@@ -1,0 +1,36 @@
+username,email,mobile,password,fullName,role
+priyanshu_acc,priyanshu@bikrikendra.com,9876543001,Admin@123,Priyanshu Pandey (Accounts),ACCOUNTS
+sankalp_acc,sankalp.acc@bikrikendra.com,9876543002,Admin@123,Sankalp (Accounts),ACCOUNTS
+rahul_im,rahul.im@bikrikendra.com,9876543003,Admin@123,Rahul Deo (Inv Mgr),INVENTORY_MANAGER
+manjeet_im,manjeet.im@bikrikendra.com,9876543004,Admin@123,Manjeet (Inv Mgr),INVENTORY_MANAGER
+dauleshwar_ih,dauleshwar.ih@bikrikendra.com,9876543005,Admin@123,Dauleshwar Kumar (Inv Helper),INVENTORY_HELPER
+ravi_ih,ravi@bikrikendra.com,9876543006,Admin@123,Ravi (Inv Helper),INVENTORY_HELPER
+jamshed_ih,jamshed@bikrikendra.com,9876543007,Admin@123,Jamshed (Inv Helper),INVENTORY_HELPER
+mukti_admin,mukti.admin@bikrikendra.com,9876543009,Admin@123,Mukti (Admin),ADMIN
+daule_admin,dauleshwar.admin@bikrikendra.com,9876543010,Admin@123,Dauleshwar Kumar (Admin),ADMIN
+sankalp_admin,sankalp.admin@bikrikendra.com,9876543011,Admin@123,Sankalp (Admin),ADMIN
+sankalp_supervisor,sankalp.supervisor@bikrikendra.com,9876543012,Admin@123,Sankalp (Supervisor),SHOP_SUPERVISOR
+manjeet_supervisor,manjeet.supervisor@bikrikendra.com,9876543013,Admin@123,Manjeet (Supervisor),SHOP_SUPERVISOR
+piyush_supervisor,piyush@bikrikendra.com,9876543014,Admin@123,Priyush Kumar (Supervisor),SHOP_SUPERVISOR
+dauleshwar_supervisor,dauleshwar.supervisor@bikrikendra.com,9876543033,Admin@123,Dauleshwar Kumar (Supervisor),SHOP_SUPERVISOR
+mukti_supervisor,mukti.supervisor@bikrikendra.com,9876543034,Admin@123,Mukti (Supervisor),SHOP_SUPERVISOR
+priyanshu_supervisor,priyanshu.supervisor@bikrikendra.com,9876543035,Admin@123,Priyanshu Pandey (Supervisor),SHOP_SUPERVISOR
+akshat_bo,akshat@bikrikendra.com,9876543029,Admin@123,Akshat Kumar (Billing),BILLING_OPERATOR
+pratap_bo,pratap@bikrikendra.com,9876543030,Admin@123,Pratap Gaurav (Billing),BILLING_OPERATOR
+yash_bo,yash@bikrikendra.com,9876543031,Admin@123,Yash (Billing),BILLING_OPERATOR
+mohit_bo,mohit@bikrikendra.com,9876543032,Admin@123,Mohit Khurana (Billing),BILLING_OPERATOR
+rahul_bo,rahul.bo@bikrikendra.com,9876543036,Admin@123,Rahul Deo (Billing),BILLING_OPERATOR
+prasent_bo,prasent.bo@bikrikendra.com,9876543037,Admin@123,Prasent Das (Billing),BILLING_OPERATOR
+arjun_csh,arjun@bikrikendra.com,9876543016,Admin@123,Arjun (Cashier),CASHIER
+nitin_csh,nitin@bikrikendra.com,9876543017,Admin@123,Nitin (Cashier),CASHIER
+vishwajeet_csh,vishwajeet@bikrikendra.com,9876543018,Admin@123,Vishwajeet (Cashier),CASHIER
+ansh_csh,ansh@bikrikendra.com,9876543019,Admin@123,Ansh (Cashier),CASHIER
+deepak_csh,deepak@bikrikendra.com,9876543020,Admin@123,Deepak Das (Cashier),CASHIER
+abhishek_csh,abhishek@bikrikendra.com,9876543021,Admin@123,Abhishek (Cashier),CASHIER
+ritesh_csh,ritesh@bikrikendra.com,9876543022,Admin@123,Ritesh Rai (Cashier),CASHIER
+bishwaranjan_csh,bishwaranjan@bikrikendra.com,9876543023,Admin@123,Bishwaranjan (Cashier),CASHIER
+sahul_csh,sahul@bikrikendra.com,9876543024,Admin@123,Sahul Deo (Cashier),CASHIER
+alok_csh,alok@bikrikendra.com,9876543025,Admin@123,Alok (Cashier),CASHIER
+shailesh_csh,shailesh@bikrikendra.com,9876543026,Admin@123,Shailesh Chauhan (Cashier),CASHIER
+sunny_csh,sunny@bikrikendra.com,9876543027,Admin@123,Sunny Narayan (Cashier),CASHIER
+shanu_csh,shanu@bikrikendra.com,9876543028,Admin@123,Shanu Kumar (Cashier),CASHIER

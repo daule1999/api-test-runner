@@ -1,0 +1,690 @@
+-- =========================================================
+-- BIKRI-KENDRA DATABASE SCHEMA STRUCTURE
+-- Consolidated Master Database DDL
+-- =========================================================
+
+-- ---------------------------------------------------------
+-- DATABASE: user_db
+-- ---------------------------------------------------------
+DROP DATABASE IF EXISTS billing_db;
+DROP DATABASE IF EXISTS auth_db;
+DROP DATABASE IF EXISTS user_db;
+DROP DATABASE IF EXISTS inventory_db;
+DROP DATABASE IF EXISTS sales_db;
+CREATE DATABASE user_db;
+USE user_db;
+
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE IF EXISTS user_event_access;
+DROP TABLE IF EXISTS role_permissions;
+DROP TABLE IF EXISTS user_roles;
+DROP TABLE IF EXISTS permissions;
+DROP TABLE IF EXISTS roles;
+DROP TABLE IF EXISTS users;
+SET FOREIGN_KEY_CHECKS = 1;
+
+CREATE TABLE users (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(100) UNIQUE,
+    mobile VARCHAR(20) UNIQUE,
+    password_hash VARCHAR(255) NOT NULL,
+    full_name VARCHAR(150),
+    status ENUM('ACTIVE','INACTIVE','LOCKED') NOT NULL DEFAULT 'ACTIVE',
+    last_login_at TIMESTAMP NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+        ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE INDEX idx_users_status ON users(status);
+
+
+CREATE TABLE roles (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL UNIQUE,   -- AppRole.name()
+    description VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE permissions (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL UNIQUE,  -- AppPermission.name()
+    description VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE user_roles (
+    user_id BIGINT NOT NULL,
+    role_id BIGINT NOT NULL,
+    assigned_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    PRIMARY KEY (user_id, role_id),
+
+    CONSTRAINT fk_ur_user
+        FOREIGN KEY (user_id)
+        REFERENCES users(id)
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_ur_role
+        FOREIGN KEY (role_id)
+        REFERENCES roles(id)
+        ON DELETE CASCADE
+);
+
+CREATE TABLE role_permissions (
+    role_id BIGINT NOT NULL,
+    permission_id BIGINT NOT NULL,
+
+    PRIMARY KEY (role_id, permission_id),
+
+    CONSTRAINT fk_rp_role
+        FOREIGN KEY (role_id)
+        REFERENCES roles(id)
+        ON DELETE CASCADE,
+
+    CONSTRAINT fk_rp_permission
+        FOREIGN KEY (permission_id)
+        REFERENCES permissions(id)
+        ON DELETE CASCADE
+);
+
+CREATE INDEX idx_rp_permission ON role_permissions(permission_id);
+
+-- =========================================================
+-- MIGRATION: EVENT-SCOPED ARCHITECTURE
+-- =========================================================
+
+-- Controls which users can access which events, with what role
+CREATE TABLE user_event_access (
+    id          BIGINT AUTO_INCREMENT PRIMARY KEY,
+    user_id     BIGINT NOT NULL,
+    event_id    BIGINT NOT NULL,
+    role_id     BIGINT NOT NULL,
+    is_active   BOOLEAN DEFAULT TRUE,
+    assigned_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    assigned_by BIGINT,
+
+    CONSTRAINT fk_uea_user FOREIGN KEY (user_id)  REFERENCES users(id)  ON DELETE CASCADE,
+    CONSTRAINT fk_uea_role FOREIGN KEY (role_id)  REFERENCES roles(id),
+    CONSTRAINT uq_user_event UNIQUE (user_id, event_id)
+);
+
+CREATE INDEX idx_uea_user  ON user_event_access(user_id);
+CREATE INDEX idx_uea_event ON user_event_access(event_id);
+
+-- ---------------------------------------------------------
+-- DATABASE: auth_db
+-- ---------------------------------------------------------
+DROP DATABASE IF EXISTS auth_db;
+CREATE DATABASE auth_db;
+USE auth_db;
+
+-- ---------------------------------------------------------
+-- DATABASE: inventory_db
+-- ---------------------------------------------------------
+
+DROP DATABASE IF EXISTS inventory_db;
+CREATE DATABASE inventory_db;
+USE inventory_db;
+
+/* =========================================================
+   INVENTORY SERVICE - SCHEMA
+   ========================================================= */
+
+/* ---------- CLEANUP (SAFE RESET) ---------- */
+SET FOREIGN_KEY_CHECKS = 0;
+
+DROP TABLE IF EXISTS stock_movement;
+DROP TABLE IF EXISTS sales;
+DROP TABLE IF EXISTS purchase;
+DROP TABLE IF EXISTS stock;
+DROP TABLE IF EXISTS product_supplier;
+DROP TABLE IF EXISTS product;
+DROP TABLE IF EXISTS supplier;
+DROP TABLE IF EXISTS category;
+
+SET FOREIGN_KEY_CHECKS = 1;
+
+
+/* ---------- MASTER TABLES ---------- */
+
+CREATE TABLE category (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL UNIQUE,
+    description TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE supplier (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    contact_name VARCHAR(255),
+    contact_email VARCHAR(255),
+    contact_phone VARCHAR(20),
+    address TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+
+/* ---------- PRODUCT ---------- */
+
+CREATE TABLE product (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    category_id BIGINT NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    sku VARCHAR(100) NOT NULL UNIQUE,
+    description TEXT,
+    mrp DECIMAL(12,2) NOT NULL,
+    selling_price DECIMAL(12,2) NOT NULL,
+    discount DECIMAL(5,2),
+    is_active BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT fk_product_category
+        FOREIGN KEY (category_id) REFERENCES category(id)
+);
+
+CREATE INDEX idx_product_name ON product(name);
+CREATE INDEX idx_product_price ON product(selling_price);
+CREATE INDEX idx_product_category ON product(category_id);
+
+
+/* ---------- PRODUCT ↔ SUPPLIER ---------- */
+
+CREATE TABLE product_supplier (
+    product_id BIGINT NOT NULL,
+    supplier_id BIGINT NOT NULL,
+    PRIMARY KEY (product_id, supplier_id),
+    CONSTRAINT fk_ps_product
+        FOREIGN KEY (product_id) REFERENCES product(id),
+    CONSTRAINT fk_ps_supplier
+        FOREIGN KEY (supplier_id) REFERENCES supplier(id)
+);
+
+
+/* ---------- STOCK ---------- */
+
+CREATE TABLE stock (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    product_id BIGINT NOT NULL,
+    quantity INT NOT NULL DEFAULT 0,
+    location VARCHAR(100) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT fk_stock_product
+        FOREIGN KEY (product_id) REFERENCES product(id),
+    CONSTRAINT uq_stock_product_location
+        UNIQUE (product_id, location),
+    CONSTRAINT chk_stock_quantity
+        CHECK (quantity >= 0)
+);
+
+CREATE INDEX idx_stock_product ON stock(product_id);
+CREATE INDEX idx_stock_location ON stock(location);
+
+
+/* ---------- PURCHASE ---------- */
+
+CREATE TABLE purchase (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    product_id BIGINT NOT NULL,
+    supplier_id BIGINT NOT NULL,
+    user_id BIGINT NOT NULL,      -- from user-service
+    quantity INT NOT NULL,
+    purchase_price DECIMAL(12,2) NOT NULL,
+    purchase_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT fk_purchase_product
+        FOREIGN KEY (product_id) REFERENCES product(id),
+    CONSTRAINT fk_purchase_supplier
+        FOREIGN KEY (supplier_id) REFERENCES supplier(id),
+    CONSTRAINT chk_purchase_qty
+        CHECK (quantity > 0)
+);
+
+CREATE INDEX idx_purchase_product ON purchase(product_id);
+CREATE INDEX idx_purchase_supplier ON purchase(supplier_id);
+CREATE INDEX idx_purchase_user ON purchase(user_id);
+CREATE INDEX idx_purchase_date ON purchase(purchase_date);
+
+
+/* ---------- SALES ---------- */
+CREATE TABLE sales (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+
+    product_id BIGINT NOT NULL,
+
+    seller_user VARCHAR(255) NOT NULL,   -- cashier / salesperson
+
+    shop_id BIGINT NOT NULL,
+
+    quantity INT NOT NULL,
+
+    sale_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        ON UPDATE CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_sales_product
+        FOREIGN KEY (product_id) REFERENCES product(id),
+
+    CONSTRAINT chk_sales_qty
+        CHECK (quantity > 0)
+);
+
+CREATE INDEX idx_sales_seller ON sales(seller_user);
+CREATE INDEX idx_sales_product ON sales(product_id);
+CREATE INDEX idx_sales_date ON sales(sale_date);
+
+
+
+/* ---------- STOCK MOVEMENT ---------- */
+
+CREATE TABLE stock_movement (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    product_id BIGINT NOT NULL,
+    username VARCHAR(100) NOT NULL,   -- from JWT (auth service)
+    movement_type ENUM ('IN','OUT','ADJUSTMENT') NOT NULL,
+    quantity INT NOT NULL,
+    reason VARCHAR(255),
+    movement_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    CONSTRAINT fk_sm_product
+        FOREIGN KEY (product_id) REFERENCES product(id)
+);
+
+CREATE INDEX idx_sm_product ON stock_movement(product_id);
+CREATE INDEX idx_sm_username ON stock_movement(username);
+CREATE INDEX idx_sm_date ON stock_movement(movement_date);
+CREATE INDEX idx_sm_type ON stock_movement(movement_type);
+
+-- =========================================================
+-- MIGRATION: EVENT-SCOPED ARCHITECTURE
+-- =========================================================
+
+-- Safely add event_id column to stock table
+ALTER TABLE stock ADD COLUMN event_id BIGINT NOT NULL DEFAULT 1;
+
+-- Drop legacy unique constraints (handles uq_stock_product_loc and uq_stock_product_location)
+ALTER TABLE stock DROP INDEX uq_stock_product_location;
+
+-- Add updated unique constraint including event_id
+ALTER TABLE stock ADD CONSTRAINT uq_stock_product_event_loc UNIQUE (product_id, event_id, location);
+
+
+-- Add event_id columns to other inventory entities
+ALTER TABLE purchase ADD COLUMN event_id BIGINT NOT NULL DEFAULT 1;
+ALTER TABLE sales ADD COLUMN event_id BIGINT NOT NULL DEFAULT 1;
+ALTER TABLE stock_movement ADD COLUMN event_id BIGINT NOT NULL DEFAULT 1;
+
+
+
+-- ---------------------------------------------------------
+-- DATABASE: sales_db
+-- ---------------------------------------------------------
+
+DROP DATABASE IF EXISTS sales_db;
+CREATE DATABASE sales_db;
+USE sales_db;
+
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE IF EXISTS shop_staff_assignment;
+DROP TABLE IF EXISTS shop;
+DROP TABLE IF EXISTS event;
+DROP TABLE IF EXISTS sales_return;
+DROP TABLE IF EXISTS sales_payment;
+DROP TABLE IF EXISTS sales_order_item;
+DROP TABLE IF EXISTS sales_order;
+SET FOREIGN_KEY_CHECKS = 1;
+
+CREATE TABLE sales_order (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+
+    order_number VARCHAR(50) NOT NULL UNIQUE,
+
+    -- Shop reference
+    shop_id BIGINT NOT NULL,
+
+    -- Seller snapshot
+    seller_id BIGINT NOT NULL,
+    seller_name VARCHAR(100) NOT NULL,
+
+    -- Customer snapshot
+    customer_name VARCHAR(150),
+    customer_mobile VARCHAR(20),
+
+    -- Financials
+    order_subtotal DECIMAL(12,2) NOT NULL,
+    discount_amount DECIMAL(12,2) DEFAULT 0,
+
+    -- Link to Billing Service
+    billing_invoice_number VARCHAR(50),
+
+    status ENUM(
+        'CREATED',
+        'CONFIRMED',
+        'CANCELLED',
+        'RETURNED',
+        'PARTIALLY_RETURNED'
+    ) DEFAULT 'CREATED',
+
+    cancellation_reason VARCHAR(255),
+
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- Indexes
+CREATE INDEX idx_sales_order_shop ON sales_order(shop_id);
+CREATE INDEX idx_sales_order_seller ON sales_order(seller_id);
+CREATE INDEX idx_sales_order_created ON sales_order(created_at);
+CREATE INDEX idx_sales_order_invoice ON sales_order(billing_invoice_number);
+
+
+CREATE TABLE sales_order_item (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+
+    sales_order_id BIGINT NOT NULL,
+
+    product_id BIGINT NOT NULL,
+    product_name VARCHAR(255) NOT NULL,
+    hsn_code VARCHAR(20),
+
+    quantity INT NOT NULL,
+
+    mrp DECIMAL(10,2) NOT NULL,
+    selling_price DECIMAL(10,2) NOT NULL,
+    discount DECIMAL(10,2) DEFAULT 0,
+
+    line_total DECIMAL(12,2) NOT NULL,
+
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_sales_item_order
+        FOREIGN KEY (sales_order_id)
+        REFERENCES sales_order(id)
+        ON DELETE CASCADE
+);
+
+CREATE INDEX idx_sales_item_order ON sales_order_item(sales_order_id);
+CREATE INDEX idx_sales_item_product ON sales_order_item(product_id);
+
+CREATE TABLE sales_payment (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+
+    sales_order_id BIGINT NOT NULL,
+
+    payment_mode ENUM(
+        'CASH',
+        'ONLINE',
+        'UPI',
+        'CARD',
+        'BANK_TRANSFER',
+        'BOTH'
+    ) NOT NULL,
+
+    payment_reference VARCHAR(100),
+
+    amount DECIMAL(12,2) NOT NULL,
+    cash_amount DECIMAL(12,2) NOT NULL DEFAULT 0.00,
+    online_amount DECIMAL(12,2) NOT NULL DEFAULT 0.00,
+
+    payment_status ENUM(
+        'SUCCESS',
+        'FAILED',
+        'REFUNDED'
+    ) DEFAULT 'SUCCESS',
+
+    paid_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_sales_payment_order
+        FOREIGN KEY (sales_order_id)
+        REFERENCES sales_order(id)
+        ON DELETE CASCADE
+);
+
+CREATE INDEX idx_sales_payment_order ON sales_payment(sales_order_id);
+CREATE INDEX idx_sales_payment_date ON sales_payment(paid_at);
+
+CREATE TABLE sales_return (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+
+    sales_order_id BIGINT NOT NULL,
+    sales_order_item_id BIGINT NOT NULL,
+
+    product_id BIGINT NOT NULL,
+
+    processed_by BIGINT NOT NULL,
+    processed_by_name VARCHAR(100) NOT NULL,
+
+    quantity INT NOT NULL,
+    refund_amount DECIMAL(12,2) NOT NULL,
+
+    reason VARCHAR(255),
+
+    billing_invoice_number VARCHAR(50),
+
+    returned_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_sales_return_order
+        FOREIGN KEY (sales_order_id)
+        REFERENCES sales_order(id)
+);
+
+CREATE TABLE event (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    event_name VARCHAR(255) NOT NULL,
+    event_type VARCHAR(100),
+    description TEXT,
+    location VARCHAR(255),
+    start_date DATETIME,
+    end_date DATETIME,
+    is_active BOOLEAN DEFAULT TRUE
+);
+
+CREATE TABLE shop (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    shop_name VARCHAR(255) NOT NULL,
+    category_id BIGINT NOT NULL,
+    counter_number INT NOT NULL,
+     event_id BIGINT,
+    is_active BOOLEAN DEFAULT TRUE,
+
+    CONSTRAINT fk_shop_event
+        FOREIGN KEY (event_id)
+        REFERENCES event(id)
+        ON DELETE SET NULL
+);
+
+CREATE TABLE shop_staff_assignment (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+
+    shop_id BIGINT NOT NULL,
+    user_id BIGINT NOT NULL,
+
+    role_code VARCHAR(50) NOT NULL,
+
+    assigned_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    left_at TIMESTAMP NULL,
+
+    is_active BOOLEAN DEFAULT TRUE,
+
+    CONSTRAINT uk_shop_role UNIQUE (shop_id, role_code),
+    CONSTRAINT fk_shop FOREIGN KEY (shop_id) REFERENCES shop(id)
+);
+
+-- =========================================================
+-- MIGRATION: EVENT-SCOPED ARCHITECTURE
+-- =========================================================
+
+ALTER TABLE sales_order ADD COLUMN event_id BIGINT NOT NULL AFTER order_number;
+ALTER TABLE event ADD COLUMN created_by BIGINT AFTER is_active;
+ALTER TABLE event ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP AFTER is_active;
+ALTER TABLE event ADD COLUMN updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP AFTER created_at;
+ALTER TABLE shop DROP FOREIGN KEY fk_shop_event; 
+ALTER TABLE shop ADD CONSTRAINT fk_shop_event FOREIGN KEY (event_id) REFERENCES event(id) ON DELETE SET NULL;
+
+ALTER TABLE shop_staff_assignment ADD COLUMN event_id BIGINT;
+
+UPDATE shop_staff_assignment ssa 
+INNER JOIN shop s ON ssa.shop_id = s.id 
+SET ssa.event_id = s.event_id;
+
+
+-- ---------------------------------------------------------
+-- DATABASE: billing_db
+-- ---------------------------------------------------------
+
+DROP DATABASE IF EXISTS billing_db;
+CREATE DATABASE billing_db;
+USE billing_db;
+
+SET FOREIGN_KEY_CHECKS = 0;
+DROP TABLE IF EXISTS invoice_audit;
+DROP TABLE IF EXISTS payments;
+DROP TABLE IF EXISTS invoice_items;
+DROP TABLE IF EXISTS invoices;
+SET FOREIGN_KEY_CHECKS = 1;
+
+CREATE TABLE invoices (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+
+    invoice_no VARCHAR(50) NOT NULL UNIQUE,
+
+    -- Link to Sales Service
+    sales_order_number VARCHAR(50) NOT NULL UNIQUE,
+
+    -- Shop snapshot (from Sales)
+    shop_id BIGINT NOT NULL,
+
+    -- Seller snapshot
+    seller_id BIGINT NOT NULL,
+    seller_name VARCHAR(100) NOT NULL,
+
+    -- Cashier / Billing user
+    billed_by BIGINT NOT NULL,
+
+    -- Customer snapshot
+    customer_name VARCHAR(150),
+    customer_mobile VARCHAR(20),
+    customer_gstin VARCHAR(20),
+
+    -- Financials (Billing owns these)
+    subtotal_amount DECIMAL(12,2) NOT NULL,
+    discount_amount DECIMAL(12,2) DEFAULT 0,
+    tax_amount DECIMAL(12,2) DEFAULT 0,
+    net_amount DECIMAL(12,2) NOT NULL,
+
+    status VARCHAR(20) NOT NULL,
+    billing_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- Indexes
+CREATE INDEX idx_invoice_no ON invoices(invoice_no);
+CREATE INDEX idx_invoice_sales_order ON invoices(sales_order_number);
+CREATE INDEX idx_invoice_date ON invoices(billing_date);
+CREATE INDEX idx_invoice_seller ON invoices(seller_id);
+CREATE INDEX idx_invoice_shop ON invoices(shop_id);
+
+CREATE TABLE invoice_items (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+
+    invoice_id BIGINT NOT NULL,
+
+    product_id BIGINT NOT NULL,
+    product_name VARCHAR(255) NOT NULL,
+    hsn_code VARCHAR(20),
+
+    quantity INT NOT NULL,
+
+    unit_price DECIMAL(10,2) NOT NULL,
+    discount DECIMAL(10,2) DEFAULT 0,
+
+    tax_rate DECIMAL(5,2) DEFAULT 0,
+    tax_amount DECIMAL(10,2) DEFAULT 0,
+
+    total_price DECIMAL(12,2) NOT NULL,
+    returned_quantity INT DEFAULT 0,
+
+    CONSTRAINT fk_invoice_items_invoice
+        FOREIGN KEY (invoice_id)
+        REFERENCES invoices(id)
+        ON DELETE CASCADE
+);
+
+CREATE INDEX idx_invoice_items_invoice ON invoice_items(invoice_id);
+CREATE INDEX idx_invoice_items_product ON invoice_items(product_id);
+
+CREATE TABLE payments (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+
+    invoice_id BIGINT NOT NULL,
+
+    payment_mode ENUM('CASH','UPI','CARD','BANK_TRANSFER','BOTH') NOT NULL,
+    payment_reference VARCHAR(100),
+
+    amount DECIMAL(12,2) NOT NULL,
+
+    payment_status ENUM(
+        'SUCCESS',
+        'FAILED',
+        'PENDING',
+        'REFUNDED'
+    ) DEFAULT 'SUCCESS',
+
+    paid_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    received_by BIGINT NOT NULL,
+
+    CONSTRAINT fk_payments_invoice
+        FOREIGN KEY (invoice_id)
+        REFERENCES invoices(id)
+        ON DELETE CASCADE
+);
+
+CREATE INDEX idx_payment_invoice ON payments(invoice_id);
+CREATE INDEX idx_payment_date ON payments(paid_at);
+
+CREATE TABLE invoice_audit (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+
+    invoice_id BIGINT NOT NULL,
+
+    action ENUM(
+        'CREATED',
+        'ISSUED',
+        'PAID',
+        'PARTIALLY_PAID',
+        'CANCELLED',
+        'REFUNDED',
+        'RETURNED'
+    ) NOT NULL,
+
+    action_by BIGINT NOT NULL,
+    remarks VARCHAR(255),
+
+    action_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_invoice_audit_invoice
+        FOREIGN KEY (invoice_id)
+        REFERENCES invoices(id)
+        ON DELETE CASCADE
+);
+
+CREATE INDEX idx_invoice_audit_invoice ON invoice_audit(invoice_id);
+CREATE INDEX idx_invoice_audit_date ON invoice_audit(action_at);
+
+-- =========================================================
+-- MIGRATION: EVENT-SCOPED ARCHITECTURE
+-- =========================================================
+
+ALTER TABLE invoices ADD COLUMN event_id BIGINT NOT NULL AFTER sales_order_number;
+
+
