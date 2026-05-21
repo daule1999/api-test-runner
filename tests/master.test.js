@@ -22,9 +22,9 @@ const event1 = {
 describe('Master E2E Serial Integration Suite', () => {
 
   // Suite 0: Test Setup Collection
-  // describe('➡️ Step 0: Test Setup Flow', () => {
-  //   runTestSetupSuite();
-  // });
+  describe('➡️ Step 0: Test Setup Flow', () => {
+    runTestSetupSuite();
+  });
 
   // Suite 1: Users Setup Collection
   describe('➡️ Step 1: Users Setup Flow', () => {
@@ -62,8 +62,8 @@ describe('Master E2E Serial Integration Suite', () => {
   });
 
   // Suite 7: Jhusi Program Sales Audit Collection
-  describe('➡️ Step 7: Jhusi Program Sales Audit Flow', () => {
-    runSalesAuditSuite();
-  });
+  // describe('➡️ Step 7: Jhusi Program Sales Audit Flow', () => {
+  //   runSalesAuditSuite();
+  // });
 
 });

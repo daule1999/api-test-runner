@@ -15,7 +15,6 @@ CREATE DATABASE user_db;
 USE user_db;
 
 SET FOREIGN_KEY_CHECKS = 0;
-DROP TABLE IF EXISTS user_event_access;
 DROP TABLE IF EXISTS role_permissions;
 DROP TABLE IF EXISTS user_roles;
 DROP TABLE IF EXISTS permissions;
@@ -56,9 +55,11 @@ CREATE TABLE permissions (
 CREATE TABLE user_roles (
     user_id BIGINT NOT NULL,
     role_id BIGINT NOT NULL,
+    event_id BIGINT NOT NULL,
+    is_active BOOLEAN NOT NULL DEFAULT TRUE,
     assigned_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
-    PRIMARY KEY (user_id, role_id),
+    PRIMARY KEY (user_id, role_id, event_id),
 
     CONSTRAINT fk_ur_user
         FOREIGN KEY (user_id)
@@ -90,28 +91,6 @@ CREATE TABLE role_permissions (
 
 CREATE INDEX idx_rp_permission ON role_permissions(permission_id);
 
--- =========================================================
--- MIGRATION: EVENT-SCOPED ARCHITECTURE
--- =========================================================
-
--- Controls which users can access which events, with what role
-CREATE TABLE user_event_access (
-    id          BIGINT AUTO_INCREMENT PRIMARY KEY,
-    user_id     BIGINT NOT NULL,
-    event_id    BIGINT NOT NULL,
-    role_id     BIGINT NOT NULL,
-    is_active   BOOLEAN DEFAULT TRUE,
-    assigned_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    assigned_by BIGINT,
-
-    CONSTRAINT fk_uea_user FOREIGN KEY (user_id)  REFERENCES users(id)  ON DELETE CASCADE,
-    CONSTRAINT fk_uea_role FOREIGN KEY (role_id)  REFERENCES roles(id),
-    CONSTRAINT uq_user_event UNIQUE (user_id, event_id)
-);
-
-CREATE INDEX idx_uea_user  ON user_event_access(user_id);
-CREATE INDEX idx_uea_event ON user_event_access(event_id);
-
 -- ---------------------------------------------------------
 -- DATABASE: auth_db
 -- ---------------------------------------------------------
@@ -135,6 +114,7 @@ USE inventory_db;
 SET FOREIGN_KEY_CHECKS = 0;
 
 DROP TABLE IF EXISTS stock_movement;
+DROP TABLE IF EXISTS counter_stocks;
 DROP TABLE IF EXISTS sales;
 DROP TABLE IF EXISTS purchase;
 DROP TABLE IF EXISTS stock;
@@ -321,6 +301,66 @@ ALTER TABLE purchase ADD COLUMN event_id BIGINT NOT NULL DEFAULT 1;
 ALTER TABLE sales ADD COLUMN event_id BIGINT NOT NULL DEFAULT 1;
 ALTER TABLE stock_movement ADD COLUMN event_id BIGINT NOT NULL DEFAULT 1;
 
+/* =============================================================================
+   UPDATED MIGRATION SCRIPT: OLD INVENTORY SCHEMA TO NEW INVENTORY SCHEMA
+   ============================================================================= */
+
+-- 1. Disable foreign key checks to perform safe constraint refactoring
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- 2. Rename the legacy 'sales' table to 'counter_stocks'
+RENAME TABLE `sales` TO `counter_stocks`;
+
+-- 3. Explicitly add the 'event_id' column to the 'counter_stocks' table
+-- Since event_id was already added to the 'sales' table before rename, we drop it first
+-- to allow the explicit ADD COLUMN statement to execute without a duplicate column error.
+ALTER TABLE `counter_stocks` DROP COLUMN `event_id`;
+ALTER TABLE `counter_stocks` ADD COLUMN `event_id` BIGINT NOT NULL DEFAULT 1;
+
+-- 4. Drop legacy constraints on the renamed 'counter_stocks' table
+ALTER TABLE `counter_stocks` DROP FOREIGN KEY `fk_sales_product`;
+ALTER TABLE `counter_stocks` DROP CHECK `chk_sales_qty`;
+
+-- 5. Update index names to reflect the table rename (drop old, build new)
+-- We drop old indexes BEFORE adding the new foreign key constraint so idx_sales_product is not locked.
+ALTER TABLE `counter_stocks` DROP INDEX `idx_sales_seller`;
+ALTER TABLE `counter_stocks` DROP INDEX `idx_sales_product`;
+ALTER TABLE `counter_stocks` DROP INDEX `idx_sales_date`;
+
+CREATE INDEX `idx_counter_stocks_seller` ON `counter_stocks`(`seller_user`);
+CREATE INDEX `idx_counter_stocks_product` ON `counter_stocks`(`product_id`);
+CREATE INDEX `idx_counter_stocks_date` ON `counter_stocks`(`sale_date`);
+
+-- 6. Add new foreign key constraint with updated naming convention
+ALTER TABLE `counter_stocks` 
+    ADD CONSTRAINT `fk_counter_stocks_product` 
+    FOREIGN KEY (`product_id`) REFERENCES `product`(`id`);
+
+-- 7. Expand 'stock_movement' ENUM to support the new 'TRANSFER' type
+ALTER TABLE `stock_movement` 
+    MODIFY COLUMN `movement_type` ENUM('IN','OUT','ADJUSTMENT','TRANSFER') NOT NULL;
+
+-- 8. Add location tracking and shop columns to 'stock_movement' after the 'reason' field
+ALTER TABLE `stock_movement` 
+    ADD COLUMN `location_from` VARCHAR(100) NULL AFTER `reason`,
+    ADD COLUMN `location_to` VARCHAR(100) NULL AFTER `location_from`,
+    ADD COLUMN `shop_id` BIGINT NULL AFTER `location_to`;
+
+-- 9. Add a composite index on transfer locations for fast aggregation lookups
+CREATE INDEX `idx_sm_locations` ON `stock_movement`(`location_from`, `location_to`);
+
+-- 10. Support explicit Initial and Live quantity tracking in counter_stocks
+ALTER TABLE `counter_stocks` ADD COLUMN `initial_quantity` INT NOT NULL DEFAULT 0;
+ALTER TABLE `counter_stocks` ADD COLUMN `live_quantity` INT NOT NULL DEFAULT 0;
+
+-- Copy existing quantity values
+UPDATE `counter_stocks` SET `initial_quantity` = `quantity`, `live_quantity` = `quantity`;
+
+-- Drop the old quantity column
+ALTER TABLE `counter_stocks` DROP COLUMN `quantity`;
+
+-- 11. Re-enable foreign key checks
+SET FOREIGN_KEY_CHECKS = 1;
 
 
 -- ---------------------------------------------------------
@@ -493,6 +533,8 @@ CREATE TABLE shop (
     counter_number INT NOT NULL,
      event_id BIGINT,
     is_active BOOLEAN DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    closed_at TIMESTAMP NULL,
 
     CONSTRAINT fk_shop_event
         FOREIGN KEY (event_id)
