@@ -7,6 +7,7 @@ const runShopIssueSuite = require('./Event Wise/Jhusi_Program/shop-issue.suite.j
 const runSalesAuditSuite = require('./Event Wise/Jhusi_Program/sales-audit.suite.js');
 const runTestSetupSuite = require('./test.suite.js');
 const runEventSetupSuite = require('./Event Wise/Jhusi_Program/event-setup.suite.js');
+const runMultiEventIsolationSuite = require('./multi-event-isolation.suite.js');
 
 const event1 = {
   id: 1,
@@ -65,5 +66,10 @@ describe('Master E2E Serial Integration Suite', () => {
   // describe('➡️ Step 7: Jhusi Program Sales Audit Flow', () => {
   //   runSalesAuditSuite();
   // });
+
+  // Suite 8: Multi-Event Security Isolation Flow
+  describe('➡️ Step 8: Multi-Event Security Isolation Flow', () => {
+    runMultiEventIsolationSuite();
+  });
 
 });
