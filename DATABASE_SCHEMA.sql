@@ -91,6 +91,24 @@ CREATE TABLE role_permissions (
 
 CREATE INDEX idx_rp_permission ON role_permissions(permission_id);
 
+-- Migration: add event_id to user_roles for event-scoped roles
+ALTER TABLE user_roles
+  ADD COLUMN event_id BIGINT NULL AFTER role_id;
+
+-- If you want event-scoped uniqueness per user+role+event, adjust PK/indexes accordingly.
+-- Create a composite primary key replacement if the DB allows it (requires dropping old PK):
+-- ALTER TABLE user_roles DROP PRIMARY KEY, ADD PRIMARY KEY (user_id, role_id, event_id);
+
+-- Optional: add foreign key to events table if it exists
+-- ALTER TABLE user_roles
+--   ADD CONSTRAINT fk_ur_event FOREIGN KEY (event_id) REFERENCES events(id) ON DELETE SET NULL;
+
+-- Index event_id for faster queries
+CREATE INDEX IF NOT EXISTS idx_user_roles_event ON user_roles(event_id);
+
+-- Backfill: if you're moving existing assignments into a default/global event, set event_id=NULL (no-op)
+-- UPDATE user_roles SET event_id = NULL WHERE event_id IS NULL;
+
 -- ---------------------------------------------------------
 -- DATABASE: auth_db
 -- ---------------------------------------------------------
@@ -362,6 +380,8 @@ ALTER TABLE `counter_stocks` DROP COLUMN `quantity`;
 -- 11. Re-enable foreign key checks
 SET FOREIGN_KEY_CHECKS = 1;
 
+ALTER TABLE product ADD COLUMN min_threshold INT NOT NULL DEFAULT 10;
+
 
 -- ---------------------------------------------------------
 -- DATABASE: sales_db
@@ -526,6 +546,7 @@ CREATE TABLE event (
     is_active BOOLEAN DEFAULT TRUE
 );
 
+
 CREATE TABLE shop (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     shop_name VARCHAR(255) NOT NULL,
@@ -533,8 +554,6 @@ CREATE TABLE shop (
     counter_number INT NOT NULL,
      event_id BIGINT,
     is_active BOOLEAN DEFAULT TRUE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    closed_at TIMESTAMP NULL,
 
     CONSTRAINT fk_shop_event
         FOREIGN KEY (event_id)
@@ -575,6 +594,9 @@ ALTER TABLE shop_staff_assignment ADD COLUMN event_id BIGINT;
 UPDATE shop_staff_assignment ssa 
 INNER JOIN shop s ON ssa.shop_id = s.id 
 SET ssa.event_id = s.event_id;
+
+ALTER TABLE shop ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+ALTER TABLE shop ADD COLUMN closed_at TIMESTAMP NULL;
 
 
 -- ---------------------------------------------------------
