@@ -299,6 +299,7 @@ CREATE INDEX idx_sm_product ON stock_movement(product_id);
 CREATE INDEX idx_sm_username ON stock_movement(username);
 CREATE INDEX idx_sm_date ON stock_movement(movement_date);
 CREATE INDEX idx_sm_type ON stock_movement(movement_type);
+CREATE INDEX idx_sm_product_event ON stock_movement(product_id, event_id);
 
 -- =========================================================
 -- MIGRATION: EVENT-SCOPED ARCHITECTURE
@@ -597,6 +598,61 @@ SET ssa.event_id = s.event_id;
 
 ALTER TABLE shop ADD COLUMN created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
 ALTER TABLE shop ADD COLUMN closed_at TIMESTAMP NULL;
+
+CREATE INDEX idx_ssa_user_event ON shop_staff_assignment(user_id, event_id);
+
+
+-- CREATE TABLE for Shop Shift Session
+CREATE TABLE IF NOT EXISTS shop_shift_session (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    shop_id BIGINT NOT NULL,
+    event_id BIGINT NOT NULL,
+    status ENUM('OPEN', 'CLOSED', 'RECONCILED') NOT NULL DEFAULT 'OPEN',
+    opened_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    closed_at TIMESTAMP NULL DEFAULT NULL,
+    
+    opening_cash_balance DECIMAL(12,2) NOT NULL DEFAULT 0.00,
+    expected_closing_cash DECIMAL(12,2) NOT NULL DEFAULT 0.00,
+    actual_closing_cash DECIMAL(12,2) DEFAULT 0.00,
+    
+    opened_by_user_id BIGINT NOT NULL,
+    closed_by_user_id BIGINT DEFAULT NULL,
+    reconciled_by_user_id BIGINT DEFAULT NULL,
+    reconciled_at TIMESTAMP NULL DEFAULT NULL,
+    reconciliation_comment VARCHAR(500) NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    
+    INDEX idx_shift_shop_event (shop_id, event_id),
+    INDEX idx_shift_status (status)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- CREATE TABLE for Shop Shift Denomination
+CREATE TABLE IF NOT EXISTS shop_shift_denomination (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    shift_session_id BIGINT NOT NULL,
+    entry_type ENUM('OPENING', 'CLOSING') NOT NULL,
+    currency_value INT NOT NULL,
+    note_count INT NOT NULL DEFAULT 0,
+    
+    CONSTRAINT fk_denomination_session
+        FOREIGN KEY (shift_session_id)
+        REFERENCES shop_shift_session(id)
+        ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ALTER TABLE sales_order to add nullable shift_session_id
+ALTER TABLE sales_order 
+ADD COLUMN shift_session_id BIGINT DEFAULT NULL AFTER event_id,
+ADD CONSTRAINT fk_sales_order_shift 
+    FOREIGN KEY (shift_session_id) 
+    REFERENCES shop_shift_session(id)
+    ON DELETE SET NULL;
+
+-- Migration: Add reconciliation audit columns to shop_shift_session
+ALTER TABLE shop_shift_session
+ADD INDEX idx_shift_active_lookup (shop_id, event_id, status, opened_at DESC);
+
 
 
 -- ---------------------------------------------------------
