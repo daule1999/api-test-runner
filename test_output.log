@@ -1,0 +1,774 @@
+
+> api-test-runner@1.0.0 test
+> jest --runInBand --detectOpenHandles --forceExit tests/retail-checkout.suite.js
+
+  console.log
+    🏁 Framework Global Setup: Initializing test environment hooks...
+
+      at Object.log (tests/setup.js:4:11)
+
+  console.log
+    🔍 Checking if microservice container network ports are active...
+
+      at log (helpers/docker-helper.js:28:11)
+
+  console.log
+    ✅ Required service ports (3306, 8090) are already active and reachable.
+
+      at log (helpers/docker-helper.js:37:13)
+
+  console.log
+    ✅ Global Setup complete. Starting declarative test suites...
+
+      at Object.log (tests/setup.js:13:11)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+    ℹ️ [Mitigation] Preferred product "Special Chyawanprash" is out of stock at shop ID 1. Dynamically selected fallback "Naranga Refreshing Bodywash" (Stock: 55) with quantity 2.
+
+      at log (tests/Event Wise/Jhusi_Program/sales-audit.suite.js:39:17)
+
+  console.error
+    ❌ [FW ERROR] confirmSale failed for order SO-01KSFFDNKY86ZFKZWK80HD02J8 with Status 500. Response Body: {"timestamp":"2026-05-25T11:48:15.653Z","path":"/api/sales-svc/retail/SO-01KSFFDNKY86ZFKZWK80HD02J8/confirm","status":500,"error":"Internal Server Error","requestId":"5ea27fce-569"}
+
+      188 |     const res = await this.client.put(`/api/sales-svc/retail/${orderNumber}/confirm`, body, { headers: this.headers });
+      189 |     if (res.status !== 200 && res.status !== 201) {
+    > 190 |       console.error(`❌ [FW ERROR] confirmSale failed for order ${orderNumber} with Status ${res.status}. Response Body:`, JSON.stringify(res.data));
+          |               ^
+      191 |       if (res.status === 400) {
+      192 |          // Return raw data for discrepancy tests
+      193 |          return { status: res.status, data: res.data };
+
+      at TestClient.error [as confirmSale] (helpers/framework.js:190:15)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:93:30
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.error
+    ❌ [FW ERROR] confirmSale failed for order SO-01KSFFDP3C7SFHPTSMZNVGF0NC with Status 500. Response Body: {"timestamp":"2026-05-25T11:48:16.151Z","path":"/api/sales-svc/retail/SO-01KSFFDP3C7SFHPTSMZNVGF0NC/confirm","status":500,"error":"Internal Server Error","requestId":"5ea27fce-584"}
+
+      188 |     const res = await this.client.put(`/api/sales-svc/retail/${orderNumber}/confirm`, body, { headers: this.headers });
+      189 |     if (res.status !== 200 && res.status !== 201) {
+    > 190 |       console.error(`❌ [FW ERROR] confirmSale failed for order ${orderNumber} with Status ${res.status}. Response Body:`, JSON.stringify(res.data));
+          |               ^
+      191 |       if (res.status === 400) {
+      192 |          // Return raw data for discrepancy tests
+      193 |          return { status: res.status, data: res.data };
+
+      at TestClient.error [as confirmSale] (helpers/framework.js:190:15)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:93:30
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+    ℹ️ [Mitigation] Preferred product "Amritvani" is out of stock at shop ID 4. Dynamically selected fallback "Adbhut Marag" (Stock: 53) with quantity 4.
+
+      at log (tests/Event Wise/Jhusi_Program/sales-audit.suite.js:39:17)
+
+  console.error
+    ❌ [FW ERROR] confirmSale failed for order SO-01KSFFDPBFTWPHCXX0F6CX8G3P with Status 500. Response Body: {"timestamp":"2026-05-25T11:48:16.408Z","path":"/api/sales-svc/retail/SO-01KSFFDPBFTWPHCXX0F6CX8G3P/confirm","status":500,"error":"Internal Server Error","requestId":"5ea27fce-591"}
+
+      188 |     const res = await this.client.put(`/api/sales-svc/retail/${orderNumber}/confirm`, body, { headers: this.headers });
+      189 |     if (res.status !== 200 && res.status !== 201) {
+    > 190 |       console.error(`❌ [FW ERROR] confirmSale failed for order ${orderNumber} with Status ${res.status}. Response Body:`, JSON.stringify(res.data));
+          |               ^
+      191 |       if (res.status === 400) {
+      192 |          // Return raw data for discrepancy tests
+      193 |          return { status: res.status, data: res.data };
+
+      at TestClient.error [as confirmSale] (helpers/framework.js:190:15)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:93:30
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+    ℹ️ [Mitigation] Preferred product "Ashtang yog" is out of stock at shop ID 5. Dynamically selected fallback "Adhyatmik Nibandh part-1" (Stock: 78) with quantity 5.
+
+      at log (tests/Event Wise/Jhusi_Program/sales-audit.suite.js:39:17)
+
+  console.error
+    ❌ [FW ERROR] confirmSale failed for order SO-01KSFFDPJJZMP543MQ3V2Z8MGX with Status 500. Response Body: {"timestamp":"2026-05-25T11:48:16.635Z","path":"/api/sales-svc/retail/SO-01KSFFDPJJZMP543MQ3V2Z8MGX/confirm","status":500,"error":"Internal Server Error","requestId":"5ea27fce-598"}
+
+      188 |     const res = await this.client.put(`/api/sales-svc/retail/${orderNumber}/confirm`, body, { headers: this.headers });
+      189 |     if (res.status !== 200 && res.status !== 201) {
+    > 190 |       console.error(`❌ [FW ERROR] confirmSale failed for order ${orderNumber} with Status ${res.status}. Response Body:`, JSON.stringify(res.data));
+          |               ^
+      191 |       if (res.status === 400) {
+      192 |          // Return raw data for discrepancy tests
+      193 |          return { status: res.status, data: res.data };
+
+      at TestClient.error [as confirmSale] (helpers/framework.js:190:15)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:93:30
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+    ℹ️ [Mitigation] Preferred product "ProductA" is out of stock at shop ID 1. Dynamically selected fallback "Naranga Refreshing Bodywash" (Stock: 55) with quantity 2.
+
+      at log (tests/Event Wise/Jhusi_Program/sales-audit.suite.js:39:17)
+
+  console.error
+    ❌ [FW ERROR] confirmSale failed for order SO-01KSFFDPTEXG4ETC16G1RDHNWA with Status 500. Response Body: {"timestamp":"2026-05-25T11:48:16.885Z","path":"/api/sales-svc/retail/SO-01KSFFDPTEXG4ETC16G1RDHNWA/confirm","status":500,"error":"Internal Server Error","requestId":"5ea27fce-607"}
+
+      188 |     const res = await this.client.put(`/api/sales-svc/retail/${orderNumber}/confirm`, body, { headers: this.headers });
+      189 |     if (res.status !== 200 && res.status !== 201) {
+    > 190 |       console.error(`❌ [FW ERROR] confirmSale failed for order ${orderNumber} with Status ${res.status}. Response Body:`, JSON.stringify(res.data));
+          |               ^
+      191 |       if (res.status === 400) {
+      192 |          // Return raw data for discrepancy tests
+      193 |          return { status: res.status, data: res.data };
+
+      at TestClient.error [as confirmSale] (helpers/framework.js:190:15)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:163:30
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+    ℹ️ [Mitigation] Preferred product "ProductA" is out of stock at shop ID 2. Dynamically selected fallback "Special Chyawanprash" (Stock: 89) with quantity 1.
+
+      at log (tests/Event Wise/Jhusi_Program/sales-audit.suite.js:39:17)
+
+  console.error
+    ❌ [FW ERROR] confirmSale failed for order SO-01KSFFDQ2B7GTNCSPFRPTJ63W1 with Status 500. Response Body: {"timestamp":"2026-05-25T11:48:17.140Z","path":"/api/sales-svc/retail/SO-01KSFFDQ2B7GTNCSPFRPTJ63W1/confirm","status":500,"error":"Internal Server Error","requestId":"5ea27fce-616"}
+
+      188 |     const res = await this.client.put(`/api/sales-svc/retail/${orderNumber}/confirm`, body, { headers: this.headers });
+      189 |     if (res.status !== 200 && res.status !== 201) {
+    > 190 |       console.error(`❌ [FW ERROR] confirmSale failed for order ${orderNumber} with Status ${res.status}. Response Body:`, JSON.stringify(res.data));
+          |               ^
+      191 |       if (res.status === 400) {
+      192 |          // Return raw data for discrepancy tests
+      193 |          return { status: res.status, data: res.data };
+
+      at TestClient.error [as confirmSale] (helpers/framework.js:190:15)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:163:30
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+    ℹ️ [Mitigation] Preferred product "ProductA" is out of stock at shop ID 3. Dynamically selected fallback "Triphala churna" (Stock: 50) with quantity 3.
+
+      at log (tests/Event Wise/Jhusi_Program/sales-audit.suite.js:39:17)
+
+  console.error
+    ❌ [FW ERROR] confirmSale failed for order SO-01KSFFDQARBSSDFR3P7NXXGXJ9 with Status 500. Response Body: {"timestamp":"2026-05-25T11:48:17.406Z","path":"/api/sales-svc/retail/SO-01KSFFDQARBSSDFR3P7NXXGXJ9/confirm","status":500,"error":"Internal Server Error","requestId":"5ea27fce-625"}
+
+      188 |     const res = await this.client.put(`/api/sales-svc/retail/${orderNumber}/confirm`, body, { headers: this.headers });
+      189 |     if (res.status !== 200 && res.status !== 201) {
+    > 190 |       console.error(`❌ [FW ERROR] confirmSale failed for order ${orderNumber} with Status ${res.status}. Response Body:`, JSON.stringify(res.data));
+          |               ^
+      191 |       if (res.status === 400) {
+      192 |          // Return raw data for discrepancy tests
+      193 |          return { status: res.status, data: res.data };
+
+      at TestClient.error [as confirmSale] (helpers/framework.js:190:15)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:163:30
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+    ℹ️ [Mitigation] Preferred product "ProductA" is out of stock at shop ID 4. Dynamically selected fallback "Adbhut Marag" (Stock: 53) with quantity 2.
+
+      at log (tests/Event Wise/Jhusi_Program/sales-audit.suite.js:39:17)
+
+  console.error
+    ❌ [FW ERROR] confirmSale failed for order SO-01KSFFDQJKWCJJ86APFWZ5SE8Z with Status 500. Response Body: {"timestamp":"2026-05-25T11:48:17.661Z","path":"/api/sales-svc/retail/SO-01KSFFDQJKWCJJ86APFWZ5SE8Z/confirm","status":500,"error":"Internal Server Error","requestId":"5ea27fce-634"}
+
+      188 |     const res = await this.client.put(`/api/sales-svc/retail/${orderNumber}/confirm`, body, { headers: this.headers });
+      189 |     if (res.status !== 200 && res.status !== 201) {
+    > 190 |       console.error(`❌ [FW ERROR] confirmSale failed for order ${orderNumber} with Status ${res.status}. Response Body:`, JSON.stringify(res.data));
+          |               ^
+      191 |       if (res.status === 400) {
+      192 |          // Return raw data for discrepancy tests
+      193 |          return { status: res.status, data: res.data };
+
+      at TestClient.error [as confirmSale] (helpers/framework.js:190:15)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:163:30
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+    ℹ️ [Mitigation] Preferred product "ProductA" is out of stock at shop ID 5. Dynamically selected fallback "Adhyatmik Nibandh part-1" (Stock: 78) with quantity 4.
+
+      at log (tests/Event Wise/Jhusi_Program/sales-audit.suite.js:39:17)
+
+  console.error
+    ❌ [FW ERROR] confirmSale failed for order SO-01KSFFDQTE6RS53AF155C56SGV with Status 500. Response Body: {"timestamp":"2026-05-25T11:48:17.919Z","path":"/api/sales-svc/retail/SO-01KSFFDQTE6RS53AF155C56SGV/confirm","status":500,"error":"Internal Server Error","requestId":"5ea27fce-643"}
+
+      188 |     const res = await this.client.put(`/api/sales-svc/retail/${orderNumber}/confirm`, body, { headers: this.headers });
+      189 |     if (res.status !== 200 && res.status !== 201) {
+    > 190 |       console.error(`❌ [FW ERROR] confirmSale failed for order ${orderNumber} with Status ${res.status}. Response Body:`, JSON.stringify(res.data));
+          |               ^
+      191 |       if (res.status === 400) {
+      192 |          // Return raw data for discrepancy tests
+      193 |          return { status: res.status, data: res.data };
+
+      at TestClient.error [as confirmSale] (helpers/framework.js:190:15)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:163:30
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.error
+    ❌ [FW ERROR] confirmSale failed for order SO-01KSFFDR2J7XARGQ6FE64992D7 with Status 500. Response Body: {"timestamp":"2026-05-25T11:48:18.172Z","path":"/api/sales-svc/retail/SO-01KSFFDR2J7XARGQ6FE64992D7/confirm","status":500,"error":"Internal Server Error","requestId":"5ea27fce-652"}
+
+      188 |     const res = await this.client.put(`/api/sales-svc/retail/${orderNumber}/confirm`, body, { headers: this.headers });
+      189 |     if (res.status !== 200 && res.status !== 201) {
+    > 190 |       console.error(`❌ [FW ERROR] confirmSale failed for order ${orderNumber} with Status ${res.status}. Response Body:`, JSON.stringify(res.data));
+          |               ^
+      191 |       if (res.status === 400) {
+      192 |          // Return raw data for discrepancy tests
+      193 |          return { status: res.status, data: res.data };
+
+      at TestClient.error [as confirmSale] (helpers/framework.js:190:15)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:244:9
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.error
+    ❌ [FW ERROR] confirmSale failed for order SO-01KSFFDRBM6YQE1QSF5TQYWZAK with Status 500. Response Body: {"timestamp":"2026-05-25T11:48:18.458Z","path":"/api/sales-svc/retail/SO-01KSFFDRBM6YQE1QSF5TQYWZAK/confirm","status":500,"error":"Internal Server Error","requestId":"5ea27fce-661"}
+
+      188 |     const res = await this.client.put(`/api/sales-svc/retail/${orderNumber}/confirm`, body, { headers: this.headers });
+      189 |     if (res.status !== 200 && res.status !== 201) {
+    > 190 |       console.error(`❌ [FW ERROR] confirmSale failed for order ${orderNumber} with Status ${res.status}. Response Body:`, JSON.stringify(res.data));
+          |               ^
+      191 |       if (res.status === 400) {
+      192 |          // Return raw data for discrepancy tests
+      193 |          return { status: res.status, data: res.data };
+
+      at TestClient.error [as confirmSale] (helpers/framework.js:190:15)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:244:9
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.error
+    ❌ [FW ERROR] confirmSale failed for order SO-01KSFFDRKHYKW901MBFJPM57WC with Status 500. Response Body: {"timestamp":"2026-05-25T11:48:18.712Z","path":"/api/sales-svc/retail/SO-01KSFFDRKHYKW901MBFJPM57WC/confirm","status":500,"error":"Internal Server Error","requestId":"5ea27fce-670"}
+
+      188 |     const res = await this.client.put(`/api/sales-svc/retail/${orderNumber}/confirm`, body, { headers: this.headers });
+      189 |     if (res.status !== 200 && res.status !== 201) {
+    > 190 |       console.error(`❌ [FW ERROR] confirmSale failed for order ${orderNumber} with Status ${res.status}. Response Body:`, JSON.stringify(res.data));
+          |               ^
+      191 |       if (res.status === 400) {
+      192 |          // Return raw data for discrepancy tests
+      193 |          return { status: res.status, data: res.data };
+
+      at TestClient.error [as confirmSale] (helpers/framework.js:190:15)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:244:9
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.error
+    ❌ [FW ERROR] confirmSale failed for order SO-01KSFFDRVE2WPNSX1K1P8H1BMY with Status 500. Response Body: {"timestamp":"2026-05-25T11:48:18.970Z","path":"/api/sales-svc/retail/SO-01KSFFDRVE2WPNSX1K1P8H1BMY/confirm","status":500,"error":"Internal Server Error","requestId":"5ea27fce-679"}
+
+      188 |     const res = await this.client.put(`/api/sales-svc/retail/${orderNumber}/confirm`, body, { headers: this.headers });
+      189 |     if (res.status !== 200 && res.status !== 201) {
+    > 190 |       console.error(`❌ [FW ERROR] confirmSale failed for order ${orderNumber} with Status ${res.status}. Response Body:`, JSON.stringify(res.data));
+          |               ^
+      191 |       if (res.status === 400) {
+      192 |          // Return raw data for discrepancy tests
+      193 |          return { status: res.status, data: res.data };
+
+      at TestClient.error [as confirmSale] (helpers/framework.js:190:15)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:244:9
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.error
+    ❌ [FW ERROR] confirmSale failed for order SO-01KSFFDS3EXGF3GX0DWQNDB25M with Status 500. Response Body: {"timestamp":"2026-05-25T11:48:19.226Z","path":"/api/sales-svc/retail/SO-01KSFFDS3EXGF3GX0DWQNDB25M/confirm","status":500,"error":"Internal Server Error","requestId":"5ea27fce-688"}
+
+      188 |     const res = await this.client.put(`/api/sales-svc/retail/${orderNumber}/confirm`, body, { headers: this.headers });
+      189 |     if (res.status !== 200 && res.status !== 201) {
+    > 190 |       console.error(`❌ [FW ERROR] confirmSale failed for order ${orderNumber} with Status ${res.status}. Response Body:`, JSON.stringify(res.data));
+          |               ^
+      191 |       if (res.status === 400) {
+      192 |          // Return raw data for discrepancy tests
+      193 |          return { status: res.status, data: res.data };
+
+      at TestClient.error [as confirmSale] (helpers/framework.js:190:15)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:244:9
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+    ℹ️ [Mitigation] Preferred product "ProductA" is out of stock at shop ID 1. Dynamically selected fallback "Naranga Refreshing Bodywash" (Stock: 55) with quantity 2.
+
+      at log (tests/Event Wise/Jhusi_Program/sales-audit.suite.js:39:17)
+
+  console.error
+    ❌ [FW ERROR] confirmSale failed for order SO-01KSFFDSBZJEMEJATY95HEH9W5 with Status 500. Response Body: {"timestamp":"2026-05-25T11:48:19.494Z","path":"/api/sales-svc/retail/SO-01KSFFDSBZJEMEJATY95HEH9W5/confirm","status":500,"error":"Internal Server Error","requestId":"5ea27fce-697"}
+
+      188 |     const res = await this.client.put(`/api/sales-svc/retail/${orderNumber}/confirm`, body, { headers: this.headers });
+      189 |     if (res.status !== 200 && res.status !== 201) {
+    > 190 |       console.error(`❌ [FW ERROR] confirmSale failed for order ${orderNumber} with Status ${res.status}. Response Body:`, JSON.stringify(res.data));
+          |               ^
+      191 |       if (res.status === 400) {
+      192 |          // Return raw data for discrepancy tests
+      193 |          return { status: res.status, data: res.data };
+
+      at TestClient.error [as confirmSale] (helpers/framework.js:190:15)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:348:9
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+    ℹ️ [Mitigation] Preferred product "ProductA" is out of stock at shop ID 2. Dynamically selected fallback "Special Chyawanprash" (Stock: 89) with quantity 1.
+
+      at log (tests/Event Wise/Jhusi_Program/sales-audit.suite.js:39:17)
+
+  console.error
+    ❌ [FW ERROR] confirmSale failed for order SO-01KSFFDSM1CY40E0EPQJVNC2H0 with Status 500. Response Body: {"timestamp":"2026-05-25T11:48:19.748Z","path":"/api/sales-svc/retail/SO-01KSFFDSM1CY40E0EPQJVNC2H0/confirm","status":500,"error":"Internal Server Error","requestId":"5ea27fce-706"}
+
+      188 |     const res = await this.client.put(`/api/sales-svc/retail/${orderNumber}/confirm`, body, { headers: this.headers });
+      189 |     if (res.status !== 200 && res.status !== 201) {
+    > 190 |       console.error(`❌ [FW ERROR] confirmSale failed for order ${orderNumber} with Status ${res.status}. Response Body:`, JSON.stringify(res.data));
+          |               ^
+      191 |       if (res.status === 400) {
+      192 |          // Return raw data for discrepancy tests
+      193 |          return { status: res.status, data: res.data };
+
+      at TestClient.error [as confirmSale] (helpers/framework.js:190:15)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:348:9
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+    ℹ️ [Mitigation] Preferred product "ProductA" is out of stock at shop ID 3. Dynamically selected fallback "Triphala churna" (Stock: 50) with quantity 3.
+
+      at log (tests/Event Wise/Jhusi_Program/sales-audit.suite.js:39:17)
+
+  console.error
+    ❌ [FW ERROR] confirmSale failed for order SO-01KSFFDSVDBKCKZHR18GR2TMKE with Status 500. Response Body: {"timestamp":"2026-05-25T11:48:19.990Z","path":"/api/sales-svc/retail/SO-01KSFFDSVDBKCKZHR18GR2TMKE/confirm","status":500,"error":"Internal Server Error","requestId":"5ea27fce-715"}
+
+      188 |     const res = await this.client.put(`/api/sales-svc/retail/${orderNumber}/confirm`, body, { headers: this.headers });
+      189 |     if (res.status !== 200 && res.status !== 201) {
+    > 190 |       console.error(`❌ [FW ERROR] confirmSale failed for order ${orderNumber} with Status ${res.status}. Response Body:`, JSON.stringify(res.data));
+          |               ^
+      191 |       if (res.status === 400) {
+      192 |          // Return raw data for discrepancy tests
+      193 |          return { status: res.status, data: res.data };
+
+      at TestClient.error [as confirmSale] (helpers/framework.js:190:15)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:348:9
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+    ℹ️ [Mitigation] Preferred product "ProductA" is out of stock at shop ID 4. Dynamically selected fallback "Adbhut Marag" (Stock: 53) with quantity 2.
+
+      at log (tests/Event Wise/Jhusi_Program/sales-audit.suite.js:39:17)
+
+  console.error
+    ❌ [FW ERROR] confirmSale failed for order SO-01KSFFDT31B2EY5S82WBMCBKS0 with Status 500. Response Body: {"timestamp":"2026-05-25T11:48:20.263Z","path":"/api/sales-svc/retail/SO-01KSFFDT31B2EY5S82WBMCBKS0/confirm","status":500,"error":"Internal Server Error","requestId":"5ea27fce-724"}
+
+      188 |     const res = await this.client.put(`/api/sales-svc/retail/${orderNumber}/confirm`, body, { headers: this.headers });
+      189 |     if (res.status !== 200 && res.status !== 201) {
+    > 190 |       console.error(`❌ [FW ERROR] confirmSale failed for order ${orderNumber} with Status ${res.status}. Response Body:`, JSON.stringify(res.data));
+          |               ^
+      191 |       if (res.status === 400) {
+      192 |          // Return raw data for discrepancy tests
+      193 |          return { status: res.status, data: res.data };
+
+      at TestClient.error [as confirmSale] (helpers/framework.js:190:15)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:348:9
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+    ℹ️ [Mitigation] Preferred product "ProductA" is out of stock at shop ID 5. Dynamically selected fallback "Adhyatmik Nibandh part-1" (Stock: 78) with quantity 4.
+
+      at log (tests/Event Wise/Jhusi_Program/sales-audit.suite.js:39:17)
+
+  console.error
+    ❌ [FW ERROR] confirmSale failed for order SO-01KSFFDTBPFSQFFFSA16ANJ1FV with Status 500. Response Body: {"timestamp":"2026-05-25T11:48:20.511Z","path":"/api/sales-svc/retail/SO-01KSFFDTBPFSQFFFSA16ANJ1FV/confirm","status":500,"error":"Internal Server Error","requestId":"5ea27fce-733"}
+
+      188 |     const res = await this.client.put(`/api/sales-svc/retail/${orderNumber}/confirm`, body, { headers: this.headers });
+      189 |     if (res.status !== 200 && res.status !== 201) {
+    > 190 |       console.error(`❌ [FW ERROR] confirmSale failed for order ${orderNumber} with Status ${res.status}. Response Body:`, JSON.stringify(res.data));
+          |               ^
+      191 |       if (res.status === 400) {
+      192 |          // Return raw data for discrepancy tests
+      193 |          return { status: res.status, data: res.data };
+
+      at TestClient.error [as confirmSale] (helpers/framework.js:190:15)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:348:9
+
+FAIL tests/retail-checkout.suite.js (5.286 s)
+  Retail sales Integration Suite
+    ➡️ Step 7: Jhusi Program Sales Audit Flow
+      Postman Collection: 05: Sales Integration & Financial Audit (Data-Driven - Chunk 1)
+        Folder 01: Single Item Checkout & Verification
+          ✕ Row #1: arjun_csh checkout 2x Special Chyawanprash (240 ms)
+          ✓ Row #2: vishwajeet_csh checkout 1x Sukrit Ayurveda Ashwagandhadi Churna (275 ms)
+          ✕ Row #3: deepak_csh checkout 5x Triphala churna (203 ms)
+          ✕ Row #4: ritesh_csh checkout 4x Amritvani (257 ms)
+          ✕ Row #5: sahul_csh checkout 5x Ashtang yog (226 ms)
+        Folder 02: Multi-Item Checkout & Verification
+          ✕ Row #1: arjun_csh checkout Multi-Items (248 ms)
+          ✕ Row #2: vishwajeet_csh checkout Multi-Items (263 ms)
+          ✕ Row #3: deepak_csh checkout Multi-Items (257 ms)
+          ✕ Row #4: ritesh_csh checkout Multi-Items (255 ms)
+          ✕ Row #5: sahul_csh checkout Multi-Items (258 ms)
+        Folder 03: Partial Returns Verification
+          ✕ Row #1: arjun_csh checkout & Partial Return (250 ms)
+          ✕ Row #2: vishwajeet_csh checkout & Partial Return (288 ms)
+          ✕ Row #3: deepak_csh checkout & Partial Return (252 ms)
+          ✕ Row #4: ritesh_csh checkout & Partial Return (258 ms)
+          ✕ Row #5: sahul_csh checkout & Partial Return (258 ms)
+        Folder 04: Full Cancellations Verification
+          ✕ Row #1: arjun_csh checkout & Cancellation (266 ms)
+          ✕ Row #2: vishwajeet_csh checkout & Cancellation (253 ms)
+          ✕ Row #3: deepak_csh checkout & Cancellation (243 ms)
+          ✕ Row #4: ritesh_csh checkout & Cancellation (273 ms)
+          ✕ Row #5: sahul_csh checkout & Cancellation (247 ms)
+
+  ● Retail sales Integration Suite › ➡️ Step 7: Jhusi Program Sales Audit Flow › Postman Collection: 05: Sales Integration & Financial Audit (Data-Driven - Chunk 1) › Folder 01: Single Item Checkout & Verification › Row #1: arjun_csh checkout 2x Special Chyawanprash
+
+    Failed to confirm order SO-01KSFFDNKY86ZFKZWK80HD02J8 (Status: 500)
+
+      193 |          return { status: res.status, data: res.data };
+      194 |       }
+    > 195 |       throw new Error(`Failed to confirm order ${orderNumber} (Status: ${res.status})`);
+          |             ^
+      196 |     }
+      197 |     return res.data.data || res.data;
+      198 |   }
+
+      at TestClient.confirmSale (helpers/framework.js:195:13)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:93:30
+
+  ● Retail sales Integration Suite › ➡️ Step 7: Jhusi Program Sales Audit Flow › Postman Collection: 05: Sales Integration & Financial Audit (Data-Driven - Chunk 1) › Folder 01: Single Item Checkout & Verification › Row #3: deepak_csh checkout 5x Triphala churna
+
+    Failed to confirm order SO-01KSFFDP3C7SFHPTSMZNVGF0NC (Status: 500)
+
+      193 |          return { status: res.status, data: res.data };
+      194 |       }
+    > 195 |       throw new Error(`Failed to confirm order ${orderNumber} (Status: ${res.status})`);
+          |             ^
+      196 |     }
+      197 |     return res.data.data || res.data;
+      198 |   }
+
+      at TestClient.confirmSale (helpers/framework.js:195:13)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:93:30
+
+  ● Retail sales Integration Suite › ➡️ Step 7: Jhusi Program Sales Audit Flow › Postman Collection: 05: Sales Integration & Financial Audit (Data-Driven - Chunk 1) › Folder 01: Single Item Checkout & Verification › Row #4: ritesh_csh checkout 4x Amritvani
+
+    Failed to confirm order SO-01KSFFDPBFTWPHCXX0F6CX8G3P (Status: 500)
+
+      193 |          return { status: res.status, data: res.data };
+      194 |       }
+    > 195 |       throw new Error(`Failed to confirm order ${orderNumber} (Status: ${res.status})`);
+          |             ^
+      196 |     }
+      197 |     return res.data.data || res.data;
+      198 |   }
+
+      at TestClient.confirmSale (helpers/framework.js:195:13)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:93:30
+
+  ● Retail sales Integration Suite › ➡️ Step 7: Jhusi Program Sales Audit Flow › Postman Collection: 05: Sales Integration & Financial Audit (Data-Driven - Chunk 1) › Folder 01: Single Item Checkout & Verification › Row #5: sahul_csh checkout 5x Ashtang yog
+
+    Failed to confirm order SO-01KSFFDPJJZMP543MQ3V2Z8MGX (Status: 500)
+
+      193 |          return { status: res.status, data: res.data };
+      194 |       }
+    > 195 |       throw new Error(`Failed to confirm order ${orderNumber} (Status: ${res.status})`);
+          |             ^
+      196 |     }
+      197 |     return res.data.data || res.data;
+      198 |   }
+
+      at TestClient.confirmSale (helpers/framework.js:195:13)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:93:30
+
+  ● Retail sales Integration Suite › ➡️ Step 7: Jhusi Program Sales Audit Flow › Postman Collection: 05: Sales Integration & Financial Audit (Data-Driven - Chunk 1) › Folder 02: Multi-Item Checkout & Verification › Row #1: arjun_csh checkout Multi-Items
+
+    Failed to confirm order SO-01KSFFDPTEXG4ETC16G1RDHNWA (Status: 500)
+
+      193 |          return { status: res.status, data: res.data };
+      194 |       }
+    > 195 |       throw new Error(`Failed to confirm order ${orderNumber} (Status: ${res.status})`);
+          |             ^
+      196 |     }
+      197 |     return res.data.data || res.data;
+      198 |   }
+
+      at TestClient.confirmSale (helpers/framework.js:195:13)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:163:30
+
+  ● Retail sales Integration Suite › ➡️ Step 7: Jhusi Program Sales Audit Flow › Postman Collection: 05: Sales Integration & Financial Audit (Data-Driven - Chunk 1) › Folder 02: Multi-Item Checkout & Verification › Row #2: vishwajeet_csh checkout Multi-Items
+
+    Failed to confirm order SO-01KSFFDQ2B7GTNCSPFRPTJ63W1 (Status: 500)
+
+      193 |          return { status: res.status, data: res.data };
+      194 |       }
+    > 195 |       throw new Error(`Failed to confirm order ${orderNumber} (Status: ${res.status})`);
+          |             ^
+      196 |     }
+      197 |     return res.data.data || res.data;
+      198 |   }
+
+      at TestClient.confirmSale (helpers/framework.js:195:13)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:163:30
+
+  ● Retail sales Integration Suite › ➡️ Step 7: Jhusi Program Sales Audit Flow › Postman Collection: 05: Sales Integration & Financial Audit (Data-Driven - Chunk 1) › Folder 02: Multi-Item Checkout & Verification › Row #3: deepak_csh checkout Multi-Items
+
+    Failed to confirm order SO-01KSFFDQARBSSDFR3P7NXXGXJ9 (Status: 500)
+
+      193 |          return { status: res.status, data: res.data };
+      194 |       }
+    > 195 |       throw new Error(`Failed to confirm order ${orderNumber} (Status: ${res.status})`);
+          |             ^
+      196 |     }
+      197 |     return res.data.data || res.data;
+      198 |   }
+
+      at TestClient.confirmSale (helpers/framework.js:195:13)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:163:30
+
+  ● Retail sales Integration Suite › ➡️ Step 7: Jhusi Program Sales Audit Flow › Postman Collection: 05: Sales Integration & Financial Audit (Data-Driven - Chunk 1) › Folder 02: Multi-Item Checkout & Verification › Row #4: ritesh_csh checkout Multi-Items
+
+    Failed to confirm order SO-01KSFFDQJKWCJJ86APFWZ5SE8Z (Status: 500)
+
+      193 |          return { status: res.status, data: res.data };
+      194 |       }
+    > 195 |       throw new Error(`Failed to confirm order ${orderNumber} (Status: ${res.status})`);
+          |             ^
+      196 |     }
+      197 |     return res.data.data || res.data;
+      198 |   }
+
+      at TestClient.confirmSale (helpers/framework.js:195:13)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:163:30
+
+  ● Retail sales Integration Suite › ➡️ Step 7: Jhusi Program Sales Audit Flow › Postman Collection: 05: Sales Integration & Financial Audit (Data-Driven - Chunk 1) › Folder 02: Multi-Item Checkout & Verification › Row #5: sahul_csh checkout Multi-Items
+
+    Failed to confirm order SO-01KSFFDQTE6RS53AF155C56SGV (Status: 500)
+
+      193 |          return { status: res.status, data: res.data };
+      194 |       }
+    > 195 |       throw new Error(`Failed to confirm order ${orderNumber} (Status: ${res.status})`);
+          |             ^
+      196 |     }
+      197 |     return res.data.data || res.data;
+      198 |   }
+
+      at TestClient.confirmSale (helpers/framework.js:195:13)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:163:30
+
+  ● Retail sales Integration Suite › ➡️ Step 7: Jhusi Program Sales Audit Flow › Postman Collection: 05: Sales Integration & Financial Audit (Data-Driven - Chunk 1) › Folder 03: Partial Returns Verification › Row #1: arjun_csh checkout & Partial Return
+
+    Failed to confirm order SO-01KSFFDR2J7XARGQ6FE64992D7 (Status: 500)
+
+      193 |          return { status: res.status, data: res.data };
+      194 |       }
+    > 195 |       throw new Error(`Failed to confirm order ${orderNumber} (Status: ${res.status})`);
+          |             ^
+      196 |     }
+      197 |     return res.data.data || res.data;
+      198 |   }
+
+      at TestClient.confirmSale (helpers/framework.js:195:13)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:244:9
+
+  ● Retail sales Integration Suite › ➡️ Step 7: Jhusi Program Sales Audit Flow › Postman Collection: 05: Sales Integration & Financial Audit (Data-Driven - Chunk 1) › Folder 03: Partial Returns Verification › Row #2: vishwajeet_csh checkout & Partial Return
+
+    Failed to confirm order SO-01KSFFDRBM6YQE1QSF5TQYWZAK (Status: 500)
+
+      193 |          return { status: res.status, data: res.data };
+      194 |       }
+    > 195 |       throw new Error(`Failed to confirm order ${orderNumber} (Status: ${res.status})`);
+          |             ^
+      196 |     }
+      197 |     return res.data.data || res.data;
+      198 |   }
+
+      at TestClient.confirmSale (helpers/framework.js:195:13)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:244:9
+
+  ● Retail sales Integration Suite › ➡️ Step 7: Jhusi Program Sales Audit Flow › Postman Collection: 05: Sales Integration & Financial Audit (Data-Driven - Chunk 1) › Folder 03: Partial Returns Verification › Row #3: deepak_csh checkout & Partial Return
+
+    Failed to confirm order SO-01KSFFDRKHYKW901MBFJPM57WC (Status: 500)
+
+      193 |          return { status: res.status, data: res.data };
+      194 |       }
+    > 195 |       throw new Error(`Failed to confirm order ${orderNumber} (Status: ${res.status})`);
+          |             ^
+      196 |     }
+      197 |     return res.data.data || res.data;
+      198 |   }
+
+      at TestClient.confirmSale (helpers/framework.js:195:13)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:244:9
+
+  ● Retail sales Integration Suite › ➡️ Step 7: Jhusi Program Sales Audit Flow › Postman Collection: 05: Sales Integration & Financial Audit (Data-Driven - Chunk 1) › Folder 03: Partial Returns Verification › Row #4: ritesh_csh checkout & Partial Return
+
+    Failed to confirm order SO-01KSFFDRVE2WPNSX1K1P8H1BMY (Status: 500)
+
+      193 |          return { status: res.status, data: res.data };
+      194 |       }
+    > 195 |       throw new Error(`Failed to confirm order ${orderNumber} (Status: ${res.status})`);
+          |             ^
+      196 |     }
+      197 |     return res.data.data || res.data;
+      198 |   }
+
+      at TestClient.confirmSale (helpers/framework.js:195:13)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:244:9
+
+  ● Retail sales Integration Suite › ➡️ Step 7: Jhusi Program Sales Audit Flow › Postman Collection: 05: Sales Integration & Financial Audit (Data-Driven - Chunk 1) › Folder 03: Partial Returns Verification › Row #5: sahul_csh checkout & Partial Return
+
+    Failed to confirm order SO-01KSFFDS3EXGF3GX0DWQNDB25M (Status: 500)
+
+      193 |          return { status: res.status, data: res.data };
+      194 |       }
+    > 195 |       throw new Error(`Failed to confirm order ${orderNumber} (Status: ${res.status})`);
+          |             ^
+      196 |     }
+      197 |     return res.data.data || res.data;
+      198 |   }
+
+      at TestClient.confirmSale (helpers/framework.js:195:13)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:244:9
+
+  ● Retail sales Integration Suite › ➡️ Step 7: Jhusi Program Sales Audit Flow › Postman Collection: 05: Sales Integration & Financial Audit (Data-Driven - Chunk 1) › Folder 04: Full Cancellations Verification › Row #1: arjun_csh checkout & Cancellation
+
+    Failed to confirm order SO-01KSFFDSBZJEMEJATY95HEH9W5 (Status: 500)
+
+      193 |          return { status: res.status, data: res.data };
+      194 |       }
+    > 195 |       throw new Error(`Failed to confirm order ${orderNumber} (Status: ${res.status})`);
+          |             ^
+      196 |     }
+      197 |     return res.data.data || res.data;
+      198 |   }
+
+      at TestClient.confirmSale (helpers/framework.js:195:13)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:348:9
+
+  ● Retail sales Integration Suite › ➡️ Step 7: Jhusi Program Sales Audit Flow › Postman Collection: 05: Sales Integration & Financial Audit (Data-Driven - Chunk 1) › Folder 04: Full Cancellations Verification › Row #2: vishwajeet_csh checkout & Cancellation
+
+    Failed to confirm order SO-01KSFFDSM1CY40E0EPQJVNC2H0 (Status: 500)
+
+      193 |          return { status: res.status, data: res.data };
+      194 |       }
+    > 195 |       throw new Error(`Failed to confirm order ${orderNumber} (Status: ${res.status})`);
+          |             ^
+      196 |     }
+      197 |     return res.data.data || res.data;
+      198 |   }
+
+      at TestClient.confirmSale (helpers/framework.js:195:13)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:348:9
+
+  ● Retail sales Integration Suite › ➡️ Step 7: Jhusi Program Sales Audit Flow › Postman Collection: 05: Sales Integration & Financial Audit (Data-Driven - Chunk 1) › Folder 04: Full Cancellations Verification › Row #3: deepak_csh checkout & Cancellation
+
+    Failed to confirm order SO-01KSFFDSVDBKCKZHR18GR2TMKE (Status: 500)
+
+      193 |          return { status: res.status, data: res.data };
+      194 |       }
+    > 195 |       throw new Error(`Failed to confirm order ${orderNumber} (Status: ${res.status})`);
+          |             ^
+      196 |     }
+      197 |     return res.data.data || res.data;
+      198 |   }
+
+      at TestClient.confirmSale (helpers/framework.js:195:13)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:348:9
+
+  ● Retail sales Integration Suite › ➡️ Step 7: Jhusi Program Sales Audit Flow › Postman Collection: 05: Sales Integration & Financial Audit (Data-Driven - Chunk 1) › Folder 04: Full Cancellations Verification › Row #4: ritesh_csh checkout & Cancellation
+
+    Failed to confirm order SO-01KSFFDT31B2EY5S82WBMCBKS0 (Status: 500)
+
+      193 |          return { status: res.status, data: res.data };
+      194 |       }
+    > 195 |       throw new Error(`Failed to confirm order ${orderNumber} (Status: ${res.status})`);
+          |             ^
+      196 |     }
+      197 |     return res.data.data || res.data;
+      198 |   }
+
+      at TestClient.confirmSale (helpers/framework.js:195:13)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:348:9
+
+  ● Retail sales Integration Suite › ➡️ Step 7: Jhusi Program Sales Audit Flow › Postman Collection: 05: Sales Integration & Financial Audit (Data-Driven - Chunk 1) › Folder 04: Full Cancellations Verification › Row #5: sahul_csh checkout & Cancellation
+
+    Failed to confirm order SO-01KSFFDTBPFSQFFFSA16ANJ1FV (Status: 500)
+
+      193 |          return { status: res.status, data: res.data };
+      194 |       }
+    > 195 |       throw new Error(`Failed to confirm order ${orderNumber} (Status: ${res.status})`);
+          |             ^
+      196 |     }
+      197 |     return res.data.data || res.data;
+      198 |   }
+
+      at TestClient.confirmSale (helpers/framework.js:195:13)
+      at tests/Event Wise/Jhusi_Program/sales-audit.suite.js:348:9
+
+Test Suites: 1 failed, 1 total
+Tests:       19 failed, 1 passed, 20 total
+Snapshots:   0 total
+Time:        5.331 s, estimated 7 s
+Ran all test suites matching /tests\/retail-checkout.suite.js/i.

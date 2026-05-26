@@ -148,10 +148,34 @@ class TestClient {
     return res.data.data || res.data;
   }
 
+  async openShift(shopId, openingCash = 1000) {
+    const body = {
+      shopId: parseInt(shopId, 10),
+      openingCash: parseFloat(openingCash),
+      denominations: [
+        { currencyValue: 500, noteCount: 2 }
+      ]
+    };
+    const res = await this.client.post('/api/sales-svc/shifts/open', body, { headers: this.headers });
+    if (res.status !== 200 && res.status !== 201 && res.status !== 400) {
+      throw new Error(`Failed to open shift session (Status: ${res.status})`);
+    }
+    return res.data;
+  }
+
   /**
    * Confirms, settles and registers a sales order.
    */
   async confirmSale(orderNumber, totalAmount, cashAmt = null, onlineAmt = null) {
+    // Automatically ensure a shift session is open
+    try {
+      if (this.shopId) {
+        await this.openShift(this.shopId);
+      }
+    } catch (err) {
+      // Ignore if already open or any other acceptable error
+    }
+
     const cashSplit = cashAmt !== null ? cashAmt : totalAmount / 2;
     const onlineSplit = onlineAmt !== null ? onlineAmt : totalAmount / 2;
     const body = {
@@ -163,6 +187,7 @@ class TestClient {
     };
     const res = await this.client.put(`/api/sales-svc/retail/${orderNumber}/confirm`, body, { headers: this.headers });
     if (res.status !== 200 && res.status !== 201) {
+      console.error(`❌ [FW ERROR] confirmSale failed for order ${orderNumber} with Status ${res.status}. Response Body:`, JSON.stringify(res.data));
       if (res.status === 400) {
          // Return raw data for discrepancy tests
          return { status: res.status, data: res.data };

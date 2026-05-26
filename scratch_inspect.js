@@ -28,14 +28,10 @@ async function main() {
     console.log('--- PRODUCTS ---');
     console.table(products);
 
-    // Inspect sales_db
-    await connection.query('USE sales_db');
-    const [shops] = await connection.query('SELECT id, name, event_id FROM shop LIMIT 50');
-    console.log('--- SHOPS ---');
-    console.table(shops);
-
-    const [stocks] = await connection.query('SELECT id, product_id, shop_id, quantity FROM stock LIMIT 50');
-    console.log('--- STOCKS ---');
+    // Inspect inventory_db
+    await connection.query('USE inventory_db');
+    const [stocks] = await connection.query('SELECT * FROM counter_stocks WHERE product_id IN (1, 2, 13, 19, 20)');
+    console.log('--- COUNTER STOCKS ---');
     console.table(stocks);
 
     await connection.end();

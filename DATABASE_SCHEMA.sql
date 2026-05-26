@@ -383,6 +383,40 @@ SET FOREIGN_KEY_CHECKS = 1;
 
 ALTER TABLE product ADD COLUMN min_threshold INT NOT NULL DEFAULT 10;
 
+-- 12. Clean up any duplicate counter_stocks rows by merging their quantities into a single row per (product_id, shop_id, event_id)
+-- Create temporary table with merged quantities
+CREATE TEMPORARY TABLE temp_counter_stocks AS
+SELECT 
+    MIN(id) as id,
+    product_id,
+    shop_id,
+    event_id,
+    SUM(initial_quantity) as initial_quantity,
+    SUM(live_quantity) as live_quantity,
+    MAX(seller_user) as seller_user,
+    MAX(sale_date) as sale_date,
+    MIN(created_at) as created_at,
+    MAX(updated_at) as updated_at
+FROM counter_stocks
+GROUP BY product_id, shop_id, event_id;
+
+-- Clear original table
+SET FOREIGN_KEY_CHECKS = 0;
+DELETE FROM counter_stocks;
+
+-- Re-insert merged records
+INSERT INTO counter_stocks (id, product_id, shop_id, event_id, initial_quantity, live_quantity, seller_user, sale_date, created_at, updated_at)
+SELECT id, product_id, shop_id, event_id, initial_quantity, live_quantity, seller_user, sale_date, created_at, updated_at
+FROM temp_counter_stocks;
+SET FOREIGN_KEY_CHECKS = 1;
+
+-- Drop temporary table
+DROP TEMPORARY TABLE temp_counter_stocks;
+
+-- Add strict UNIQUE constraint to prevent duplicate counter stocks
+ALTER TABLE counter_stocks ADD CONSTRAINT uq_counter_stocks_prod_shop_event UNIQUE (product_id, shop_id, event_id);
+
+
 
 -- ---------------------------------------------------------
 -- DATABASE: sales_db
@@ -614,6 +648,8 @@ CREATE TABLE IF NOT EXISTS shop_shift_session (
     opening_cash_balance DECIMAL(12,2) NOT NULL DEFAULT 0.00,
     expected_closing_cash DECIMAL(12,2) NOT NULL DEFAULT 0.00,
     actual_closing_cash DECIMAL(12,2) DEFAULT 0.00,
+    expected_closing_online DECIMAL(12,2) NOT NULL DEFAULT 0.00,
+    actual_closing_online DECIMAL(12,2) NOT NULL DEFAULT 0.00,
     
     opened_by_user_id BIGINT NOT NULL,
     closed_by_user_id BIGINT DEFAULT NULL,
