@@ -18,7 +18,7 @@ graph TD
     Client["🖠 Frontend (Next.js 14)"]
     Gateway["🔿 Traefik API Gateway"]
     
-    subgraph Microservices Layer
+    subgraph Svc [Microservices Layer]
         AuthSvc["auth-service (8081) - Authentication"]
         UserSvc["user-service (8083) - User Management"]
         InventorySvc["inventory-service (8082) - Products & Stock"]
@@ -26,7 +26,7 @@ graph TD
         BillingSvc["billing-service (8085) - Invoice Generation"]
     end
     
-    subgraph Data Layer
+    subgraph DB [Data Layer]
         MySQL["MySQL Database (3306)"]
     end
     
@@ -241,12 +241,12 @@ graph TD
 graph TD
     Network["gateway-network (Docker)"]
     
-    subgraph External Access Layer
+    subgraph Ext [External Access Layer]
         Traefik["Traefik API Gateway (8090)"]
         Kong["Kong SSL Proxy (8443)"]
     end
     
-    subgraph Application Services Layer
+    subgraph App [Application Services Layer]
         Auth["auth-service (8081)"]
         User["user-service (8083)"]
         Inv["inventory-service (8082)"]
@@ -254,13 +254,13 @@ graph TD
         Bill["billing-service (8085)"]
     end
     
-    subgraph Data Layer
+    subgraph Data [Data Layer]
         MySQL["MySQL Database (3306)"]
     end
     
-    Network --> External Access Layer
-    External Access Layer --> Application Services Layer
-    Application Services Layer --> Data Layer
+    Network --> Ext
+    Ext --> App
+    App --> Data
 ```
 
 ---
