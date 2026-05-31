@@ -15,20 +15,20 @@
 
 ```mermaid
 graph TD
-    title: Event Management System - High Level Architecture
-    
     Client["🖠 Frontend (Next.js 14)"]
     Gateway["🔿 Traefik API Gateway"]
     
-    subservice "Microservices Layer"
-        AuthSvc["auth-service\n(8081) - Authentication"]
-        UserSvc["user-service\n(8083) - User Management"]
-        InventorySvc["inventory-service\n(8082) - Products & Stock"]
-        SalesSvc["sales-service\n(8084) - Retail Sales & Events"]
-        BillingSvc["billing-service\n(8085) - Invoice Generation"]
+    subgraph Microservices Layer
+        AuthSvc["auth-service (8081) - Authentication"]
+        UserSvc["user-service (8083) - User Management"]
+        InventorySvc["inventory-service (8082) - Products & Stock"]
+        SalesSvc["sales-service (8084) - Retail Sales & Events"]
+        BillingSvc["billing-service (8085) - Invoice Generation"]
+    end
     
-    subdb "Data Layer"
-        MySQL["MySQL Database\n(3306)"]
+    subgraph Data Layer
+        MySQL["MySQL Database (3306)"]
+    end
     
     Client --> Gateway
     Gateway --> AuthSvc
@@ -37,40 +37,48 @@ graph TD
     Gateway --> SalesSvc
     Gateway --> BillingSvc
     
-    subservice --> MySQL
+    AuthSvc --> MySQL
+    UserSvc --> MySQL
+    InventorySvc --> MySQL
+    SalesSvc --> MySQL
+    BillingSvc --> MySQL
 ```
 
 ### Request Flow Architecture
 
 ```mermaid
 sequenceDiagram
-    title: Event Management - Request Flow
+    title Event Management - Request Flow
     
-    participant Client as Frontend (Next.js)
+    actor Client as Frontend (Next.js)
     participant Gateway as Traefik API Gateway
     participant SalesSvc as sales-service
     participant DB as MySQL Database
     
-    Client -->|"POST /api/sales-svc/events"| Gateway
-    Gateway -->|"Route to sales-service:8084"| SalesSvc
-    SalesSvc -->|"SELECT/INSERT into events table"| DB
-    DB -->|"Query results"| SalesSvc
-    SalesSvc -->|"JSON response"| Gateway
-    Gateway -->|"HTTP 200 OK + data"| Client
+    Client->>Gateway: POST /api/sales-svc/events
+    Gateway->>SalesSvc: Route to sales-service:8084
+    SalesSvc->>DB: SELECT/INSERT into events table
+    DB-->>SalesSvc: Query results
+    SalesSvc-->>Gateway: JSON response
+    Gateway-->>Client: HTTP 200 OK + data
 ```
 
 ### Service Communication Pattern
 
 ```mermaid
-treeDiagram
-    title: Inter-Service Communication (Reactive)
+graph TD
+    SalesSvc["sales-service"]
+    InvSvc["inventory-service (product lookups)"]
+    BillSvc["billing-service (invoice references)"]
+    InvDB[("inventory_db")]
+    BillDB[("billing_db")]
+    SalesDB[("sales_db")]
     
-    sales-service
-        ├── inventory-service (product lookups)
-            └── inventory_db
-        ├── billing-service (invoice references)
-            └── billing_db
-        └── sales_db
+    SalesSvc --> InvSvc
+    InvSvc --> InvDB
+    SalesSvc --> BillSvc
+    BillSvc --> BillDB
+    SalesSvc --> SalesDB
 ```
 
 ---
@@ -81,77 +89,84 @@ treeDiagram
 
 ```mermaid
 erDiagram
-    title: Event Management - Entity Relationship Map
+    users {
+        bigint id PK
+        varchar username
+        varchar email
+        varchar password
+        timestamp createdAt
+    }
+    event {
+        bigint id PK
+        varchar eventName
+        varchar eventType
+        text description
+        varchar location
+        datetime startDate
+        datetime endDate
+        boolean isActive
+    }
+    shop {
+        bigint id PK
+        varchar shop_name
+        bigint category_id FK
+        int counter_number
+        bigint event_id FK
+        boolean is_active
+    }
+    sales_order {
+        bigint id PK
+        varchar order_number
+        bigint shop_id FK
+        bigint seller_id FK
+        varchar billing_invoice_number FK
+        varchar status
+    }
+    sales_order_item {
+        bigint id PK
+        bigint sales_order_id FK
+        bigint product_id FK
+        int quantity
+    }
+    shop_staff_assignment {
+        bigint id PK
+        bigint shop_id FK
+        bigint user_id FK
+        varchar role_code
+    }
     
-    users
-        ├── id (PK)
-        ├── username
-        ├── email
-        ├── password
-        └── createdAt
-    
-    event
-        ├── id (PK)
-        ├── eventName
-        ├── eventType
-        ├── description
-        ├── location
-        ├── startDate
-        ├── endDate
-        └── isActive
-    
-    shop
-        ├── id (PK)
-        ├── shop_name
-        ├── category_id (FK → categories.id)
-        ├── counter_number
-        ├── event_id (FK → event.id)
-        └── is_active
-    
-    sales_order
-        ├── id (PK)
-        ├── order_number
-        ├── shop_id (FK → shop.id)
-        ├── seller_id (FK → users.id)
-        ├── billing_invoice_number (FK → invoices.id)
-        └── status
-    
-    sales_order_item
-        ├── id (PK)
-        ├── sales_order_id (FK → sales_order.id)
-        ├── product_id (FK → products.id)
-        └── quantity
-    
-    shop_staff_assignment
-        ├── id (PK)
-        ├── shop_id (FK → shop.id)
-        ├── user_id (FK → users.id)
-        └── role_code
+    event ||--o{ shop : hosts
+    shop ||--o{ sales_order : receives
+    users ||--o{ sales_order : sells
+    sales_order ||--|{ sales_order_item : contains
+    shop ||--o{ shop_staff_assignment : assigns
+    users ||--o{ shop_staff_assignment : assigned
 ```
 
 ### Event-Centric Schema View
 
 ```mermaid
 erDiagram
-    title: Event Management - Event Entity Relationships
+    event {
+        bigint id PK
+        varchar eventName
+        varchar eventType
+        text description
+        varchar location
+        datetime startDate
+        datetime endDate
+        boolean isActive
+    }
+    shop {
+        bigint id PK
+        varchar shop_name
+        bigint category_id FK
+        int counter_number
+        bigint event_id FK
+        boolean is_active
+    }
     
-    event
-        ├── id (PK)
-        ├── eventName
-        ├── eventType
-        ├── description
-        ├── location
-        ├── startDate
-        ├── endDate
-        └── isActive
-    
-    shop
-        ├── id (PK)
-        ├── shop_name
-        ├── category_id (FK → categories.id)
-        ├── counter_number
-        ├── event_id (FK → event.id) ← Linked to Event
-        └── is_active
+    event ||--o{ shop : "hosts (event_id)"
 ```
 
 ---
@@ -161,32 +176,35 @@ erDiagram
 ### Traefik Routing Layer
 
 ```mermaid
-treeDiagram
-    title: Traefik API Gateway - Dynamic Routing
+graph LR
+    Traefik["Traefik Gateway (8090)"]
+    Auth["auth-service (8081)"]
+    User["user-service (8083)"]
+    Inv["inventory-service (8082)"]
+    Sales["sales-service (8084)"]
+    Bill["billing-service (8085)"]
     
-    Traefik (8090)
-        ├── /api/auth-svc/* → auth-service:8081
-        ├── /api/users-svc/* → user-service:8083
-        ├── /api/inventory-svc/* → inventory-service:8082
-        ├── /api/sales-svc/* → sales-service:8084
-        └── /api/billing-svc/* → billing-service:8085
+    Traefik -->|"/api/auth-svc/*"| Auth
+    Traefik -->|"/api/users-svc/*"| User
+    Traefik -->|"/api/inventory-svc/*"| Inv
+    Traefik -->|"/api/sales-svc/*"| Sales
+    Traefik -->|"/api/billing-svc/*"| Bill
 ```
 
 ### Event API Endpoints
 
 ```mermaid
-treeDiagram
-    title: Event Management - API Endpoint Structure
+graph TD
+    API["Events API (/api/sales-svc/events)"]
+    GET["GET (List all events)"]
+    POST["POST (Create new event)"]
+    PUT["PUT /[id] (Update event)"]
+    DELETE["DELETE /[id] (Delete event)"]
     
-    Events API (/api/sales-svc/events)
-        ├── GET /api/sales-svc/events
-        │   └── List all events (SELECT * FROM event)
-        ├── POST /api/sales-svc/events
-        │   └── Create new event (INSERT INTO event)
-        ├── PUT /api/sales-svc/events/[id]
-        │   └── Update event (UPDATE event SET WHERE id = {id})
-        └── DELETE /api/sales-svc/events/[id]
-            └── Delete event (DELETE FROM event WHERE id = {id})
+    API --> GET
+    API --> POST
+    API --> PUT
+    API --> DELETE
 ```
 
 ---
@@ -196,48 +214,53 @@ treeDiagram
 ### Docker Compose Topology
 
 ```mermaid
-treeDiagram
-    title: Event Management - Docker Service Topology
+graph TD
+    Compose["docker-compose.combined.yml"]
+    Traefik["Traefik (Gateway) - 8090/8080"]
+    Kong["Kong (SSL Proxy) - 8000/8443"]
+    MySQL["MySQL Database - 3306"]
+    AuthSvc["auth-service - 8081"]
+    UserSvc["user-service - 8083"]
+    InvSvc["inventory-service - 8082"]
+    SalesSvc["sales-service - 8084"]
+    BillSvc["billing-service - 8085"]
     
-    docker-compose.combined.yml
-        ├── Traefik (API Gateway)
-        │   ├── Port 8090 (API)
-        │   └── Port 8080 (Dashboard)
-        ├── Kong (SSL Proxy)
-        │   ├── Port 8000
-        │   └── Port 8443
-        ├── MySQL Database
-        │   └── Port 3306
-        ├── auth-service
-        │   └── Port 8081
-        ├── user-service
-        │   └── Port 8083
-        ├── inventory-service
-        │   └── Port 8082
-        ├── sales-service
-        │   └── Port 8084
-        └── billing-service
-            └── Port 8085
+    Compose --> Traefik
+    Compose --> Kong
+    Compose --> MySQL
+    Compose --> AuthSvc
+    Compose --> UserSvc
+    Compose --> InvSvc
+    Compose --> SalesSvc
+    Compose --> BillSvc
 ```
 
 ### Network Topology
 
 ```mermaid
-treeDiagram
-    title: Event Management - Network Topology
+graph TD
+    Network["gateway-network (Docker)"]
     
-    gateway-network (Docker)
-        ├── External Access Layer
-        │   ├── Traefik API Gateway (8090)
-        │   └── Kong SSL Proxy (8443)
-        ├── Application Services Layer
-        │   ├── auth-service (8081)
-        │   ├── user-service (8083)
-        │   ├── inventory-service (8082)
-        │   ├── sales-service (8084)
-        │   └── billing-service (8085)
-        └── Data Layer
-            └── MySQL Database (3306)
+    subgraph External Access Layer
+        Traefik["Traefik API Gateway (8090)"]
+        Kong["Kong SSL Proxy (8443)"]
+    end
+    
+    subgraph Application Services Layer
+        Auth["auth-service (8081)"]
+        User["user-service (8083)"]
+        Inv["inventory-service (8082)"]
+        Sales["sales-service (8084)"]
+        Bill["billing-service (8085)"]
+    end
+    
+    subgraph Data Layer
+        MySQL["MySQL Database (3306)"]
+    end
+    
+    Network --> External Access Layer
+    External Access Layer --> Application Services Layer
+    Application Services Layer --> Data Layer
 ```
 
 ---
@@ -248,52 +271,53 @@ treeDiagram
 
 ```mermaid
 sequenceDiagram
-    title: Event Management - Event Creation Flow
+    title Event Creation Flow
     
-    participant Client as Frontend User
+    actor Client as Frontend User
     participant NextJS as Next.js App Router
     participant Traefik as Traefik Gateway
     participant SalesSvc as sales-service
     participant MySQL as MySQL Database
     
-    Client -->|"POST /api/sales-svc/events\n{eventName, eventType, description}"| NextJS
-    NextJS -->|"Forward to Traefik:8090"| Traefik
-    Traefik -->|"Route → sales-service:8084"| SalesSvc
-    SalesSvc -->|"Validate input & generate UUID"| SalesSvc
-    SalesSvc -->|"INSERT INTO event\n(id, eventName, eventType, description)"| MySQL
-    MySQL -->|"Success - Row inserted"| SalesSvc
-    SalesSvc -->|"Return created Event object"| Traefik
-    Traefik -->|"HTTP 201 Created + Event data"| NextJS
-    NextJS -->|"Update React state, show success"| Client
+    Client->>NextJS: POST /api/sales-svc/events <br/> {eventName, eventType, description}
+    NextJS->>Traefik: Forward to Traefik:8090
+    Traefik->>SalesSvc: Route to sales-service:8084
+    SalesSvc->>SalesSvc: Validate input & generate UUID
+    SalesSvc->>MySQL: INSERT INTO event (id, eventName, eventType, description)
+    MySQL-->>SalesSvc: Success - Row inserted
+    SalesSvc-->>Traefik: Return created Event object
+    Traefik-->>NextJS: HTTP 201 Created + Event data
+    NextJS-->>Client: Update React state, show success
 ```
 
 ### Shop Assignment Flow (Multi-Service)
 
 ```mermaid
 sequenceDiagram
-    title: Event Management - Shop Staff Assignment Flow
+    title Shop Staff Assignment Flow
     
-    participant Client as Frontend User
+    actor Client as Frontend User
     participant NextJS as Next.js App Router
     participant Traefik as Traefik Gateway
     participant SalesSvc as sales-service
     participant UserSvc as user-service
     participant MySQL as MySQL Database
     
-    Client -->|"POST /api/sales-svc/shops-staff/assign\n{shopId, userId, roleCode}"| NextJS
-    NextJS -->|"Forward to Traefik:8090"| Traefik
-    Traefik -->|"Route → sales-service:8084"| SalesSvc
+    Client->>NextJS: POST /api/sales-svc/shops-staff/assign <br/> {shopId, userId, roleCode}
+    NextJS->>Traefik: Forward to Traefik:8090
+    Traefik->>SalesSvc: Route to sales-service:8084
     
-    SalesSvc -->|"Validate shop exists\n(SELECT FROM shop WHERE id = {shopId})"| MySQL
-    MySQL -->|"Shop found"| SalesSvc
-    SalesSvc -->|"Validate user exists\n(SELECT FROM users WHERE id = {userId})"| UserSvc
-    UserSvc -->|"User found"| SalesSvc
+    SalesSvc->>MySQL: Validate shop exists (SELECT FROM shop WHERE id = {shopId})
+    MySQL-->>SalesSvc: Shop found
     
-    SalesSvc -->|"INSERT INTO shop_staff_assignment\n(shop_id, user_id, role_code)"| MySQL
-    MySQL -->|"Success - Assignment created"| SalesSvc
-    SalesSvc -->|"Return assignment object"| Traefik
-    Traefik -->|"HTTP 201 Created + Assignment data"| NextJS
-    NextJS -->|"Update UI, show confirmation"| Client
+    SalesSvc->>UserSvc: Validate user exists (SELECT FROM users WHERE id = {userId})
+    UserSvc-->>SalesSvc: User found
+    
+    SalesSvc->>MySQL: INSERT INTO shop_staff_assignment (shop_id, user_id, role_code)
+    MySQL-->>SalesSvc: Success - Assignment created
+    SalesSvc-->>Traefik: Return assignment object
+    Traefik-->>NextJS: HTTP 201 Created + Assignment data
+    NextJS-->>Client: Update UI, show confirmation
 ```
 
 ---
