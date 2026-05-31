@@ -16,10 +16,11 @@ function runShopCounterSuite() {
 
     beforeAll(async () => {
       // Resolve Event ID from environment variable or fallback to '1'
-      eventId = process.env.JHUSI_EVENT_ID || '1';
+      eventId = process.env.SELECTED_EVENT_ID;
 
       // 1. Perform Single Admin Login (Postman Request 01)
       const api = new TestClient();
+      api.setEventId(eventId);
       console.log('🧪 Executing pre-requisite: 01: Admin Login...');
       adminToken = await api.login('admin', 'Admin@123');
       expect(adminToken).toBeDefined();
@@ -110,7 +111,7 @@ function runShopCounterSuite() {
             // Support both direct array, wrapped array, or single object format
             const list = Array.isArray(existingShop) ? existingShop : (existingShop.data && Array.isArray(existingShop.data) ? existingShop.data : null);
             const shopObj = list && list.length > 0 ? list[0] : (existingShop.data ? existingShop.data : existingShop);
-            
+
             if (shopObj && shopObj.id) {
               skipShopRegistration = true;
               shopId = shopObj.id;
@@ -159,7 +160,7 @@ function runShopCounterSuite() {
             console.log(`🚀 Assigning event ID ${eventId} to user "${row.username}"...`);
             const assignEventResult = await api.assignEvents(row.username, [parseInt(eventId, 10)]);
             expect(assignEventResult).toBeDefined();
-            
+
             // Verify returned assigned events array contains active event ID
             const record = assignEventResult.data ? assignEventResult.data : assignEventResult;
             const assignedList = record.assignedEvents || [];
@@ -210,11 +211,11 @@ function runShopCounterSuite() {
             console.log(`🔍 Verifying staff assignment is active for shop ID ${shopId}...`);
             const staffAllocations = await api.getStaffByShopId(shopId);
             expect(Array.isArray(staffAllocations)).toBe(true);
-            
+
             const verifiedUser = staffAllocations.find(
               s => s.userId && s.userId.toString() === userId.toString()
             );
-            
+
             expect(verifiedUser).toBeDefined();
             if (verifiedUser.isActive !== null && verifiedUser.isActive !== undefined) {
               expect(verifiedUser.isActive).toBe(true);

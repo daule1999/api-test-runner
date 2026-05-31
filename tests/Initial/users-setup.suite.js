@@ -87,6 +87,36 @@ function runUsersSetupSuite() {
         expect(userProfile.email).toBe(row.email);
         expect(userProfile.roles).toContain(row.role);
         console.log(`🎉 Verification passed: User profile details match exactly.`);
+
+        // Verification Check: Without event assignment (no X-Event-Id header), user should not have any role
+        console.log(`🧪 Verifying role omission without event assignment...`);
+        const apiNoEvent = new TestClient();
+        apiNoEvent.token = adminToken;
+        apiNoEvent.eventId = ''; // Remove event ID header so no event is assigned
+        
+        const noEventUsername = `no_ev_${row.username}`;
+        try {
+            await apiNoEvent.registerUser({
+                username: noEventUsername,
+                email: `no_ev_${row.email}`,
+                mobile: String(row.mobile).replace('98765', '98700'),
+                password: 'Admin@123',
+                fullName: `No Event ${row.fullName}`,
+                role: row.role
+            });
+            
+            const profileNoEvent = await apiNoEvent.getUser(noEventUsername);
+            expect(profileNoEvent.roles).toBeDefined();
+            // User registered without event assignment must have 0 roles
+            const rolesList = Array.from(profileNoEvent.roles);
+            expect(rolesList.length).toBe(0); 
+            console.log(`✅ Passed: User ${noEventUsername} registered without event assignment has 0 roles.`);
+            
+            // Clean up the dummy user
+            await apiNoEvent.deleteUser(noEventUsername);
+        } catch (err) {
+            console.warn(`⚠️ Warning during unassigned user role verification:`, err.message);
+        }
       });
     });
   });

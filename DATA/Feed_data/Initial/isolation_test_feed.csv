@@ -1,0 +1,2 @@
+activeEventId,crossedEventId,username,password,expectedStatus
+1,999,test_cashier,Cashier@123,403

@@ -1,0 +1,5 @@
+fieldName,invalidValue,expectedErrorType
+quantity,-5,BAD_INPUT
+quantity,0,BAD_INPUT
+mrp,999999.9999,BAD_PRICE
+sku,DUP_SKU_123,DUPLICATE

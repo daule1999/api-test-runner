@@ -1,0 +1,6 @@
+username,password,method,endpoint,bodyType,expectedStatus
+admin,Admin@123,POST,/api/inventory-svc/categories,CATEGORY_CREATE,201
+test_cashier,Cashier@123,POST,/api/inventory-svc/categories,CATEGORY_CREATE,403
+admin,Admin@123,DELETE,/api/inventory-svc/products/1,,200
+test_cashier,Cashier@123,DELETE,/api/inventory-svc/products/1,,403
+test_cashier,Cashier@123,GET,/api/inventory-svc/products,,200

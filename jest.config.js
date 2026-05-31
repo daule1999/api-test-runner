@@ -1,6 +1,6 @@
 module.exports = {
   testEnvironment: "node",
-  testMatch: ["**/tests/**/*.test.js", "**/tests/**/*.suite.js"],
+  testMatch: ["**/tests/**/*.test.js"],
   setupFilesAfterEnv: ["./tests/setup.js"],
   verbose: true,
   forceExit: true,

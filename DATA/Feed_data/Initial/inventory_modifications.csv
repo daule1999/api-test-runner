@@ -1,0 +1,4 @@
+productName,sku,mrp,sellingPrice,discount,action
+Amrit Ras Drops,AR001,150.00,120.00,10.00,UPDATE
+Sukrit Health Tablets,SHT002,250.00,220.00,0.00,UPDATE
+Product To Delete,PTD999,99.00,80.00,5.00,DELETE

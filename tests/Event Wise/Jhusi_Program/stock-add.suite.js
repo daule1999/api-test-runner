@@ -13,6 +13,7 @@ function runStockAddSuite() {
     beforeAll(async () => {
       // 1. Perform Single Admin Login (Postman Request 01)
       const api = new TestClient();
+      api.setEventId(process.env.SELECTED_EVENT_ID);
       console.log('🧪 Executing pre-requisite: 01: Admin Login...');
       adminToken = await api.login('admin', 'Admin@123');
       expect(adminToken).toBeDefined();
@@ -42,7 +43,7 @@ function runStockAddSuite() {
         const api = new TestClient();
         api.token = adminToken;
         // Event ID is '1' in Postman collection variables
-        api.setEventId(process.env.JHUSI_EVENT_ID);
+        api.setEventId(process.env.SELECTED_EVENT_ID);
 
         console.log(`\n──────────────────────────────────────────────────`);
         console.log(`🧪 Starting Pipeline for Stock Movement: ${row.product_name}`);

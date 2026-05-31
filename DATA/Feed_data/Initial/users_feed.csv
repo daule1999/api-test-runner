@@ -1,0 +1,5 @@
+username,email,mobile,password,fullName,role,action
+test_supervisor,supervisor@test.com,9876543210,Super@123,Test Supervisor,SHOP_SUPERVISOR,CREATE
+test_cashier,cashier@test.com,9876543211,Cashier@123,Test Cashier,CASHIER,CREATE
+temp_user_to_delete,tempdel@test.com,9876543212,Temp@1234,Temp Delete User,CASHIER,DELETE
+temp_user_to_update,tempupd@test.com,9876543213,Temp@1234,Temp Update User,CASHIER,UPDATE_ROLE

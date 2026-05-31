@@ -157,8 +157,8 @@ class TestClient {
       ]
     };
     const res = await this.client.post('/api/sales-svc/shifts/open', body, { headers: this.headers });
-    if (res.status !== 200 && res.status !== 201 && res.status !== 400) {
-      throw new Error(`Failed to open shift session (Status: ${res.status})`);
+    if (res.status !== 200 && res.status !== 201) {
+      throw new Error(`Failed to open shift session (Status: ${res.status}): ${JSON.stringify(res.data)}`);
     }
     return res.data;
   }
@@ -189,8 +189,8 @@ class TestClient {
     if (res.status !== 200 && res.status !== 201) {
       console.error(`❌ [FW ERROR] confirmSale failed for order ${orderNumber} with Status ${res.status}. Response Body:`, JSON.stringify(res.data));
       if (res.status === 400) {
-         // Return raw data for discrepancy tests
-         return { status: res.status, data: res.data };
+        // Return raw data for discrepancy tests
+        return { status: res.status, data: res.data };
       }
       throw new Error(`Failed to confirm order ${orderNumber} (Status: ${res.status})`);
     }
@@ -243,6 +243,11 @@ class TestClient {
   async registerUser({ username, email, mobile, password, fullName, role }) {
     const body = { username, email, mobile, password, fullName, role };
     const res = await this.client.post('/api/users-svc/register', body, { headers: this.headers });
+    if (res.status === 409) {
+      // Idempotent: user already exists — treat as success
+      console.log(`ℹ️ User "${username}" already exists (409) — treating as idempotent success.`);
+      return res.data.data || res.data || { username };
+    }
     if (res.status !== 200 && res.status !== 201) {
       throw new Error(`Failed to register user "${username}" (Status: ${res.status})`);
     }
@@ -479,6 +484,203 @@ class TestClient {
     }
     return res.data.data || res.data;
   }
+
+  // --- 9. Additional CRUD and High-Rigor Operations ---
+  async updateEvent(eventId, payload) {
+    const res = await this.client.put(`/api/sales-svc/events/${eventId}`, payload, { headers: this.headers });
+    if (res.status !== 200) {
+      throw new Error(`Failed to update event ID ${eventId} (Status: ${res.status})`);
+    }
+    return res.data.data || res.data;
+  }
+
+  async deleteEvent(eventId) {
+    const res = await this.client.delete(`/api/sales-svc/events/${eventId}`, { headers: this.headers });
+    if (res.status !== 200 && res.status !== 204) {
+      throw new Error(`Failed to delete event ID ${eventId} (Status: ${res.status})`);
+    }
+    return res.data;
+  }
+
+  async updateShop(shopId, payload) {
+    const res = await this.client.put(`/api/sales-svc/shops/${shopId}`, payload, { headers: this.headers });
+    if (res.status !== 200) {
+      throw new Error(`Failed to update shop ID ${shopId} (Status: ${res.status})`);
+    }
+    return res.data.data || res.data;
+  }
+
+  async deleteShop(shopId) {
+    const res = await this.client.delete(`/api/sales-svc/shops/${shopId}`, { headers: this.headers });
+    if (res.status !== 200 && res.status !== 204) {
+      throw new Error(`Failed to delete shop ID ${shopId} (Status: ${res.status})`);
+    }
+    return res.data;
+  }
+
+  async getShopSalesHistory(shopId) {
+    const res = await this.client.get(`/api/sales-svc/shops/${shopId}/history`, { headers: this.headers });
+    if (res.status !== 200) {
+      throw new Error(`Failed to retrieve sales history for shop ID ${shopId} (Status: ${res.status})`);
+    }
+    return res.data.data || res.data;
+  }
+
+  async updateUserProfile(username, payload) {
+    const res = await this.client.put(`/api/users-svc/${username}`, payload, { headers: this.headers });
+    if (res.status !== 200) {
+      throw new Error(`Failed to update user profile for "${username}" (Status: ${res.status})`);
+    }
+    return res.data.data || res.data;
+  }
+
+  async updateUserRole({ userId, roleIds }) {
+    const res = await this.client.put('/api/users-svc/users-role', { userId, roleIds }, { headers: this.headers });
+    if (res.status !== 200) {
+      throw new Error(`Failed to update user role for ID ${userId} (Status: ${res.status})`);
+    }
+    return res.data.data || res.data;
+  }
+
+  async deleteUser(username) {
+    const res = await this.client.delete(`/api/users-svc/${username}`, { headers: this.headers });
+    if (res.status !== 200 && res.status !== 204) {
+      throw new Error(`Failed to delete user "${username}" (Status: ${res.status})`);
+    }
+    return res.data;
+  }
+
+  async updateCategory(categoryId, payload) {
+    const res = await this.client.put(`/api/inventory-svc/categories/${categoryId}`, payload, { headers: this.headers });
+    if (res.status !== 200) {
+      throw new Error(`Failed to update category ID ${categoryId} (Status: ${res.status})`);
+    }
+    return res.data.data || res.data;
+  }
+
+  async updateProduct(productId, payload) {
+    const res = await this.client.put(`/api/inventory-svc/products/${productId}`, payload, { headers: this.headers });
+    if (res.status !== 200) {
+      throw new Error(`Failed to update product ID ${productId} (Status: ${res.status})`);
+    }
+    return res.data.data || res.data;
+  }
+
+  async deleteProduct(productId) {
+    const res = await this.client.delete(`/api/inventory-svc/products/${productId}`, { headers: this.headers });
+    if (res.status !== 200 && res.status !== 204) {
+      throw new Error(`Failed to delete product ID ${productId} (Status: ${res.status})`);
+    }
+    return res.data;
+  }
+
+  async bulkCreateProducts(productsList) {
+    const res = await this.client.post('/api/inventory-svc/products/bulk', productsList, { headers: this.headers });
+    if (res.status !== 200 && res.status !== 201) {
+      throw new Error(`Failed bulk creating products (Status: ${res.status})`);
+    }
+    return res.data.data || res.data;
+  }
+
+  async bulkIssueStock(bulkPayload) {
+    const res = await this.client.post('/api/inventory-svc/sales/bulk', bulkPayload, { headers: this.headers });
+    if (res.status !== 200 && res.status !== 201) {
+      throw new Error(`Failed bulk issuing stock (Status: ${res.status})`);
+    }
+    return res.data.data || res.data;
+  }
+
+  async getActiveShift(shopId) {
+    const res = await this.client.get(`/api/sales-svc/shifts/active/${shopId}`, { headers: this.headers });
+    if (res.status !== 200 && res.status !== 404) {
+      throw new Error(`Failed to fetch active shift for shop ID ${shopId} (Status: ${res.status})`);
+    }
+    return res.data;
+  }
+
+  async getShiftHistory(shopId) {
+    const res = await this.client.get(`/api/sales-svc/shifts/history/${shopId}`, { headers: this.headers });
+    if (res.status !== 200) {
+      throw new Error(`Failed to fetch shift history for shop ID ${shopId} (Status: ${res.status})`);
+    }
+    return res.data;
+  }
+
+  async closeShift(shiftId, payload) {
+    const res = await this.client.post(`/api/sales-svc/shifts/${shiftId}/close`, payload, { headers: this.headers });
+    if (res.status !== 200) {
+      throw new Error(`Failed to close shift ID ${shiftId} (Status: ${res.status})`);
+    }
+    return res.data;
+  }
+
+  async reconcileShift(shiftId, comment) {
+    const res = await this.client.post(`/api/sales-svc/shifts/${shiftId}/reconcile`, { comment }, { headers: this.headers });
+    if (res.status !== 200) {
+      throw new Error(`Failed to reconcile shift ID ${shiftId} (Status: ${res.status})`);
+    }
+    return res.data;
+  }
+
+  async getShopStaff(shopId) {
+    const res = await this.client.get(`/api/sales-svc/shops-staff/${shopId}`, { headers: this.headers });
+    if (res.status !== 200) {
+      throw new Error(`Failed to retrieve staff for shop ID ${shopId} (Status: ${res.status})`);
+    }
+    return res.data.data || res.data;
+  }
+
+  async getAllUsers() {
+    const res = await this.client.get('/api/users-svc/allUsers', { headers: this.headers });
+    if (res.status !== 200) {
+      throw new Error(`Failed to fetch all users (Status: ${res.status})`);
+    }
+    return res.data.data || res.data;
+  }
+
+  async getProductSalesAnalytics() {
+    const res = await this.client.get('/api/sales-svc/retail/analytics/product-shop-sales', { headers: this.headers });
+    if (res.status !== 200) {
+      throw new Error(`Failed to retrieve product counter sales analytics (Status: ${res.status})`);
+    }
+    return res.data.data || res.data;
+  }
+
+  async getShiftProductSummary(shopId, shiftSessionId) {
+    let url = '/api/sales-svc/retail/analytics/shift-product-summary?';
+    const params = new URLSearchParams();
+    if (shopId) params.append('shopId', shopId);
+    if (shiftSessionId) params.append('shiftSessionId', shiftSessionId);
+    const res = await this.client.get(url + params.toString(), { headers: this.headers });
+    if (res.status !== 200) {
+      throw new Error(`Failed to retrieve shift product summary (Status: ${res.status})`);
+    }
+    return res.data.data || res.data;
+  }
+
+  async getPaymentDetails(orderNumber) {
+    const res = await this.client.get(`/api/sales-svc/retail/${orderNumber}/payment`, { headers: this.headers });
+    if (res.status !== 200) {
+      throw new Error(`Failed to fetch payment details for order ${orderNumber} (Status: ${res.status})`);
+    }
+    return res.data.data || res.data;
+  }
+
+  async getAllRetailSales() {
+    const res = await this.client.get('/api/sales-svc/retail/all', { headers: this.headers });
+    if (res.status !== 200) {
+      throw new Error(`Failed to fetch all retail sales (Status: ${res.status})`);
+    }
+    return res.data.data || res.data;
+  }
+
+  async getInvoiceItemsByOrderNo(orderNo) {
+    const res = await this.client.get(`/api/billing-svc/invoices/order/${orderNo}/items`, { headers: this.headers });
+    if (res.status !== 200) {
+      throw new Error(`Failed to fetch invoice items for order ${orderNo} (Status: ${res.status})`);
+    }
+    return res.data.data || res.data;
+  }
 }
 
 /**
@@ -508,7 +710,7 @@ function runCsvSuite(suiteName, csvFileName, customTestCallback) {
       })()
     )('%s', async (description, row) => {
       const api = new TestClient();
-      api.setEventId(row.eventId || '1');
+      api.setEventId(process.env.SELECTED_EVENT_ID)
 
       if (customTestCallback) {
         // Mode 2: Call custom testing flow override

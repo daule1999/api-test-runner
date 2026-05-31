@@ -15,7 +15,7 @@ function isPortOpen(port, host = '127.0.0.1') {
     socket.once('error', onError);
     socket.once('timeout', onError);
     socket.connect(port, host, () => {
-      socket.end();
+      socket.destroy();
       resolve(true);
     });
   });

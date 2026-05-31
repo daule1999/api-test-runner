@@ -1,0 +1,13 @@
+shopName,categoryName,counterNumber,isActive,action
+Ayurveda Counter 1,Sukrit Ayurveda,1,true,CREATE
+Literature Counter 2,Sahitya,2,true,CREATE
+Ayurveda Counter 3,Sukrit Ayurveda,3,true,CREATE
+Pharmacy Counter 4,Sukrit Pharmacy,4,true,CREATE
+Organic Products Counter 5,Sukrit Products,5,true,CREATE
+Archives Counter 6,Old Books,6,true,CREATE
+Temp Counter To Delete,Sukrit Ayurveda,9,true,DELETE
+Temp Counter To Update,Sukrit Ayurveda,8,true,UPDATE
+Pharmacy Counter To Delete,Sukrit Pharmacy,10,true,DELETE
+Literature Counter To Update,Sahitya,11,true,UPDATE
+Old Books Counter To Delete,Old Books,12,true,DELETE
+Products Counter To Update,Sukrit Products,13,true,UPDATE

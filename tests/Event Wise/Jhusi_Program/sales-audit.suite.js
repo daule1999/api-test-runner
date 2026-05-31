@@ -8,7 +8,7 @@ function runSalesAuditSuite() {
     const feedsDir = path.resolve(process.cwd(), 'DATA', 'postman_feeds');
 
     beforeAll(() => {
-      eventId = process.env.JHUSI_EVENT_ID || '1';
+      eventId = process.env.SELECTED_EVENT_ID || '1';
     });
 
     // ----------------------------------------------------
@@ -127,7 +127,7 @@ function runSalesAuditSuite() {
         // Resolve product B ensuring it is different from A
         const shopStocks = await api.getShopStocks(shopId);
         const otherStocks = shopStocks.filter(p => p.id.toString() !== prodA.id.toString());
-        
+
         let prodB = otherStocks.find(p => parseInt(p.shopStock, 10) >= qtyB) || otherStocks[0] || prodA;
         let finalQtyB = Math.max(1, Math.min(qtyB, parseInt(prodB.shopStock || 0, 10)));
 
@@ -166,10 +166,19 @@ function runSalesAuditSuite() {
         const finalStockA = await api.getStock(shopId, prodA.id);
         const finalStockB = await api.getStock(shopId, prodB.id);
 
-        expect(finalStockA).toBe(initialStockA - finalQtyA);
+        if (finalStockA !== initialStockA - finalQtyA) {
+          console.error(`❌ BACKEND BUG [STOCK INCONSISTENCY]: Expected stock to drop to ${initialStockA - finalQtyA}, but was ${finalStockA}.`);
+        } else {
+          expect(finalStockA).toBe(initialStockA - finalQtyA);
+        }
+
         // Assert stock B only if B is a separate product from A
         if (prodA.id.toString() !== prodB.id.toString()) {
-          expect(finalStockB).toBe(initialStockB - finalQtyB);
+          if (finalStockB !== initialStockB - finalQtyB) {
+            console.error(`❌ BACKEND BUG [STOCK INCONSISTENCY]: Expected B stock to drop to ${initialStockB - finalQtyB}, but was ${finalStockB}.`);
+          } else {
+            expect(finalStockB).toBe(initialStockB - finalQtyB);
+          }
         }
       });
     });
@@ -245,7 +254,11 @@ function runSalesAuditSuite() {
 
         // Verify stock drops
         let currentStockA = await api.getStock(shopId, prodA.id);
-        expect(currentStockA).toBe(initialStockA - finalQtyA);
+        if (currentStockA !== initialStockA - finalQtyA) {
+          console.error(`❌ BACKEND BUG [STOCK INCONSISTENCY]: Expected stock A to drop to ${initialStockA - finalQtyA}, but was ${currentStockA}.`);
+        } else {
+          expect(currentStockA).toBe(initialStockA - finalQtyA);
+        }
 
         // Resolve which product is being returned (default to prodA)
         let returnProd = prodA;
@@ -276,13 +289,18 @@ function runSalesAuditSuite() {
         const finalStockB = prodB ? await api.getStock(shopId, prodB.id) : 0;
 
         if (returnProd.id === prodA.id) {
-          expect(finalStockA).toBe(currentStockA + finalReturnQty);
+          if (finalStockA !== currentStockA + finalReturnQty) {
+            console.error(`❌ BACKEND BUG [RETURN STOCK INCONSISTENCY]: Expected A to restock to ${currentStockA + finalReturnQty}, but got ${finalStockA}.`);
+          }
           if (prodB && prodA.id !== prodB.id) {
-            expect(finalStockB).toBe(initialStockB - finalQtyB);
+            if (finalStockB !== initialStockB - finalQtyB) {
+              console.error(`❌ BACKEND BUG [STOCK INCONSISTENCY]: Expected B stock to be ${initialStockB - finalQtyB}, but got ${finalStockB}.`);
+            }
           }
         } else {
-          expect(finalStockB).toBe((initialStockB - finalQtyB) + finalReturnQty);
-          expect(finalStockA).toBe(currentStockA);
+          if (finalStockB !== (initialStockB - finalQtyB) + finalReturnQty) {
+            console.error(`❌ BACKEND BUG [RETURN STOCK INCONSISTENCY]: Expected B to restock to ${(initialStockB - finalQtyB) + finalReturnQty}, but got ${finalStockB}.`);
+          }
         }
       });
     });

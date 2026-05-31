@@ -1,0 +1,3 @@
+username,password,shopId,openingCash,actualClosingCash,varianceComment
+test_cashier,Cashier@123,1,1000.00,1050.00,Cashier mismatch extra money found
+test_cashier,Cashier@123,2,1000.00,980.00,Shortage in float due to change issue

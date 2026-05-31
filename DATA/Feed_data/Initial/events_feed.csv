@@ -1,0 +1,5 @@
+eventName,eventType,description,location,startDate,endDate,isActive,action
+Jhusi Magh Mela 2026,PROGRAM,Large spiritual congregation and yoga session,Jhusi Prayagraj,2026-01-10T00:00:00,2026-02-25T23:59:59,true,CREATE
+Sarang Dev Camp,CAMP,Intensive meditation camp,Rishikesh,2026-03-01T00:00:00,2026-03-07T23:59:59,true,CREATE
+Dynamic Event To Delete,PROGRAM,Temporary program to test soft delete execution,Noida,2026-04-01T00:00:00,2026-04-05T23:59:59,true,DELETE
+Dynamic Event To Update,PROGRAM,Temporary program to verify put update actions,New Delhi,2026-05-01T00:00:00,2026-05-10T23:59:59,true,UPDATE

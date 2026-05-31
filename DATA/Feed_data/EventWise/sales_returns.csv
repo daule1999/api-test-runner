@@ -1,0 +1,4 @@
+username,password,productName,orderQuantity,returnQuantity,reason,action
+deepak_csh,Admin@123,Amrit Ras Drops (Updated),10,3,Defective Seal,RETURN
+deepak_csh,Admin@123,Sukrit Health Tablets (Updated),5,5,Customer mind change,RETURN
+deepak_csh,Admin@123,Amrit Ras Drops (Updated),2,,Wrong Order Number,CANCEL
