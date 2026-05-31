@@ -9,6 +9,7 @@ const { restartEverything } = require('../helpers/restart-all');
 const runShopsSuite = require('./Initial/shops.suite.js');
 const runStockAddSuite = require('./Event Wise/Jhusi_Program/stock-add.suite.js');
 const runShopCounterSuite = require('./Event Wise/Jhusi_Program/shop-counter.suite.js');
+const runShopIssueSuite = require('./Event Wise/Jhusi_Program/shop-issue.suite.js');
 
 describe('Master E2E Serial Integration Suite', () => {
 
@@ -57,6 +58,11 @@ describe('Master E2E Serial Integration Suite', () => {
     // Suite 5.5: Dynamic Shop Counters CRUD Collection
     describe('➡️ Step 5.5: Dynamic Shop Counters CRUD Flow', () => {
         runShopsSuite();
+    });
+
+    // Suite 6: Jhusi Program Shop Issue Collection
+    describe('➡️ Step 6: Jhusi Program Shop Issue Flow', () => {
+        runShopIssueSuite();
     });
 
 
