@@ -1,0 +1,5 @@
+username,email,mobile,password,fullName,role
+admin_user,admin@bikri.com,9000000001,Admin@1234,Admin User,ADMIN
+manager_user,manager@bikri.com,9000000002,Manager@1234,Manager User,INVENTORY_MANAGER
+cashier_john,john@bikri.com,9000000003,Cashier@1234,John Cashier,CASHIER
+cashier_jane,jane@bikri.com,9000000004,Cashier@1234,Jane Cashier,CASHIER

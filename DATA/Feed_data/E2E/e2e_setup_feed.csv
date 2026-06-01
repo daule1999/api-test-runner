@@ -1,0 +1,4 @@
+event_name,event_type,event_location,event_start,event_end,cashier_username,cashier_password,cashier_email,cashier_mobile,cashier_fullname,category_name,product_name,product_sku,product_mrp,product_selling_price,product_discount
+E2E Audit Event Alpha,PROGRAM,Prayagraj,2026-06-01T00:00:00,2026-06-30T23:59:59,e2e_cashier_alpha,Admin@123,e2e_alpha@bikrikendra.com,9900010001,E2E Cashier Alpha,E2E Ayurveda,E2E Herbal Shampoo,E2E-SKU-001,299.00,249.00,10.00
+E2E Audit Event Beta,CAMP,Rishikesh,2026-07-01T00:00:00,2026-07-15T23:59:59,e2e_cashier_beta,Admin@123,e2e_beta@bikrikendra.com,9900010002,E2E Cashier Beta,E2E Literature,E2E Spiritual Guide Book,E2E-SKU-002,199.00,179.00,0.00
+E2E Audit Event Gamma,MELA,Varanasi,2026-08-01T00:00:00,2026-08-31T23:59:59,e2e_cashier_gamma,Admin@123,e2e_gamma@bikrikendra.com,9900010003,E2E Cashier Gamma,E2E Pharmacy,E2E Chyawanprash Premium,E2E-SKU-003,499.00,449.00,20.00

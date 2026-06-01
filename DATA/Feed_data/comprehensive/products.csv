@@ -1,0 +1,6 @@
+name,sku,categoryName,mrp,sellingPrice,description
+Mineral Water 500ml,SKU-BEV-001,Beverages,20.00,18.00,Packaged drinking water
+Cola Can 330ml,SKU-BEV-002,Beverages,45.00,40.00,Carbonated cola drink
+Potato Chips 50g,SKU-SNK-001,Beverages,30.00,25.00,Salted potato chips
+Ballpoint Pen,SKU-STA-001,Stationery,15.00,12.00,Blue ink ballpoint pen
+USB-C Cable 1m,SKU-ELC-001,Stationery,299.00,249.00,Fast charge cable

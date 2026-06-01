@@ -1,0 +1,4 @@
+shopName,cashierUsername,productName,quantity,mrp,sellingPrice,discount,paymentMode,cashAmount,onlineAmount
+Counter A,cashier_john,Mineral Water 500ml,3,20.00,18.00,0,BOTH,27.00,27.00
+Counter A,cashier_john,Cola Can 330ml,2,45.00,40.00,0,CASH,80.00,0.00
+Counter A,cashier_john,Potato Chips 50g,2,30.00,25.00,0,ONLINE,0.00,50.00

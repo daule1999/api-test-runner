@@ -1,0 +1,958 @@
+  console.log
+    🏁 Framework Global Setup: Initializing test environment hooks...
+
+      at Object.log (tests/setup.js:5:11)
+
+  console.log
+    🔍 Checking if microservice container network ports are active...
+
+      at log (helpers/docker-helper.js:28:11)
+
+  console.log
+    ✅ Required service ports (3306, 8090) are already active and reachable.
+
+      at log (helpers/docker-helper.js:37:13)
+
+  console.log
+    🧹 Wiping stale staff assignments to ensure a conflict-free E2E starting state...
+
+      at Object.log (tests/setup.js:16:13)
+
+  console.log
+    ✅ Staff assignments database table successfully truncated.
+
+      at Object.log (tests/setup.js:21:13)
+
+  console.log
+    ✅ Global Setup complete. Starting declarative test suites...
+
+      at Object.log (tests/setup.js:26:11)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+      🏁 Bootstrapped Event "Bikri Mela 2026" (ID: 1).
+
+      at Object.log (tests/comprehensive/phase1-auth-user-setup.suite.js:35:19)
+
+  console.log
+      ✅ User "admin_user" registered (role: ADMIN).
+
+      at log (tests/comprehensive/phase1-auth-user-setup.suite.js:56:17)
+
+  console.log
+      ✅ User "manager_user" registered (role: INVENTORY_MANAGER).
+
+      at log (tests/comprehensive/phase1-auth-user-setup.suite.js:56:17)
+
+  console.log
+      ✅ User "cashier_john" registered (role: CASHIER).
+
+      at log (tests/comprehensive/phase1-auth-user-setup.suite.js:56:17)
+
+  console.log
+      ✅ User "cashier_jane" registered (role: CASHIER).
+
+      at log (tests/comprehensive/phase1-auth-user-setup.suite.js:56:17)
+
+  console.log
+      ✅ Duplicate username correctly handled (status: 409).
+
+      at Object.log (tests/comprehensive/phase1-auth-user-setup.suite.js:73:17)
+
+  console.log
+      ✅ Invalid registration correctly rejected (status: 400, expected: 400).
+
+      at log (tests/comprehensive/phase1-auth-user-setup.suite.js:92:17)
+
+  console.log
+      ✅ Invalid registration correctly rejected (status: 409, expected: 409).
+
+      at log (tests/comprehensive/phase1-auth-user-setup.suite.js:92:17)
+
+  console.log
+      ✅ Invalid registration correctly rejected (status: 400, expected: 400).
+
+      at log (tests/comprehensive/phase1-auth-user-setup.suite.js:92:17)
+
+  console.log
+      ✅ Invalid registration correctly rejected (status: 400, expected: 400).
+
+      at log (tests/comprehensive/phase1-auth-user-setup.suite.js:92:17)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+      ✅ Admin JWT obtained (length: 212).
+
+      at Object.log (tests/comprehensive/phase1-auth-user-setup.suite.js:103:17)
+
+  console.log
+      ✅ JWT claims validated: roles=["ADMIN"], userId=1
+
+      at Object.log (tests/comprehensive/phase1-auth-user-setup.suite.js:115:17)
+
+  console.log
+      ✅ Wrong password correctly rejected (status: 401).
+
+      at Object.log (tests/comprehensive/phase1-auth-user-setup.suite.js:128:17)
+
+  console.log
+      ✅ Malformed JWT correctly rejected (status: 401).
+
+      at Object.log (tests/comprehensive/phase1-auth-user-setup.suite.js:141:17)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+      ✅ cashier_john userId = 4
+
+      at Object.log (tests/comprehensive/phase1-auth-user-setup.suite.js:152:17)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+      ✅ cashier_jane userId = 5
+
+      at Object.log (tests/comprehensive/phase1-auth-user-setup.suite.js:160:17)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+      ✅ Category "Beverages" created (ID: 1).
+
+      at log (tests/comprehensive/phase2-inventory-seeding.suite.js:37:19)
+
+  console.log
+      ✅ Category "Snacks" created (ID: 2).
+
+      at log (tests/comprehensive/phase2-inventory-seeding.suite.js:37:19)
+
+  console.log
+      ✅ Category "Stationery" created (ID: 3).
+
+      at log (tests/comprehensive/phase2-inventory-seeding.suite.js:37:19)
+
+  console.log
+      ✅ Category "Electronics" created (ID: 4).
+
+      at log (tests/comprehensive/phase2-inventory-seeding.suite.js:37:19)
+
+  console.log
+      ✅ Duplicate category handled (status: 400).
+
+      at Object.log (tests/comprehensive/phase2-inventory-seeding.suite.js:52:17)
+
+  console.log
+      ✅ Category map resolved: {"Beverages":1,"Snacks":2,"Stationery":3,"Electronics":4}
+
+      at Object.log (tests/comprehensive/phase2-inventory-seeding.suite.js:64:17)
+
+  console.log
+      ✅ Product "Mineral Water 500ml" created (ID: 1).
+
+      at log (tests/comprehensive/phase2-inventory-seeding.suite.js:96:19)
+
+  console.log
+      ✅ Product "Cola Can 330ml" created (ID: 2).
+
+      at log (tests/comprehensive/phase2-inventory-seeding.suite.js:96:19)
+
+  console.log
+      ✅ Product "Potato Chips 50g" created (ID: 3).
+
+      at log (tests/comprehensive/phase2-inventory-seeding.suite.js:96:19)
+
+  console.log
+      ✅ Product "Ballpoint Pen" created (ID: 4).
+
+      at log (tests/comprehensive/phase2-inventory-seeding.suite.js:96:19)
+
+  console.log
+      ✅ Product "USB-C Cable 1m" created (ID: 5).
+
+      at log (tests/comprehensive/phase2-inventory-seeding.suite.js:96:19)
+
+  console.log
+      ✅ Duplicate SKU handled (status: 500).
+
+      at Object.log (tests/comprehensive/phase2-inventory-seeding.suite.js:112:17)
+
+  console.log
+      ✅ Product map resolved (5 products).
+
+      at Object.log (tests/comprehensive/phase2-inventory-seeding.suite.js:132:17)
+
+  console.log
+      ✅ Warehouse IN: 200x "Mineral Water 500ml" (movement ID: 1).
+
+      at log (tests/comprehensive/phase2-inventory-seeding.suite.js:157:17)
+
+  console.log
+      ✅ Warehouse IN: 150x "Cola Can 330ml" (movement ID: 2).
+
+      at log (tests/comprehensive/phase2-inventory-seeding.suite.js:157:17)
+
+  console.log
+      ✅ Warehouse IN: 300x "Potato Chips 50g" (movement ID: 3).
+
+      at log (tests/comprehensive/phase2-inventory-seeding.suite.js:157:17)
+
+  console.log
+      ✅ Warehouse IN: 100x "Ballpoint Pen" (movement ID: 4).
+
+      at log (tests/comprehensive/phase2-inventory-seeding.suite.js:157:17)
+
+  console.log
+      ✅ Warehouse IN: 50x "USB-C Cable 1m" (movement ID: 5).
+
+      at log (tests/comprehensive/phase2-inventory-seeding.suite.js:157:17)
+
+  console.log
+      ✅ Warehouse stocks retrieved (5 records).
+
+      at Object.log (tests/comprehensive/phase2-inventory-seeding.suite.js:166:17)
+
+  console.log
+      ✅ Temp product 7 soft-deleted (status: 200).
+
+      at Object.log (tests/comprehensive/phase2-inventory-seeding.suite.js:190:19)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+      ✅ Event "Bikri Mela 2026" created (ID: 2).
+
+      at log (tests/comprehensive/phase3-event-shop-setup.suite.js:48:19)
+
+  console.log
+      ✅ Event "Tech Expo 2026" created (ID: 3).
+
+      at log (tests/comprehensive/phase3-event-shop-setup.suite.js:48:19)
+
+  console.log
+      ✅ Event ID 1 assigned to all users.
+
+      at Object.log (tests/comprehensive/phase3-event-shop-setup.suite.js:65:17)
+
+  console.log
+      ✅ Shop "Counter A_Event_1" registered (ID: 1).
+
+      at log (tests/comprehensive/phase3-event-shop-setup.suite.js:100:21)
+
+  console.log
+      ✅ Shop "Counter B_Event_1" registered (ID: 2).
+
+      at log (tests/comprehensive/phase3-event-shop-setup.suite.js:100:21)
+
+  console.log
+      ✅ Shop "Counter C_Event_1" registered (ID: 3).
+
+      at log (tests/comprehensive/phase3-event-shop-setup.suite.js:100:21)
+
+  console.log
+      ✅ Shop map resolved: {"Counter A":{"id":1,"counterNumber":1,"categoryId":1,"uniqueName":"Counter A_Event_1"},"Counter B":{"id":2,"counterNumber":2,"categoryId":2,"uniqueName":"Counter B_Event_1"},"Counter C":{"id":3,"counterNumber":3,"categoryId":3,"uniqueName":"Counter C_Event_1"}}
+
+      at Object.log (tests/comprehensive/phase3-event-shop-setup.suite.js:128:17)
+
+  console.log
+      ✅ Assigned cashier_john to Counter A.
+
+      at Object.log (tests/comprehensive/phase3-event-shop-setup.suite.js:145:17)
+
+  console.log
+      ✅ Assigned cashier_jane to Counter B.
+
+      at Object.log (tests/comprehensive/phase3-event-shop-setup.suite.js:159:17)
+
+  console.log
+      ✅ Consigned 50x "Mineral Water 500ml" to "Counter A". Warehouse stock: 200 -> 150. Counter stock: 50
+
+      at log (tests/comprehensive/phase3-event-shop-setup.suite.js:207:17)
+
+  console.log
+      ✅ Consigned 30x "Cola Can 330ml" to "Counter A". Warehouse stock: 150 -> 120. Counter stock: 30
+
+      at log (tests/comprehensive/phase3-event-shop-setup.suite.js:207:17)
+
+  console.log
+      ✅ Consigned 30x "Potato Chips 50g" to "Counter B". Warehouse stock: 260 -> 230. Counter stock: 30
+
+      at log (tests/comprehensive/phase3-event-shop-setup.suite.js:207:17)
+
+  console.log
+      ✅ Consigned 20x "Ballpoint Pen" to "Counter C". Warehouse stock: 100 -> 80. Counter stock: 20
+
+      at log (tests/comprehensive/phase3-event-shop-setup.suite.js:207:17)
+
+  console.log
+      ✅ Insufficient stock correctly rejected (status: 400).
+
+      at Object.log (tests/comprehensive/phase3-event-shop-setup.suite.js:227:17)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+      ✅ Shift opened for cashier_john at Counter A (Shift ID: 1).
+
+      at Object.log (tests/comprehensive/phase4-shift-sales-lifecycle.suite.js:39:17)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+      ✅ Shift opened for cashier_jane at Counter B.
+
+      at Object.log (tests/comprehensive/phase4-shift-sales-lifecycle.suite.js:52:17)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+      ✅ Duplicate shift open rejected (status: 400).
+
+      at Object.log (tests/comprehensive/phase4-shift-sales-lifecycle.suite.js:68:17)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.error
+    ❌ [FW ERROR] confirmSale failed for order SO-01KT1E7WWGCYBY03A4141CJSD5 with Status 409. Response Body: {"success":false,"data":null,"message":"Duplicate or invalid reference"}
+
+      188 |     const res = await this.client.put(`/api/sales-svc/retail/${orderNumber}/confirm`, body, { headers: this.headers });
+      189 |     if (res.status !== 200 && res.status !== 201) {
+    > 190 |       console.error(`❌ [FW ERROR] confirmSale failed for order ${orderNumber} with Status ${res.status}. Response Body:`, JSON.stringify(res.data));
+          |               ^
+      191 |       if (res.status === 400) {
+      192 |         // Return raw data for discrepancy tests
+      193 |         return { status: res.status, data: res.data };
+
+      at TestClient.error [as confirmSale] (helpers/framework.js:190:15)
+      at tests/comprehensive/phase4-shift-sales-lifecycle.suite.js:109:30
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.error
+    ❌ [FW ERROR] confirmSale failed for order SO-01KT1E7X3EHKR3SMPXJ8QY78ZG with Status 409. Response Body: {"success":false,"data":null,"message":"Duplicate or invalid reference"}
+
+      188 |     const res = await this.client.put(`/api/sales-svc/retail/${orderNumber}/confirm`, body, { headers: this.headers });
+      189 |     if (res.status !== 200 && res.status !== 201) {
+    > 190 |       console.error(`❌ [FW ERROR] confirmSale failed for order ${orderNumber} with Status ${res.status}. Response Body:`, JSON.stringify(res.data));
+          |               ^
+      191 |       if (res.status === 400) {
+      192 |         // Return raw data for discrepancy tests
+      193 |         return { status: res.status, data: res.data };
+
+      at TestClient.error [as confirmSale] (helpers/framework.js:190:15)
+      at tests/comprehensive/phase4-shift-sales-lifecycle.suite.js:109:30
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.error
+    ❌ [FW ERROR] confirmSale failed for order SO-01KT1E7X950PQ7V1X37ASF2BYM with Status 409. Response Body: {"success":false,"data":null,"message":"Duplicate or invalid reference"}
+
+      188 |     const res = await this.client.put(`/api/sales-svc/retail/${orderNumber}/confirm`, body, { headers: this.headers });
+      189 |     if (res.status !== 200 && res.status !== 201) {
+    > 190 |       console.error(`❌ [FW ERROR] confirmSale failed for order ${orderNumber} with Status ${res.status}. Response Body:`, JSON.stringify(res.data));
+          |               ^
+      191 |       if (res.status === 400) {
+      192 |         // Return raw data for discrepancy tests
+      193 |         return { status: res.status, data: res.data };
+
+      at TestClient.error [as confirmSale] (helpers/framework.js:190:15)
+      at tests/comprehensive/phase4-shift-sales-lifecycle.suite.js:109:30
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.error
+    ❌ [FW ERROR] confirmSale failed for order SO-01KT1E7XEPGHMPN60EBR05BJ4N with Status 409. Response Body: {"success":false,"data":null,"message":"Duplicate or invalid reference"}
+
+      188 |     const res = await this.client.put(`/api/sales-svc/retail/${orderNumber}/confirm`, body, { headers: this.headers });
+      189 |     if (res.status !== 200 && res.status !== 201) {
+    > 190 |       console.error(`❌ [FW ERROR] confirmSale failed for order ${orderNumber} with Status ${res.status}. Response Body:`, JSON.stringify(res.data));
+          |               ^
+      191 |       if (res.status === 400) {
+      192 |         // Return raw data for discrepancy tests
+      193 |         return { status: res.status, data: res.data };
+
+      at TestClient.error [as confirmSale] (helpers/framework.js:190:15)
+      at Object.<anonymous> (tests/comprehensive/phase4-shift-sales-lifecycle.suite.js:212:9)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+      ✅ Live tally expected cash in drawer: 0
+
+      at Object.log (tests/comprehensive/phase5-shift-reconciliation.suite.js:29:15)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+      ✅ Shift 1 closed by cashier. Expected cash: 1000, Declared: 1010
+
+      at Object.log (tests/comprehensive/phase5-shift-reconciliation.suite.js:62:15)
+
+  console.log
+      ✅ Shift 1 successfully reconciled by admin. Variance comment logged.
+
+      at Object.log (tests/comprehensive/phase5-shift-reconciliation.suite.js:78:15)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+      ✅ Closing already-closed shift correctly rejected (status: 400).
+
+      at Object.log (tests/comprehensive/phase5-shift-reconciliation.suite.js:93:15)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+      ✅ Live snapshot fetched successfully for Counter A.
+
+      at Object.log (tests/comprehensive/phase7-reports-analytics.suite.js:27:15)
+
+  console.log
+      ✅ Product shop sales analytics fetched.
+
+      at Object.log (tests/comprehensive/phase7-reports-analytics.suite.js:47:15)
+
+  console.log
+      ✅ Master settlement report generated for Event 1.
+
+      at Object.log (tests/comprehensive/phase7-reports-analytics.suite.js:58:15)
+
+  console.log
+      ✅ 3-Way Match report generated for Event 1.
+
+      at Object.log (tests/comprehensive/phase7-reports-analytics.suite.js:69:15)
+
+  console.log
+      ✅ Cashier trust score fetched. Cash variance tracking included.
+
+      at Object.log (tests/comprehensive/phase7-reports-analytics.suite.js:80:15)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+      📊 Inventory Audit for "Mineral Water 500ml":
+
+      at Object.log (tests/comprehensive/phase8-conservation-audit.suite.js:48:17)
+
+  console.log
+         - Inwarded (Purchased): 200
+
+      at Object.log (tests/comprehensive/phase8-conservation-audit.suite.js:49:17)
+
+  console.log
+         - Remaining in Central Warehouse: 110
+
+      at Object.log (tests/comprehensive/phase8-conservation-audit.suite.js:50:17)
+
+  console.log
+         - Net Sold on Counters: 0
+
+      at Object.log (tests/comprehensive/phase8-conservation-audit.suite.js:51:17)
+
+  console.log
+         - Remaining Leftover on Counters: 47
+
+      at Object.log (tests/comprehensive/phase8-conservation-audit.suite.js:52:17)
+
+  console.log
+         - Drift Calculation: 43
+
+      at Object.log (tests/comprehensive/phase8-conservation-audit.suite.js:53:17)
+
+  console.log
+      💸 Financial Audit:
+
+      at Object.log (tests/comprehensive/phase8-conservation-audit.suite.js:77:15)
+
+  console.log
+         - Cash Collected: 0
+
+      at Object.log (tests/comprehensive/phase8-conservation-audit.suite.js:78:15)
+
+  console.log
+         - Online Collected: 0
+
+      at Object.log (tests/comprehensive/phase8-conservation-audit.suite.js:79:15)
+
+  console.log
+         - Cumulative Refunds Issued: 0
+
+      at Object.log (tests/comprehensive/phase8-conservation-audit.suite.js:80:15)
+
+  console.log
+         - Net Sales Revenue: 0
+
+      at Object.log (tests/comprehensive/phase8-conservation-audit.suite.js:81:15)
+
+  console.log
+         - Cumulative Invoice Net Total: 0
+
+      at Object.log (tests/comprehensive/phase8-conservation-audit.suite.js:82:15)
+
+  console.log
+      💰 Cash Drawer Audit for Counter A:
+
+      at Object.log (tests/comprehensive/phase8-conservation-audit.suite.js:104:15)
+
+  console.log
+         - Opening Float: 1000
+
+      at Object.log (tests/comprehensive/phase8-conservation-audit.suite.js:105:15)
+
+  console.log
+         - Cash Revenue Added: 0
+
+      at Object.log (tests/comprehensive/phase8-conservation-audit.suite.js:106:15)
+
+  console.log
+         - Cash Refunds Subtracted: 0
+
+      at Object.log (tests/comprehensive/phase8-conservation-audit.suite.js:107:15)
+
+  console.log
+         - Expected closing in Drawer: 1000
+
+      at Object.log (tests/comprehensive/phase8-conservation-audit.suite.js:108:15)
+
+  console.log
+         - Recorded expected closing in database: 1000
+
+      at Object.log (tests/comprehensive/phase8-conservation-audit.suite.js:109:15)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+      ✅ Zero quantity confirmation correctly rejected (status: 400).
+
+      at Object.log (tests/comprehensive/phase9-negative-edge-cases.suite.js:48:17)
+
+  console.log
+      ✅ Negative payment split correctly rejected (status: 400).
+
+      at Object.log (tests/comprehensive/phase9-negative-edge-cases.suite.js:83:15)
+
+  console.log
+      ✅ Deleted product order confirmation correctly rejected (status: 400).
+
+      at Object.log (tests/comprehensive/phase9-negative-edge-cases.suite.js:131:17)
+
+FAIL tests/comprehensive/master-comprehensive.test.js (7.363 s)
+  Bikri Kendra — Master Comprehensive E2E Test Suite
+    Phase 1 — Auth & User Setup
+      1.1 Register Users from CSV
+        ✓ [1] Register user: admin_user (137 ms)
+        ✓ [2] Register user: manager_user (100 ms)
+        ✓ [3] Register user: cashier_john (96 ms)
+        ✓ [4] Register user: cashier_jane (96 ms)
+      1.2 Negative: Duplicate username returns 409
+        ✓ Duplicate "cashier_john" returns 409 or idempotent success (29 ms)
+      1.3 Negative: Invalid user registrations
+        ✓ [1] Invalid user: "(empty)" → expect 400 (27 ms)
+        ✓ [2] Invalid user: "cashier_john" → expect 409 (19 ms)
+        ✓ [3] Invalid user: "valid_but_bad_email" → expect 400 (15 ms)
+        ✓ [4] Invalid user: "missing_password" → expect 400 (11 ms)
+      1.4 Login and receive JWT tokens
+        ✓ Admin login returns JWT (94 ms)
+      1.5 JWT contains required claims
+        ✓ JWT payload has roles and userId (4 ms)
+      1.6 Wrong password returns 401
+        ✓ Wrong password is rejected (91 ms)
+      1.7 Expired/malformed JWT returns 401 not 500
+        ✓ Malformed token is rejected (12 ms)
+      1.8 Resolve user IDs for later phases
+        ✓ Resolve cashier_john userId (122 ms)
+        ✓ Resolve cashier_jane userId (120 ms)
+    Phase 2 — Inventory Seeding
+      2.1 Create product categories from CSV
+        ✓ [1] Category: Beverages (432 ms)
+        ✓ [2] Category: Snacks (28 ms)
+        ✓ [3] Category: Stationery (19 ms)
+        ✓ [4] Category: Electronics (16 ms)
+      2.2 Duplicate category name returns 409
+        ✓ Duplicate "Beverages" is handled gracefully (24 ms)
+      2.3 Resolve category map
+        ✓ Fetch all categories and build map (35 ms)
+      2.4 Create products from CSV
+        ✓ [1] Product: Mineral Water 500ml (SKU-BEV-001) (29 ms)
+        ✓ [2] Product: Cola Can 330ml (SKU-BEV-002) (18 ms)
+        ✓ [3] Product: Potato Chips 50g (SKU-SNK-001) (16 ms)
+        ✓ [4] Product: Ballpoint Pen (SKU-STA-001) (13 ms)
+        ✓ [5] Product: USB-C Cable 1m (SKU-ELC-001) (13 ms)
+      2.5 Duplicate SKU returns 409
+        ✓ Duplicate "SKU-BEV-001" is handled gracefully (30 ms)
+      2.6 Resolve product map
+        ✓ Fetch all products and build map (19 ms)
+      2.7 Purchase stock (warehouse IN) from CSV
+        ✓ [1] Inward: 200x "Mineral Water 500ml" (114 ms)
+        ✓ [2] Inward: 150x "Cola Can 330ml" (23 ms)
+        ✓ [3] Inward: 300x "Potato Chips 50g" (25 ms)
+        ✓ [4] Inward: 100x "Ballpoint Pen" (20 ms)
+        ✓ [5] Inward: 50x "USB-C Cable 1m" (21 ms)
+      2.8 Verify warehouse stock levels
+        ✓ Warehouse stocks are populated (18 ms)
+      2.9 Soft delete product sets isActive=false
+        ✓ Create and soft-delete a temp product (34 ms)
+    Phase 3 — Event & Shop Setup
+      3.1 Create events from CSV
+        ✓ [1] Event: Bikri Mela 2026 (20 ms)
+        ✓ [2] Event: Tech Expo 2026 (15 ms)
+      3.2 Assign event to cashiers
+        ✓ Assign event to cashier_john and cashier_jane (140 ms)
+      3.3 Register shop counters with unique event suffix
+        ✓ [1] Shop: Counter A (81 ms)
+        ✓ [2] Shop: Counter B (18 ms)
+        ✓ [3] Shop: Counter C (19 ms)
+      3.4 Resolve shop map from event allocations
+        ✓ Fetch all shops and map details (31 ms)
+      3.5 Assign staff to shop counters
+        ✓ Assign cashier_john to Counter A (28 ms)
+        ✓ Assign cashier_jane to Counter B (20 ms)
+      3.6 Issue stock to counters from CSV
+        ✓ [1] Issue 50x "Mineral Water 500ml" to "Counter A" (211 ms)
+        ✓ [2] Issue 30x "Cola Can 330ml" to "Counter A" (76 ms)
+        ✕ [3] Issue 40x "Potato Chips 50g" to "Counter A" (66 ms)
+        ✕ [4] Issue 40x "Mineral Water 500ml" to "Counter B" (71 ms)
+        ✓ [5] Issue 30x "Potato Chips 50g" to "Counter B" (85 ms)
+        ✓ [6] Issue 20x "Ballpoint Pen" to "Counter C" (70 ms)
+        ✕ [7] Issue 10x "USB-C Cable 1m" to "Counter C" (69 ms)
+      3.7 Insufficient warehouse stock is rejected
+        ✓ Try to issue 10000 Mineral Water and expect rejection (18 ms)
+    Phase 4 — Shift Operations & Sales Lifecycle
+      4.1 Open shift sessions
+        ✓ Open shift for cashier_john at Counter A (234 ms)
+        ✓ Open shift for cashier_jane at Counter B (119 ms)
+        ✓ Negative: Duplicate open shift returns 409 (118 ms)
+      4.2 Create and confirm sales orders
+        ✕ [1] Order: 3x "Mineral Water 500ml" by "cashier_john" (215 ms)
+        ✕ [2] Order: 2x "Cola Can 330ml" by "cashier_john" (174 ms)
+        ✕ [3] Order: 2x "Potato Chips 50g" by "cashier_john" (179 ms)
+      4.3 Process sales returns
+        ✕ [1] Return 1x "Mineral Water 500ml" (1 ms)
+        ✕ [2] Return 1x "Cola Can 330ml" (1 ms)
+      4.4 Full order cancellation and stock restoration
+        ✕ Create, confirm and cancel order to verify full reversal (188 ms)
+      4.5 Invalid returns rejected
+        ✕ Return quantity exceeding original quantity returns 400 (2 ms)
+    Phase 5 — Shift Close & Reconciliation
+      ✓ Verify shift live tally before closure (91 ms)
+      ✓ Close active shift session for cashier_john (144 ms)
+      ✓ Supervisor shift reconciliation with variance audit (31 ms)
+      ✓ Negative: Cannot close an already-closed shift (108 ms)
+    Phase 6 — Billing Verification
+      ✕ Verify invoice items match order details in billing-service (1 ms)
+      ✕ High-Rigor Audit: Price immutability on catalog price update (1 ms)
+    Phase 7 — Reports & Analytics
+      ✓ Live Snapshot Report returns 200 (34 ms)
+      ✕ Shift Product Summary Analytics matches order records (14 ms)
+      ✓ Product Counter Sales Analytics returns 200 (12 ms)
+      ✓ Master Settlement Report for event returns 200 (21 ms)
+      ✓ 3-Way Match Report returns 200 (18 ms)
+      ✓ Trust Score Query for cashier returns history (13 ms)
+    Phase 8 — Conservation & Audit Equations
+      ✕ 8.1 Inventory Conservation Equation holds (Drift == 0) (66 ms)
+      ✓ 8.2 Financial Conservation Equation holds (Variance == 0) (6 ms)
+      ✓ 8.3 Cash Drawer Drawer Tally holds expected balance (13 ms)
+    Phase 9 — Negative Edge Cases
+      ✓ 9.1 Zero quantity draft sale is rejected (31 ms)
+      ✓ 9.2 Negative payment splits are rejected (26 ms)
+      ✓ 9.3 Accessing or ordering soft-deleted products is blocked (51 ms)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 3 — Event & Shop Setup › 3.6 Issue stock to counters from CSV › [3] Issue 40x "Potato Chips 50g" to "Counter A"
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 40
+    Received: 0
+
+      196 |         // Fetch counter stock
+      197 |         const counterQty = await api.getStock(shop.id, product.id);
+    > 198 |         expect(counterQty).toBe(qty);
+          |                            ^
+      199 |
+      200 |         // Store snapshots in context
+      201 |         ctx.stockSnapshots[row.productName] = ctx.stockSnapshots[row.productName] || {
+
+      at toBe (tests/comprehensive/phase3-event-shop-setup.suite.js:198:28)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 3 — Event & Shop Setup › 3.6 Issue stock to counters from CSV › [4] Issue 40x "Mineral Water 500ml" to "Counter B"
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 40
+    Received: 0
+
+      196 |         // Fetch counter stock
+      197 |         const counterQty = await api.getStock(shop.id, product.id);
+    > 198 |         expect(counterQty).toBe(qty);
+          |                            ^
+      199 |
+      200 |         // Store snapshots in context
+      201 |         ctx.stockSnapshots[row.productName] = ctx.stockSnapshots[row.productName] || {
+
+      at toBe (tests/comprehensive/phase3-event-shop-setup.suite.js:198:28)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 3 — Event & Shop Setup › 3.6 Issue stock to counters from CSV › [7] Issue 10x "USB-C Cable 1m" to "Counter C"
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 10
+    Received: 0
+
+      196 |         // Fetch counter stock
+      197 |         const counterQty = await api.getStock(shop.id, product.id);
+    > 198 |         expect(counterQty).toBe(qty);
+          |                            ^
+      199 |
+      200 |         // Store snapshots in context
+      201 |         ctx.stockSnapshots[row.productName] = ctx.stockSnapshots[row.productName] || {
+
+      at toBe (tests/comprehensive/phase3-event-shop-setup.suite.js:198:28)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 4 — Shift Operations & Sales Lifecycle › 4.2 Create and confirm sales orders › [1] Order: 3x "Mineral Water 500ml" by "cashier_john"
+
+    Failed to confirm order SO-01KT1E7WWGCYBY03A4141CJSD5 (Status: 409)
+
+      193 |         return { status: res.status, data: res.data };
+      194 |       }
+    > 195 |       throw new Error(`Failed to confirm order ${orderNumber} (Status: ${res.status})`);
+          |             ^
+      196 |     }
+      197 |     return res.data.data || res.data;
+      198 |   }
+
+      at TestClient.confirmSale (helpers/framework.js:195:13)
+      at tests/comprehensive/phase4-shift-sales-lifecycle.suite.js:109:30
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 4 — Shift Operations & Sales Lifecycle › 4.2 Create and confirm sales orders › [2] Order: 2x "Cola Can 330ml" by "cashier_john"
+
+    Failed to confirm order SO-01KT1E7X3EHKR3SMPXJ8QY78ZG (Status: 409)
+
+      193 |         return { status: res.status, data: res.data };
+      194 |       }
+    > 195 |       throw new Error(`Failed to confirm order ${orderNumber} (Status: ${res.status})`);
+          |             ^
+      196 |     }
+      197 |     return res.data.data || res.data;
+      198 |   }
+
+      at TestClient.confirmSale (helpers/framework.js:195:13)
+      at tests/comprehensive/phase4-shift-sales-lifecycle.suite.js:109:30
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 4 — Shift Operations & Sales Lifecycle › 4.2 Create and confirm sales orders › [3] Order: 2x "Potato Chips 50g" by "cashier_john"
+
+    Failed to confirm order SO-01KT1E7X950PQ7V1X37ASF2BYM (Status: 409)
+
+      193 |         return { status: res.status, data: res.data };
+      194 |       }
+    > 195 |       throw new Error(`Failed to confirm order ${orderNumber} (Status: ${res.status})`);
+          |             ^
+      196 |     }
+      197 |     return res.data.data || res.data;
+      198 |   }
+
+      at TestClient.confirmSale (helpers/framework.js:195:13)
+      at tests/comprehensive/phase4-shift-sales-lifecycle.suite.js:109:30
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 4 — Shift Operations & Sales Lifecycle › 4.3 Process sales returns › [1] Return 1x "Mineral Water 500ml"
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      144 |         // Find matching confirmed order in context
+      145 |         const order = ctx.orders.find(o => o.productName === row.productName && o.status === 'COMPLETED');
+    > 146 |         expect(order).toBeDefined();
+          |                       ^
+      147 |
+      148 |         const returnQty = parseInt(row.returnQty, 10);
+      149 |         const unitPrice = parseFloat(row.unitPrice);
+
+      at toBeDefined (tests/comprehensive/phase4-shift-sales-lifecycle.suite.js:146:23)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 4 — Shift Operations & Sales Lifecycle › 4.3 Process sales returns › [2] Return 1x "Cola Can 330ml"
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      144 |         // Find matching confirmed order in context
+      145 |         const order = ctx.orders.find(o => o.productName === row.productName && o.status === 'COMPLETED');
+    > 146 |         expect(order).toBeDefined();
+          |                       ^
+      147 |
+      148 |         const returnQty = parseInt(row.returnQty, 10);
+      149 |         const unitPrice = parseFloat(row.unitPrice);
+
+      at toBeDefined (tests/comprehensive/phase4-shift-sales-lifecycle.suite.js:146:23)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 4 — Shift Operations & Sales Lifecycle › 4.4 Full order cancellation and stock restoration › Create, confirm and cancel order to verify full reversal
+
+    Failed to confirm order SO-01KT1E7XEPGHMPN60EBR05BJ4N (Status: 409)
+
+      193 |         return { status: res.status, data: res.data };
+      194 |       }
+    > 195 |       throw new Error(`Failed to confirm order ${orderNumber} (Status: ${res.status})`);
+          |             ^
+      196 |     }
+      197 |     return res.data.data || res.data;
+      198 |   }
+
+      at TestClient.confirmSale (helpers/framework.js:195:13)
+      at Object.<anonymous> (tests/comprehensive/phase4-shift-sales-lifecycle.suite.js:212:9)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 4 — Shift Operations & Sales Lifecycle › 4.5 Invalid returns rejected › Return quantity exceeding original quantity returns 400
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      230 |       test('Return quantity exceeding original quantity returns 400', async () => {
+      231 |         const order = ctx.orders[0];
+    > 232 |         expect(order).toBeDefined();
+          |                       ^
+      233 |
+      234 |         const client = new TestClient();
+      235 |         await client.login('admin', 'Admin@123');
+
+      at Object.toBeDefined (tests/comprehensive/phase4-shift-sales-lifecycle.suite.js:232:23)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 6 — Billing Verification › Verify invoice items match order details in billing-service
+
+    expect(received).toBeGreaterThan(expected)
+
+    Expected: > 0
+    Received:   0
+
+      17 |
+      18 |     test('Verify invoice items match order details in billing-service', async () => {
+    > 19 |       expect(ctx.orders.length).toBeGreaterThan(0);
+         |                                 ^
+      20 |
+      21 |       for (const order of ctx.orders) {
+      22 |         console.log(`  🔍 Verifying billing invoice for Order ${order.orderNumber}...`);
+
+      at Object.toBeGreaterThan (tests/comprehensive/phase6-billing-verification.suite.js:19:33)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 6 — Billing Verification › High-Rigor Audit: Price immutability on catalog price update
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      41 |       // Pick the first order and product
+      42 |       const order = ctx.orders[0];
+    > 43 |       expect(order).toBeDefined();
+         |                     ^
+      44 |
+      45 |       const product = ctx.productMap[order.productName];
+      46 |       expect(product).toBeDefined();
+
+      at Object.toBeDefined (tests/comprehensive/phase6-billing-verification.suite.js:43:21)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 7 — Reports & Analytics › Shift Product Summary Analytics matches order records
+
+    expect(received).toBeGreaterThan(expected)
+
+    Expected: > 0
+    Received:   0
+
+      38 |       // Check if products we sold are represented
+      39 |       const summaryList = Array.isArray(result) ? result : (result.data || []);
+    > 40 |       expect(summaryList.length).toBeGreaterThan(0);
+         |                                  ^
+      41 |       console.log(`  ✅ Shift product summary matches: ${JSON.stringify(summaryList)}`);
+      42 |     });
+      43 |
+
+      at Object.toBeGreaterThan (tests/comprehensive/phase7-reports-analytics.suite.js:40:34)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 8 — Conservation & Audit Equations › 8.1 Inventory Conservation Equation holds (Drift == 0)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 43
+
+      53 |         console.log(`     - Drift Calculation: ${drift}`);
+      54 |
+    > 55 |         expect(drift).toBe(0);
+         |                       ^
+      56 |       }
+      57 |     });
+      58 |
+
+      at Object.toBe (tests/comprehensive/phase8-conservation-audit.suite.js:55:23)
+
+Test Suites: 1 failed, 1 total
+Tests:       14 failed, 66 passed, 80 total
+Snapshots:   0 total
+Time:        7.413 s, estimated 8 s
+Ran all test suites matching /tests\/comprehensive\/master-comprehensive.test.js/i.

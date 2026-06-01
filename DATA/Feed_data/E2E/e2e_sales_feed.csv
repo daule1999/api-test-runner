@@ -1,0 +1,4 @@
+product_name,sale_qty,payment_mode,cash_amount,online_amount,return_qty,return_reason,cancel_order2,cancel_qty,cancel_reason
+E2E Herbal Shampoo,3,BOTH,358.50,358.50,1,Damaged packaging,true,1,Customer changed mind
+E2E Spiritual Guide Book,2,CASH,358.00,0.00,0,,true,1,Duplicate order
+E2E Chyawanprash Premium,4,BOTH,858.00,858.00,2,Expired batch,true,1,Wrong product ordered

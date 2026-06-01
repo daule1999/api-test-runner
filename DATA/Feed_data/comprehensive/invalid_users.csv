@@ -1,0 +1,5 @@
+username,email,mobile,password,fullName,expectedError
+,invalid-email,123,ab,,400
+cashier_john,john@bikri.com,9000000003,Cashier@1234,Duplicate User,409
+valid_but_bad_email,not-an-email,9000099999,Pass@1234,Bad Email User,400
+missing_password,mp@test.com,9000099998,,Missing Pass,400

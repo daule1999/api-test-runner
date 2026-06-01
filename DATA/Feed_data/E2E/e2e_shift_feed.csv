@@ -1,0 +1,4 @@
+opening_cash,denominations_json,declared_cash,closing_denominations_json,variance_comment
+1000.00,"[{""currencyValue"":500,""noteCount"":2}]",1358.50,"[{""currencyValue"":500,""noteCount"":2},{""currencyValue"":100,""noteCount"":3},{""currencyValue"":50,""noteCount"":1},{""currencyValue"":10,""noteCount"":1}]",E2E Alpha shift reconciled perfectly
+1000.00,"[{""currencyValue"":500,""noteCount"":2}]",1358.00,"[{""currencyValue"":500,""noteCount"":2},{""currencyValue"":100,""noteCount"":3},{""currencyValue"":50,""noteCount"":1},{""currencyValue"":10,""noteCount"":1}]",E2E Beta shift reconciled perfectly
+1000.00,"[{""currencyValue"":500,""noteCount"":2}]",1858.00,"[{""currencyValue"":500,""noteCount"":3},{""currencyValue"":100,""noteCount"":3},{""currencyValue"":50,""noteCount"":1},{""currencyValue"":10,""noteCount"":1}]",E2E Gamma shift reconciled perfectly

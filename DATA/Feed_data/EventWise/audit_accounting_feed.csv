@@ -1,0 +1,3 @@
+username,password,product_name,quantity,cash_amount,online_amount,return_qty,return_reason,cancellation_reason,declared_cash,variance_comment
+arjun_csh,Admin@123,Naranga Refreshing Bodywash,2,199.00,199.00,1,Damaged item,Wrong items ordered,1000.00,Shift closed with perfect reconciliation
+nitin_csh,Admin@123,Special Chyawanprash,1,499.00,0.00,0,Customer changed mind,Cashier mistake,1499.00,Reconciled successfully

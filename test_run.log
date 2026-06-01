@@ -1,0 +1,1307 @@
+  console.log
+    🏁 Framework Global Setup: Initializing test environment hooks...
+
+      at Object.log (tests/setup.js:5:11)
+
+  console.log
+    🔍 Checking if microservice container network ports are active...
+
+      at log (helpers/docker-helper.js:28:11)
+
+  console.log
+    ✅ Required service ports (3306, 8090) are already active and reachable.
+
+      at log (helpers/docker-helper.js:37:13)
+
+  console.log
+    🧹 Wiping stale staff assignments to ensure a conflict-free E2E starting state...
+
+      at Object.log (tests/setup.js:16:13)
+
+  console.log
+    ✅ Staff assignments database table successfully truncated.
+
+      at Object.log (tests/setup.js:21:13)
+
+  console.log
+    ✅ Global Setup complete. Starting declarative test suites...
+
+      at Object.log (tests/setup.js:26:11)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+      ✅ Admin JWT obtained (length: 212).
+
+      at Object.log (tests/comprehensive/phase1-auth-user-setup.suite.js:79:17)
+
+  console.log
+      ✅ JWT claims validated: roles=["ADMIN"], userId=1
+
+      at Object.log (tests/comprehensive/phase1-auth-user-setup.suite.js:91:17)
+
+  console.log
+      ✅ Wrong password correctly rejected (status: 401).
+
+      at Object.log (tests/comprehensive/phase1-auth-user-setup.suite.js:104:17)
+
+  console.log
+      ✅ Malformed JWT correctly rejected (status: 401).
+
+      at Object.log (tests/comprehensive/phase1-auth-user-setup.suite.js:117:17)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+      ✅ Duplicate category handled (status: 400).
+
+      at Object.log (tests/comprehensive/phase2-inventory-seeding.suite.js:49:17)
+
+  console.log
+      ✅ Category map resolved: {"Beverages":1,"Snacks":2,"Stationery":3,"Electronics":4}
+
+      at Object.log (tests/comprehensive/phase2-inventory-seeding.suite.js:61:17)
+
+  console.log
+      ✅ Product map resolved (5 products).
+
+      at Object.log (tests/comprehensive/phase2-inventory-seeding.suite.js:125:17)
+
+  console.log
+      ✅ Warehouse IN: 200x "Mineral Water 500ml" (movement ID: 18).
+
+      at log (tests/comprehensive/phase2-inventory-seeding.suite.js:150:17)
+
+  console.log
+      ✅ Warehouse IN: 150x "Cola Can 330ml" (movement ID: 19).
+
+      at log (tests/comprehensive/phase2-inventory-seeding.suite.js:150:17)
+
+  console.log
+      ✅ Warehouse IN: 300x "Potato Chips 50g" (movement ID: 20).
+
+      at log (tests/comprehensive/phase2-inventory-seeding.suite.js:150:17)
+
+  console.log
+      ✅ Warehouse IN: 100x "Ballpoint Pen" (movement ID: 21).
+
+      at log (tests/comprehensive/phase2-inventory-seeding.suite.js:150:17)
+
+  console.log
+      ✅ Warehouse IN: 50x "USB-C Cable 1m" (movement ID: 22).
+
+      at log (tests/comprehensive/phase2-inventory-seeding.suite.js:150:17)
+
+  console.log
+      ✅ Warehouse stocks retrieved (5 records).
+
+      at Object.log (tests/comprehensive/phase2-inventory-seeding.suite.js:159:17)
+
+  console.log
+      ✅ Temp product 23 soft-deleted (status: 200).
+
+      at Object.log (tests/comprehensive/phase2-inventory-seeding.suite.js:183:19)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+      ✅ Event "Bikri Mela 2026" created (ID: 5).
+
+      at log (tests/comprehensive/phase3-event-shop-setup.suite.js:47:17)
+
+  console.log
+      ✅ Event "Tech Expo 2026" created (ID: 6).
+
+      at log (tests/comprehensive/phase3-event-shop-setup.suite.js:47:17)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+      ✅ Product shop sales analytics fetched.
+
+      at Object.log (tests/comprehensive/phase7-reports-analytics.suite.js:47:15)
+
+  console.log
+      ✅ Master settlement report generated for Event 5.
+
+      at Object.log (tests/comprehensive/phase7-reports-analytics.suite.js:58:15)
+
+  console.log
+      ✅ 3-Way Match report generated for Event 5.
+
+      at Object.log (tests/comprehensive/phase7-reports-analytics.suite.js:69:15)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+  console.log
+      📊 Inventory Audit for "Mineral Water 500ml":
+
+      at Object.log (tests/comprehensive/phase8-conservation-audit.suite.js:48:17)
+
+  console.log
+         - Inwarded (Purchased): 200
+
+      at Object.log (tests/comprehensive/phase8-conservation-audit.suite.js:49:17)
+
+  console.log
+         - Remaining in Central Warehouse: 0
+
+      at Object.log (tests/comprehensive/phase8-conservation-audit.suite.js:50:17)
+
+  console.log
+         - Net Sold on Counters: 0
+
+      at Object.log (tests/comprehensive/phase8-conservation-audit.suite.js:51:17)
+
+  console.log
+         - Remaining Leftover on Counters: 0
+
+      at Object.log (tests/comprehensive/phase8-conservation-audit.suite.js:52:17)
+
+  console.log
+         - Drift Calculation: 200
+
+      at Object.log (tests/comprehensive/phase8-conservation-audit.suite.js:53:17)
+
+  console.log
+      💸 Financial Audit:
+
+      at Object.log (tests/comprehensive/phase8-conservation-audit.suite.js:77:15)
+
+  console.log
+         - Cash Collected: 0
+
+      at Object.log (tests/comprehensive/phase8-conservation-audit.suite.js:78:15)
+
+  console.log
+         - Online Collected: 0
+
+      at Object.log (tests/comprehensive/phase8-conservation-audit.suite.js:79:15)
+
+  console.log
+         - Cumulative Refunds Issued: 0
+
+      at Object.log (tests/comprehensive/phase8-conservation-audit.suite.js:80:15)
+
+  console.log
+         - Net Sales Revenue: 0
+
+      at Object.log (tests/comprehensive/phase8-conservation-audit.suite.js:81:15)
+
+  console.log
+         - Cumulative Invoice Net Total: 0
+
+      at Object.log (tests/comprehensive/phase8-conservation-audit.suite.js:82:15)
+
+  console.log
+    Token: [object Object]
+
+      at TestClient.log [as login] (helpers/framework.js:42:13)
+
+FAIL tests/comprehensive/master-comprehensive.test.js
+  Bikri Kendra — Master Comprehensive E2E Test Suite
+    Phase 1 — Auth & User Setup
+      1.1 Register Users from CSV
+        ✕ [1] Register user: admin_user (71 ms)
+        ✕ [2] Register user: manager_user (6 ms)
+        ✕ [3] Register user: cashier_john (5 ms)
+        ✕ [4] Register user: cashier_jane (5 ms)
+      1.2 Negative: Duplicate username returns 409
+        ✕ Duplicate "cashier_john" returns 409 or idempotent success (7 ms)
+      1.3 Negative: Invalid user registrations
+        ✕ [1] Invalid user: "(empty)" → expect 400 (11 ms)
+        ✕ [2] Invalid user: "cashier_john" → expect 409 (6 ms)
+        ✕ [3] Invalid user: "valid_but_bad_email" → expect 400 (9 ms)
+        ✕ [4] Invalid user: "missing_password" → expect 400 (7 ms)
+      1.4 Login and receive JWT tokens
+        ✓ Admin login returns JWT (184 ms)
+      1.5 JWT contains required claims
+        ✓ JWT payload has roles and userId (1 ms)
+      1.6 Wrong password returns 401
+        ✓ Wrong password is rejected (91 ms)
+      1.7 Expired/malformed JWT returns 401 not 500
+        ✓ Malformed token is rejected (9 ms)
+      1.8 Resolve user IDs for later phases
+        ✕ Resolve cashier_john userId (115 ms)
+        ✕ Resolve cashier_jane userId (117 ms)
+    Phase 2 — Inventory Seeding
+      2.1 Create product categories from CSV
+        ✕ [1] Category: Beverages (49 ms)
+        ✕ [2] Category: Snacks (18 ms)
+        ✕ [3] Category: Stationery (13 ms)
+        ✕ [4] Category: Electronics (25 ms)
+      2.2 Duplicate category name returns 409
+        ✓ Duplicate "Beverages" is rejected (13 ms)
+      2.3 Resolve category map
+        ✓ Fetch all categories and build map (11 ms)
+      2.4 Create products from CSV
+        ✕ [1] Product: Mineral Water 500ml (SKU-BEV-001) (15 ms)
+        ✕ [2] Product: Cola Can 330ml (SKU-BEV-002) (17 ms)
+        ✕ [3] Product: Potato Chips 50g (SKU-SNK-001) (13 ms)
+        ✕ [4] Product: Ballpoint Pen (SKU-STA-001) (29 ms)
+        ✕ [5] Product: USB-C Cable 1m (SKU-ELC-001) (23 ms)
+      2.5 Duplicate SKU returns 409
+        ✕ Duplicate "SKU-BEV-001" is rejected (15 ms)
+      2.6 Resolve product map
+        ✓ Fetch all products and build map (18 ms)
+      2.7 Purchase stock (warehouse IN) from CSV
+        ✓ [1] Inward: 200x "Mineral Water 500ml" (26 ms)
+        ✓ [2] Inward: 150x "Cola Can 330ml" (19 ms)
+        ✓ [3] Inward: 300x "Potato Chips 50g" (25 ms)
+        ✓ [4] Inward: 100x "Ballpoint Pen" (16 ms)
+        ✓ [5] Inward: 50x "USB-C Cable 1m" (16 ms)
+      2.8 Verify warehouse stock levels
+        ✓ Warehouse stocks are populated (10 ms)
+      2.9 Soft delete product sets isActive=false
+        ✓ Create and soft-delete a temp product (19 ms)
+    Phase 3 — Event & Shop Setup
+      3.1 Create events from CSV
+        ✓ [1] Event: Bikri Mela 2026 (39 ms)
+        ✓ [2] Event: Tech Expo 2026 (17 ms)
+      3.2 Assign event to cashiers
+        ✕ Assign event to cashier_john and cashier_jane (31 ms)
+      3.3 Register shop counters from CSV
+        ✕ [1] Shop: Counter A (17 ms)
+        ✕ [2] Shop: Counter B (11 ms)
+        ✕ [3] Shop: Counter C (10 ms)
+      3.4 Resolve shop map
+        ✕ Fetch all shops and map details (14 ms)
+      3.5 Assign staff to shop counters
+        ✕ Assign cashier_john to Counter A (1 ms)
+        ✕ Assign cashier_jane to Counter B
+      3.6 Issue stock to counters from CSV
+        ✕ [1] Issue 50x "Mineral Water 500ml" to "Counter A" (1 ms)
+        ✕ [2] Issue 30x "Cola Can 330ml" to "Counter A" (1 ms)
+        ✕ [3] Issue 40x "Potato Chips 50g" to "Counter A" (1 ms)
+        ✕ [4] Issue 40x "Mineral Water 500ml" to "Counter B"
+        ✕ [5] Issue 30x "Potato Chips 50g" to "Counter B" (1 ms)
+        ✕ [6] Issue 20x "Ballpoint Pen" to "Counter C"
+        ✕ [7] Issue 10x "USB-C Cable 1m" to "Counter C"
+      3.7 Insufficient warehouse stock is rejected
+        ✕ Try to issue 10000 Mineral Water and expect rejection
+    Phase 4 — Shift Operations & Sales Lifecycle
+      4.1 Open shift sessions
+        ✕ Open shift for cashier_john at Counter A (14 ms)
+        ✕ Open shift for cashier_jane at Counter B (14 ms)
+        ✕ Negative: Duplicate open shift returns 409 (11 ms)
+      4.2 Create and confirm sales orders
+        ✕ [1] Order: 3x "Mineral Water 500ml" by "cashier_john" (12 ms)
+        ✕ [2] Order: 2x "Cola Can 330ml" by "cashier_john" (10 ms)
+        ✕ [3] Order: 2x "Potato Chips 50g" by "cashier_john" (11 ms)
+      4.3 Process sales returns
+        ✕ [1] Return 1x "Mineral Water 500ml" (1 ms)
+        ✕ [2] Return 1x "Cola Can 330ml"
+      4.4 Full order cancellation and stock restoration
+        ✕ Create, confirm and cancel order to verify full reversal (14 ms)
+      4.5 Invalid returns rejected
+        ✕ Return quantity exceeding original quantity returns 400
+    Phase 5 — Shift Close & Reconciliation
+      ✕ Verify shift live tally before closure (1 ms)
+      ✕ Close active shift session for cashier_john (1 ms)
+      ✕ Supervisor shift reconciliation with variance audit (13 ms)
+      ✕ Negative: Cannot close an already-closed shift (11 ms)
+    Phase 6 — Billing Verification
+      ✕ Verify invoice items match order details in billing-service (2 ms)
+      ✕ High-Rigor Audit: Price immutability on catalog price update (1 ms)
+    Phase 7 — Reports & Analytics
+      ✕ Live Snapshot Report returns 200 (1 ms)
+      ✕ Shift Product Summary Analytics matches order records (1 ms)
+      ✓ Product Counter Sales Analytics returns 200 (15 ms)
+      ✓ Master Settlement Report for event returns 200 (16 ms)
+      ✓ 3-Way Match Report returns 200 (15 ms)
+      ✕ Trust Score Query for cashier returns history
+    Phase 8 — Conservation & Audit Equations
+      ✕ 8.1 Inventory Conservation Equation holds (Drift == 0) (25 ms)
+      ✓ 8.2 Financial Conservation Equation holds (Variance == 0) (6 ms)
+      ✕ 8.3 Cash Drawer Drawer Tally holds expected balance
+    Phase 9 — Negative Edge Cases
+      ✕ 9.1 Zero quantity draft sale is rejected (1 ms)
+      ✕ 9.2 Negative payment splits are rejected (1 ms)
+      ✕ 9.3 Accessing or ordering soft-deleted products is blocked (21 ms)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 1 — Auth & User Setup › 1.1 Register Users from CSV › [1] Register user: admin_user
+
+    Failed to register user "admin_user" (Status: 401)
+
+      250 |     }
+      251 |     if (res.status !== 200 && res.status !== 201) {
+    > 252 |       throw new Error(`Failed to register user "${username}" (Status: ${res.status})`);
+          |             ^
+      253 |     }
+      254 |     return res.data.data || res.data;
+      255 |   }
+
+      at TestClient.registerUser (helpers/framework.js:252:13)
+      at tests/comprehensive/phase1-auth-user-setup.suite.js:23:24
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 1 — Auth & User Setup › 1.1 Register Users from CSV › [2] Register user: manager_user
+
+    Failed to register user "manager_user" (Status: 401)
+
+      250 |     }
+      251 |     if (res.status !== 200 && res.status !== 201) {
+    > 252 |       throw new Error(`Failed to register user "${username}" (Status: ${res.status})`);
+          |             ^
+      253 |     }
+      254 |     return res.data.data || res.data;
+      255 |   }
+
+      at TestClient.registerUser (helpers/framework.js:252:13)
+      at tests/comprehensive/phase1-auth-user-setup.suite.js:23:24
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 1 — Auth & User Setup › 1.1 Register Users from CSV › [3] Register user: cashier_john
+
+    Failed to register user "cashier_john" (Status: 401)
+
+      250 |     }
+      251 |     if (res.status !== 200 && res.status !== 201) {
+    > 252 |       throw new Error(`Failed to register user "${username}" (Status: ${res.status})`);
+          |             ^
+      253 |     }
+      254 |     return res.data.data || res.data;
+      255 |   }
+
+      at TestClient.registerUser (helpers/framework.js:252:13)
+      at tests/comprehensive/phase1-auth-user-setup.suite.js:23:24
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 1 — Auth & User Setup › 1.1 Register Users from CSV › [4] Register user: cashier_jane
+
+    Failed to register user "cashier_jane" (Status: 401)
+
+      250 |     }
+      251 |     if (res.status !== 200 && res.status !== 201) {
+    > 252 |       throw new Error(`Failed to register user "${username}" (Status: ${res.status})`);
+          |             ^
+      253 |     }
+      254 |     return res.data.data || res.data;
+      255 |   }
+
+      at TestClient.registerUser (helpers/framework.js:252:13)
+      at tests/comprehensive/phase1-auth-user-setup.suite.js:23:24
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 1 — Auth & User Setup › 1.2 Negative: Duplicate username returns 409 › Duplicate "cashier_john" returns 409 or idempotent success
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected value: 401
+    Received array: [200, 201, 409]
+
+      46 |         }, { headers: api.headers });
+      47 |
+    > 48 |         expect([200, 201, 409]).toContain(res.status);
+         |                                 ^
+      49 |         console.log(`  ✅ Duplicate username correctly handled (status: ${res.status}).`);
+      50 |       });
+      51 |     });
+
+      at Object.toContain (tests/comprehensive/phase1-auth-user-setup.suite.js:48:33)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 1 — Auth & User Setup › 1.3 Negative: Invalid user registrations › [1] Invalid user: "(empty)" → expect 400
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected value: 401
+    Received array: [400, 400, 409, 422, 500]
+
+      65 |
+      66 |         const expected = parseInt(row.expectedError, 10);
+    > 67 |         expect([expected, 400, 409, 422, 500]).toContain(res.status);
+         |                                                ^
+      68 |         console.log(`  ✅ Invalid registration correctly rejected (status: ${res.status}, expected: ${expected}).`);
+      69 |       });
+      70 |     });
+
+      at toContain (tests/comprehensive/phase1-auth-user-setup.suite.js:67:48)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 1 — Auth & User Setup › 1.3 Negative: Invalid user registrations › [2] Invalid user: "cashier_john" → expect 409
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected value: 401
+    Received array: [409, 400, 409, 422, 500]
+
+      65 |
+      66 |         const expected = parseInt(row.expectedError, 10);
+    > 67 |         expect([expected, 400, 409, 422, 500]).toContain(res.status);
+         |                                                ^
+      68 |         console.log(`  ✅ Invalid registration correctly rejected (status: ${res.status}, expected: ${expected}).`);
+      69 |       });
+      70 |     });
+
+      at toContain (tests/comprehensive/phase1-auth-user-setup.suite.js:67:48)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 1 — Auth & User Setup › 1.3 Negative: Invalid user registrations › [3] Invalid user: "valid_but_bad_email" → expect 400
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected value: 401
+    Received array: [400, 400, 409, 422, 500]
+
+      65 |
+      66 |         const expected = parseInt(row.expectedError, 10);
+    > 67 |         expect([expected, 400, 409, 422, 500]).toContain(res.status);
+         |                                                ^
+      68 |         console.log(`  ✅ Invalid registration correctly rejected (status: ${res.status}, expected: ${expected}).`);
+      69 |       });
+      70 |     });
+
+      at toContain (tests/comprehensive/phase1-auth-user-setup.suite.js:67:48)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 1 — Auth & User Setup › 1.3 Negative: Invalid user registrations › [4] Invalid user: "missing_password" → expect 400
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected value: 401
+    Received array: [400, 400, 409, 422, 500]
+
+      65 |
+      66 |         const expected = parseInt(row.expectedError, 10);
+    > 67 |         expect([expected, 400, 409, 422, 500]).toContain(res.status);
+         |                                                ^
+      68 |         console.log(`  ✅ Invalid registration correctly rejected (status: ${res.status}, expected: ${expected}).`);
+      69 |       });
+      70 |     });
+
+      at toContain (tests/comprehensive/phase1-auth-user-setup.suite.js:67:48)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 1 — Auth & User Setup › 1.8 Resolve user IDs for later phases › Resolve cashier_john userId
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      125 |         await authed.login('admin', 'Admin@123');
+      126 |         ctx.cashierJohnUserId = await authed.getUserId('cashier_john');
+    > 127 |         expect(ctx.cashierJohnUserId).toBeDefined();
+          |                                       ^
+      128 |         console.log(`  ✅ cashier_john userId = ${ctx.cashierJohnUserId}`);
+      129 |       });
+      130 |
+
+      at Object.toBeDefined (tests/comprehensive/phase1-auth-user-setup.suite.js:127:39)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 1 — Auth & User Setup › 1.8 Resolve user IDs for later phases › Resolve cashier_jane userId
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      133 |         await authed.login('admin', 'Admin@123');
+      134 |         ctx.cashierJaneUserId = await authed.getUserId('cashier_jane');
+    > 135 |         expect(ctx.cashierJaneUserId).toBeDefined();
+          |                                       ^
+      136 |         console.log(`  ✅ cashier_jane userId = ${ctx.cashierJaneUserId}`);
+      137 |       });
+      138 |     });
+
+      at Object.toBeDefined (tests/comprehensive/phase1-auth-user-setup.suite.js:135:39)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 2 — Inventory Seeding › 2.1 Create product categories from CSV › [1] Category: Beverages
+
+    Failed to create category "Beverages" (Status: 400)
+
+      290 |     const res = await this.client.post('/api/inventory-svc/categories', body, { headers: this.headers });
+      291 |     if (res.status !== 200 && res.status !== 201) {
+    > 292 |       throw new Error(`Failed to create category "${name}" (Status: ${res.status})`);
+          |             ^
+      293 |     }
+      294 |     return res.data.data || res.data;
+      295 |   }
+
+      at TestClient.createCategory (helpers/framework.js:292:13)
+      at tests/comprehensive/phase2-inventory-seeding.suite.js:30:24
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 2 — Inventory Seeding › 2.1 Create product categories from CSV › [2] Category: Snacks
+
+    Failed to create category "Snacks" (Status: 400)
+
+      290 |     const res = await this.client.post('/api/inventory-svc/categories', body, { headers: this.headers });
+      291 |     if (res.status !== 200 && res.status !== 201) {
+    > 292 |       throw new Error(`Failed to create category "${name}" (Status: ${res.status})`);
+          |             ^
+      293 |     }
+      294 |     return res.data.data || res.data;
+      295 |   }
+
+      at TestClient.createCategory (helpers/framework.js:292:13)
+      at tests/comprehensive/phase2-inventory-seeding.suite.js:30:24
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 2 — Inventory Seeding › 2.1 Create product categories from CSV › [3] Category: Stationery
+
+    Failed to create category "Stationery" (Status: 400)
+
+      290 |     const res = await this.client.post('/api/inventory-svc/categories', body, { headers: this.headers });
+      291 |     if (res.status !== 200 && res.status !== 201) {
+    > 292 |       throw new Error(`Failed to create category "${name}" (Status: ${res.status})`);
+          |             ^
+      293 |     }
+      294 |     return res.data.data || res.data;
+      295 |   }
+
+      at TestClient.createCategory (helpers/framework.js:292:13)
+      at tests/comprehensive/phase2-inventory-seeding.suite.js:30:24
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 2 — Inventory Seeding › 2.1 Create product categories from CSV › [4] Category: Electronics
+
+    Failed to create category "Electronics" (Status: 400)
+
+      290 |     const res = await this.client.post('/api/inventory-svc/categories', body, { headers: this.headers });
+      291 |     if (res.status !== 200 && res.status !== 201) {
+    > 292 |       throw new Error(`Failed to create category "${name}" (Status: ${res.status})`);
+          |             ^
+      293 |     }
+      294 |     return res.data.data || res.data;
+      295 |   }
+
+      at TestClient.createCategory (helpers/framework.js:292:13)
+      at tests/comprehensive/phase2-inventory-seeding.suite.js:30:24
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 2 — Inventory Seeding › 2.4 Create products from CSV › [1] Product: Mineral Water 500ml (SKU-BEV-001)
+
+    Failed to create product "Mineral Water 500ml" (Status: 500)
+
+      324 |     const res = await this.client.post('/api/inventory-svc/products', body, { headers: this.headers });
+      325 |     if (res.status !== 200 && res.status !== 201) {
+    > 326 |       throw new Error(`Failed to create product "${name}" (Status: ${res.status})`);
+          |             ^
+      327 |     }
+      328 |     return res.data.data || res.data;
+      329 |   }
+
+      at TestClient.createProduct (helpers/framework.js:326:13)
+      at tests/comprehensive/phase2-inventory-seeding.suite.js:73:24
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 2 — Inventory Seeding › 2.4 Create products from CSV › [2] Product: Cola Can 330ml (SKU-BEV-002)
+
+    Failed to create product "Cola Can 330ml" (Status: 500)
+
+      324 |     const res = await this.client.post('/api/inventory-svc/products', body, { headers: this.headers });
+      325 |     if (res.status !== 200 && res.status !== 201) {
+    > 326 |       throw new Error(`Failed to create product "${name}" (Status: ${res.status})`);
+          |             ^
+      327 |     }
+      328 |     return res.data.data || res.data;
+      329 |   }
+
+      at TestClient.createProduct (helpers/framework.js:326:13)
+      at tests/comprehensive/phase2-inventory-seeding.suite.js:73:24
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 2 — Inventory Seeding › 2.4 Create products from CSV › [3] Product: Potato Chips 50g (SKU-SNK-001)
+
+    Failed to create product "Potato Chips 50g" (Status: 500)
+
+      324 |     const res = await this.client.post('/api/inventory-svc/products', body, { headers: this.headers });
+      325 |     if (res.status !== 200 && res.status !== 201) {
+    > 326 |       throw new Error(`Failed to create product "${name}" (Status: ${res.status})`);
+          |             ^
+      327 |     }
+      328 |     return res.data.data || res.data;
+      329 |   }
+
+      at TestClient.createProduct (helpers/framework.js:326:13)
+      at tests/comprehensive/phase2-inventory-seeding.suite.js:73:24
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 2 — Inventory Seeding › 2.4 Create products from CSV › [4] Product: Ballpoint Pen (SKU-STA-001)
+
+    Failed to create product "Ballpoint Pen" (Status: 500)
+
+      324 |     const res = await this.client.post('/api/inventory-svc/products', body, { headers: this.headers });
+      325 |     if (res.status !== 200 && res.status !== 201) {
+    > 326 |       throw new Error(`Failed to create product "${name}" (Status: ${res.status})`);
+          |             ^
+      327 |     }
+      328 |     return res.data.data || res.data;
+      329 |   }
+
+      at TestClient.createProduct (helpers/framework.js:326:13)
+      at tests/comprehensive/phase2-inventory-seeding.suite.js:73:24
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 2 — Inventory Seeding › 2.4 Create products from CSV › [5] Product: USB-C Cable 1m (SKU-ELC-001)
+
+    Failed to create product "USB-C Cable 1m" (Status: 500)
+
+      324 |     const res = await this.client.post('/api/inventory-svc/products', body, { headers: this.headers });
+      325 |     if (res.status !== 200 && res.status !== 201) {
+    > 326 |       throw new Error(`Failed to create product "${name}" (Status: ${res.status})`);
+          |             ^
+      327 |     }
+      328 |     return res.data.data || res.data;
+      329 |   }
+
+      at TestClient.createProduct (helpers/framework.js:326:13)
+      at tests/comprehensive/phase2-inventory-seeding.suite.js:73:24
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 2 — Inventory Seeding › 2.5 Duplicate SKU returns 409 › Duplicate "SKU-BEV-001" is rejected
+
+    expect(received).toContain(expected) // indexOf
+
+    Expected value: 500
+    Received array: [409, 400]
+
+      102 |           categoryId: catId, mrp: 20.00, sellingPrice: 18.00, description: 'Dup'
+      103 |         }, { headers: api.headers });
+    > 104 |         expect([409, 400]).toContain(res.status);
+          |                            ^
+      105 |         console.log(`  ✅ Duplicate SKU correctly rejected (status: ${res.status}).`);
+      106 |       });
+      107 |     });
+
+      at Object.toContain (tests/comprehensive/phase2-inventory-seeding.suite.js:104:28)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 3 — Event & Shop Setup › 3.2 Assign event to cashiers › Assign event to cashier_john and cashier_jane
+
+    Failed to assign events to user "cashier_john" (Status: 404)
+
+      280 |     const res = await this.client.post('/api/users-svc/assign-events', { username, eventIds }, { headers: hdrs });
+      281 |     if (res.status !== 200) {
+    > 282 |       throw new Error(`Failed to assign events to user "${username}" (Status: ${res.status})`);
+          |             ^
+      283 |     }
+      284 |     return res.data.data || res.data;
+      285 |   }
+
+      at TestClient.assignEvents (helpers/framework.js:282:13)
+      at Object.<anonymous> (tests/comprehensive/phase3-event-shop-setup.suite.js:56:9)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 3 — Event & Shop Setup › 3.3 Register shop counters from CSV › [1] Shop: Counter A
+
+    Failed to register shop counter "Counter A" (Status: 400)
+
+      416 |     const res = await this.client.post('/api/sales-svc/shops/register', body, { headers: this.headers });
+      417 |     if (res.status !== 200 && res.status !== 201) {
+    > 418 |       throw new Error(`Failed to register shop counter "${shopName}" (Status: ${res.status})`);
+          |             ^
+      419 |     }
+      420 |     return res.data.data || res.data;
+      421 |   }
+
+      at TestClient.registerShop (helpers/framework.js:418:13)
+      at tests/comprehensive/phase3-event-shop-setup.suite.js:77:24
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 3 — Event & Shop Setup › 3.3 Register shop counters from CSV › [2] Shop: Counter B
+
+    Failed to register shop counter "Counter B" (Status: 400)
+
+      416 |     const res = await this.client.post('/api/sales-svc/shops/register', body, { headers: this.headers });
+      417 |     if (res.status !== 200 && res.status !== 201) {
+    > 418 |       throw new Error(`Failed to register shop counter "${shopName}" (Status: ${res.status})`);
+          |             ^
+      419 |     }
+      420 |     return res.data.data || res.data;
+      421 |   }
+
+      at TestClient.registerShop (helpers/framework.js:418:13)
+      at tests/comprehensive/phase3-event-shop-setup.suite.js:77:24
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 3 — Event & Shop Setup › 3.3 Register shop counters from CSV › [3] Shop: Counter C
+
+    Failed to register shop counter "Counter C" (Status: 400)
+
+      416 |     const res = await this.client.post('/api/sales-svc/shops/register', body, { headers: this.headers });
+      417 |     if (res.status !== 200 && res.status !== 201) {
+    > 418 |       throw new Error(`Failed to register shop counter "${shopName}" (Status: ${res.status})`);
+          |             ^
+      419 |     }
+      420 |     return res.data.data || res.data;
+      421 |   }
+
+      at TestClient.registerShop (helpers/framework.js:418:13)
+      at tests/comprehensive/phase3-event-shop-setup.suite.js:77:24
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 3 — Event & Shop Setup › 3.4 Resolve shop map › Fetch all shops and map details
+
+    expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 3
+    Received:    0
+
+      107 |           }
+      108 |         }
+    > 109 |         expect(Object.keys(ctx.shopMap).length).toBeGreaterThanOrEqual(shopRows.length);
+          |                                                 ^
+      110 |         console.log(`  ✅ Shop map resolved: ${JSON.stringify(ctx.shopMap)}`);
+      111 |       });
+      112 |     });
+
+      at Object.toBeGreaterThanOrEqual (tests/comprehensive/phase3-event-shop-setup.suite.js:109:49)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 3 — Event & Shop Setup › 3.5 Assign staff to shop counters › Assign cashier_john to Counter A
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      116 |       test('Assign cashier_john to Counter A', async () => {
+      117 |         const shop = ctx.shopMap['Counter A'];
+    > 118 |         expect(shop).toBeDefined();
+          |                      ^
+      119 |         expect(ctx.cashierJohnUserId).toBeDefined();
+      120 |
+      121 |         const result = await api.assignStaff({
+
+      at Object.toBeDefined (tests/comprehensive/phase3-event-shop-setup.suite.js:118:22)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 3 — Event & Shop Setup › 3.5 Assign staff to shop counters › Assign cashier_jane to Counter B
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      130 |       test('Assign cashier_jane to Counter B', async () => {
+      131 |         const shop = ctx.shopMap['Counter B'];
+    > 132 |         expect(shop).toBeDefined();
+          |                      ^
+      133 |         expect(ctx.cashierJaneUserId).toBeDefined();
+      134 |
+      135 |         const result = await api.assignStaff({
+
+      at Object.toBeDefined (tests/comprehensive/phase3-event-shop-setup.suite.js:132:22)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 3 — Event & Shop Setup › 3.6 Issue stock to counters from CSV › [1] Issue 50x "Mineral Water 500ml" to "Counter A"
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      150 |         const shop = ctx.shopMap[row.shopName];
+      151 |         const product = ctx.productMap[row.productName];
+    > 152 |         expect(shop).toBeDefined();
+          |                      ^
+      153 |         expect(product).toBeDefined();
+      154 |
+      155 |         const qty = parseInt(row.quantity, 10);
+
+      at toBeDefined (tests/comprehensive/phase3-event-shop-setup.suite.js:152:22)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 3 — Event & Shop Setup › 3.6 Issue stock to counters from CSV › [2] Issue 30x "Cola Can 330ml" to "Counter A"
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      150 |         const shop = ctx.shopMap[row.shopName];
+      151 |         const product = ctx.productMap[row.productName];
+    > 152 |         expect(shop).toBeDefined();
+          |                      ^
+      153 |         expect(product).toBeDefined();
+      154 |
+      155 |         const qty = parseInt(row.quantity, 10);
+
+      at toBeDefined (tests/comprehensive/phase3-event-shop-setup.suite.js:152:22)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 3 — Event & Shop Setup › 3.6 Issue stock to counters from CSV › [3] Issue 40x "Potato Chips 50g" to "Counter A"
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      150 |         const shop = ctx.shopMap[row.shopName];
+      151 |         const product = ctx.productMap[row.productName];
+    > 152 |         expect(shop).toBeDefined();
+          |                      ^
+      153 |         expect(product).toBeDefined();
+      154 |
+      155 |         const qty = parseInt(row.quantity, 10);
+
+      at toBeDefined (tests/comprehensive/phase3-event-shop-setup.suite.js:152:22)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 3 — Event & Shop Setup › 3.6 Issue stock to counters from CSV › [4] Issue 40x "Mineral Water 500ml" to "Counter B"
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      150 |         const shop = ctx.shopMap[row.shopName];
+      151 |         const product = ctx.productMap[row.productName];
+    > 152 |         expect(shop).toBeDefined();
+          |                      ^
+      153 |         expect(product).toBeDefined();
+      154 |
+      155 |         const qty = parseInt(row.quantity, 10);
+
+      at toBeDefined (tests/comprehensive/phase3-event-shop-setup.suite.js:152:22)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 3 — Event & Shop Setup › 3.6 Issue stock to counters from CSV › [5] Issue 30x "Potato Chips 50g" to "Counter B"
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      150 |         const shop = ctx.shopMap[row.shopName];
+      151 |         const product = ctx.productMap[row.productName];
+    > 152 |         expect(shop).toBeDefined();
+          |                      ^
+      153 |         expect(product).toBeDefined();
+      154 |
+      155 |         const qty = parseInt(row.quantity, 10);
+
+      at toBeDefined (tests/comprehensive/phase3-event-shop-setup.suite.js:152:22)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 3 — Event & Shop Setup › 3.6 Issue stock to counters from CSV › [6] Issue 20x "Ballpoint Pen" to "Counter C"
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      150 |         const shop = ctx.shopMap[row.shopName];
+      151 |         const product = ctx.productMap[row.productName];
+    > 152 |         expect(shop).toBeDefined();
+          |                      ^
+      153 |         expect(product).toBeDefined();
+      154 |
+      155 |         const qty = parseInt(row.quantity, 10);
+
+      at toBeDefined (tests/comprehensive/phase3-event-shop-setup.suite.js:152:22)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 3 — Event & Shop Setup › 3.6 Issue stock to counters from CSV › [7] Issue 10x "USB-C Cable 1m" to "Counter C"
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      150 |         const shop = ctx.shopMap[row.shopName];
+      151 |         const product = ctx.productMap[row.productName];
+    > 152 |         expect(shop).toBeDefined();
+          |                      ^
+      153 |         expect(product).toBeDefined();
+      154 |
+      155 |         const qty = parseInt(row.quantity, 10);
+
+      at toBeDefined (tests/comprehensive/phase3-event-shop-setup.suite.js:152:22)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 3 — Event & Shop Setup › 3.7 Insufficient warehouse stock is rejected › Try to issue 10000 Mineral Water and expect rejection
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      196 |         const shop = ctx.shopMap['Counter A'];
+      197 |         const product = ctx.productMap['Mineral Water 500ml'];
+    > 198 |         expect(shop).toBeDefined();
+          |                      ^
+      199 |         expect(product).toBeDefined();
+      200 |
+      201 |         const res = await api.client.post('/api/inventory-svc/sales', {
+
+      at Object.toBeDefined (tests/comprehensive/phase3-event-shop-setup.suite.js:198:22)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 4 — Shift Operations & Sales Lifecycle › 4.1 Open shift sessions › Open shift for cashier_john at Counter A
+
+    Authentication failed for user "cashier_john" (Status: 401)
+
+      38 |     const res = await this.client.post('/api/auth-svc/login', { username, password });
+      39 |     if (res.status !== 200) {
+    > 40 |       throw new Error(`Authentication failed for user "${username}" (Status: ${res.status})`);
+         |             ^
+      41 |     }
+      42 |     console.log('Token: ' + res.data);
+      43 |     this.token = res.data.accessToken;
+
+      at TestClient.login (helpers/framework.js:40:13)
+      at Object.<anonymous> (tests/comprehensive/phase4-shift-sales-lifecycle.suite.js:29:9)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 4 — Shift Operations & Sales Lifecycle › 4.1 Open shift sessions › Open shift for cashier_jane at Counter B
+
+    Authentication failed for user "cashier_jane" (Status: 401)
+
+      38 |     const res = await this.client.post('/api/auth-svc/login', { username, password });
+      39 |     if (res.status !== 200) {
+    > 40 |       throw new Error(`Authentication failed for user "${username}" (Status: ${res.status})`);
+         |             ^
+      41 |     }
+      42 |     console.log('Token: ' + res.data);
+      43 |     this.token = res.data.accessToken;
+
+      at TestClient.login (helpers/framework.js:40:13)
+      at Object.<anonymous> (tests/comprehensive/phase4-shift-sales-lifecycle.suite.js:44:9)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 4 — Shift Operations & Sales Lifecycle › 4.1 Open shift sessions › Negative: Duplicate open shift returns 409
+
+    Authentication failed for user "cashier_john" (Status: 401)
+
+      38 |     const res = await this.client.post('/api/auth-svc/login', { username, password });
+      39 |     if (res.status !== 200) {
+    > 40 |       throw new Error(`Authentication failed for user "${username}" (Status: ${res.status})`);
+         |             ^
+      41 |     }
+      42 |     console.log('Token: ' + res.data);
+      43 |     this.token = res.data.accessToken;
+
+      at TestClient.login (helpers/framework.js:40:13)
+      at Object.<anonymous> (tests/comprehensive/phase4-shift-sales-lifecycle.suite.js:57:9)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 4 — Shift Operations & Sales Lifecycle › 4.2 Create and confirm sales orders › [1] Order: 3x "Mineral Water 500ml" by "cashier_john"
+
+    Authentication failed for user "cashier_john" (Status: 401)
+
+      38 |     const res = await this.client.post('/api/auth-svc/login', { username, password });
+      39 |     if (res.status !== 200) {
+    > 40 |       throw new Error(`Authentication failed for user "${username}" (Status: ${res.status})`);
+         |             ^
+      41 |     }
+      42 |     console.log('Token: ' + res.data);
+      43 |     this.token = res.data.accessToken;
+
+      at TestClient.login (helpers/framework.js:40:13)
+      at tests/comprehensive/phase4-shift-sales-lifecycle.suite.js:78:9
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 4 — Shift Operations & Sales Lifecycle › 4.2 Create and confirm sales orders › [2] Order: 2x "Cola Can 330ml" by "cashier_john"
+
+    Authentication failed for user "cashier_john" (Status: 401)
+
+      38 |     const res = await this.client.post('/api/auth-svc/login', { username, password });
+      39 |     if (res.status !== 200) {
+    > 40 |       throw new Error(`Authentication failed for user "${username}" (Status: ${res.status})`);
+         |             ^
+      41 |     }
+      42 |     console.log('Token: ' + res.data);
+      43 |     this.token = res.data.accessToken;
+
+      at TestClient.login (helpers/framework.js:40:13)
+      at tests/comprehensive/phase4-shift-sales-lifecycle.suite.js:78:9
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 4 — Shift Operations & Sales Lifecycle › 4.2 Create and confirm sales orders › [3] Order: 2x "Potato Chips 50g" by "cashier_john"
+
+    Authentication failed for user "cashier_john" (Status: 401)
+
+      38 |     const res = await this.client.post('/api/auth-svc/login', { username, password });
+      39 |     if (res.status !== 200) {
+    > 40 |       throw new Error(`Authentication failed for user "${username}" (Status: ${res.status})`);
+         |             ^
+      41 |     }
+      42 |     console.log('Token: ' + res.data);
+      43 |     this.token = res.data.accessToken;
+
+      at TestClient.login (helpers/framework.js:40:13)
+      at tests/comprehensive/phase4-shift-sales-lifecycle.suite.js:78:9
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 4 — Shift Operations & Sales Lifecycle › 4.3 Process sales returns › [1] Return 1x "Mineral Water 500ml"
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      144 |         // Find matching confirmed order in context
+      145 |         const order = ctx.orders.find(o => o.productName === row.productName && o.status === 'COMPLETED');
+    > 146 |         expect(order).toBeDefined();
+          |                       ^
+      147 |
+      148 |         const returnQty = parseInt(row.returnQty, 10);
+      149 |         const unitPrice = parseFloat(row.unitPrice);
+
+      at toBeDefined (tests/comprehensive/phase4-shift-sales-lifecycle.suite.js:146:23)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 4 — Shift Operations & Sales Lifecycle › 4.3 Process sales returns › [2] Return 1x "Cola Can 330ml"
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      144 |         // Find matching confirmed order in context
+      145 |         const order = ctx.orders.find(o => o.productName === row.productName && o.status === 'COMPLETED');
+    > 146 |         expect(order).toBeDefined();
+          |                       ^
+      147 |
+      148 |         const returnQty = parseInt(row.returnQty, 10);
+      149 |         const unitPrice = parseFloat(row.unitPrice);
+
+      at toBeDefined (tests/comprehensive/phase4-shift-sales-lifecycle.suite.js:146:23)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 4 — Shift Operations & Sales Lifecycle › 4.4 Full order cancellation and stock restoration › Create, confirm and cancel order to verify full reversal
+
+    Authentication failed for user "cashier_john" (Status: 401)
+
+      38 |     const res = await this.client.post('/api/auth-svc/login', { username, password });
+      39 |     if (res.status !== 200) {
+    > 40 |       throw new Error(`Authentication failed for user "${username}" (Status: ${res.status})`);
+         |             ^
+      41 |     }
+      42 |     console.log('Token: ' + res.data);
+      43 |     this.token = res.data.accessToken;
+
+      at TestClient.login (helpers/framework.js:40:13)
+      at Object.<anonymous> (tests/comprehensive/phase4-shift-sales-lifecycle.suite.js:188:9)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 4 — Shift Operations & Sales Lifecycle › 4.5 Invalid returns rejected › Return quantity exceeding original quantity returns 400
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      229 |       test('Return quantity exceeding original quantity returns 400', async () => {
+      230 |         const order = ctx.orders[0];
+    > 231 |         expect(order).toBeDefined();
+          |                       ^
+      232 |
+      233 |         const client = new TestClient();
+      234 |         await client.login('admin', 'Admin@123');
+
+      at Object.toBeDefined (tests/comprehensive/phase4-shift-sales-lifecycle.suite.js:231:23)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 5 — Shift Close & Reconciliation › Verify shift live tally before closure
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      20 |     test('Verify shift live tally before closure', async () => {
+      21 |       const shop = ctx.shopMap['Counter A'];
+    > 22 |       expect(shop).toBeDefined();
+         |                    ^
+      23 |
+      24 |       // Retrieve live-tally using direct axios client
+      25 |       const res = await adminApi.client.get(`/api/sales-svc/reports/live-tally/${shop.id}`, { headers: adminApi.headers });
+
+      at Object.toBeDefined (tests/comprehensive/phase5-shift-reconciliation.suite.js:22:20)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 5 — Shift Close & Reconciliation › Close active shift session for cashier_john
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      32 |     test('Close active shift session for cashier_john', async () => {
+      33 |       const shop = ctx.shopMap['Counter A'];
+    > 34 |       expect(shop).toBeDefined();
+         |                    ^
+      35 |       expect(ctx.shiftId).toBeDefined();
+      36 |
+      37 |       const johnClient = new TestClient();
+
+      at Object.toBeDefined (tests/comprehensive/phase5-shift-reconciliation.suite.js:34:20)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 5 — Shift Close & Reconciliation › Supervisor shift reconciliation with variance audit
+
+    Failed to reconcile shift ID null (Status: 400)
+
+      618 |     const res = await this.client.post(`/api/sales-svc/shifts/${shiftId}/reconcile`, { comment }, { headers: this.headers });
+      619 |     if (res.status !== 200) {
+    > 620 |       throw new Error(`Failed to reconcile shift ID ${shiftId} (Status: ${res.status})`);
+          |             ^
+      621 |     }
+      622 |     return res.data;
+      623 |   }
+
+      at TestClient.reconcileShift (helpers/framework.js:620:13)
+      at Object.<anonymous> (tests/comprehensive/phase5-shift-reconciliation.suite.js:68:22)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 5 — Shift Close & Reconciliation › Negative: Cannot close an already-closed shift
+
+    Authentication failed for user "cashier_john" (Status: 401)
+
+      38 |     const res = await this.client.post('/api/auth-svc/login', { username, password });
+      39 |     if (res.status !== 200) {
+    > 40 |       throw new Error(`Authentication failed for user "${username}" (Status: ${res.status})`);
+         |             ^
+      41 |     }
+      42 |     console.log('Token: ' + res.data);
+      43 |     this.token = res.data.accessToken;
+
+      at TestClient.login (helpers/framework.js:40:13)
+      at Object.<anonymous> (tests/comprehensive/phase5-shift-reconciliation.suite.js:84:7)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 6 — Billing Verification › Verify invoice items match order details in billing-service
+
+    expect(received).toBeGreaterThan(expected)
+
+    Expected: > 0
+    Received:   0
+
+      17 |
+      18 |     test('Verify invoice items match order details in billing-service', async () => {
+    > 19 |       expect(ctx.orders.length).toBeGreaterThan(0);
+         |                                 ^
+      20 |
+      21 |       for (const order of ctx.orders) {
+      22 |         console.log(`  🔍 Verifying billing invoice for Order ${order.orderNumber}...`);
+
+      at Object.toBeGreaterThan (tests/comprehensive/phase6-billing-verification.suite.js:19:33)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 6 — Billing Verification › High-Rigor Audit: Price immutability on catalog price update
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      41 |       // Pick the first order and product
+      42 |       const order = ctx.orders[0];
+    > 43 |       expect(order).toBeDefined();
+         |                     ^
+      44 |
+      45 |       const product = ctx.productMap[order.productName];
+      46 |       expect(product).toBeDefined();
+
+      at Object.toBeDefined (tests/comprehensive/phase6-billing-verification.suite.js:43:21)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 7 — Reports & Analytics › Live Snapshot Report returns 200
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      18 |     test('Live Snapshot Report returns 200', async () => {
+      19 |       const shop = ctx.shopMap['Counter A'];
+    > 20 |       expect(shop).toBeDefined();
+         |                    ^
+      21 |
+      22 |       const res = await adminApi.client.get(`/api/sales-svc/reports/live-snapshot/${shop.id}`, { headers: adminApi.headers });
+      23 |       expect(res.status).toBe(200);
+
+      at Object.toBeDefined (tests/comprehensive/phase7-reports-analytics.suite.js:20:20)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 7 — Reports & Analytics › Shift Product Summary Analytics matches order records
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      30 |     test('Shift Product Summary Analytics matches order records', async () => {
+      31 |       const shop = ctx.shopMap['Counter A'];
+    > 32 |       expect(shop).toBeDefined();
+         |                    ^
+      33 |       expect(ctx.shiftId).toBeDefined();
+      34 |
+      35 |       const result = await adminApi.getShiftProductSummary(shop.id, ctx.shiftId);
+
+      at Object.toBeDefined (tests/comprehensive/phase7-reports-analytics.suite.js:32:20)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 7 — Reports & Analytics › Trust Score Query for cashier returns history
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      71 |
+      72 |     test('Trust Score Query for cashier returns history', async () => {
+    > 73 |       expect(ctx.cashierJohnUserId).toBeDefined();
+         |                                     ^
+      74 |
+      75 |       const res = await adminApi.client.get(`/api/sales-svc/reports/trust-score/${ctx.cashierJohnUserId}`, { headers: adminApi.headers });
+      76 |       expect(res.status).toBe(200);
+
+      at Object.toBeDefined (tests/comprehensive/phase7-reports-analytics.suite.js:73:37)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 8 — Conservation & Audit Equations › 8.1 Inventory Conservation Equation holds (Drift == 0)
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 0
+    Received: 200
+
+      53 |         console.log(`     - Drift Calculation: ${drift}`);
+      54 |
+    > 55 |         expect(drift).toBe(0);
+         |                       ^
+      56 |       }
+      57 |     });
+      58 |
+
+      at Object.toBe (tests/comprehensive/phase8-conservation-audit.suite.js:55:23)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 8 — Conservation & Audit Equations › 8.3 Cash Drawer Drawer Tally holds expected balance
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      89 |       // Shift A (Counter A) expected closing balance verification
+      90 |       const shop = ctx.shopMap['Counter A'];
+    > 91 |       expect(shop).toBeDefined();
+         |                    ^
+      92 |
+      93 |       const history = await adminApi.getShiftHistory(shop.id);
+      94 |       const shiftRecord = Array.isArray(history) ? history.find(s => s.id === ctx.shiftId) : history;
+
+      at Object.toBeDefined (tests/comprehensive/phase8-conservation-audit.suite.js:91:20)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 9 — Negative Edge Cases › 9.1 Zero quantity draft sale is rejected
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      19 |       const shop = ctx.shopMap['Counter A'];
+      20 |       const product = ctx.productMap['Mineral Water 500ml'];
+    > 21 |       expect(shop).toBeDefined();
+         |                    ^
+      22 |       expect(product).toBeDefined();
+      23 |
+      24 |       const res = await adminApi.client.post('/api/sales-svc/retail', {
+
+      at Object.toBeDefined (tests/comprehensive/phase9-negative-edge-cases.suite.js:21:20)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 9 — Negative Edge Cases › 9.2 Negative payment splits are rejected
+
+    expect(received).toBeDefined()
+
+    Received: undefined
+
+      43 |       const shop = ctx.shopMap['Counter A'];
+      44 |       const product = ctx.productMap['Mineral Water 500ml'];
+    > 45 |       expect(shop).toBeDefined();
+         |                    ^
+      46 |       expect(product).toBeDefined();
+      47 |
+      48 |       // Create draft order first
+
+      at Object.toBeDefined (tests/comprehensive/phase9-negative-edge-cases.suite.js:45:20)
+
+  ● Bikri Kendra — Master Comprehensive E2E Test Suite › Phase 9 — Negative Edge Cases › 9.3 Accessing or ordering soft-deleted products is blocked
+
+    TypeError: Cannot read properties of undefined (reading 'id')
+
+      92 |       const shop = ctx.shopMap['Counter A'];
+      93 |       const orderRes = await adminApi.client.post('/api/sales-svc/retail', {
+    > 94 |         shopId: shop.id,
+         |                      ^
+      95 |         customerName: 'Deleted Product Buyer',
+      96 |         customerMobile: '9999988888',
+      97 |         items: [{
+
+      at Object.id (tests/comprehensive/phase9-negative-edge-cases.suite.js:94:22)
+
+Test Suites: 1 failed, 1 total
+Tests:       60 failed, 20 passed, 80 total
+Snapshots:   0 total
+Time:        2.51 s, estimated 3 s
+Ran all test suites matching /tests\/comprehensive\/master-comprehensive.test.js/i.
