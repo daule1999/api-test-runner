@@ -6,7 +6,7 @@ const path = require('path');
  * Exportable Jest suite mapping to the "04: Products" Postman Collection,
  * powered dynamically by Feed_data/product_addition.csv!
  */
-function runProductsSuite() {
+function runProductsSuite(customCsvPath) {
   describe('Postman Collection: 04: Products (Data-Driven)', () => {
     let adminToken;
     let systemCategoryMap = {};
@@ -55,8 +55,8 @@ function runProductsSuite() {
 
     // Generate dynamic test cases for each product in the CSV file
     describe('Dynamic Product Setup Pipeline', () => {
-      const csvPath = path.resolve(process.cwd(), 'DATA', 'Feed_data', 'Initial', 'product_addition.csv');
-      const syncRows = readCsv(csvPath);
+      const csvPath = typeof customCsvPath === 'string' ? customCsvPath : path.resolve(process.cwd(), 'DATA', 'Feed_data', 'Initial', 'product_addition.csv');
+      const syncRows = Array.isArray(customCsvPath) ? customCsvPath : readCsv(csvPath);
 
       test.each(
         syncRows.map((row, index) => [

@@ -6,7 +6,7 @@ const path = require('path');
  * Exportable Jest suite mapping to the "02: Users Setup" Postman Collection,
  * powered dynamically by Feed_data/user_addition.csv!
  */
-function runUsersSetupSuite() {
+function runUsersSetupSuite(customCsvPath) {
   describe('Postman Collection: 02: Users Setup (Data-Driven)', () => {
     let adminToken;
     let systemRoles = [];
@@ -30,8 +30,8 @@ function runUsersSetupSuite() {
 
     // Generate dynamic test cases for each user in the CSV file
     describe('Dynamic User Registrations', () => {
-      const csvPathForSync = path.resolve(process.cwd(), 'DATA', 'Feed_data', 'Initial', 'user_addition.csv');
-      const syncRows = readCsv(csvPathForSync);
+      const csvPathForSync = typeof customCsvPath === 'string' ? customCsvPath : path.resolve(process.cwd(), 'DATA', 'Feed_data', 'Initial', 'user_addition.csv');
+      const syncRows = Array.isArray(customCsvPath) ? customCsvPath : readCsv(csvPathForSync);
 
       test.each(
         syncRows.map((row, index) => [

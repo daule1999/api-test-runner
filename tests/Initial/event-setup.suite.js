@@ -9,7 +9,7 @@ const path = require('path');
  * Additionally sets the dynamic Event ID of the Jhusi event to
  * process.env.SELECTED_EVENT_ID for subsequent suites.
  */
-function runEventSetupSuite(eventInput) {
+function runEventSetupSuite(customCsvPath, selectEventName) {
     describe('➡️ Jhusi Program Event Setup & Verification', () => {
         let adminToken;
 
@@ -27,14 +27,15 @@ function runEventSetupSuite(eventInput) {
             // Note: Since Jest requires test definitions to be synchronous, we read the CSV here
             // to populate the test.each rows before beforeAll executes.
             const initialCsvPath = path.resolve(process.cwd(), 'DATA', 'Feed_data', 'Initial', 'events_feed.csv');
-            const csvRows = eventInput ? [eventInput] : readCsv(initialCsvPath).filter(row => row.action === 'CREATE').map(row => ({
-                event_name: row.eventName,
-                event_type: row.eventType || 'MELA',
+            const csvPath = typeof customCsvPath === 'string' ? customCsvPath : initialCsvPath;
+            const csvRows = Array.isArray(customCsvPath) ? customCsvPath : readCsv(csvPath).filter(row => row.action === 'CREATE').map(row => ({
+                event_name: row.eventName || row.event_name,
+                event_type: row.eventType || row.event_type || 'MELA',
                 description: row.description || 'Default Program Event',
                 location: row.location || 'Jhusi Prayagraj',
-                start_date: row.startDate || '2026-01-10T00:00:00',
-                end_date: row.endDate || '2026-02-25T23:59:59',
-                is_active: row.isActive === 'true' || row.isActive === true
+                start_date: row.startDate || row.start_date || '2026-01-10T00:00:00',
+                end_date: row.endDate || row.end_date || '2026-02-25T23:59:59',
+                is_active: row.isActive === 'true' || row.isActive === true || row.is_active === 'true' || row.is_active === true
             }));
 
             test.each(
@@ -58,6 +59,7 @@ function runEventSetupSuite(eventInput) {
                 console.log(`──────────────────────────────────────────────────`);
 
                 let eventId;
+                let selectedEventId;
                 let alreadyExists = false;
 
                 // Step 1: Pre-creation Check (Check if event already exists by name)
@@ -70,6 +72,12 @@ function runEventSetupSuite(eventInput) {
                     if (match) {
                         alreadyExists = true;
                         eventId = match.id;
+                        existingEventName = match.eventName;
+                        if (existingEventName.toLocaleLowerCase() == selectEventName.toLocaleLowerCase()) {
+                            selectedEventId = eventId;
+                            process.env.SELECTED_EVENT_ID = eventId.toString();
+                            console.log(`🎉 Event "${existingEventName}" ID detected and set to SELECTED_EVENT_ID: ${process.env.SELECTED_EVENT_ID}`);
+                        }
                         console.log(`⚠️ Event "${eventName}" already exists with ID ${eventId}.`);
                     }
                 } catch (err) {
@@ -94,6 +102,11 @@ function runEventSetupSuite(eventInput) {
                     expect(createdEvent.eventType).toBe(eventType);
 
                     eventId = createdEvent.id;
+                    if (selectEventName.toLocaleLowerCase() == createdEvent.eventName.toLocaleLowerCase()) {
+                        selectedEventId = eventId;
+                        process.env.SELECTED_EVENT_ID = eventId.toString();
+                        console.log(`🎉 Event "${selectEventName}" ID detected and set to SELECTED_EVENT_ID: ${process.env.SELECTED_EVENT_ID}`);
+                    }
                     expect(eventId).toBeDefined();
                     console.log(`✅ Event "${eventName}" created successfully with ID ${eventId}.`);
                 }
@@ -107,10 +120,8 @@ function runEventSetupSuite(eventInput) {
                 expect(eventData.eventName).toBe(eventName);
 
                 // Step 4: If this is the Jhusi event, set process.env.SELECTED_EVENT_ID
-                if (eventName.toLowerCase().includes('jhusi')) {
-                    process.env.SELECTED_EVENT_ID = eventId.toString();
-                    console.log(`🎉 Jhusi Event ID detected and set to SELECTED_EVENT_ID: ${process.env.SELECTED_EVENT_ID}`);
-                }
+                process.env.SELECTED_EVENT_ID = selectedEventId
+                console.log(`🎉  Event ID detected and set to SELECTED_EVENT_ID: ${process.env.SELECTED_EVENT_ID}`);
             });
         });
     });

@@ -6,7 +6,7 @@ const path = require('path');
  * Exportable Jest suite mapping to the "03: Categories" Postman Collection,
  * powered dynamically by Feed_data/category.csv!
  */
-function runCategoriesSuite() {
+function runCategoriesSuite(customCsvPath) {
   describe('Postman Collection: 03: Categories (Data-Driven)', () => {
     let adminToken;
 
@@ -21,8 +21,8 @@ function runCategoriesSuite() {
 
     // Generate dynamic test cases for each category in the CSV file
     describe('Dynamic Category Creation', () => {
-      const csvPath = path.resolve(process.cwd(), 'DATA', 'Feed_data', 'Initial', 'category.csv');
-      const syncRows = readCsv(csvPath);
+      const csvPath = typeof customCsvPath === 'string' ? customCsvPath : path.resolve(process.cwd(), 'DATA', 'Feed_data', 'Initial', 'category.csv');
+      const syncRows = Array.isArray(customCsvPath) ? customCsvPath : readCsv(csvPath);
 
       test.each(
         syncRows.map((row, index) => [

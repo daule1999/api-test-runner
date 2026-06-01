@@ -1,12 +1,12 @@
-const { TestClient } = require('../../../helpers/framework');
-const { readCsv } = require('../../../helpers/csv-helper');
+const { TestClient } = require('../../helpers/framework');
+const { readCsv } = require('../../helpers/csv-helper');
 const path = require('path');
 
 /**
  * Exportable Jest suite mapping to the "03: Shop/Counter" collection,
  * powered dynamically by Feed_data/EventWise/Jhusi_Program/Setup/shop_assignment.csv!
  */
-function runShopCounterSuite() {
+function runShopCounterSuite(customCsvPath) {
   describe('Postman Collection: 03: Shop/Counter (Data-Driven)', () => {
     let adminToken;
     let authUsername = 'admin';
@@ -49,7 +49,7 @@ function runShopCounterSuite() {
 
     // Generate dynamic test cases for each assignment in the CSV file
     describe('Dynamic Shop Setup and Staff Allocation', () => {
-      const csvPath = path.resolve(
+      const csvPath = typeof customCsvPath === 'string' ? customCsvPath : path.resolve(
         process.cwd(),
         'DATA',
         'Feed_data',
@@ -58,7 +58,7 @@ function runShopCounterSuite() {
         'Setup',
         'shop_assignment.csv'
       );
-      const syncRows = readCsv(csvPath);
+      const syncRows = Array.isArray(customCsvPath) ? customCsvPath : readCsv(csvPath);
 
       test.each(
         syncRows.map((row, index) => [

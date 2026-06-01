@@ -1,5 +1,5 @@
-const { TestClient } = require('../../../helpers/framework');
-const { readCsv } = require('../../../helpers/csv-helper');
+const { TestClient } = require('../../helpers/framework');
+const { readCsv } = require('../../helpers/csv-helper');
 const path = require('path');
 
 function runShiftsReconciliationSuite() {

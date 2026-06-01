@@ -2,7 +2,7 @@ const { TestClient } = require('../../helpers/framework');
 const { readCsv } = require('../../helpers/csv-helper');
 const path = require('path');
 
-function runShopsSuite() {
+function runShopsSuite(customCsvPath) {
   describe('Postman Collection: Shops CRUD (Data-Driven)', () => {
     let adminToken;
 
@@ -14,8 +14,8 @@ function runShopsSuite() {
     });
 
     describe('Dynamic Shop CRUD Lifecycle', () => {
-      const csvPath = path.resolve(process.cwd(), 'DATA', 'Feed_data', 'Initial', 'shops_feed.csv');
-      const syncRows = readCsv(csvPath);
+      const csvPath = typeof customCsvPath === 'string' ? customCsvPath : path.resolve(process.cwd(), 'DATA', 'Feed_data', 'Initial', 'shops_feed.csv');
+      const syncRows = Array.isArray(customCsvPath) ? customCsvPath : readCsv(csvPath);
 
       test.each(
         syncRows.map((row, index) => [

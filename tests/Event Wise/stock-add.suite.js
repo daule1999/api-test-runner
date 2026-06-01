@@ -1,12 +1,12 @@
-const { TestClient } = require('../../../helpers/framework');
-const { readCsv } = require('../../../helpers/csv-helper');
+const { TestClient } = require('../../helpers/framework');
+const { readCsv } = require('../../helpers/csv-helper');
 const path = require('path');
 
 /**
  * Exportable Jest suite mapping to the "02: Stock add into inventory" collection,
  * powered dynamically by Feed_data/EventWise/Jhusi_Program/Setup/stock_movement.csv!
  */
-function runStockAddSuite() {
+function runInventoryStockAddSuite(customCsvPath) {
   describe('Postman Collection: 02: Stock add into inventory (Data-Driven)', () => {
     let adminToken;
 
@@ -22,7 +22,7 @@ function runStockAddSuite() {
 
     // Generate dynamic test cases for each stock movement in the CSV file
     describe('Dynamic Stock Movement Pipeline', () => {
-      const csvPath = path.resolve(
+      const csvPath = typeof customCsvPath === 'string' ? customCsvPath : path.resolve(
         process.cwd(),
         'DATA',
         'Feed_data',
@@ -31,7 +31,7 @@ function runStockAddSuite() {
         'Setup',
         'stock_movement.csv'
       );
-      const syncRows = readCsv(csvPath);
+      const syncRows = Array.isArray(customCsvPath) ? customCsvPath : readCsv(csvPath);
 
       test.each(
         syncRows.map((row, index) => [
@@ -97,4 +97,4 @@ function runStockAddSuite() {
   });
 }
 
-module.exports = runStockAddSuite;
+module.exports = runInventoryStockAddSuite;

@@ -1,5 +1,5 @@
-const { TestClient } = require('../../../helpers/framework');
-const { readCsv } = require('../../../helpers/csv-helper');
+const { TestClient } = require('../../helpers/framework');
+const { readCsv } = require('../../helpers/csv-helper');
 const path = require('path');
 
 /**
@@ -10,7 +10,7 @@ const path = require('path');
  * quantities per shop, and performs rigorous validation on stock visibility for 
  * EVERY single staff user assigned to each shop counter!
  */
-function runShopIssueSuite() {
+function runShopIssueSuite(customCsvPath) {
   describe('Postman Collection: 04: Counter/Shop issue (Data-Driven)', () => {
     let adminToken;
     let eventId;
@@ -94,7 +94,7 @@ function runShopIssueSuite() {
 
     // Generate dynamic test cases for each stock assignment row
     describe('Dynamic Counter Stock Issuance Operations', () => {
-      const csvPath = path.resolve(
+      const csvPath = typeof customCsvPath === 'string' ? customCsvPath : path.resolve(
         process.cwd(),
         'DATA',
         'Feed_data',
@@ -103,7 +103,7 @@ function runShopIssueSuite() {
         'Setup',
         'stock_assignemnt.csv'
       );
-      const syncRows = readCsv(csvPath);
+      const syncRows = Array.isArray(customCsvPath) ? customCsvPath : readCsv(csvPath);
 
       test.each(
         syncRows.map((row, index) => [

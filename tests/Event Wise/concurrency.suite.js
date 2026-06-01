@@ -1,4 +1,4 @@
-const { TestClient } = require('../../../helpers/framework');
+const { TestClient } = require('../../helpers/framework');
 
 /**
  * Concurrency Suite

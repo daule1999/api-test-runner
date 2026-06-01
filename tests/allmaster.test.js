@@ -1,7 +1,7 @@
 const runUsersSetupSuite = require('./Initial/users-setup.suite.js');
 const runCategoriesSuite = require('./Initial/categories.suite.js');
 const runProductsSuite = require('./Initial/products.suite.js');
-const runStockAddSuite = require('./Event Wise/Jhusi_Program/stock-add.suite.js');
+const runInventoryStockAddSuite = require('./Event Wise/Jhusi_Program/stock-add.suite.js');
 const runShopCounterSuite = require('./Event Wise/Jhusi_Program/shop-counter.suite.js');
 const runShopIssueSuite = require('./Event Wise/Jhusi_Program/shop-issue.suite.js');
 const runSalesAuditSuite = require('./Event Wise/Jhusi_Program/sales-audit.suite.js');
@@ -108,7 +108,7 @@ describe('Master E2E Serial Integration Suite', () => {
 
   // Suite 4: Jhusi Program Stock Add Collection (CSV-driven IN)
   describe('➡️ Step 4: Jhusi Program Stock Add Flow (STOCK IN)', () => {
-    runStockAddSuite();
+    runInventoryStockAddSuite();
   });
 
   // Suite 4.1: Stock Movement Directions — ALL Types (P0)
