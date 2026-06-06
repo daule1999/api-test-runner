@@ -108,11 +108,11 @@ function runUsersManagementSuite() {
       test('Edit user role without specifying event in request body or header → 400 Bad Request', async () => {
         const api = new TestClient();
         api.token = adminToken;
-        
+
         // 1. Create a dummy user
         const username = 'neg_role_no_event';
-        try { await api.deleteUser(username); } catch (e) {} // cleanup
-        
+        try { await api.deleteUser(username); } catch (e) { } // cleanup
+
         await api.registerUser({
           username,
           email: 'neg_role_no_event@test.com',
@@ -121,25 +121,25 @@ function runUsersManagementSuite() {
           fullName: 'Negative Role Test',
           role: 'CASHIER'
         });
-        
+
         const userId = await api.getUserId(username);
-        
+
         // 2. Fetch role ID for CASHIER
         const roles = await api.getRoles();
         const cashierRole = roles.find(r => r.name === 'CASHIER');
         const roleId = cashierRole ? cashierRole.id : 1;
-        
+
         // 3. Try to update user role with empty eventId (without header and without body eventId)
         api.eventId = ''; // clear header
-        
+
         const response = await api.client.put('/api/users-svc/users-role', {
           userId,
           roleIds: [roleId]
         }, { headers: api.headers });
-        
+
         expect(response.status).toBe(400);
         console.log('✅ Passed: Editing user role without specifying event successfully failed with 400.');
-        
+
         // Cleanup
         api.eventId = '1';
         await api.deleteUser(username);
@@ -148,31 +148,24 @@ function runUsersManagementSuite() {
       test('Assign event to a user without any role → 400 Bad Request', async () => {
         const api = new TestClient();
         api.token = adminToken;
-        
+
         // 1. Create a dummy user without event assignment (results in 0 roles)
         const username = 'neg_ev_no_role';
-        try { await api.deleteUser(username); } catch (e) {} // cleanup
-        
+        try { await api.deleteUser(username); } catch (e) { } // cleanup
+
         api.eventId = ''; // register without event assignment
-        await api.registerUser({
+        const response = await api.registerUser({
           username,
           email: 'neg_ev_no_role@test.com',
           mobile: '9870000002',
           password: 'Admin@123',
           fullName: 'Negative Event Test',
-          role: 'CASHIER'
+          role: 'CASHIER',
+          eventId: process.env.SELECTED_EVENT_ID
         });
-        
-        // 2. Try to assign an event to this user who has no roles
-        api.eventId = '1'; // set event header for subsequent requests
-        const response = await api.client.post('/api/users-svc/assign-events', {
-          username,
-          eventIds: [1]
-        }, { headers: { ...api.headers, 'X-Username': 'admin', 'X-Roles': 'ADMIN' } });
-        
         expect(response.status).toBe(400);
         console.log('✅ Passed: Assigning event to a user without a role successfully failed with 400.');
-        
+
         // Cleanup
         await api.deleteUser(username);
       });

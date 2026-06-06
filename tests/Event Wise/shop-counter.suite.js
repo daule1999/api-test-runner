@@ -158,7 +158,7 @@ function runShopCounterSuite(customCsvPath) {
           } else {
             // Postman Step 09: Assign Event to Cashier/Supervisor
             console.log(`🚀 Assigning event ID ${eventId} to user "${row.username}"...`);
-            const assignEventResult = await api.assignEvents(row.username, [parseInt(eventId, 10)]);
+            await adminApi.updateUserRole({ username: row.username, roleIds: [userRole], eventId: arseInt(eventId, 10) });
             expect(assignEventResult).toBeDefined();
 
             // Verify returned assigned events array contains active event ID

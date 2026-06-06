@@ -50,19 +50,11 @@ function runPhase1() {
           mobile: row.mobile,
           password: row.password,
           fullName: row.fullName,
-          role: row.role
+          role: row.role,
+          eventId: ctx.eventId
         });
         expect(result).toBeDefined();
         console.log(`  ✅ User "${row.username}" registered (role: ${row.role}).`);
-
-        if (ctx.eventId) {
-          try {
-            await api.assignEvents(row.username, [ctx.eventId]);
-            console.log(`  ✅ Event ID ${ctx.eventId} assigned to user "${row.username}".`);
-          } catch (assignErr) {
-            console.log(`  ⚠️ Event assignment failed for user "${row.username}": ${assignErr.message}`);
-          }
-        }
       });
     });
 

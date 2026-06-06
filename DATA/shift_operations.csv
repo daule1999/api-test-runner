@@ -1,0 +1,596 @@
+user_name,shop_name,operations
+sankalp_supervisor,Sukrit Ayurveda_counter_101,LOGIN
+sankalp_supervisor,Sukrit Ayurveda_counter_101,CHECK SHOP ACCESSIBLE
+sankalp_supervisor,Sukrit Ayurveda_counter_101,CHECK SHOP PRODUCT VISIBLE
+sankalp_supervisor,Sukrit Ayurveda_counter_101,OPEN SHIFt
+sankalp_supervisor,Sukrit Ayurveda_counter_101,CLOSE SHIFT
+sankalp_supervisor,Sukrit Ayurveda_counter_101,RECOINCILE
+sankalp_supervisor,Sukrit Ayurveda_counter_101,LOGOUT
+akshat_bo,Sukrit Ayurveda_counter_101,LOGIN
+akshat_bo,Sukrit Ayurveda_counter_101,CHECK SHOP ACCESSIBLE
+akshat_bo,Sukrit Ayurveda_counter_101,CHECK SHOP PRODUCT VISIBLE
+akshat_bo,Sukrit Ayurveda_counter_101,OPEN SHIFt
+akshat_bo,Sukrit Ayurveda_counter_101,CLOSE SHIFT
+akshat_bo,Sukrit Ayurveda_counter_101,RECOINCILE
+akshat_bo,Sukrit Ayurveda_counter_101,LOGOUT
+arjun_csh,Sukrit Ayurveda_counter_101,LOGIN
+arjun_csh,Sukrit Ayurveda_counter_101,CHECK SHOP ACCESSIBLE
+arjun_csh,Sukrit Ayurveda_counter_101,CHECK SHOP PRODUCT VISIBLE
+arjun_csh,Sukrit Ayurveda_counter_101,OPEN SHIFt
+arjun_csh,Sukrit Ayurveda_counter_101,CLOSE SHIFT
+arjun_csh,Sukrit Ayurveda_counter_101,RECOINCILE
+arjun_csh,Sukrit Ayurveda_counter_101,LOGOUT
+nitin_csh,Sukrit Ayurveda_counter_101,LOGIN
+nitin_csh,Sukrit Ayurveda_counter_101,CHECK SHOP ACCESSIBLE
+nitin_csh,Sukrit Ayurveda_counter_101,CHECK SHOP PRODUCT VISIBLE
+nitin_csh,Sukrit Ayurveda_counter_101,OPEN SHIFt
+nitin_csh,Sukrit Ayurveda_counter_101,CLOSE SHIFT
+nitin_csh,Sukrit Ayurveda_counter_101,RECOINCILE
+nitin_csh,Sukrit Ayurveda_counter_101,LOGOUT
+manjeet_supervisor,Sukrit Ayurveda_counter_102,LOGIN
+manjeet_supervisor,Sukrit Ayurveda_counter_102,CHECK SHOP ACCESSIBLE
+manjeet_supervisor,Sukrit Ayurveda_counter_102,CHECK SHOP PRODUCT VISIBLE
+manjeet_supervisor,Sukrit Ayurveda_counter_102,OPEN SHIFt
+manjeet_supervisor,Sukrit Ayurveda_counter_102,CLOSE SHIFT
+manjeet_supervisor,Sukrit Ayurveda_counter_102,RECOINCILE
+manjeet_supervisor,Sukrit Ayurveda_counter_102,LOGOUT
+pratap_bo,Sukrit Ayurveda_counter_102,LOGIN
+pratap_bo,Sukrit Ayurveda_counter_102,CHECK SHOP ACCESSIBLE
+pratap_bo,Sukrit Ayurveda_counter_102,CHECK SHOP PRODUCT VISIBLE
+pratap_bo,Sukrit Ayurveda_counter_102,OPEN SHIFt
+pratap_bo,Sukrit Ayurveda_counter_102,CLOSE SHIFT
+pratap_bo,Sukrit Ayurveda_counter_102,RECOINCILE
+pratap_bo,Sukrit Ayurveda_counter_102,LOGOUT
+vishwajeet_csh,Sukrit Ayurveda_counter_102,LOGIN
+vishwajeet_csh,Sukrit Ayurveda_counter_102,CHECK SHOP ACCESSIBLE
+vishwajeet_csh,Sukrit Ayurveda_counter_102,CHECK SHOP PRODUCT VISIBLE
+vishwajeet_csh,Sukrit Ayurveda_counter_102,OPEN SHIFt
+vishwajeet_csh,Sukrit Ayurveda_counter_102,CLOSE SHIFT
+vishwajeet_csh,Sukrit Ayurveda_counter_102,RECOINCILE
+vishwajeet_csh,Sukrit Ayurveda_counter_102,LOGOUT
+ansh_csh,Sukrit Ayurveda_counter_102,LOGIN
+ansh_csh,Sukrit Ayurveda_counter_102,CHECK SHOP ACCESSIBLE
+ansh_csh,Sukrit Ayurveda_counter_102,CHECK SHOP PRODUCT VISIBLE
+ansh_csh,Sukrit Ayurveda_counter_102,OPEN SHIFt
+ansh_csh,Sukrit Ayurveda_counter_102,CLOSE SHIFT
+ansh_csh,Sukrit Ayurveda_counter_102,RECOINCILE
+ansh_csh,Sukrit Ayurveda_counter_102,LOGOUT
+piyush_supervisor,Sukrit Pharmacy_counter_103,LOGIN
+piyush_supervisor,Sukrit Pharmacy_counter_103,CHECK SHOP ACCESSIBLE
+piyush_supervisor,Sukrit Pharmacy_counter_103,CHECK SHOP PRODUCT VISIBLE
+piyush_supervisor,Sukrit Pharmacy_counter_103,OPEN SHIFt
+piyush_supervisor,Sukrit Pharmacy_counter_103,CLOSE SHIFT
+piyush_supervisor,Sukrit Pharmacy_counter_103,RECOINCILE
+piyush_supervisor,Sukrit Pharmacy_counter_103,LOGOUT
+yash_bo,Sukrit Pharmacy_counter_103,LOGIN
+yash_bo,Sukrit Pharmacy_counter_103,CHECK SHOP ACCESSIBLE
+yash_bo,Sukrit Pharmacy_counter_103,CHECK SHOP PRODUCT VISIBLE
+yash_bo,Sukrit Pharmacy_counter_103,OPEN SHIFt
+yash_bo,Sukrit Pharmacy_counter_103,CLOSE SHIFT
+yash_bo,Sukrit Pharmacy_counter_103,RECOINCILE
+yash_bo,Sukrit Pharmacy_counter_103,LOGOUT
+deepak_csh,Sukrit Pharmacy_counter_103,LOGIN
+deepak_csh,Sukrit Pharmacy_counter_103,CHECK SHOP ACCESSIBLE
+deepak_csh,Sukrit Pharmacy_counter_103,CHECK SHOP PRODUCT VISIBLE
+deepak_csh,Sukrit Pharmacy_counter_103,OPEN SHIFt
+deepak_csh,Sukrit Pharmacy_counter_103,CLOSE SHIFT
+deepak_csh,Sukrit Pharmacy_counter_103,RECOINCILE
+deepak_csh,Sukrit Pharmacy_counter_103,LOGOUT
+abhishek_csh,Sukrit Pharmacy_counter_103,LOGIN
+abhishek_csh,Sukrit Pharmacy_counter_103,CHECK SHOP ACCESSIBLE
+abhishek_csh,Sukrit Pharmacy_counter_103,CHECK SHOP PRODUCT VISIBLE
+abhishek_csh,Sukrit Pharmacy_counter_103,OPEN SHIFt
+abhishek_csh,Sukrit Pharmacy_counter_103,CLOSE SHIFT
+abhishek_csh,Sukrit Pharmacy_counter_103,RECOINCILE
+abhishek_csh,Sukrit Pharmacy_counter_103,LOGOUT
+dauleshwar_supervisor,Sahitya_counter_104,LOGIN
+dauleshwar_supervisor,Sahitya_counter_104,CHECK SHOP ACCESSIBLE
+dauleshwar_supervisor,Sahitya_counter_104,CHECK SHOP PRODUCT VISIBLE
+dauleshwar_supervisor,Sahitya_counter_104,OPEN SHIFt
+dauleshwar_supervisor,Sahitya_counter_104,CLOSE SHIFT
+dauleshwar_supervisor,Sahitya_counter_104,RECOINCILE
+dauleshwar_supervisor,Sahitya_counter_104,LOGOUT
+mohit_bo,Sahitya_counter_104,LOGIN
+mohit_bo,Sahitya_counter_104,CHECK SHOP ACCESSIBLE
+mohit_bo,Sahitya_counter_104,CHECK SHOP PRODUCT VISIBLE
+mohit_bo,Sahitya_counter_104,OPEN SHIFt
+mohit_bo,Sahitya_counter_104,CLOSE SHIFT
+mohit_bo,Sahitya_counter_104,RECOINCILE
+mohit_bo,Sahitya_counter_104,LOGOUT
+ritesh_csh,Sahitya_counter_104,LOGIN
+ritesh_csh,Sahitya_counter_104,CHECK SHOP ACCESSIBLE
+ritesh_csh,Sahitya_counter_104,CHECK SHOP PRODUCT VISIBLE
+ritesh_csh,Sahitya_counter_104,OPEN SHIFt
+ritesh_csh,Sahitya_counter_104,CLOSE SHIFT
+ritesh_csh,Sahitya_counter_104,RECOINCILE
+ritesh_csh,Sahitya_counter_104,LOGOUT
+bishwaranjan_csh,Sahitya_counter_104,LOGIN
+bishwaranjan_csh,Sahitya_counter_104,CHECK SHOP ACCESSIBLE
+bishwaranjan_csh,Sahitya_counter_104,CHECK SHOP PRODUCT VISIBLE
+bishwaranjan_csh,Sahitya_counter_104,OPEN SHIFt
+bishwaranjan_csh,Sahitya_counter_104,CLOSE SHIFT
+bishwaranjan_csh,Sahitya_counter_104,RECOINCILE
+bishwaranjan_csh,Sahitya_counter_104,LOGOUT
+mukti_supervisor,Sahitya_counter_105,LOGIN
+mukti_supervisor,Sahitya_counter_105,CHECK SHOP ACCESSIBLE
+mukti_supervisor,Sahitya_counter_105,CHECK SHOP PRODUCT VISIBLE
+mukti_supervisor,Sahitya_counter_105,OPEN SHIFt
+mukti_supervisor,Sahitya_counter_105,CLOSE SHIFT
+mukti_supervisor,Sahitya_counter_105,RECOINCILE
+mukti_supervisor,Sahitya_counter_105,LOGOUT
+rahul_bo,Sahitya_counter_105,LOGIN
+rahul_bo,Sahitya_counter_105,CHECK SHOP ACCESSIBLE
+rahul_bo,Sahitya_counter_105,CHECK SHOP PRODUCT VISIBLE
+rahul_bo,Sahitya_counter_105,OPEN SHIFt
+rahul_bo,Sahitya_counter_105,CLOSE SHIFT
+rahul_bo,Sahitya_counter_105,RECOINCILE
+rahul_bo,Sahitya_counter_105,LOGOUT
+sahul_csh,Sahitya_counter_105,LOGIN
+sahul_csh,Sahitya_counter_105,CHECK SHOP ACCESSIBLE
+sahul_csh,Sahitya_counter_105,CHECK SHOP PRODUCT VISIBLE
+sahul_csh,Sahitya_counter_105,OPEN SHIFt
+sahul_csh,Sahitya_counter_105,CLOSE SHIFT
+sahul_csh,Sahitya_counter_105,RECOINCILE
+sahul_csh,Sahitya_counter_105,LOGOUT
+alok_csh,Sahitya_counter_105,LOGIN
+alok_csh,Sahitya_counter_105,CHECK SHOP ACCESSIBLE
+alok_csh,Sahitya_counter_105,CHECK SHOP PRODUCT VISIBLE
+alok_csh,Sahitya_counter_105,OPEN SHIFt
+alok_csh,Sahitya_counter_105,CLOSE SHIFT
+alok_csh,Sahitya_counter_105,RECOINCILE
+alok_csh,Sahitya_counter_105,LOGOUT
+priyanshu_supervisor,Sahitya_counter_106,LOGIN
+priyanshu_supervisor,Sahitya_counter_106,CHECK SHOP ACCESSIBLE
+priyanshu_supervisor,Sahitya_counter_106,CHECK SHOP PRODUCT VISIBLE
+priyanshu_supervisor,Sahitya_counter_106,OPEN SHIFt
+priyanshu_supervisor,Sahitya_counter_106,CLOSE SHIFT
+priyanshu_supervisor,Sahitya_counter_106,RECOINCILE
+priyanshu_supervisor,Sahitya_counter_106,LOGOUT
+prasent_bo,Sahitya_counter_106,LOGIN
+prasent_bo,Sahitya_counter_106,CHECK SHOP ACCESSIBLE
+prasent_bo,Sahitya_counter_106,CHECK SHOP PRODUCT VISIBLE
+prasent_bo,Sahitya_counter_106,OPEN SHIFt
+prasent_bo,Sahitya_counter_106,CLOSE SHIFT
+prasent_bo,Sahitya_counter_106,RECOINCILE
+prasent_bo,Sahitya_counter_106,LOGOUT
+shailesh_csh,Sahitya_counter_106,LOGIN
+shailesh_csh,Sahitya_counter_106,CHECK SHOP ACCESSIBLE
+shailesh_csh,Sahitya_counter_106,CHECK SHOP PRODUCT VISIBLE
+shailesh_csh,Sahitya_counter_106,OPEN SHIFt
+shailesh_csh,Sahitya_counter_106,CLOSE SHIFT
+shailesh_csh,Sahitya_counter_106,RECOINCILE
+shailesh_csh,Sahitya_counter_106,LOGOUT
+sunny_csh,Sahitya_counter_106,LOGIN
+sunny_csh,Sahitya_counter_106,CHECK SHOP ACCESSIBLE
+sunny_csh,Sahitya_counter_106,CHECK SHOP PRODUCT VISIBLE
+sunny_csh,Sahitya_counter_106,OPEN SHIFt
+sunny_csh,Sahitya_counter_106,CLOSE SHIFT
+sunny_csh,Sahitya_counter_106,RECOINCILE
+sunny_csh,Sahitya_counter_106,LOGOUT
+shanu_csh,Sahitya_counter_106,LOGIN
+shanu_csh,Sahitya_counter_106,CHECK SHOP ACCESSIBLE
+shanu_csh,Sahitya_counter_106,CHECK SHOP PRODUCT VISIBLE
+shanu_csh,Sahitya_counter_106,OPEN SHIFt
+shanu_csh,Sahitya_counter_106,CLOSE SHIFT
+shanu_csh,Sahitya_counter_106,RECOINCILE
+shanu_csh,Sahitya_counter_106,LOGOUT
+priyanshu_acc,Sukrit Ayurveda_counter_101,LOGIN
+priyanshu_acc,Sukrit Ayurveda_counter_101,CHECK SHOP ACCESSIBLE
+priyanshu_acc,Sukrit Ayurveda_counter_101,CHECK SHOP PRODUCT VISIBLE
+priyanshu_acc,Sukrit Ayurveda_counter_101,OPEN SHIFt
+priyanshu_acc,Sukrit Ayurveda_counter_101,CLOSE SHIFT
+priyanshu_acc,Sukrit Ayurveda_counter_101,RECOINCILE
+priyanshu_acc,Sukrit Ayurveda_counter_101,LOGOUT
+priyanshu_acc,Sukrit Ayurveda_counter_102,LOGIN
+priyanshu_acc,Sukrit Ayurveda_counter_102,CHECK SHOP ACCESSIBLE
+priyanshu_acc,Sukrit Ayurveda_counter_102,CHECK SHOP PRODUCT VISIBLE
+priyanshu_acc,Sukrit Ayurveda_counter_102,OPEN SHIFt
+priyanshu_acc,Sukrit Ayurveda_counter_102,CLOSE SHIFT
+priyanshu_acc,Sukrit Ayurveda_counter_102,RECOINCILE
+priyanshu_acc,Sukrit Ayurveda_counter_102,LOGOUT
+priyanshu_acc,Sukrit Pharmacy_counter_103,LOGIN
+priyanshu_acc,Sukrit Pharmacy_counter_103,CHECK SHOP ACCESSIBLE
+priyanshu_acc,Sukrit Pharmacy_counter_103,CHECK SHOP PRODUCT VISIBLE
+priyanshu_acc,Sukrit Pharmacy_counter_103,OPEN SHIFt
+priyanshu_acc,Sukrit Pharmacy_counter_103,CLOSE SHIFT
+priyanshu_acc,Sukrit Pharmacy_counter_103,RECOINCILE
+priyanshu_acc,Sukrit Pharmacy_counter_103,LOGOUT
+priyanshu_acc,Sahitya_counter_104,LOGIN
+priyanshu_acc,Sahitya_counter_104,CHECK SHOP ACCESSIBLE
+priyanshu_acc,Sahitya_counter_104,CHECK SHOP PRODUCT VISIBLE
+priyanshu_acc,Sahitya_counter_104,OPEN SHIFt
+priyanshu_acc,Sahitya_counter_104,CLOSE SHIFT
+priyanshu_acc,Sahitya_counter_104,RECOINCILE
+priyanshu_acc,Sahitya_counter_104,LOGOUT
+priyanshu_acc,Sahitya_counter_105,LOGIN
+priyanshu_acc,Sahitya_counter_105,CHECK SHOP ACCESSIBLE
+priyanshu_acc,Sahitya_counter_105,CHECK SHOP PRODUCT VISIBLE
+priyanshu_acc,Sahitya_counter_105,OPEN SHIFt
+priyanshu_acc,Sahitya_counter_105,CLOSE SHIFT
+priyanshu_acc,Sahitya_counter_105,RECOINCILE
+priyanshu_acc,Sahitya_counter_105,LOGOUT
+priyanshu_acc,Sahitya_counter_106,LOGIN
+priyanshu_acc,Sahitya_counter_106,CHECK SHOP ACCESSIBLE
+priyanshu_acc,Sahitya_counter_106,CHECK SHOP PRODUCT VISIBLE
+priyanshu_acc,Sahitya_counter_106,OPEN SHIFt
+priyanshu_acc,Sahitya_counter_106,CLOSE SHIFT
+priyanshu_acc,Sahitya_counter_106,RECOINCILE
+priyanshu_acc,Sahitya_counter_106,LOGOUT
+sankalp_acc,Sukrit Ayurveda_counter_101,LOGIN
+sankalp_acc,Sukrit Ayurveda_counter_101,CHECK SHOP ACCESSIBLE
+sankalp_acc,Sukrit Ayurveda_counter_101,CHECK SHOP PRODUCT VISIBLE
+sankalp_acc,Sukrit Ayurveda_counter_101,OPEN SHIFt
+sankalp_acc,Sukrit Ayurveda_counter_101,CLOSE SHIFT
+sankalp_acc,Sukrit Ayurveda_counter_101,RECOINCILE
+sankalp_acc,Sukrit Ayurveda_counter_101,LOGOUT
+sankalp_acc,Sukrit Ayurveda_counter_102,LOGIN
+sankalp_acc,Sukrit Ayurveda_counter_102,CHECK SHOP ACCESSIBLE
+sankalp_acc,Sukrit Ayurveda_counter_102,CHECK SHOP PRODUCT VISIBLE
+sankalp_acc,Sukrit Ayurveda_counter_102,OPEN SHIFt
+sankalp_acc,Sukrit Ayurveda_counter_102,CLOSE SHIFT
+sankalp_acc,Sukrit Ayurveda_counter_102,RECOINCILE
+sankalp_acc,Sukrit Ayurveda_counter_102,LOGOUT
+sankalp_acc,Sukrit Pharmacy_counter_103,LOGIN
+sankalp_acc,Sukrit Pharmacy_counter_103,CHECK SHOP ACCESSIBLE
+sankalp_acc,Sukrit Pharmacy_counter_103,CHECK SHOP PRODUCT VISIBLE
+sankalp_acc,Sukrit Pharmacy_counter_103,OPEN SHIFt
+sankalp_acc,Sukrit Pharmacy_counter_103,CLOSE SHIFT
+sankalp_acc,Sukrit Pharmacy_counter_103,RECOINCILE
+sankalp_acc,Sukrit Pharmacy_counter_103,LOGOUT
+sankalp_acc,Sahitya_counter_104,LOGIN
+sankalp_acc,Sahitya_counter_104,CHECK SHOP ACCESSIBLE
+sankalp_acc,Sahitya_counter_104,CHECK SHOP PRODUCT VISIBLE
+sankalp_acc,Sahitya_counter_104,OPEN SHIFt
+sankalp_acc,Sahitya_counter_104,CLOSE SHIFT
+sankalp_acc,Sahitya_counter_104,RECOINCILE
+sankalp_acc,Sahitya_counter_104,LOGOUT
+sankalp_acc,Sahitya_counter_105,LOGIN
+sankalp_acc,Sahitya_counter_105,CHECK SHOP ACCESSIBLE
+sankalp_acc,Sahitya_counter_105,CHECK SHOP PRODUCT VISIBLE
+sankalp_acc,Sahitya_counter_105,OPEN SHIFt
+sankalp_acc,Sahitya_counter_105,CLOSE SHIFT
+sankalp_acc,Sahitya_counter_105,RECOINCILE
+sankalp_acc,Sahitya_counter_105,LOGOUT
+sankalp_acc,Sahitya_counter_106,LOGIN
+sankalp_acc,Sahitya_counter_106,CHECK SHOP ACCESSIBLE
+sankalp_acc,Sahitya_counter_106,CHECK SHOP PRODUCT VISIBLE
+sankalp_acc,Sahitya_counter_106,OPEN SHIFt
+sankalp_acc,Sahitya_counter_106,CLOSE SHIFT
+sankalp_acc,Sahitya_counter_106,RECOINCILE
+sankalp_acc,Sahitya_counter_106,LOGOUT
+rahul_im,Sukrit Ayurveda_counter_101,LOGIN
+rahul_im,Sukrit Ayurveda_counter_101,CHECK SHOP ACCESSIBLE
+rahul_im,Sukrit Ayurveda_counter_101,CHECK SHOP PRODUCT VISIBLE
+rahul_im,Sukrit Ayurveda_counter_101,OPEN SHIFt
+rahul_im,Sukrit Ayurveda_counter_101,CLOSE SHIFT
+rahul_im,Sukrit Ayurveda_counter_101,RECOINCILE
+rahul_im,Sukrit Ayurveda_counter_101,LOGOUT
+rahul_im,Sukrit Ayurveda_counter_102,LOGIN
+rahul_im,Sukrit Ayurveda_counter_102,CHECK SHOP ACCESSIBLE
+rahul_im,Sukrit Ayurveda_counter_102,CHECK SHOP PRODUCT VISIBLE
+rahul_im,Sukrit Ayurveda_counter_102,OPEN SHIFt
+rahul_im,Sukrit Ayurveda_counter_102,CLOSE SHIFT
+rahul_im,Sukrit Ayurveda_counter_102,RECOINCILE
+rahul_im,Sukrit Ayurveda_counter_102,LOGOUT
+rahul_im,Sukrit Pharmacy_counter_103,LOGIN
+rahul_im,Sukrit Pharmacy_counter_103,CHECK SHOP ACCESSIBLE
+rahul_im,Sukrit Pharmacy_counter_103,CHECK SHOP PRODUCT VISIBLE
+rahul_im,Sukrit Pharmacy_counter_103,OPEN SHIFt
+rahul_im,Sukrit Pharmacy_counter_103,CLOSE SHIFT
+rahul_im,Sukrit Pharmacy_counter_103,RECOINCILE
+rahul_im,Sukrit Pharmacy_counter_103,LOGOUT
+rahul_im,Sahitya_counter_104,LOGIN
+rahul_im,Sahitya_counter_104,CHECK SHOP ACCESSIBLE
+rahul_im,Sahitya_counter_104,CHECK SHOP PRODUCT VISIBLE
+rahul_im,Sahitya_counter_104,OPEN SHIFt
+rahul_im,Sahitya_counter_104,CLOSE SHIFT
+rahul_im,Sahitya_counter_104,RECOINCILE
+rahul_im,Sahitya_counter_104,LOGOUT
+rahul_im,Sahitya_counter_105,LOGIN
+rahul_im,Sahitya_counter_105,CHECK SHOP ACCESSIBLE
+rahul_im,Sahitya_counter_105,CHECK SHOP PRODUCT VISIBLE
+rahul_im,Sahitya_counter_105,OPEN SHIFt
+rahul_im,Sahitya_counter_105,CLOSE SHIFT
+rahul_im,Sahitya_counter_105,RECOINCILE
+rahul_im,Sahitya_counter_105,LOGOUT
+rahul_im,Sahitya_counter_106,LOGIN
+rahul_im,Sahitya_counter_106,CHECK SHOP ACCESSIBLE
+rahul_im,Sahitya_counter_106,CHECK SHOP PRODUCT VISIBLE
+rahul_im,Sahitya_counter_106,OPEN SHIFt
+rahul_im,Sahitya_counter_106,CLOSE SHIFT
+rahul_im,Sahitya_counter_106,RECOINCILE
+rahul_im,Sahitya_counter_106,LOGOUT
+manjeet_im,Sukrit Ayurveda_counter_101,LOGIN
+manjeet_im,Sukrit Ayurveda_counter_101,CHECK SHOP ACCESSIBLE
+manjeet_im,Sukrit Ayurveda_counter_101,CHECK SHOP PRODUCT VISIBLE
+manjeet_im,Sukrit Ayurveda_counter_101,OPEN SHIFt
+manjeet_im,Sukrit Ayurveda_counter_101,CLOSE SHIFT
+manjeet_im,Sukrit Ayurveda_counter_101,RECOINCILE
+manjeet_im,Sukrit Ayurveda_counter_101,LOGOUT
+manjeet_im,Sukrit Ayurveda_counter_102,LOGIN
+manjeet_im,Sukrit Ayurveda_counter_102,CHECK SHOP ACCESSIBLE
+manjeet_im,Sukrit Ayurveda_counter_102,CHECK SHOP PRODUCT VISIBLE
+manjeet_im,Sukrit Ayurveda_counter_102,OPEN SHIFt
+manjeet_im,Sukrit Ayurveda_counter_102,CLOSE SHIFT
+manjeet_im,Sukrit Ayurveda_counter_102,RECOINCILE
+manjeet_im,Sukrit Ayurveda_counter_102,LOGOUT
+manjeet_im,Sukrit Pharmacy_counter_103,LOGIN
+manjeet_im,Sukrit Pharmacy_counter_103,CHECK SHOP ACCESSIBLE
+manjeet_im,Sukrit Pharmacy_counter_103,CHECK SHOP PRODUCT VISIBLE
+manjeet_im,Sukrit Pharmacy_counter_103,OPEN SHIFt
+manjeet_im,Sukrit Pharmacy_counter_103,CLOSE SHIFT
+manjeet_im,Sukrit Pharmacy_counter_103,RECOINCILE
+manjeet_im,Sukrit Pharmacy_counter_103,LOGOUT
+manjeet_im,Sahitya_counter_104,LOGIN
+manjeet_im,Sahitya_counter_104,CHECK SHOP ACCESSIBLE
+manjeet_im,Sahitya_counter_104,CHECK SHOP PRODUCT VISIBLE
+manjeet_im,Sahitya_counter_104,OPEN SHIFt
+manjeet_im,Sahitya_counter_104,CLOSE SHIFT
+manjeet_im,Sahitya_counter_104,RECOINCILE
+manjeet_im,Sahitya_counter_104,LOGOUT
+manjeet_im,Sahitya_counter_105,LOGIN
+manjeet_im,Sahitya_counter_105,CHECK SHOP ACCESSIBLE
+manjeet_im,Sahitya_counter_105,CHECK SHOP PRODUCT VISIBLE
+manjeet_im,Sahitya_counter_105,OPEN SHIFt
+manjeet_im,Sahitya_counter_105,CLOSE SHIFT
+manjeet_im,Sahitya_counter_105,RECOINCILE
+manjeet_im,Sahitya_counter_105,LOGOUT
+manjeet_im,Sahitya_counter_106,LOGIN
+manjeet_im,Sahitya_counter_106,CHECK SHOP ACCESSIBLE
+manjeet_im,Sahitya_counter_106,CHECK SHOP PRODUCT VISIBLE
+manjeet_im,Sahitya_counter_106,OPEN SHIFt
+manjeet_im,Sahitya_counter_106,CLOSE SHIFT
+manjeet_im,Sahitya_counter_106,RECOINCILE
+manjeet_im,Sahitya_counter_106,LOGOUT
+dauleshwar_ih,Sukrit Ayurveda_counter_101,LOGIN
+dauleshwar_ih,Sukrit Ayurveda_counter_101,CHECK SHOP ACCESSIBLE
+dauleshwar_ih,Sukrit Ayurveda_counter_101,CHECK SHOP PRODUCT VISIBLE
+dauleshwar_ih,Sukrit Ayurveda_counter_101,OPEN SHIFt
+dauleshwar_ih,Sukrit Ayurveda_counter_101,CLOSE SHIFT
+dauleshwar_ih,Sukrit Ayurveda_counter_101,RECOINCILE
+dauleshwar_ih,Sukrit Ayurveda_counter_101,LOGOUT
+dauleshwar_ih,Sukrit Ayurveda_counter_102,LOGIN
+dauleshwar_ih,Sukrit Ayurveda_counter_102,CHECK SHOP ACCESSIBLE
+dauleshwar_ih,Sukrit Ayurveda_counter_102,CHECK SHOP PRODUCT VISIBLE
+dauleshwar_ih,Sukrit Ayurveda_counter_102,OPEN SHIFt
+dauleshwar_ih,Sukrit Ayurveda_counter_102,CLOSE SHIFT
+dauleshwar_ih,Sukrit Ayurveda_counter_102,RECOINCILE
+dauleshwar_ih,Sukrit Ayurveda_counter_102,LOGOUT
+dauleshwar_ih,Sukrit Pharmacy_counter_103,LOGIN
+dauleshwar_ih,Sukrit Pharmacy_counter_103,CHECK SHOP ACCESSIBLE
+dauleshwar_ih,Sukrit Pharmacy_counter_103,CHECK SHOP PRODUCT VISIBLE
+dauleshwar_ih,Sukrit Pharmacy_counter_103,OPEN SHIFt
+dauleshwar_ih,Sukrit Pharmacy_counter_103,CLOSE SHIFT
+dauleshwar_ih,Sukrit Pharmacy_counter_103,RECOINCILE
+dauleshwar_ih,Sukrit Pharmacy_counter_103,LOGOUT
+dauleshwar_ih,Sahitya_counter_104,LOGIN
+dauleshwar_ih,Sahitya_counter_104,CHECK SHOP ACCESSIBLE
+dauleshwar_ih,Sahitya_counter_104,CHECK SHOP PRODUCT VISIBLE
+dauleshwar_ih,Sahitya_counter_104,OPEN SHIFt
+dauleshwar_ih,Sahitya_counter_104,CLOSE SHIFT
+dauleshwar_ih,Sahitya_counter_104,RECOINCILE
+dauleshwar_ih,Sahitya_counter_104,LOGOUT
+dauleshwar_ih,Sahitya_counter_105,LOGIN
+dauleshwar_ih,Sahitya_counter_105,CHECK SHOP ACCESSIBLE
+dauleshwar_ih,Sahitya_counter_105,CHECK SHOP PRODUCT VISIBLE
+dauleshwar_ih,Sahitya_counter_105,OPEN SHIFt
+dauleshwar_ih,Sahitya_counter_105,CLOSE SHIFT
+dauleshwar_ih,Sahitya_counter_105,RECOINCILE
+dauleshwar_ih,Sahitya_counter_105,LOGOUT
+dauleshwar_ih,Sahitya_counter_106,LOGIN
+dauleshwar_ih,Sahitya_counter_106,CHECK SHOP ACCESSIBLE
+dauleshwar_ih,Sahitya_counter_106,CHECK SHOP PRODUCT VISIBLE
+dauleshwar_ih,Sahitya_counter_106,OPEN SHIFt
+dauleshwar_ih,Sahitya_counter_106,CLOSE SHIFT
+dauleshwar_ih,Sahitya_counter_106,RECOINCILE
+dauleshwar_ih,Sahitya_counter_106,LOGOUT
+ravi_ih,Sukrit Ayurveda_counter_101,LOGIN
+ravi_ih,Sukrit Ayurveda_counter_101,CHECK SHOP ACCESSIBLE
+ravi_ih,Sukrit Ayurveda_counter_101,CHECK SHOP PRODUCT VISIBLE
+ravi_ih,Sukrit Ayurveda_counter_101,OPEN SHIFt
+ravi_ih,Sukrit Ayurveda_counter_101,CLOSE SHIFT
+ravi_ih,Sukrit Ayurveda_counter_101,RECOINCILE
+ravi_ih,Sukrit Ayurveda_counter_101,LOGOUT
+ravi_ih,Sukrit Ayurveda_counter_102,LOGIN
+ravi_ih,Sukrit Ayurveda_counter_102,CHECK SHOP ACCESSIBLE
+ravi_ih,Sukrit Ayurveda_counter_102,CHECK SHOP PRODUCT VISIBLE
+ravi_ih,Sukrit Ayurveda_counter_102,OPEN SHIFt
+ravi_ih,Sukrit Ayurveda_counter_102,CLOSE SHIFT
+ravi_ih,Sukrit Ayurveda_counter_102,RECOINCILE
+ravi_ih,Sukrit Ayurveda_counter_102,LOGOUT
+ravi_ih,Sukrit Pharmacy_counter_103,LOGIN
+ravi_ih,Sukrit Pharmacy_counter_103,CHECK SHOP ACCESSIBLE
+ravi_ih,Sukrit Pharmacy_counter_103,CHECK SHOP PRODUCT VISIBLE
+ravi_ih,Sukrit Pharmacy_counter_103,OPEN SHIFt
+ravi_ih,Sukrit Pharmacy_counter_103,CLOSE SHIFT
+ravi_ih,Sukrit Pharmacy_counter_103,RECOINCILE
+ravi_ih,Sukrit Pharmacy_counter_103,LOGOUT
+ravi_ih,Sahitya_counter_104,LOGIN
+ravi_ih,Sahitya_counter_104,CHECK SHOP ACCESSIBLE
+ravi_ih,Sahitya_counter_104,CHECK SHOP PRODUCT VISIBLE
+ravi_ih,Sahitya_counter_104,OPEN SHIFt
+ravi_ih,Sahitya_counter_104,CLOSE SHIFT
+ravi_ih,Sahitya_counter_104,RECOINCILE
+ravi_ih,Sahitya_counter_104,LOGOUT
+ravi_ih,Sahitya_counter_105,LOGIN
+ravi_ih,Sahitya_counter_105,CHECK SHOP ACCESSIBLE
+ravi_ih,Sahitya_counter_105,CHECK SHOP PRODUCT VISIBLE
+ravi_ih,Sahitya_counter_105,OPEN SHIFt
+ravi_ih,Sahitya_counter_105,CLOSE SHIFT
+ravi_ih,Sahitya_counter_105,RECOINCILE
+ravi_ih,Sahitya_counter_105,LOGOUT
+ravi_ih,Sahitya_counter_106,LOGIN
+ravi_ih,Sahitya_counter_106,CHECK SHOP ACCESSIBLE
+ravi_ih,Sahitya_counter_106,CHECK SHOP PRODUCT VISIBLE
+ravi_ih,Sahitya_counter_106,OPEN SHIFt
+ravi_ih,Sahitya_counter_106,CLOSE SHIFT
+ravi_ih,Sahitya_counter_106,RECOINCILE
+ravi_ih,Sahitya_counter_106,LOGOUT
+jamshed_ih,Sukrit Ayurveda_counter_101,LOGIN
+jamshed_ih,Sukrit Ayurveda_counter_101,CHECK SHOP ACCESSIBLE
+jamshed_ih,Sukrit Ayurveda_counter_101,CHECK SHOP PRODUCT VISIBLE
+jamshed_ih,Sukrit Ayurveda_counter_101,OPEN SHIFt
+jamshed_ih,Sukrit Ayurveda_counter_101,CLOSE SHIFT
+jamshed_ih,Sukrit Ayurveda_counter_101,RECOINCILE
+jamshed_ih,Sukrit Ayurveda_counter_101,LOGOUT
+jamshed_ih,Sukrit Ayurveda_counter_102,LOGIN
+jamshed_ih,Sukrit Ayurveda_counter_102,CHECK SHOP ACCESSIBLE
+jamshed_ih,Sukrit Ayurveda_counter_102,CHECK SHOP PRODUCT VISIBLE
+jamshed_ih,Sukrit Ayurveda_counter_102,OPEN SHIFt
+jamshed_ih,Sukrit Ayurveda_counter_102,CLOSE SHIFT
+jamshed_ih,Sukrit Ayurveda_counter_102,RECOINCILE
+jamshed_ih,Sukrit Ayurveda_counter_102,LOGOUT
+jamshed_ih,Sukrit Pharmacy_counter_103,LOGIN
+jamshed_ih,Sukrit Pharmacy_counter_103,CHECK SHOP ACCESSIBLE
+jamshed_ih,Sukrit Pharmacy_counter_103,CHECK SHOP PRODUCT VISIBLE
+jamshed_ih,Sukrit Pharmacy_counter_103,OPEN SHIFt
+jamshed_ih,Sukrit Pharmacy_counter_103,CLOSE SHIFT
+jamshed_ih,Sukrit Pharmacy_counter_103,RECOINCILE
+jamshed_ih,Sukrit Pharmacy_counter_103,LOGOUT
+jamshed_ih,Sahitya_counter_104,LOGIN
+jamshed_ih,Sahitya_counter_104,CHECK SHOP ACCESSIBLE
+jamshed_ih,Sahitya_counter_104,CHECK SHOP PRODUCT VISIBLE
+jamshed_ih,Sahitya_counter_104,OPEN SHIFt
+jamshed_ih,Sahitya_counter_104,CLOSE SHIFT
+jamshed_ih,Sahitya_counter_104,RECOINCILE
+jamshed_ih,Sahitya_counter_104,LOGOUT
+jamshed_ih,Sahitya_counter_105,LOGIN
+jamshed_ih,Sahitya_counter_105,CHECK SHOP ACCESSIBLE
+jamshed_ih,Sahitya_counter_105,CHECK SHOP PRODUCT VISIBLE
+jamshed_ih,Sahitya_counter_105,OPEN SHIFt
+jamshed_ih,Sahitya_counter_105,CLOSE SHIFT
+jamshed_ih,Sahitya_counter_105,RECOINCILE
+jamshed_ih,Sahitya_counter_105,LOGOUT
+jamshed_ih,Sahitya_counter_106,LOGIN
+jamshed_ih,Sahitya_counter_106,CHECK SHOP ACCESSIBLE
+jamshed_ih,Sahitya_counter_106,CHECK SHOP PRODUCT VISIBLE
+jamshed_ih,Sahitya_counter_106,OPEN SHIFt
+jamshed_ih,Sahitya_counter_106,CLOSE SHIFT
+jamshed_ih,Sahitya_counter_106,RECOINCILE
+jamshed_ih,Sahitya_counter_106,LOGOUT
+mukti_admin,Sukrit Ayurveda_counter_101,LOGIN
+mukti_admin,Sukrit Ayurveda_counter_101,CHECK SHOP ACCESSIBLE
+mukti_admin,Sukrit Ayurveda_counter_101,CHECK SHOP PRODUCT VISIBLE
+mukti_admin,Sukrit Ayurveda_counter_101,OPEN SHIFt
+mukti_admin,Sukrit Ayurveda_counter_101,CLOSE SHIFT
+mukti_admin,Sukrit Ayurveda_counter_101,RECOINCILE
+mukti_admin,Sukrit Ayurveda_counter_101,LOGOUT
+mukti_admin,Sukrit Ayurveda_counter_102,LOGIN
+mukti_admin,Sukrit Ayurveda_counter_102,CHECK SHOP ACCESSIBLE
+mukti_admin,Sukrit Ayurveda_counter_102,CHECK SHOP PRODUCT VISIBLE
+mukti_admin,Sukrit Ayurveda_counter_102,OPEN SHIFt
+mukti_admin,Sukrit Ayurveda_counter_102,CLOSE SHIFT
+mukti_admin,Sukrit Ayurveda_counter_102,RECOINCILE
+mukti_admin,Sukrit Ayurveda_counter_102,LOGOUT
+mukti_admin,Sukrit Pharmacy_counter_103,LOGIN
+mukti_admin,Sukrit Pharmacy_counter_103,CHECK SHOP ACCESSIBLE
+mukti_admin,Sukrit Pharmacy_counter_103,CHECK SHOP PRODUCT VISIBLE
+mukti_admin,Sukrit Pharmacy_counter_103,OPEN SHIFt
+mukti_admin,Sukrit Pharmacy_counter_103,CLOSE SHIFT
+mukti_admin,Sukrit Pharmacy_counter_103,RECOINCILE
+mukti_admin,Sukrit Pharmacy_counter_103,LOGOUT
+mukti_admin,Sahitya_counter_104,LOGIN
+mukti_admin,Sahitya_counter_104,CHECK SHOP ACCESSIBLE
+mukti_admin,Sahitya_counter_104,CHECK SHOP PRODUCT VISIBLE
+mukti_admin,Sahitya_counter_104,OPEN SHIFt
+mukti_admin,Sahitya_counter_104,CLOSE SHIFT
+mukti_admin,Sahitya_counter_104,RECOINCILE
+mukti_admin,Sahitya_counter_104,LOGOUT
+mukti_admin,Sahitya_counter_105,LOGIN
+mukti_admin,Sahitya_counter_105,CHECK SHOP ACCESSIBLE
+mukti_admin,Sahitya_counter_105,CHECK SHOP PRODUCT VISIBLE
+mukti_admin,Sahitya_counter_105,OPEN SHIFt
+mukti_admin,Sahitya_counter_105,CLOSE SHIFT
+mukti_admin,Sahitya_counter_105,RECOINCILE
+mukti_admin,Sahitya_counter_105,LOGOUT
+mukti_admin,Sahitya_counter_106,LOGIN
+mukti_admin,Sahitya_counter_106,CHECK SHOP ACCESSIBLE
+mukti_admin,Sahitya_counter_106,CHECK SHOP PRODUCT VISIBLE
+mukti_admin,Sahitya_counter_106,OPEN SHIFt
+mukti_admin,Sahitya_counter_106,CLOSE SHIFT
+mukti_admin,Sahitya_counter_106,RECOINCILE
+mukti_admin,Sahitya_counter_106,LOGOUT
+daule_admin,Sukrit Ayurveda_counter_101,LOGIN
+daule_admin,Sukrit Ayurveda_counter_101,CHECK SHOP ACCESSIBLE
+daule_admin,Sukrit Ayurveda_counter_101,CHECK SHOP PRODUCT VISIBLE
+daule_admin,Sukrit Ayurveda_counter_101,OPEN SHIFt
+daule_admin,Sukrit Ayurveda_counter_101,CLOSE SHIFT
+daule_admin,Sukrit Ayurveda_counter_101,RECOINCILE
+daule_admin,Sukrit Ayurveda_counter_101,LOGOUT
+daule_admin,Sukrit Ayurveda_counter_102,LOGIN
+daule_admin,Sukrit Ayurveda_counter_102,CHECK SHOP ACCESSIBLE
+daule_admin,Sukrit Ayurveda_counter_102,CHECK SHOP PRODUCT VISIBLE
+daule_admin,Sukrit Ayurveda_counter_102,OPEN SHIFt
+daule_admin,Sukrit Ayurveda_counter_102,CLOSE SHIFT
+daule_admin,Sukrit Ayurveda_counter_102,RECOINCILE
+daule_admin,Sukrit Ayurveda_counter_102,LOGOUT
+daule_admin,Sukrit Pharmacy_counter_103,LOGIN
+daule_admin,Sukrit Pharmacy_counter_103,CHECK SHOP ACCESSIBLE
+daule_admin,Sukrit Pharmacy_counter_103,CHECK SHOP PRODUCT VISIBLE
+daule_admin,Sukrit Pharmacy_counter_103,OPEN SHIFt
+daule_admin,Sukrit Pharmacy_counter_103,CLOSE SHIFT
+daule_admin,Sukrit Pharmacy_counter_103,RECOINCILE
+daule_admin,Sukrit Pharmacy_counter_103,LOGOUT
+daule_admin,Sahitya_counter_104,LOGIN
+daule_admin,Sahitya_counter_104,CHECK SHOP ACCESSIBLE
+daule_admin,Sahitya_counter_104,CHECK SHOP PRODUCT VISIBLE
+daule_admin,Sahitya_counter_104,OPEN SHIFt
+daule_admin,Sahitya_counter_104,CLOSE SHIFT
+daule_admin,Sahitya_counter_104,RECOINCILE
+daule_admin,Sahitya_counter_104,LOGOUT
+daule_admin,Sahitya_counter_105,LOGIN
+daule_admin,Sahitya_counter_105,CHECK SHOP ACCESSIBLE
+daule_admin,Sahitya_counter_105,CHECK SHOP PRODUCT VISIBLE
+daule_admin,Sahitya_counter_105,OPEN SHIFt
+daule_admin,Sahitya_counter_105,CLOSE SHIFT
+daule_admin,Sahitya_counter_105,RECOINCILE
+daule_admin,Sahitya_counter_105,LOGOUT
+daule_admin,Sahitya_counter_106,LOGIN
+daule_admin,Sahitya_counter_106,CHECK SHOP ACCESSIBLE
+daule_admin,Sahitya_counter_106,CHECK SHOP PRODUCT VISIBLE
+daule_admin,Sahitya_counter_106,OPEN SHIFt
+daule_admin,Sahitya_counter_106,CLOSE SHIFT
+daule_admin,Sahitya_counter_106,RECOINCILE
+daule_admin,Sahitya_counter_106,LOGOUT
+sankalp_admin,Sukrit Ayurveda_counter_101,LOGIN
+sankalp_admin,Sukrit Ayurveda_counter_101,CHECK SHOP ACCESSIBLE
+sankalp_admin,Sukrit Ayurveda_counter_101,CHECK SHOP PRODUCT VISIBLE
+sankalp_admin,Sukrit Ayurveda_counter_101,OPEN SHIFt
+sankalp_admin,Sukrit Ayurveda_counter_101,CLOSE SHIFT
+sankalp_admin,Sukrit Ayurveda_counter_101,RECOINCILE
+sankalp_admin,Sukrit Ayurveda_counter_101,LOGOUT
+sankalp_admin,Sukrit Ayurveda_counter_102,LOGIN
+sankalp_admin,Sukrit Ayurveda_counter_102,CHECK SHOP ACCESSIBLE
+sankalp_admin,Sukrit Ayurveda_counter_102,CHECK SHOP PRODUCT VISIBLE
+sankalp_admin,Sukrit Ayurveda_counter_102,OPEN SHIFt
+sankalp_admin,Sukrit Ayurveda_counter_102,CLOSE SHIFT
+sankalp_admin,Sukrit Ayurveda_counter_102,RECOINCILE
+sankalp_admin,Sukrit Ayurveda_counter_102,LOGOUT
+sankalp_admin,Sukrit Pharmacy_counter_103,LOGIN
+sankalp_admin,Sukrit Pharmacy_counter_103,CHECK SHOP ACCESSIBLE
+sankalp_admin,Sukrit Pharmacy_counter_103,CHECK SHOP PRODUCT VISIBLE
+sankalp_admin,Sukrit Pharmacy_counter_103,OPEN SHIFt
+sankalp_admin,Sukrit Pharmacy_counter_103,CLOSE SHIFT
+sankalp_admin,Sukrit Pharmacy_counter_103,RECOINCILE
+sankalp_admin,Sukrit Pharmacy_counter_103,LOGOUT
+sankalp_admin,Sahitya_counter_104,LOGIN
+sankalp_admin,Sahitya_counter_104,CHECK SHOP ACCESSIBLE
+sankalp_admin,Sahitya_counter_104,CHECK SHOP PRODUCT VISIBLE
+sankalp_admin,Sahitya_counter_104,OPEN SHIFt
+sankalp_admin,Sahitya_counter_104,CLOSE SHIFT
+sankalp_admin,Sahitya_counter_104,RECOINCILE
+sankalp_admin,Sahitya_counter_104,LOGOUT
+sankalp_admin,Sahitya_counter_105,LOGIN
+sankalp_admin,Sahitya_counter_105,CHECK SHOP ACCESSIBLE
+sankalp_admin,Sahitya_counter_105,CHECK SHOP PRODUCT VISIBLE
+sankalp_admin,Sahitya_counter_105,OPEN SHIFt
+sankalp_admin,Sahitya_counter_105,CLOSE SHIFT
+sankalp_admin,Sahitya_counter_105,RECOINCILE
+sankalp_admin,Sahitya_counter_105,LOGOUT
+sankalp_admin,Sahitya_counter_106,LOGIN
+sankalp_admin,Sahitya_counter_106,CHECK SHOP ACCESSIBLE
+sankalp_admin,Sahitya_counter_106,CHECK SHOP PRODUCT VISIBLE
+sankalp_admin,Sahitya_counter_106,OPEN SHIFt
+sankalp_admin,Sahitya_counter_106,CLOSE SHIFT
+sankalp_admin,Sahitya_counter_106,RECOINCILE
+sankalp_admin,Sahitya_counter_106,LOGOUT

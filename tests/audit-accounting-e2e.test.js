@@ -27,7 +27,7 @@ describe('Bikri Kendra E2E Audit & Financial Accounting Test Suite', () => {
     testRows.map((row, idx) => [`Row #${idx + 1}: Cashier ${row.username} processing "${row.product_name}"`, row])
   )('%s', async (description, row) => {
     console.log(`\n🚀 [START] E2E Audit & Accounting Flow for Cashier: ${row.username} | Product: ${row.product_name}`);
-    
+
     // Create unique identifiers for this specific CSV row to prevent concurrency overlaps
     const ts = Date.now() + Math.floor(Math.random() * 1000);
     const uniqueCashierName = `${row.username}_${ts}`;
@@ -48,7 +48,8 @@ describe('Bikri Kendra E2E Audit & Financial Accounting Test Suite', () => {
       mobile: row.mobile || `987654${String(ts).slice(-4)}`,
       password: row.password,
       fullName: `E2E Audit Cashier ${ts}`,
-      role: 'CASHIER'
+      role: 'CASHIER',
+      eventId: parseInt(eventId, 10)
     });
 
     // Resolve Category
@@ -68,9 +69,7 @@ describe('Bikri Kendra E2E Audit & Financial Accounting Test Suite', () => {
 
     // Map User to obtain internal userId
     const cashierUserId = await adminApi.getUserId(uniqueCashierName);
-    
-    // Assign Event to Cashier
-    await adminApi.assignEvents(uniqueCashierName, [parseInt(eventId, 10)]);
+
 
     // Assign dynamic staff role
     console.log(`➡️ [Setup] Assigning Cashier to shop: ${uniqueShopName} (ID: ${shop.id})`);
@@ -104,7 +103,7 @@ describe('Bikri Kendra E2E Audit & Financial Accounting Test Suite', () => {
     // =========================================================================
     const qtyToConsign = parseInt(row.quantity, 10) * 5; // Issue 5x order quantity
     console.log(`➡️ [Phase 2] Consigning stock from warehouse to Shop ID ${shop.id}. Qty: ${qtyToConsign}`);
-    
+
     const consignment = await adminApi.issueStockToShop({
       productId: product.id,
       sellerUser: uniqueCashierName,
@@ -124,7 +123,7 @@ describe('Bikri Kendra E2E Audit & Financial Accounting Test Suite', () => {
     // 3.1 Login Cashier and Open Work Shift Session
     console.log(`➡️ [Phase 3] Logging in cashier: ${uniqueCashierName} and opening shift...`);
     await cashierApi.login(uniqueCashierName, row.password);
-    
+
     // Resolve dynamic cashier attributes
     const resolvedUserId = await cashierApi.getUserId(uniqueCashierName);
     const resolvedShopId = await cashierApi.getShopId(resolvedUserId);
@@ -175,7 +174,7 @@ describe('Bikri Kendra E2E Audit & Financial Accounting Test Suite', () => {
     // 3.5 Place & Confirm Draft Retail Order (Category 4: PUT /api/sales-svc/retail/{orderNumber}/confirm)
     const saleQty = parseInt(row.quantity, 10);
     console.log(`➡️ [Phase 3.5] Creating and confirming sale of ${saleQty} items...`);
-    
+
     const draft = await cashierApi.createDraftSale({
       shopId: resolvedShopId,
       productId: product.id,
@@ -190,7 +189,7 @@ describe('Bikri Kendra E2E Audit & Financial Accounting Test Suite', () => {
     const grandTotal = (product.sellingPrice - product.discount) * saleQty;
     const cashSplit = parseFloat(row.cash_amount);
     const onlineSplit = parseFloat(row.online_amount);
-    
+
     const confirmation = await cashierApi.confirmSale(draft.orderNumber, grandTotal, cashSplit, onlineSplit);
     expect(['CONFIRMED', 'SUCCESS', 'PAID', 'COMPLETED']).toContain(confirmation.status);
     console.log(`✅ [Phase 3.5 Success] Checkout confirmed. Invoice Number: ${confirmation.billingInvoiceNumber}`);
@@ -267,12 +266,12 @@ describe('Bikri Kendra E2E Audit & Financial Accounting Test Suite', () => {
     // 4.1 Cashier Shift Closure (POST /api/sales-svc/shifts/{id}/close)
     console.log(`➡️ [Phase 4.1] Terminating active cashier work shift...`);
     const declaredCash = parseFloat(row.declared_cash);
-    
+
     // Map final expected cash (ShiftOpenAmount + cash from confirmed non-refunded transactions)
     // Note: order 1 had cashSplit. order 2 was fully cancelled so cash is reverted.
     // If standard return happened, partial refund may be issued.
-    const finalExpectedCash = shiftOpenAmount + cashSplit; 
-    
+    const finalExpectedCash = shiftOpenAmount + cashSplit;
+
     const closedShift = await cashierApi.closeShift(shiftSession.id, {
       declaredCash: declaredCash,
       denominations: [
@@ -292,7 +291,7 @@ describe('Bikri Kendra E2E Audit & Financial Accounting Test Suite', () => {
     // 4.3 Leftover Reclaim Handover (Return Unsold Counter Stock to Warehouse)
     const finalCounterStock = await cashierApi.getStock(resolvedShopId, product.id);
     console.log(`➡️ [Phase 4.3] Returning leftover physical stock to warehouse: ${finalCounterStock}`);
-    
+
     const leftoverReturn = await adminApi.createStockMovement({
       productId: product.id,
       movementType: 'RETURN_FROM_COUNTER',
@@ -327,7 +326,7 @@ describe('Bikri Kendra E2E Audit & Financial Accounting Test Suite', () => {
     console.log(`ℹ️ [Inventory Audit] Net Confirmed Sold   : ${netSoldQuantity}`);
     console.log(`ℹ️ [Inventory Audit] Leftover Returned   : ${finalCounterStock}`);
     console.log(`ℹ️ [Inventory Audit] Conservation Sum     : ${inventoryConservationTally}`);
-    
+
     const inventoryDrift = quantityToInward - inventoryConservationTally;
     console.log(`📊 [Inventory Audit] Stock Drift (Leakage): ${inventoryDrift}`);
     expect(inventoryDrift).toBe(0);
@@ -343,7 +342,7 @@ describe('Bikri Kendra E2E Audit & Financial Accounting Test Suite', () => {
     console.log(`ℹ️ [Financial Audit] Dynamic Expected Total   : ${finalExpectedCash}`);
     console.log(`ℹ️ [Financial Audit] Cashier Declared Drawer  : ${declaredCash}`);
     console.log(`📊 [Financial Audit] Cash Registry Variance   : ${cashVariance}`);
-    
+
     expect(declaredCash - cashVariance).toBe(finalExpectedCash);
 
     // 3. Verify 3-Way Match Report API (GET /api/sales-svc/reports/3-way-match/{eventId})

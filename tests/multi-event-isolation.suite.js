@@ -61,14 +61,14 @@ function runMultiEventIsolationSuite() {
         mobile: `922${time.toString().slice(-7)}`,
         password: 'Cashier@123',
         fullName: 'Cashier Two Isolation',
-        role: 'CASHIER'
+        role: 'CASHIER',
+        eventId: event1.id
       });
       expect(cashier2.username).toBeDefined();
 
       // 3. Assign Cashier 1 to Event 1, and Cashier 2 to Event 2
       console.log('🚀 Assigning Cashier 1 -> Event 1 and Cashier 2 -> Event 2...');
-      await adminApi.assignEvents(cashier1.username, [event1.id]);
-      await adminApi.assignEvents(cashier2.username, [event2.id]);
+      await adminApi.updateUserRole({ username: cashier2.username, roleIds: [roleIds], eventId: event2.id });
 
       // 4. Set up Shop Counters scoped to respective Events
       console.log('🚀 Registering Shop 1 for Event 1...');

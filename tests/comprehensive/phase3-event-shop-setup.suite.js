@@ -53,20 +53,6 @@ function runPhase3() {
       });
     });
 
-    // ─── 3.2 Assign Event to Users ─────────────────────────────────────────
-    describe('3.2 Assign event to cashiers', () => {
-      test('Assign event to cashier_john and cashier_jane', async () => {
-        expect(ctx.eventId).toBeDefined();
-        
-        await api.assignEvents('cashier_john', [ctx.eventId]);
-        await api.assignEvents('cashier_jane', [ctx.eventId]);
-        await api.assignEvents('manager_user', [ctx.eventId]);
-        await api.assignEvents('admin_user', [ctx.eventId]);
-        
-        console.log(`  ✅ Event ID ${ctx.eventId} assigned to all users.`);
-      });
-    });
-
     // ─── 3.3 Register Shop Counters ─────────────────────────────────────────
     describe('3.3 Register shop counters with unique event suffix', () => {
       test.each(

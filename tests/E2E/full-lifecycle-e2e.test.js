@@ -25,11 +25,11 @@ const path = require('path');
 // CSV Feed Paths
 // ──────────────────────────────────────────────────────────────
 const CSV_DIR = path.resolve(__dirname, '..', '..', 'DATA', 'Feed_data', 'E2E');
-const setupRows    = readCsv(path.join(CSV_DIR, 'e2e_setup_feed.csv'));
-const stockRows    = readCsv(path.join(CSV_DIR, 'e2e_stock_feed.csv'));
-const salesRows    = readCsv(path.join(CSV_DIR, 'e2e_sales_feed.csv'));
-const shiftRows    = readCsv(path.join(CSV_DIR, 'e2e_shift_feed.csv'));
-const auditRows    = readCsv(path.join(CSV_DIR, 'e2e_audit_checkpoints.csv'));
+const setupRows = readCsv(path.join(CSV_DIR, 'e2e_setup_feed.csv'));
+const stockRows = readCsv(path.join(CSV_DIR, 'e2e_stock_feed.csv'));
+const salesRows = readCsv(path.join(CSV_DIR, 'e2e_sales_feed.csv'));
+const shiftRows = readCsv(path.join(CSV_DIR, 'e2e_shift_feed.csv'));
+const auditRows = readCsv(path.join(CSV_DIR, 'e2e_audit_checkpoints.csv'));
 
 // ──────────────────────────────────────────────────────────────
 // Test Timeout — generous for cross-service orchestration
@@ -62,13 +62,13 @@ describe('Bikri Kendra — Full Lifecycle E2E Suite (CSV-Driven)', () => {
 
     // Unique timestamp suffix to isolate entities per run
     const ts = Date.now() + Math.floor(Math.random() * 10000);
-    const uniqueCashier  = `${setup.cashier_username}_${ts}`;
-    const uniqueEmail    = `${setup.cashier_email.replace('@', `_${ts}@`)}`;
+    const uniqueCashier = `${setup.cashier_username}_${ts}`;
+    const uniqueEmail = `${setup.cashier_email.replace('@', `_${ts}@`)}`;
     const uniqueShopName = `${stock.shop_name} ${ts}`;
     const uniqueEventName = `${setup.event_name} ${ts}`;
     const uniqueCategoryName = `${setup.category_name} ${ts}`;
-    const uniqueProductName  = `${setup.product_name} ${ts}`;
-    const uniqueSku          = `${setup.product_sku}-${ts}`;
+    const uniqueProductName = `${setup.product_name} ${ts}`;
+    const uniqueSku = `${setup.product_sku}-${ts}`;
 
     const cashierApi = new TestClient();
 
@@ -112,14 +112,10 @@ describe('Bikri Kendra — Full Lifecycle E2E Suite (CSV-Driven)', () => {
       mobile: `99${String(ts).slice(-8)}`,
       password: setup.cashier_password,
       fullName: `${setup.cashier_fullname} ${ts}`,
-      role: 'CASHIER'
+      role: 'CASHIER',
+      eventId: parseInt(eventId, 10)
     });
     console.log(`  ✅ [P1.3] Cashier registered.`);
-
-    // 1.4 Assign Event to Cashier
-    console.log(`  ➡️ [P1.4] Assigning event to cashier...`);
-    await adminApi.assignEvents(uniqueCashier, [parseInt(eventId, 10)]);
-    console.log(`  ✅ [P1.4] Event assigned to "${uniqueCashier}".`);
 
     // 1.5 Create Category
     console.log(`  ➡️ [P1.5] Creating category: "${uniqueCategoryName}"`);
@@ -162,7 +158,7 @@ describe('Bikri Kendra — Full Lifecycle E2E Suite (CSV-Driven)', () => {
     console.log(`\n📦 ─── PHASE 2: STOCK PIPELINE ───`);
 
     const warehouseQty = parseInt(stock.warehouse_inward_qty, 10);
-    const issueQty     = parseInt(stock.issue_qty, 10);
+    const issueQty = parseInt(stock.issue_qty, 10);
 
     // 2.1 Warehouse Stock IN
     console.log(`  ➡️ [P2.1] Inward stock to warehouse. Qty: ${warehouseQty}`);
@@ -312,8 +308,8 @@ describe('Bikri Kendra — Full Lifecycle E2E Suite (CSV-Driven)', () => {
     console.log(`  ✅ [P3.8] Draft order created. Order#: ${draft.orderNumber}`);
 
     // 3.9 Confirm Sale (Cross-service: sales → inventory → billing)
-    const cashAmt    = parseFloat(sales.cash_amount);
-    const onlineAmt  = parseFloat(sales.online_amount);
+    const cashAmt = parseFloat(sales.cash_amount);
+    const onlineAmt = parseFloat(sales.online_amount);
     console.log(`  ➡️ [P3.9] Confirming sale. Total: ₹${grandTotal} | Cash: ₹${cashAmt} | Online: ₹${onlineAmt}`);
     const confirmation = await cashierApi.confirmSale(draft.orderNumber, grandTotal, cashAmt, onlineAmt);
     expect(confirmation).toBeDefined();

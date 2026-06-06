@@ -262,28 +262,6 @@ class TestClient {
     return res.data.data || res.data;
   }
 
-  async assignEvents(username, eventIds) {
-    let authUsername = 'admin';
-    let authRoles = 'ADMIN';
-    try {
-      const adminProfile = await this.getAdminProfile();
-      authUsername = adminProfile.username || 'admin';
-      authRoles = Array.isArray(adminProfile.roles) ? adminProfile.roles.join(',') : (adminProfile.roles || 'ADMIN');
-    } catch (err) {
-      // Keep defaults
-    }
-    const hdrs = {
-      ...this.headers,
-      'X-Username': authUsername,
-      'X-Roles': authRoles
-    };
-    const res = await this.client.post('/api/users-svc/assign-events', { username, eventIds }, { headers: hdrs });
-    if (res.status !== 200) {
-      throw new Error(`Failed to assign events to user "${username}" (Status: ${res.status})`);
-    }
-    return res.data.data || res.data;
-  }
-
   // --- 3. Catalog Categories ---
   async createCategory({ name, description }) {
     const body = { name, description };
@@ -534,8 +512,8 @@ class TestClient {
     return res.data.data || res.data;
   }
 
-  async updateUserRole({ userId, roleIds }) {
-    const res = await this.client.put('/api/users-svc/users-role', { userId, roleIds }, { headers: this.headers });
+  async updateUserRole({ userId, roleIds, eventId = process.env.SELECTED_EVENT_ID }) {
+    const res = await this.client.put('/api/users-svc/users-role', { userId, roleIds, eventId }, { headers: this.headers });
     if (res.status !== 200) {
       throw new Error(`Failed to update user role for ID ${userId} (Status: ${res.status})`);
     }

@@ -42,8 +42,26 @@ function restartEverything() {
     console.log('✅ Step 5 complete: Core containers started.\n');
 
     // 6. Wait for service bootstrap to complete
+
+    // 6. Wait for service bootstrap to complete
     console.log('⏱️ Step 6: Waiting 15 seconds for Spring Boot applications to initialize and bootstrap...');
     execSync('sleep 15');
+
+    console.log('⏱️ Step 6: Polling backend services via curl until the admin user is fully bootstrapped and ready...');
+    const checkCommand = `
+      for i in {1..90}; do
+        STATUS=$(curl -s -o /dev/null -w "%{http_code}" -X POST -H "Content-Type: application/json" -d '{"username":"admin","password":"Admin@123"}' http://localhost:8090/api/auth-svc/login)
+        if [ "$STATUS" = "200" ]; then
+          echo "✅ Backend services are fully ready (status $STATUS)!"
+          exit 0
+        fi
+        echo "⏱️ Waiting for services to bootstrap... (status $STATUS, attempt $i/90)"
+        sleep 2
+      done
+      echo "❌ Timeout waiting for services"
+      exit 1
+    `;
+    execSync(checkCommand, { stdio: 'inherit' });
     console.log('✅ Step 6 complete: Services ready!\n');
 
     console.log('==================================================');
