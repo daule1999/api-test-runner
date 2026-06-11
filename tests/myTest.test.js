@@ -64,8 +64,8 @@ describe('Till Counter Flow', () => {
         runShopIssueSuite(shopIssuesPath);
     });
 
-    // // Suite 7: Jhusi Program Shop Issue Collection
-    // describe('➡️ Step 6: Jhusi Program Shop Shift Flow', () => {
-    //     runShopShiftSuite();
-    // });
+    // Suite 7: Jhusi Program Shop Issue Collection
+    describe('➡️ Step 6: Jhusi Program Shop Shift Flow', () => {
+        runShopShiftSuite();
+    });
 })

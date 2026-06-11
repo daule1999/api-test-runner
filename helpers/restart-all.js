@@ -11,9 +11,9 @@ function restartEverything() {
   console.log('🔄 STARTING COMPREHENSIVE SYSTEM RESTART PIPELINE');
   console.log('==================================================\n');
 
-  const traefikDir = '/Users/dauleshwar/Downloads/Workspace/Event Manage/bikri-kendra/traefik';
-  const bikriKendraDir = '/Users/dauleshwar/Downloads/Workspace/Event Manage/bikri-kendra';
-  const testRunnerDir = '/Users/dauleshwar/Downloads/Workspace/Event Manage/api-test-runner';
+  const traefikDir = '/Users/dauleshwar/Downloads/Workspace/Event_Manage/bikri-kendra/traefik';
+  const bikriKendraDir = '/Users/dauleshwar/Downloads/Workspace/Event_Manage/bikri-kendra';
+  const testRunnerDir = '/Users/dauleshwar/Downloads/Workspace/Event_Manage/api-test-runner';
 
   try {
     // 1. Stop local services
