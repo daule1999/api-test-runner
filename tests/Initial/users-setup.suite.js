@@ -6,7 +6,7 @@ const path = require('path');
  * Exportable Jest suite mapping to the "02: Users Setup" Postman Collection,
  * powered dynamically by Feed_data/user_addition.csv!
  */
-function runUsersSetupSuite(customCsvPath) {
+function runUsersSetupSuite(customCsvPath, createdEventId) {
   describe('Postman Collection: 02: Users Setup (Data-Driven)', () => {
     let adminToken;
     let systemRoles = [];
@@ -93,29 +93,29 @@ function runUsersSetupSuite(customCsvPath) {
         const apiNoEvent = new TestClient();
         apiNoEvent.token = adminToken;
         apiNoEvent.eventId = ''; // Remove event ID header so no event is assigned
-        
+
         const noEventUsername = `no_ev_${row.username}`;
         try {
-            await apiNoEvent.registerUser({
-                username: noEventUsername,
-                email: `no_ev_${row.email}`,
-                mobile: String(row.mobile).replace('98765', '98700'),
-                password: 'Admin@123',
-                fullName: `No Event ${row.fullName}`,
-                role: row.role
-            });
-            
-            const profileNoEvent = await apiNoEvent.getUser(noEventUsername);
-            expect(profileNoEvent.roles).toBeDefined();
-            // User registered without event assignment must have 0 roles
-            const rolesList = Array.from(profileNoEvent.roles);
-            expect(rolesList.length).toBe(0); 
-            console.log(`✅ Passed: User ${noEventUsername} registered without event assignment has 0 roles.`);
-            
-            // Clean up the dummy user
-            await apiNoEvent.deleteUser(noEventUsername);
+          await apiNoEvent.registerUser({
+            username: noEventUsername,
+            email: `no_ev_${row.email}`,
+            mobile: String(row.mobile).replace('98765', '98700'),
+            password: 'Admin@123',
+            fullName: `No Event ${row.fullName}`,
+            role: row.role
+          });
+
+          const profileNoEvent = await apiNoEvent.getUser(noEventUsername);
+          expect(profileNoEvent.roles).toBeDefined();
+          // User registered without event assignment must have 0 roles
+          const rolesList = Array.from(profileNoEvent.roles);
+          expect(rolesList.length).toBe(0);
+          console.log(`✅ Passed: User ${noEventUsername} registered without event assignment has 0 roles.`);
+
+          // Clean up the dummy user
+          await apiNoEvent.deleteUser(noEventUsername);
         } catch (err) {
-            console.warn(`⚠️ Warning during unassigned user role verification:`, err.message);
+          console.warn(`⚠️ Warning during unassigned user role verification:`, err.message);
         }
       });
     });

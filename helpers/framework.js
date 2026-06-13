@@ -393,7 +393,7 @@ class TestClient {
     };
     const res = await this.client.post('/api/sales-svc/shops/register', body, { headers: this.headers });
     if (res.status !== 200 && res.status !== 201) {
-      throw new Error(`Failed to register shop counter "${shopName}" (Status: ${res.status})`);
+      throw new Error(`Failed to register shop counter "${shopName}" (Status: ${res.status})`, res);
     }
     return res.data.data || res.data;
   }

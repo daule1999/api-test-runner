@@ -10,6 +10,7 @@ const path = require('path');
  * process.env.SELECTED_EVENT_ID for subsequent suites.
  */
 function runEventSetupSuite(customCsvPath, selectEventName) {
+    let createdEventId = null;
     describe('➡️ Jhusi Program Event Setup & Verification', () => {
         let adminToken;
 
@@ -114,7 +115,7 @@ function runEventSetupSuite(customCsvPath, selectEventName) {
                 // Step 3: Fetch event by ID to verify details
                 console.log(`🔍 Fetching event by ID ${eventId} to verify details...`);
                 const eventData = await api.getEventById(eventId);
-
+                createdEventId = eventData.id;
                 expect(eventData).toBeDefined();
                 expect(eventData.id.toString()).toBe(eventId.toString());
                 expect(eventData.eventName).toBe(eventName);
@@ -125,6 +126,7 @@ function runEventSetupSuite(customCsvPath, selectEventName) {
             });
         });
     });
+    return createdEventId;
 }
 
 module.exports = runEventSetupSuite;

@@ -1,0 +1,501 @@
+product_name,product_quantity,product_reason
+Rigveda Vol 1 Grand Edition (RIG),299,Initial Opening stock entry
+Rigveda Vol 2 Standard Text (RIG),345,Inward inventory lot allocation
+Rigveda Vol 3 Advanced Study (RIG),282,Initial setup warehouse inventory allocation
+Rigveda Vol 4 Complete Guide (RIG),253,Warehouse inbound allocation transfer
+Rigveda Foundational Basic Text (RIG),204,Bulk counter stock inward entry
+Rigveda Classical Commentary (RIG),223,Initial Opening stock entry
+Rigveda Practical Workbook Set (RIG),276,Inward inventory lot allocation
+Rigveda Authentic Handbook (RIG),375,Initial setup warehouse inventory allocation
+Rigveda Wall Charts Set (RIG),282,Warehouse inbound allocation transfer
+Rigveda Reference Manual (RIG),214,Bulk counter stock inward entry
+Rigveda Premium Natural Essence (RIG),430,Initial Opening stock entry
+Rigveda Pure Extract Drops (RIG),317,Inward inventory lot allocation
+Rigveda Therapeutic Tablets (RIG),239,Initial setup warehouse inventory allocation
+Rigveda Herbal Powder Mix (RIG),201,Warehouse inbound allocation transfer
+Rigveda Premium Concentrated Oil (RIG),371,Bulk counter stock inward entry
+Rigveda Special Application Lepa (RIG),329,Initial Opening stock entry
+Rigveda Natural Rejuvenator (RIG),398,Inward inventory lot allocation
+Rigveda Pure Aqueous Drops (RIG),459,Initial setup warehouse inventory allocation
+Rigveda Ultimate Seeker Starter Kit (RIG),496,Warehouse inbound allocation transfer
+Rigveda Safe Storage Guide (RIG),415,Bulk counter stock inward entry
+Yajurveda Vol 1 Grand Edition (YAJ),436,Initial Opening stock entry
+Yajurveda Vol 2 Standard Text (YAJ),315,Inward inventory lot allocation
+Yajurveda Vol 3 Advanced Study (YAJ),387,Initial setup warehouse inventory allocation
+Yajurveda Vol 4 Complete Guide (YAJ),288,Warehouse inbound allocation transfer
+Yajurveda Foundational Basic Text (YAJ),378,Bulk counter stock inward entry
+Yajurveda Classical Commentary (YAJ),228,Initial Opening stock entry
+Yajurveda Practical Workbook Set (YAJ),239,Inward inventory lot allocation
+Yajurveda Authentic Handbook (YAJ),233,Initial setup warehouse inventory allocation
+Yajurveda Wall Charts Set (YAJ),460,Warehouse inbound allocation transfer
+Yajurveda Reference Manual (YAJ),275,Bulk counter stock inward entry
+Yajurveda Premium Natural Essence (YAJ),491,Initial Opening stock entry
+Yajurveda Pure Extract Drops (YAJ),455,Inward inventory lot allocation
+Yajurveda Therapeutic Tablets (YAJ),342,Initial setup warehouse inventory allocation
+Yajurveda Herbal Powder Mix (YAJ),446,Warehouse inbound allocation transfer
+Yajurveda Premium Concentrated Oil (YAJ),332,Bulk counter stock inward entry
+Yajurveda Special Application Lepa (YAJ),499,Initial Opening stock entry
+Yajurveda Natural Rejuvenator (YAJ),271,Inward inventory lot allocation
+Yajurveda Pure Aqueous Drops (YAJ),332,Initial setup warehouse inventory allocation
+Yajurveda Ultimate Seeker Starter Kit (YAJ),414,Warehouse inbound allocation transfer
+Yajurveda Safe Storage Guide (YAJ),329,Bulk counter stock inward entry
+Samaveda Vol 1 Grand Edition (SAM),208,Initial Opening stock entry
+Samaveda Vol 2 Standard Text (SAM),283,Inward inventory lot allocation
+Samaveda Vol 3 Advanced Study (SAM),334,Initial setup warehouse inventory allocation
+Samaveda Vol 4 Complete Guide (SAM),279,Warehouse inbound allocation transfer
+Samaveda Foundational Basic Text (SAM),362,Bulk counter stock inward entry
+Samaveda Classical Commentary (SAM),472,Initial Opening stock entry
+Samaveda Practical Workbook Set (SAM),414,Inward inventory lot allocation
+Samaveda Authentic Handbook (SAM),240,Initial setup warehouse inventory allocation
+Samaveda Wall Charts Set (SAM),466,Warehouse inbound allocation transfer
+Samaveda Reference Manual (SAM),466,Bulk counter stock inward entry
+Samaveda Premium Natural Essence (SAM),424,Initial Opening stock entry
+Samaveda Pure Extract Drops (SAM),367,Inward inventory lot allocation
+Samaveda Therapeutic Tablets (SAM),444,Initial setup warehouse inventory allocation
+Samaveda Herbal Powder Mix (SAM),360,Warehouse inbound allocation transfer
+Samaveda Premium Concentrated Oil (SAM),217,Bulk counter stock inward entry
+Samaveda Special Application Lepa (SAM),428,Initial Opening stock entry
+Samaveda Natural Rejuvenator (SAM),306,Inward inventory lot allocation
+Samaveda Pure Aqueous Drops (SAM),243,Initial setup warehouse inventory allocation
+Samaveda Ultimate Seeker Starter Kit (SAM),200,Warehouse inbound allocation transfer
+Samaveda Safe Storage Guide (SAM),289,Bulk counter stock inward entry
+Atharvaveda Vol 1 Grand Edition (ATH),446,Initial Opening stock entry
+Atharvaveda Vol 2 Standard Text (ATH),302,Inward inventory lot allocation
+Atharvaveda Vol 3 Advanced Study (ATH),250,Initial setup warehouse inventory allocation
+Atharvaveda Vol 4 Complete Guide (ATH),437,Warehouse inbound allocation transfer
+Atharvaveda Foundational Basic Text (ATH),481,Bulk counter stock inward entry
+Atharvaveda Classical Commentary (ATH),496,Initial Opening stock entry
+Atharvaveda Practical Workbook Set (ATH),325,Inward inventory lot allocation
+Atharvaveda Authentic Handbook (ATH),304,Initial setup warehouse inventory allocation
+Atharvaveda Wall Charts Set (ATH),496,Warehouse inbound allocation transfer
+Atharvaveda Reference Manual (ATH),413,Bulk counter stock inward entry
+Atharvaveda Premium Natural Essence (ATH),227,Initial Opening stock entry
+Atharvaveda Pure Extract Drops (ATH),444,Inward inventory lot allocation
+Atharvaveda Therapeutic Tablets (ATH),452,Initial setup warehouse inventory allocation
+Atharvaveda Herbal Powder Mix (ATH),479,Warehouse inbound allocation transfer
+Atharvaveda Premium Concentrated Oil (ATH),405,Bulk counter stock inward entry
+Atharvaveda Special Application Lepa (ATH),203,Initial Opening stock entry
+Atharvaveda Natural Rejuvenator (ATH),407,Inward inventory lot allocation
+Atharvaveda Pure Aqueous Drops (ATH),247,Initial setup warehouse inventory allocation
+Atharvaveda Ultimate Seeker Starter Kit (ATH),434,Warehouse inbound allocation transfer
+Atharvaveda Safe Storage Guide (ATH),378,Bulk counter stock inward entry
+Upanishad Vol 1 Grand Edition (UPA),245,Initial Opening stock entry
+Upanishad Vol 2 Standard Text (UPA),319,Inward inventory lot allocation
+Upanishad Vol 3 Advanced Study (UPA),395,Initial setup warehouse inventory allocation
+Upanishad Vol 4 Complete Guide (UPA),243,Warehouse inbound allocation transfer
+Upanishad Foundational Basic Text (UPA),465,Bulk counter stock inward entry
+Upanishad Classical Commentary (UPA),325,Initial Opening stock entry
+Upanishad Practical Workbook Set (UPA),369,Inward inventory lot allocation
+Upanishad Authentic Handbook (UPA),230,Initial setup warehouse inventory allocation
+Upanishad Wall Charts Set (UPA),301,Warehouse inbound allocation transfer
+Upanishad Reference Manual (UPA),481,Bulk counter stock inward entry
+Upanishad Premium Natural Essence (UPA),478,Initial Opening stock entry
+Upanishad Pure Extract Drops (UPA),449,Inward inventory lot allocation
+Upanishad Therapeutic Tablets (UPA),454,Initial setup warehouse inventory allocation
+Upanishad Herbal Powder Mix (UPA),397,Warehouse inbound allocation transfer
+Upanishad Premium Concentrated Oil (UPA),243,Bulk counter stock inward entry
+Upanishad Special Application Lepa (UPA),203,Initial Opening stock entry
+Upanishad Natural Rejuvenator (UPA),432,Inward inventory lot allocation
+Upanishad Pure Aqueous Drops (UPA),206,Initial setup warehouse inventory allocation
+Upanishad Ultimate Seeker Starter Kit (UPA),497,Warehouse inbound allocation transfer
+Upanishad Safe Storage Guide (UPA),481,Bulk counter stock inward entry
+Vedanga Vol 1 Grand Edition (VED),328,Initial Opening stock entry
+Vedanga Vol 2 Standard Text (VED),346,Inward inventory lot allocation
+Vedanga Vol 3 Advanced Study (VED),314,Initial setup warehouse inventory allocation
+Vedanga Vol 4 Complete Guide (VED),444,Warehouse inbound allocation transfer
+Vedanga Foundational Basic Text (VED),219,Bulk counter stock inward entry
+Vedanga Classical Commentary (VED),477,Initial Opening stock entry
+Vedanga Practical Workbook Set (VED),302,Inward inventory lot allocation
+Vedanga Authentic Handbook (VED),493,Initial setup warehouse inventory allocation
+Vedanga Wall Charts Set (VED),224,Warehouse inbound allocation transfer
+Vedanga Reference Manual (VED),294,Bulk counter stock inward entry
+Vedanga Premium Natural Essence (VED),478,Initial Opening stock entry
+Vedanga Pure Extract Drops (VED),236,Inward inventory lot allocation
+Vedanga Therapeutic Tablets (VED),399,Initial setup warehouse inventory allocation
+Vedanga Herbal Powder Mix (VED),465,Warehouse inbound allocation transfer
+Vedanga Premium Concentrated Oil (VED),461,Bulk counter stock inward entry
+Vedanga Special Application Lepa (VED),275,Initial Opening stock entry
+Vedanga Natural Rejuvenator (VED),231,Inward inventory lot allocation
+Vedanga Pure Aqueous Drops (VED),376,Initial setup warehouse inventory allocation
+Vedanga Ultimate Seeker Starter Kit (VED),234,Warehouse inbound allocation transfer
+Vedanga Safe Storage Guide (VED),227,Bulk counter stock inward entry
+Darshana Vol 1 Grand Edition (DAR),251,Initial Opening stock entry
+Darshana Vol 2 Standard Text (DAR),466,Inward inventory lot allocation
+Darshana Vol 3 Advanced Study (DAR),320,Initial setup warehouse inventory allocation
+Darshana Vol 4 Complete Guide (DAR),340,Warehouse inbound allocation transfer
+Darshana Foundational Basic Text (DAR),487,Bulk counter stock inward entry
+Darshana Classical Commentary (DAR),220,Initial Opening stock entry
+Darshana Practical Workbook Set (DAR),443,Inward inventory lot allocation
+Darshana Authentic Handbook (DAR),445,Initial setup warehouse inventory allocation
+Darshana Wall Charts Set (DAR),454,Warehouse inbound allocation transfer
+Darshana Reference Manual (DAR),388,Bulk counter stock inward entry
+Darshana Premium Natural Essence (DAR),351,Initial Opening stock entry
+Darshana Pure Extract Drops (DAR),208,Inward inventory lot allocation
+Darshana Therapeutic Tablets (DAR),427,Initial setup warehouse inventory allocation
+Darshana Herbal Powder Mix (DAR),304,Warehouse inbound allocation transfer
+Darshana Premium Concentrated Oil (DAR),209,Bulk counter stock inward entry
+Darshana Special Application Lepa (DAR),319,Initial Opening stock entry
+Darshana Natural Rejuvenator (DAR),469,Inward inventory lot allocation
+Darshana Pure Aqueous Drops (DAR),340,Initial setup warehouse inventory allocation
+Darshana Ultimate Seeker Starter Kit (DAR),371,Warehouse inbound allocation transfer
+Darshana Safe Storage Guide (DAR),264,Bulk counter stock inward entry
+Sukrit Vol 1 Grand Edition (RAS),252,Initial Opening stock entry
+Sukrit Vol 2 Standard Text (RAS),400,Inward inventory lot allocation
+Sukrit Vol 3 Advanced Study (RAS),305,Initial setup warehouse inventory allocation
+Sukrit Vol 4 Complete Guide (RAS),406,Warehouse inbound allocation transfer
+Sukrit Foundational Basic Text (RAS),360,Bulk counter stock inward entry
+Sukrit Classical Commentary (RAS),296,Initial Opening stock entry
+Sukrit Practical Workbook Set (RAS),456,Inward inventory lot allocation
+Sukrit Authentic Handbook (RAS),344,Initial setup warehouse inventory allocation
+Sukrit Wall Charts Set (RAS),328,Warehouse inbound allocation transfer
+Sukrit Reference Manual (RAS),219,Bulk counter stock inward entry
+Sukrit Premium Natural Essence (RAS),444,Initial Opening stock entry
+Sukrit Pure Extract Drops (RAS),453,Inward inventory lot allocation
+Sukrit Therapeutic Tablets (RAS),429,Initial setup warehouse inventory allocation
+Sukrit Herbal Powder Mix (RAS),280,Warehouse inbound allocation transfer
+Sukrit Premium Concentrated Oil (RAS),500,Bulk counter stock inward entry
+Sukrit Special Application Lepa (RAS),343,Initial Opening stock entry
+Sukrit Natural Rejuvenator (RAS),313,Inward inventory lot allocation
+Sukrit Pure Aqueous Drops (RAS),385,Initial setup warehouse inventory allocation
+Sukrit Ultimate Seeker Starter Kit (RAS),215,Warehouse inbound allocation transfer
+Sukrit Safe Storage Guide (RAS),316,Bulk counter stock inward entry
+Sukrit Vol 1 Grand Edition (ARK),262,Initial Opening stock entry
+Sukrit Vol 2 Standard Text (ARK),393,Inward inventory lot allocation
+Sukrit Vol 3 Advanced Study (ARK),487,Initial setup warehouse inventory allocation
+Sukrit Vol 4 Complete Guide (ARK),256,Warehouse inbound allocation transfer
+Sukrit Foundational Basic Text (ARK),358,Bulk counter stock inward entry
+Sukrit Classical Commentary (ARK),327,Initial Opening stock entry
+Sukrit Practical Workbook Set (ARK),393,Inward inventory lot allocation
+Sukrit Authentic Handbook (ARK),390,Initial setup warehouse inventory allocation
+Sukrit Wall Charts Set (ARK),440,Warehouse inbound allocation transfer
+Sukrit Reference Manual (ARK),438,Bulk counter stock inward entry
+Sukrit Premium Natural Essence (ARK),270,Initial Opening stock entry
+Sukrit Pure Extract Drops (ARK),340,Inward inventory lot allocation
+Sukrit Therapeutic Tablets (ARK),402,Initial setup warehouse inventory allocation
+Sukrit Herbal Powder Mix (ARK),412,Warehouse inbound allocation transfer
+Sukrit Premium Concentrated Oil (ARK),432,Bulk counter stock inward entry
+Sukrit Special Application Lepa (ARK),352,Initial Opening stock entry
+Sukrit Natural Rejuvenator (ARK),313,Inward inventory lot allocation
+Sukrit Pure Aqueous Drops (ARK),411,Initial setup warehouse inventory allocation
+Sukrit Ultimate Seeker Starter Kit (ARK),359,Warehouse inbound allocation transfer
+Sukrit Safe Storage Guide (ARK),465,Bulk counter stock inward entry
+Sukrit Vol 1 Grand Edition (GUT),474,Initial Opening stock entry
+Sukrit Vol 2 Standard Text (GUT),410,Inward inventory lot allocation
+Sukrit Vol 3 Advanced Study (GUT),408,Initial setup warehouse inventory allocation
+Sukrit Vol 4 Complete Guide (GUT),389,Warehouse inbound allocation transfer
+Sukrit Foundational Basic Text (GUT),431,Bulk counter stock inward entry
+Sukrit Classical Commentary (GUT),254,Initial Opening stock entry
+Sukrit Practical Workbook Set (GUT),233,Inward inventory lot allocation
+Sukrit Authentic Handbook (GUT),317,Initial setup warehouse inventory allocation
+Sukrit Wall Charts Set (GUT),337,Warehouse inbound allocation transfer
+Sukrit Reference Manual (GUT),325,Bulk counter stock inward entry
+Sukrit Premium Natural Essence (GUT),403,Initial Opening stock entry
+Sukrit Pure Extract Drops (GUT),486,Inward inventory lot allocation
+Sukrit Therapeutic Tablets (GUT),475,Initial setup warehouse inventory allocation
+Sukrit Herbal Powder Mix (GUT),452,Warehouse inbound allocation transfer
+Sukrit Premium Concentrated Oil (GUT),343,Bulk counter stock inward entry
+Sukrit Special Application Lepa (GUT),231,Initial Opening stock entry
+Sukrit Natural Rejuvenator (GUT),327,Inward inventory lot allocation
+Sukrit Pure Aqueous Drops (GUT),373,Initial setup warehouse inventory allocation
+Sukrit Ultimate Seeker Starter Kit (GUT),273,Warehouse inbound allocation transfer
+Sukrit Safe Storage Guide (GUT),468,Bulk counter stock inward entry
+Sukrit Vol 1 Grand Edition (CHU),254,Initial Opening stock entry
+Sukrit Vol 2 Standard Text (CHU),427,Inward inventory lot allocation
+Sukrit Vol 3 Advanced Study (CHU),218,Initial setup warehouse inventory allocation
+Sukrit Vol 4 Complete Guide (CHU),482,Warehouse inbound allocation transfer
+Sukrit Foundational Basic Text (CHU),414,Bulk counter stock inward entry
+Sukrit Classical Commentary (CHU),482,Initial Opening stock entry
+Sukrit Practical Workbook Set (CHU),319,Inward inventory lot allocation
+Sukrit Authentic Handbook (CHU),224,Initial setup warehouse inventory allocation
+Sukrit Wall Charts Set (CHU),443,Warehouse inbound allocation transfer
+Sukrit Reference Manual (CHU),489,Bulk counter stock inward entry
+Sukrit Premium Natural Essence (CHU),399,Initial Opening stock entry
+Sukrit Pure Extract Drops (CHU),304,Inward inventory lot allocation
+Sukrit Therapeutic Tablets (CHU),396,Initial setup warehouse inventory allocation
+Sukrit Herbal Powder Mix (CHU),496,Warehouse inbound allocation transfer
+Sukrit Premium Concentrated Oil (CHU),493,Bulk counter stock inward entry
+Sukrit Special Application Lepa (CHU),299,Initial Opening stock entry
+Sukrit Natural Rejuvenator (CHU),484,Inward inventory lot allocation
+Sukrit Pure Aqueous Drops (CHU),294,Initial setup warehouse inventory allocation
+Sukrit Ultimate Seeker Starter Kit (CHU),204,Warehouse inbound allocation transfer
+Sukrit Safe Storage Guide (CHU),205,Bulk counter stock inward entry
+Sukrit Vol 1 Grand Edition (TAI),453,Initial Opening stock entry
+Sukrit Vol 2 Standard Text (TAI),209,Inward inventory lot allocation
+Sukrit Vol 3 Advanced Study (TAI),434,Initial setup warehouse inventory allocation
+Sukrit Vol 4 Complete Guide (TAI),497,Warehouse inbound allocation transfer
+Sukrit Foundational Basic Text (TAI),206,Bulk counter stock inward entry
+Sukrit Classical Commentary (TAI),234,Initial Opening stock entry
+Sukrit Practical Workbook Set (TAI),300,Inward inventory lot allocation
+Sukrit Authentic Handbook (TAI),441,Initial setup warehouse inventory allocation
+Sukrit Wall Charts Set (TAI),266,Warehouse inbound allocation transfer
+Sukrit Reference Manual (TAI),222,Bulk counter stock inward entry
+Sukrit Premium Natural Essence (TAI),488,Initial Opening stock entry
+Sukrit Pure Extract Drops (TAI),473,Inward inventory lot allocation
+Sukrit Therapeutic Tablets (TAI),222,Initial setup warehouse inventory allocation
+Sukrit Herbal Powder Mix (TAI),412,Warehouse inbound allocation transfer
+Sukrit Premium Concentrated Oil (TAI),284,Bulk counter stock inward entry
+Sukrit Special Application Lepa (TAI),210,Initial Opening stock entry
+Sukrit Natural Rejuvenator (TAI),481,Inward inventory lot allocation
+Sukrit Pure Aqueous Drops (TAI),263,Initial setup warehouse inventory allocation
+Sukrit Ultimate Seeker Starter Kit (TAI),359,Warehouse inbound allocation transfer
+Sukrit Safe Storage Guide (TAI),398,Bulk counter stock inward entry
+Sukrit Vol 1 Grand Edition (LEP),494,Initial Opening stock entry
+Sukrit Vol 2 Standard Text (LEP),209,Inward inventory lot allocation
+Sukrit Vol 3 Advanced Study (LEP),335,Initial setup warehouse inventory allocation
+Sukrit Vol 4 Complete Guide (LEP),324,Warehouse inbound allocation transfer
+Sukrit Foundational Basic Text (LEP),334,Bulk counter stock inward entry
+Sukrit Classical Commentary (LEP),447,Initial Opening stock entry
+Sukrit Practical Workbook Set (LEP),393,Inward inventory lot allocation
+Sukrit Authentic Handbook (LEP),239,Initial setup warehouse inventory allocation
+Sukrit Wall Charts Set (LEP),465,Warehouse inbound allocation transfer
+Sukrit Reference Manual (LEP),458,Bulk counter stock inward entry
+Sukrit Premium Natural Essence (LEP),340,Initial Opening stock entry
+Sukrit Pure Extract Drops (LEP),463,Inward inventory lot allocation
+Sukrit Therapeutic Tablets (LEP),270,Initial setup warehouse inventory allocation
+Sukrit Herbal Powder Mix (LEP),473,Warehouse inbound allocation transfer
+Sukrit Premium Concentrated Oil (LEP),368,Bulk counter stock inward entry
+Sukrit Special Application Lepa (LEP),376,Initial Opening stock entry
+Sukrit Natural Rejuvenator (LEP),370,Inward inventory lot allocation
+Sukrit Pure Aqueous Drops (LEP),253,Initial setup warehouse inventory allocation
+Sukrit Ultimate Seeker Starter Kit (LEP),374,Warehouse inbound allocation transfer
+Sukrit Safe Storage Guide (LEP),360,Bulk counter stock inward entry
+Soma Vol 1 Grand Edition (TEA),341,Initial Opening stock entry
+Soma Vol 2 Standard Text (TEA),428,Inward inventory lot allocation
+Soma Vol 3 Advanced Study (TEA),406,Initial setup warehouse inventory allocation
+Soma Vol 4 Complete Guide (TEA),460,Warehouse inbound allocation transfer
+Soma Foundational Basic Text (TEA),244,Bulk counter stock inward entry
+Soma Classical Commentary (TEA),237,Initial Opening stock entry
+Soma Practical Workbook Set (TEA),292,Inward inventory lot allocation
+Soma Authentic Handbook (TEA),441,Initial setup warehouse inventory allocation
+Soma Wall Charts Set (TEA),279,Warehouse inbound allocation transfer
+Soma Reference Manual (TEA),348,Bulk counter stock inward entry
+Soma Premium Natural Essence (TEA),216,Initial Opening stock entry
+Soma Pure Extract Drops (TEA),350,Inward inventory lot allocation
+Soma Therapeutic Tablets (TEA),355,Initial setup warehouse inventory allocation
+Soma Herbal Powder Mix (TEA),457,Warehouse inbound allocation transfer
+Soma Premium Concentrated Oil (TEA),315,Bulk counter stock inward entry
+Soma Special Application Lepa (TEA),402,Initial Opening stock entry
+Soma Natural Rejuvenator (TEA),393,Inward inventory lot allocation
+Soma Pure Aqueous Drops (TEA),259,Initial setup warehouse inventory allocation
+Soma Ultimate Seeker Starter Kit (TEA),451,Warehouse inbound allocation transfer
+Soma Safe Storage Guide (TEA),405,Bulk counter stock inward entry
+Vedic Vol 1 Grand Edition (HER),302,Initial Opening stock entry
+Vedic Vol 2 Standard Text (HER),251,Inward inventory lot allocation
+Vedic Vol 3 Advanced Study (HER),383,Initial setup warehouse inventory allocation
+Vedic Vol 4 Complete Guide (HER),447,Warehouse inbound allocation transfer
+Vedic Foundational Basic Text (HER),361,Bulk counter stock inward entry
+Vedic Classical Commentary (HER),263,Initial Opening stock entry
+Vedic Practical Workbook Set (HER),299,Inward inventory lot allocation
+Vedic Authentic Handbook (HER),293,Initial setup warehouse inventory allocation
+Vedic Wall Charts Set (HER),370,Warehouse inbound allocation transfer
+Vedic Reference Manual (HER),425,Bulk counter stock inward entry
+Vedic Premium Natural Essence (HER),411,Initial Opening stock entry
+Vedic Pure Extract Drops (HER),367,Inward inventory lot allocation
+Vedic Therapeutic Tablets (HER),236,Initial setup warehouse inventory allocation
+Vedic Herbal Powder Mix (HER),446,Warehouse inbound allocation transfer
+Vedic Premium Concentrated Oil (HER),332,Bulk counter stock inward entry
+Vedic Special Application Lepa (HER),473,Initial Opening stock entry
+Vedic Natural Rejuvenator (HER),296,Inward inventory lot allocation
+Vedic Pure Aqueous Drops (HER),250,Initial setup warehouse inventory allocation
+Vedic Ultimate Seeker Starter Kit (HER),359,Warehouse inbound allocation transfer
+Vedic Safe Storage Guide (HER),369,Bulk counter stock inward entry
+Sattvik Vol 1 Grand Edition (BHO),480,Initial Opening stock entry
+Sattvik Vol 2 Standard Text (BHO),223,Inward inventory lot allocation
+Sattvik Vol 3 Advanced Study (BHO),465,Initial setup warehouse inventory allocation
+Sattvik Vol 4 Complete Guide (BHO),232,Warehouse inbound allocation transfer
+Sattvik Foundational Basic Text (BHO),315,Bulk counter stock inward entry
+Sattvik Classical Commentary (BHO),344,Initial Opening stock entry
+Sattvik Practical Workbook Set (BHO),249,Inward inventory lot allocation
+Sattvik Authentic Handbook (BHO),482,Initial setup warehouse inventory allocation
+Sattvik Wall Charts Set (BHO),500,Warehouse inbound allocation transfer
+Sattvik Reference Manual (BHO),345,Bulk counter stock inward entry
+Sattvik Premium Natural Essence (BHO),346,Initial Opening stock entry
+Sattvik Pure Extract Drops (BHO),482,Inward inventory lot allocation
+Sattvik Therapeutic Tablets (BHO),350,Initial setup warehouse inventory allocation
+Sattvik Herbal Powder Mix (BHO),359,Warehouse inbound allocation transfer
+Sattvik Premium Concentrated Oil (BHO),370,Bulk counter stock inward entry
+Sattvik Special Application Lepa (BHO),279,Initial Opening stock entry
+Sattvik Natural Rejuvenator (BHO),279,Inward inventory lot allocation
+Sattvik Pure Aqueous Drops (BHO),345,Initial setup warehouse inventory allocation
+Sattvik Ultimate Seeker Starter Kit (BHO),343,Warehouse inbound allocation transfer
+Sattvik Safe Storage Guide (BHO),365,Bulk counter stock inward entry
+Panchgavya Vol 1 Grand Edition (KRA),380,Initial Opening stock entry
+Panchgavya Vol 2 Standard Text (KRA),405,Inward inventory lot allocation
+Panchgavya Vol 3 Advanced Study (KRA),359,Initial setup warehouse inventory allocation
+Panchgavya Vol 4 Complete Guide (KRA),436,Warehouse inbound allocation transfer
+Panchgavya Foundational Basic Text (KRA),438,Bulk counter stock inward entry
+Panchgavya Classical Commentary (KRA),207,Initial Opening stock entry
+Panchgavya Practical Workbook Set (KRA),416,Inward inventory lot allocation
+Panchgavya Authentic Handbook (KRA),266,Initial setup warehouse inventory allocation
+Panchgavya Wall Charts Set (KRA),320,Warehouse inbound allocation transfer
+Panchgavya Reference Manual (KRA),398,Bulk counter stock inward entry
+Panchgavya Premium Natural Essence (KRA),485,Initial Opening stock entry
+Panchgavya Pure Extract Drops (KRA),449,Inward inventory lot allocation
+Panchgavya Therapeutic Tablets (KRA),325,Initial setup warehouse inventory allocation
+Panchgavya Herbal Powder Mix (KRA),258,Warehouse inbound allocation transfer
+Panchgavya Premium Concentrated Oil (KRA),209,Bulk counter stock inward entry
+Panchgavya Special Application Lepa (KRA),402,Initial Opening stock entry
+Panchgavya Natural Rejuvenator (KRA),346,Inward inventory lot allocation
+Panchgavya Pure Aqueous Drops (KRA),213,Initial setup warehouse inventory allocation
+Panchgavya Ultimate Seeker Starter Kit (KRA),499,Warehouse inbound allocation transfer
+Panchgavya Safe Storage Guide (KRA),461,Bulk counter stock inward entry
+Ganga Vol 1 Grand Edition (GAN),480,Initial Opening stock entry
+Ganga Vol 2 Standard Text (GAN),314,Inward inventory lot allocation
+Ganga Vol 3 Advanced Study (GAN),483,Initial setup warehouse inventory allocation
+Ganga Vol 4 Complete Guide (GAN),362,Warehouse inbound allocation transfer
+Ganga Foundational Basic Text (GAN),459,Bulk counter stock inward entry
+Ganga Classical Commentary (GAN),256,Initial Opening stock entry
+Ganga Practical Workbook Set (GAN),431,Inward inventory lot allocation
+Ganga Authentic Handbook (GAN),221,Initial setup warehouse inventory allocation
+Ganga Wall Charts Set (GAN),381,Warehouse inbound allocation transfer
+Ganga Reference Manual (GAN),303,Bulk counter stock inward entry
+Ganga Premium Natural Essence (GAN),228,Initial Opening stock entry
+Ganga Pure Extract Drops (GAN),245,Inward inventory lot allocation
+Ganga Therapeutic Tablets (GAN),246,Initial setup warehouse inventory allocation
+Ganga Herbal Powder Mix (GAN),268,Warehouse inbound allocation transfer
+Ganga Premium Concentrated Oil (GAN),459,Bulk counter stock inward entry
+Ganga Special Application Lepa (GAN),299,Initial Opening stock entry
+Ganga Natural Rejuvenator (GAN),473,Inward inventory lot allocation
+Ganga Pure Aqueous Drops (GAN),488,Initial setup warehouse inventory allocation
+Ganga Ultimate Seeker Starter Kit (GAN),411,Warehouse inbound allocation transfer
+Ganga Safe Storage Guide (GAN),328,Bulk counter stock inward entry
+Aromatherapy Vol 1 Grand Edition (ARO),488,Initial Opening stock entry
+Aromatherapy Vol 2 Standard Text (ARO),399,Inward inventory lot allocation
+Aromatherapy Vol 3 Advanced Study (ARO),382,Initial setup warehouse inventory allocation
+Aromatherapy Vol 4 Complete Guide (ARO),272,Warehouse inbound allocation transfer
+Aromatherapy Foundational Basic Text (ARO),352,Bulk counter stock inward entry
+Aromatherapy Classical Commentary (ARO),444,Initial Opening stock entry
+Aromatherapy Practical Workbook Set (ARO),273,Inward inventory lot allocation
+Aromatherapy Authentic Handbook (ARO),422,Initial setup warehouse inventory allocation
+Aromatherapy Wall Charts Set (ARO),375,Warehouse inbound allocation transfer
+Aromatherapy Reference Manual (ARO),372,Bulk counter stock inward entry
+Aromatherapy Premium Natural Essence (ARO),348,Initial Opening stock entry
+Aromatherapy Pure Extract Drops (ARO),227,Inward inventory lot allocation
+Aromatherapy Therapeutic Tablets (ARO),294,Initial setup warehouse inventory allocation
+Aromatherapy Herbal Powder Mix (ARO),492,Warehouse inbound allocation transfer
+Aromatherapy Premium Concentrated Oil (ARO),259,Bulk counter stock inward entry
+Aromatherapy Special Application Lepa (ARO),338,Initial Opening stock entry
+Aromatherapy Natural Rejuvenator (ARO),465,Inward inventory lot allocation
+Aromatherapy Pure Aqueous Drops (ARO),213,Initial setup warehouse inventory allocation
+Aromatherapy Ultimate Seeker Starter Kit (ARO),250,Warehouse inbound allocation transfer
+Aromatherapy Safe Storage Guide (ARO),327,Bulk counter stock inward entry
+Sanskrit Vol 1 Grand Edition (SAN),499,Initial Opening stock entry
+Sanskrit Vol 2 Standard Text (SAN),209,Inward inventory lot allocation
+Sanskrit Vol 3 Advanced Study (SAN),491,Initial setup warehouse inventory allocation
+Sanskrit Vol 4 Complete Guide (SAN),365,Warehouse inbound allocation transfer
+Sanskrit Foundational Basic Text (SAN),421,Bulk counter stock inward entry
+Sanskrit Classical Commentary (SAN),246,Initial Opening stock entry
+Sanskrit Practical Workbook Set (SAN),484,Inward inventory lot allocation
+Sanskrit Authentic Handbook (SAN),435,Initial setup warehouse inventory allocation
+Sanskrit Wall Charts Set (SAN),250,Warehouse inbound allocation transfer
+Sanskrit Reference Manual (SAN),207,Bulk counter stock inward entry
+Sanskrit Premium Natural Essence (SAN),233,Initial Opening stock entry
+Sanskrit Pure Extract Drops (SAN),405,Inward inventory lot allocation
+Sanskrit Therapeutic Tablets (SAN),311,Initial setup warehouse inventory allocation
+Sanskrit Herbal Powder Mix (SAN),321,Warehouse inbound allocation transfer
+Sanskrit Premium Concentrated Oil (SAN),414,Bulk counter stock inward entry
+Sanskrit Special Application Lepa (SAN),246,Initial Opening stock entry
+Sanskrit Natural Rejuvenator (SAN),216,Inward inventory lot allocation
+Sanskrit Pure Aqueous Drops (SAN),398,Initial setup warehouse inventory allocation
+Sanskrit Ultimate Seeker Starter Kit (SAN),456,Warehouse inbound allocation transfer
+Sanskrit Safe Storage Guide (SAN),350,Bulk counter stock inward entry
+Dhyana Vol 1 Grand Edition (DHY),474,Initial Opening stock entry
+Dhyana Vol 2 Standard Text (DHY),366,Inward inventory lot allocation
+Dhyana Vol 3 Advanced Study (DHY),297,Initial setup warehouse inventory allocation
+Dhyana Vol 4 Complete Guide (DHY),394,Warehouse inbound allocation transfer
+Dhyana Foundational Basic Text (DHY),274,Bulk counter stock inward entry
+Dhyana Classical Commentary (DHY),425,Initial Opening stock entry
+Dhyana Practical Workbook Set (DHY),372,Inward inventory lot allocation
+Dhyana Authentic Handbook (DHY),402,Initial setup warehouse inventory allocation
+Dhyana Wall Charts Set (DHY),420,Warehouse inbound allocation transfer
+Dhyana Reference Manual (DHY),477,Bulk counter stock inward entry
+Dhyana Premium Natural Essence (DHY),286,Initial Opening stock entry
+Dhyana Pure Extract Drops (DHY),427,Inward inventory lot allocation
+Dhyana Therapeutic Tablets (DHY),323,Initial setup warehouse inventory allocation
+Dhyana Herbal Powder Mix (DHY),495,Warehouse inbound allocation transfer
+Dhyana Premium Concentrated Oil (DHY),446,Bulk counter stock inward entry
+Dhyana Special Application Lepa (DHY),314,Initial Opening stock entry
+Dhyana Natural Rejuvenator (DHY),255,Inward inventory lot allocation
+Dhyana Pure Aqueous Drops (DHY),423,Initial setup warehouse inventory allocation
+Dhyana Ultimate Seeker Starter Kit (DHY),202,Warehouse inbound allocation transfer
+Dhyana Safe Storage Guide (DHY),487,Bulk counter stock inward entry
+Spiritual Vol 1 Grand Edition (ART),397,Initial Opening stock entry
+Spiritual Vol 2 Standard Text (ART),264,Inward inventory lot allocation
+Spiritual Vol 3 Advanced Study (ART),200,Initial setup warehouse inventory allocation
+Spiritual Vol 4 Complete Guide (ART),385,Warehouse inbound allocation transfer
+Spiritual Foundational Basic Text (ART),389,Bulk counter stock inward entry
+Spiritual Classical Commentary (ART),228,Initial Opening stock entry
+Spiritual Practical Workbook Set (ART),377,Inward inventory lot allocation
+Spiritual Authentic Handbook (ART),297,Initial setup warehouse inventory allocation
+Spiritual Wall Charts Set (ART),333,Warehouse inbound allocation transfer
+Spiritual Reference Manual (ART),284,Bulk counter stock inward entry
+Spiritual Premium Natural Essence (ART),247,Initial Opening stock entry
+Spiritual Pure Extract Drops (ART),462,Inward inventory lot allocation
+Spiritual Therapeutic Tablets (ART),274,Initial setup warehouse inventory allocation
+Spiritual Herbal Powder Mix (ART),245,Warehouse inbound allocation transfer
+Spiritual Premium Concentrated Oil (ART),381,Bulk counter stock inward entry
+Spiritual Special Application Lepa (ART),228,Initial Opening stock entry
+Spiritual Natural Rejuvenator (ART),227,Inward inventory lot allocation
+Spiritual Pure Aqueous Drops (ART),498,Initial setup warehouse inventory allocation
+Spiritual Ultimate Seeker Starter Kit (ART),236,Warehouse inbound allocation transfer
+Spiritual Safe Storage Guide (ART),437,Bulk counter stock inward entry
+Puja Vol 1 Grand Edition (PSM),464,Initial Opening stock entry
+Puja Vol 2 Standard Text (PSM),355,Inward inventory lot allocation
+Puja Vol 3 Advanced Study (PSM),428,Initial setup warehouse inventory allocation
+Puja Vol 4 Complete Guide (PSM),441,Warehouse inbound allocation transfer
+Puja Foundational Basic Text (PSM),307,Bulk counter stock inward entry
+Puja Classical Commentary (PSM),231,Initial Opening stock entry
+Puja Practical Workbook Set (PSM),230,Inward inventory lot allocation
+Puja Authentic Handbook (PSM),218,Initial setup warehouse inventory allocation
+Puja Wall Charts Set (PSM),278,Warehouse inbound allocation transfer
+Puja Reference Manual (PSM),481,Bulk counter stock inward entry
+Puja Premium Natural Essence (PSM),498,Initial Opening stock entry
+Puja Pure Extract Drops (PSM),435,Inward inventory lot allocation
+Puja Therapeutic Tablets (PSM),395,Initial setup warehouse inventory allocation
+Puja Herbal Powder Mix (PSM),270,Warehouse inbound allocation transfer
+Puja Premium Concentrated Oil (PSM),476,Bulk counter stock inward entry
+Puja Special Application Lepa (PSM),307,Initial Opening stock entry
+Puja Natural Rejuvenator (PSM),343,Inward inventory lot allocation
+Puja Pure Aqueous Drops (PSM),211,Initial setup warehouse inventory allocation
+Puja Ultimate Seeker Starter Kit (PSM),251,Warehouse inbound allocation transfer
+Puja Safe Storage Guide (PSM),249,Bulk counter stock inward entry
+Vedic Vol 1 Grand Edition (AST),407,Initial Opening stock entry
+Vedic Vol 2 Standard Text (AST),420,Inward inventory lot allocation
+Vedic Vol 3 Advanced Study (AST),369,Initial setup warehouse inventory allocation
+Vedic Vol 4 Complete Guide (AST),212,Warehouse inbound allocation transfer
+Vedic Foundational Basic Text (AST),374,Bulk counter stock inward entry
+Vedic Classical Commentary (AST),250,Initial Opening stock entry
+Vedic Practical Workbook Set (AST),314,Inward inventory lot allocation
+Vedic Authentic Handbook (AST),332,Initial setup warehouse inventory allocation
+Vedic Wall Charts Set (AST),385,Warehouse inbound allocation transfer
+Vedic Reference Manual (AST),462,Bulk counter stock inward entry
+Vedic Premium Natural Essence (AST),331,Initial Opening stock entry
+Vedic Pure Extract Drops (AST),490,Inward inventory lot allocation
+Vedic Therapeutic Tablets (AST),464,Initial setup warehouse inventory allocation
+Vedic Herbal Powder Mix (AST),432,Warehouse inbound allocation transfer
+Vedic Premium Concentrated Oil (AST),389,Bulk counter stock inward entry
+Vedic Special Application Lepa (AST),476,Initial Opening stock entry
+Vedic Natural Rejuvenator (AST),357,Inward inventory lot allocation
+Vedic Pure Aqueous Drops (AST),402,Initial setup warehouse inventory allocation
+Vedic Ultimate Seeker Starter Kit (AST),498,Warehouse inbound allocation transfer
+Vedic Safe Storage Guide (AST),264,Bulk counter stock inward entry
+Sanatana Vol 1 Grand Edition (ITI),399,Initial Opening stock entry
+Sanatana Vol 2 Standard Text (ITI),484,Inward inventory lot allocation
+Sanatana Vol 3 Advanced Study (ITI),216,Initial setup warehouse inventory allocation
+Sanatana Vol 4 Complete Guide (ITI),299,Warehouse inbound allocation transfer
+Sanatana Foundational Basic Text (ITI),471,Bulk counter stock inward entry
+Sanatana Classical Commentary (ITI),219,Initial Opening stock entry
+Sanatana Practical Workbook Set (ITI),290,Inward inventory lot allocation
+Sanatana Authentic Handbook (ITI),266,Initial setup warehouse inventory allocation
+Sanatana Wall Charts Set (ITI),359,Warehouse inbound allocation transfer
+Sanatana Reference Manual (ITI),322,Bulk counter stock inward entry
+Sanatana Premium Natural Essence (ITI),334,Initial Opening stock entry
+Sanatana Pure Extract Drops (ITI),498,Inward inventory lot allocation
+Sanatana Therapeutic Tablets (ITI),255,Initial setup warehouse inventory allocation
+Sanatana Herbal Powder Mix (ITI),494,Warehouse inbound allocation transfer
+Sanatana Premium Concentrated Oil (ITI),311,Bulk counter stock inward entry
+Sanatana Special Application Lepa (ITI),497,Initial Opening stock entry
+Sanatana Natural Rejuvenator (ITI),280,Inward inventory lot allocation
+Sanatana Pure Aqueous Drops (ITI),241,Initial setup warehouse inventory allocation
+Sanatana Ultimate Seeker Starter Kit (ITI),386,Warehouse inbound allocation transfer
+Sanatana Safe Storage Guide (ITI),399,Bulk counter stock inward entry

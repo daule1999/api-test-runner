@@ -6,7 +6,7 @@ const path = require('path');
  * Exportable Jest suite mapping to the "03: Shop/Counter" collection,
  * powered dynamically by Feed_data/EventWise/Jhusi_Program/Setup/shop_assignment.csv!
  */
-function runShopCounterSuite(customCsvPath) {
+function runShopCounterSuite(customCsvPath, createdEventId) {
   describe('Postman Collection: 03: Shop/Counter (Data-Driven)', () => {
     let adminToken;
     let authUsername = 'admin';
@@ -16,7 +16,7 @@ function runShopCounterSuite(customCsvPath) {
 
     beforeAll(async () => {
       // Resolve Event ID from environment variable or fallback to '1'
-      eventId = process.env.SELECTED_EVENT_ID;
+      eventId = createdEventId || process.env.SELECTED_EVENT_ID;
 
       // 1. Perform Single Admin Login (Postman Request 01)
       const api = new TestClient();
@@ -129,7 +129,8 @@ function runShopCounterSuite(customCsvPath) {
             shopName,
             categoryId,
             counterNumber: row.counter_number,
-            isActive: true
+            isActive: true,
+            categoryName: row.category_name
           });
 
           expect(createdShop).toBeDefined();

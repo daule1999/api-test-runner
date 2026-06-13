@@ -8,7 +8,7 @@ const { getAdminConnection } = require('../helpers/db-helper');
  * Exportable Jest test suite for testing Cashier Shift operations based on CSV input.
  * Automatically generates the shift_operations.csv file if it is not present.
  */
-function runShopShiftSuite(customCsvPath) {
+function runShopShiftSuite(customCsvPath, createdEventId) {
   const usersPath = path.resolve(process.cwd(), 'DATA', 'Feed_data', 'EventWise', 'Event1', 'user_addition.csv');
   const shopCountersPath = path.resolve(process.cwd(), 'DATA', 'Feed_data', 'EventWise', 'Event1', 'shop_counters_feed.csv');
   const defaultCsvPath = path.resolve(process.cwd(), 'DATA', 'shift_operations.csv');
@@ -122,11 +122,11 @@ function runShopShiftSuite(customCsvPath) {
           const [userRows] = await conn.query('SELECT id FROM user_db.users WHERE username = ?', [row.username]);
           if (userRows.length === 0) continue;
           const userId = userRows[0].id;
-          
+
           const [shopRows] = await conn.query('SELECT id FROM sales_db.shop WHERE shop_name = ?', [shopName]);
           if (shopRows.length === 0) continue;
           const shopId = shopRows[0].id;
-          
+
           const [roleRows] = await conn.query(
             `SELECT r.name FROM user_db.user_roles ur 
              JOIN user_db.roles r ON ur.role_id = r.id 
@@ -207,10 +207,10 @@ function runShopShiftSuite(customCsvPath) {
         case 'LOGOUT': {
           await api.login(username, 'Admin@123');
           expect(api.token).toBeDefined();
-          
+
           // Clear credentials
           api.token = null;
-          
+
           // Expect subsequent authenticated requests to fail with 401 Unauthorized
           const res = await api.client.get('/api/users-svc/admin', { headers: api.headers });
           expect([401, 403]).toContain(res.status);
@@ -221,7 +221,7 @@ function runShopShiftSuite(customCsvPath) {
         case 'CHECK SHOP ACCESSIBLE': {
           await api.login(username, 'Admin@123');
           const res = await api.client.get(`/api/sales-svc/shops/${shopId}`, { headers: api.headers });
-          
+
           if (isAdmin || isAssigned) {
             expect(res.status).toBe(200);
             console.log(`  ✅ Allowed access verified (Status: ${res.status}).`);
@@ -236,7 +236,7 @@ function runShopShiftSuite(customCsvPath) {
         case 'CHECK SHOP PRODUCT VISIBLE': {
           await api.login(username, 'Admin@123');
           const res = await api.client.get(`/api/sales-svc/retail/stocks/${shopId}`, { headers: api.headers });
-          
+
           if (isAdmin || isAssigned || hasAnyActualAssignment) {
             expect(res.status).toBe(200);
             expect(Array.isArray(res.data)).toBe(true);
@@ -260,7 +260,7 @@ function runShopShiftSuite(customCsvPath) {
             denominations: [{ currencyValue: 500, noteCount: 2 }]
           };
           const res = await api.client.post('/api/sales-svc/shifts/open', body, { headers: api.headers });
-          
+
           if (isAdmin || isAssigned) {
             expect([200, 201, 400]).toContain(res.status);
             console.log(`  ✅ Open Shift handled (Status: ${res.status}).`);
@@ -275,7 +275,7 @@ function runShopShiftSuite(customCsvPath) {
         case 'CLOSE SHIFT': {
           await api.login(username, 'Admin@123');
           const activeShiftRes = await api.client.get(`/api/sales-svc/shifts/active/${shopId}`, { headers: api.headers });
-          
+
           if (activeShiftRes.status === 200 && activeShiftRes.data && activeShiftRes.data.id) {
             const shiftId = activeShiftRes.data.id;
             const body = {
@@ -283,7 +283,7 @@ function runShopShiftSuite(customCsvPath) {
               denominations: [{ currencyValue: 500, noteCount: 2 }]
             };
             const res = await api.client.post(`/api/sales-svc/shifts/${shiftId}/close`, body, { headers: api.headers });
-            
+
             if (isAdmin || isAssigned) {
               expect([200, 201]).toContain(res.status);
               console.log(`  ✅ Close Shift handled (Status: ${res.status}).`);
@@ -303,7 +303,7 @@ function runShopShiftSuite(customCsvPath) {
         case 'RECONCILE': {
           // Normalize user's exact spelling: "RECOINCILE"
           await api.login(username, 'Admin@123');
-          
+
           // Fetch shift history to find a closed shift to reconcile
           const historyRes = await api.client.get(`/api/sales-svc/shifts/history/${shopId}`, { headers: api.headers });
           if (historyRes.status === 200 && Array.isArray(historyRes.data)) {

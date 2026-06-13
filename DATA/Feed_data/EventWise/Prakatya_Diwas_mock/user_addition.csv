@@ -1,0 +1,257 @@
+username,email,mobile,password,fullName,role
+priyanshu_acc,priyanshu@bikrikendra.com,9876543001,Admin@123,Priyanshu Pandey (Accounts),ACCOUNTS
+sankalp_acc,sankalp.acc@bikrikendra.com,9876543002,Admin@123,Sankalp (Accounts),ACCOUNTS
+rahul_im,rahul.im@bikrikendra.com,9876543003,Admin@123,Rahul Deo (Inv Mgr),INVENTORY_MANAGER
+manjeet_im,manjeet.im@bikrikendra.com,9876543004,Admin@123,Manjeet (Inv Mgr),INVENTORY_MANAGER
+dauleshwar_ih,dauleshwar.ih@bikrikendra.com,9876543005,Admin@123,Dauleshwar Kumar (Inv Helper),INVENTORY_HELPER
+ravi_ih,ravi@bikrikendra.com,9876543006,Admin@123,Ravi (Inv Helper),INVENTORY_HELPER
+rig_s1_admin,rig_s1_admin@bikrikendra.com,9000000001,Admin@123,RIG Shop1 Admin,ADMIN
+rig_s1_supervisor,rig_s1_supervisor@bikrikendra.com,9000000002,Admin@123,RIG Shop1 Shop Supervisor,SHOP_SUPERVISOR
+rig_s1_bo,rig_s1_bo@bikrikendra.com,9000000003,Admin@123,RIG Shop1 Billing Operator,BILLING_OPERATOR
+rig_s1_cashier1,rig_s1_cashier1@bikrikendra.com,9000000004,Admin@123,RIG Shop1 Cashier,CASHIER
+rig_s1_cashier2,rig_s1_cashier2@bikrikendra.com,9000000005,Admin@123,RIG Shop1 Cashier,CASHIER
+rig_s2_admin,rig_s2_admin@bikrikendra.com,9000000006,Admin@123,RIG Shop2 Admin,ADMIN
+rig_s2_supervisor,rig_s2_supervisor@bikrikendra.com,9000000007,Admin@123,RIG Shop2 Shop Supervisor,SHOP_SUPERVISOR
+rig_s2_bo,rig_s2_bo@bikrikendra.com,9000000008,Admin@123,RIG Shop2 Billing Operator,BILLING_OPERATOR
+rig_s2_cashier1,rig_s2_cashier1@bikrikendra.com,9000000009,Admin@123,RIG Shop2 Cashier,CASHIER
+rig_s2_cashier2,rig_s2_cashier2@bikrikendra.com,9000000010,Admin@123,RIG Shop2 Cashier,CASHIER
+yaj_s1_admin,yaj_s1_admin@bikrikendra.com,9000000011,Admin@123,YAJ Shop1 Admin,ADMIN
+yaj_s1_supervisor,yaj_s1_supervisor@bikrikendra.com,9000000012,Admin@123,YAJ Shop1 Shop Supervisor,SHOP_SUPERVISOR
+yaj_s1_bo,yaj_s1_bo@bikrikendra.com,9000000013,Admin@123,YAJ Shop1 Billing Operator,BILLING_OPERATOR
+yaj_s1_cashier1,yaj_s1_cashier1@bikrikendra.com,9000000014,Admin@123,YAJ Shop1 Cashier,CASHIER
+yaj_s1_cashier2,yaj_s1_cashier2@bikrikendra.com,9000000015,Admin@123,YAJ Shop1 Cashier,CASHIER
+yaj_s2_admin,yaj_s2_admin@bikrikendra.com,9000000016,Admin@123,YAJ Shop2 Admin,ADMIN
+yaj_s2_supervisor,yaj_s2_supervisor@bikrikendra.com,9000000017,Admin@123,YAJ Shop2 Shop Supervisor,SHOP_SUPERVISOR
+yaj_s2_bo,yaj_s2_bo@bikrikendra.com,9000000018,Admin@123,YAJ Shop2 Billing Operator,BILLING_OPERATOR
+yaj_s2_cashier1,yaj_s2_cashier1@bikrikendra.com,9000000019,Admin@123,YAJ Shop2 Cashier,CASHIER
+yaj_s2_cashier2,yaj_s2_cashier2@bikrikendra.com,9000000020,Admin@123,YAJ Shop2 Cashier,CASHIER
+sam_s1_admin,sam_s1_admin@bikrikendra.com,9000000021,Admin@123,SAM Shop1 Admin,ADMIN
+sam_s1_supervisor,sam_s1_supervisor@bikrikendra.com,9000000022,Admin@123,SAM Shop1 Shop Supervisor,SHOP_SUPERVISOR
+sam_s1_bo,sam_s1_bo@bikrikendra.com,9000000023,Admin@123,SAM Shop1 Billing Operator,BILLING_OPERATOR
+sam_s1_cashier1,sam_s1_cashier1@bikrikendra.com,9000000024,Admin@123,SAM Shop1 Cashier,CASHIER
+sam_s1_cashier2,sam_s1_cashier2@bikrikendra.com,9000000025,Admin@123,SAM Shop1 Cashier,CASHIER
+sam_s2_admin,sam_s2_admin@bikrikendra.com,9000000026,Admin@123,SAM Shop2 Admin,ADMIN
+sam_s2_supervisor,sam_s2_supervisor@bikrikendra.com,9000000027,Admin@123,SAM Shop2 Shop Supervisor,SHOP_SUPERVISOR
+sam_s2_bo,sam_s2_bo@bikrikendra.com,9000000028,Admin@123,SAM Shop2 Billing Operator,BILLING_OPERATOR
+sam_s2_cashier1,sam_s2_cashier1@bikrikendra.com,9000000029,Admin@123,SAM Shop2 Cashier,CASHIER
+sam_s2_cashier2,sam_s2_cashier2@bikrikendra.com,9000000030,Admin@123,SAM Shop2 Cashier,CASHIER
+ath_s1_admin,ath_s1_admin@bikrikendra.com,9000000031,Admin@123,ATH Shop1 Admin,ADMIN
+ath_s1_supervisor,ath_s1_supervisor@bikrikendra.com,9000000032,Admin@123,ATH Shop1 Shop Supervisor,SHOP_SUPERVISOR
+ath_s1_bo,ath_s1_bo@bikrikendra.com,9000000033,Admin@123,ATH Shop1 Billing Operator,BILLING_OPERATOR
+ath_s1_cashier1,ath_s1_cashier1@bikrikendra.com,9000000034,Admin@123,ATH Shop1 Cashier,CASHIER
+ath_s1_cashier2,ath_s1_cashier2@bikrikendra.com,9000000035,Admin@123,ATH Shop1 Cashier,CASHIER
+ath_s2_admin,ath_s2_admin@bikrikendra.com,9000000036,Admin@123,ATH Shop2 Admin,ADMIN
+ath_s2_supervisor,ath_s2_supervisor@bikrikendra.com,9000000037,Admin@123,ATH Shop2 Shop Supervisor,SHOP_SUPERVISOR
+ath_s2_bo,ath_s2_bo@bikrikendra.com,9000000038,Admin@123,ATH Shop2 Billing Operator,BILLING_OPERATOR
+ath_s2_cashier1,ath_s2_cashier1@bikrikendra.com,9000000039,Admin@123,ATH Shop2 Cashier,CASHIER
+ath_s2_cashier2,ath_s2_cashier2@bikrikendra.com,9000000040,Admin@123,ATH Shop2 Cashier,CASHIER
+upa_s1_admin,upa_s1_admin@bikrikendra.com,9000000041,Admin@123,UPA Shop1 Admin,ADMIN
+upa_s1_supervisor,upa_s1_supervisor@bikrikendra.com,9000000042,Admin@123,UPA Shop1 Shop Supervisor,SHOP_SUPERVISOR
+upa_s1_bo,upa_s1_bo@bikrikendra.com,9000000043,Admin@123,UPA Shop1 Billing Operator,BILLING_OPERATOR
+upa_s1_cashier1,upa_s1_cashier1@bikrikendra.com,9000000044,Admin@123,UPA Shop1 Cashier,CASHIER
+upa_s1_cashier2,upa_s1_cashier2@bikrikendra.com,9000000045,Admin@123,UPA Shop1 Cashier,CASHIER
+upa_s2_admin,upa_s2_admin@bikrikendra.com,9000000046,Admin@123,UPA Shop2 Admin,ADMIN
+upa_s2_supervisor,upa_s2_supervisor@bikrikendra.com,9000000047,Admin@123,UPA Shop2 Shop Supervisor,SHOP_SUPERVISOR
+upa_s2_bo,upa_s2_bo@bikrikendra.com,9000000048,Admin@123,UPA Shop2 Billing Operator,BILLING_OPERATOR
+upa_s2_cashier1,upa_s2_cashier1@bikrikendra.com,9000000049,Admin@123,UPA Shop2 Cashier,CASHIER
+upa_s2_cashier2,upa_s2_cashier2@bikrikendra.com,9000000050,Admin@123,UPA Shop2 Cashier,CASHIER
+ved_s1_admin,ved_s1_admin@bikrikendra.com,9000000051,Admin@123,VED Shop1 Admin,ADMIN
+ved_s1_supervisor,ved_s1_supervisor@bikrikendra.com,9000000052,Admin@123,VED Shop1 Shop Supervisor,SHOP_SUPERVISOR
+ved_s1_bo,ved_s1_bo@bikrikendra.com,9000000053,Admin@123,VED Shop1 Billing Operator,BILLING_OPERATOR
+ved_s1_cashier1,ved_s1_cashier1@bikrikendra.com,9000000054,Admin@123,VED Shop1 Cashier,CASHIER
+ved_s1_cashier2,ved_s1_cashier2@bikrikendra.com,9000000055,Admin@123,VED Shop1 Cashier,CASHIER
+ved_s2_admin,ved_s2_admin@bikrikendra.com,9000000056,Admin@123,VED Shop2 Admin,ADMIN
+ved_s2_supervisor,ved_s2_supervisor@bikrikendra.com,9000000057,Admin@123,VED Shop2 Shop Supervisor,SHOP_SUPERVISOR
+ved_s2_bo,ved_s2_bo@bikrikendra.com,9000000058,Admin@123,VED Shop2 Billing Operator,BILLING_OPERATOR
+ved_s2_cashier1,ved_s2_cashier1@bikrikendra.com,9000000059,Admin@123,VED Shop2 Cashier,CASHIER
+ved_s2_cashier2,ved_s2_cashier2@bikrikendra.com,9000000060,Admin@123,VED Shop2 Cashier,CASHIER
+dar_s1_admin,dar_s1_admin@bikrikendra.com,9000000061,Admin@123,DAR Shop1 Admin,ADMIN
+dar_s1_supervisor,dar_s1_supervisor@bikrikendra.com,9000000062,Admin@123,DAR Shop1 Shop Supervisor,SHOP_SUPERVISOR
+dar_s1_bo,dar_s1_bo@bikrikendra.com,9000000063,Admin@123,DAR Shop1 Billing Operator,BILLING_OPERATOR
+dar_s1_cashier1,dar_s1_cashier1@bikrikendra.com,9000000064,Admin@123,DAR Shop1 Cashier,CASHIER
+dar_s1_cashier2,dar_s1_cashier2@bikrikendra.com,9000000065,Admin@123,DAR Shop1 Cashier,CASHIER
+dar_s2_admin,dar_s2_admin@bikrikendra.com,9000000066,Admin@123,DAR Shop2 Admin,ADMIN
+dar_s2_supervisor,dar_s2_supervisor@bikrikendra.com,9000000067,Admin@123,DAR Shop2 Shop Supervisor,SHOP_SUPERVISOR
+dar_s2_bo,dar_s2_bo@bikrikendra.com,9000000068,Admin@123,DAR Shop2 Billing Operator,BILLING_OPERATOR
+dar_s2_cashier1,dar_s2_cashier1@bikrikendra.com,9000000069,Admin@123,DAR Shop2 Cashier,CASHIER
+dar_s2_cashier2,dar_s2_cashier2@bikrikendra.com,9000000070,Admin@123,DAR Shop2 Cashier,CASHIER
+ras_s1_admin,ras_s1_admin@bikrikendra.com,9000000071,Admin@123,RAS Shop1 Admin,ADMIN
+ras_s1_supervisor,ras_s1_supervisor@bikrikendra.com,9000000072,Admin@123,RAS Shop1 Shop Supervisor,SHOP_SUPERVISOR
+ras_s1_bo,ras_s1_bo@bikrikendra.com,9000000073,Admin@123,RAS Shop1 Billing Operator,BILLING_OPERATOR
+ras_s1_cashier1,ras_s1_cashier1@bikrikendra.com,9000000074,Admin@123,RAS Shop1 Cashier,CASHIER
+ras_s1_cashier2,ras_s1_cashier2@bikrikendra.com,9000000075,Admin@123,RAS Shop1 Cashier,CASHIER
+ras_s2_admin,ras_s2_admin@bikrikendra.com,9000000076,Admin@123,RAS Shop2 Admin,ADMIN
+ras_s2_supervisor,ras_s2_supervisor@bikrikendra.com,9000000077,Admin@123,RAS Shop2 Shop Supervisor,SHOP_SUPERVISOR
+ras_s2_bo,ras_s2_bo@bikrikendra.com,9000000078,Admin@123,RAS Shop2 Billing Operator,BILLING_OPERATOR
+ras_s2_cashier1,ras_s2_cashier1@bikrikendra.com,9000000079,Admin@123,RAS Shop2 Cashier,CASHIER
+ras_s2_cashier2,ras_s2_cashier2@bikrikendra.com,9000000080,Admin@123,RAS Shop2 Cashier,CASHIER
+ark_s1_admin,ark_s1_admin@bikrikendra.com,9000000081,Admin@123,ARK Shop1 Admin,ADMIN
+ark_s1_supervisor,ark_s1_supervisor@bikrikendra.com,9000000082,Admin@123,ARK Shop1 Shop Supervisor,SHOP_SUPERVISOR
+ark_s1_bo,ark_s1_bo@bikrikendra.com,9000000083,Admin@123,ARK Shop1 Billing Operator,BILLING_OPERATOR
+ark_s1_cashier1,ark_s1_cashier1@bikrikendra.com,9000000084,Admin@123,ARK Shop1 Cashier,CASHIER
+ark_s1_cashier2,ark_s1_cashier2@bikrikendra.com,9000000085,Admin@123,ARK Shop1 Cashier,CASHIER
+ark_s2_admin,ark_s2_admin@bikrikendra.com,9000000086,Admin@123,ARK Shop2 Admin,ADMIN
+ark_s2_supervisor,ark_s2_supervisor@bikrikendra.com,9000000087,Admin@123,ARK Shop2 Shop Supervisor,SHOP_SUPERVISOR
+ark_s2_bo,ark_s2_bo@bikrikendra.com,9000000088,Admin@123,ARK Shop2 Billing Operator,BILLING_OPERATOR
+ark_s2_cashier1,ark_s2_cashier1@bikrikendra.com,9000000089,Admin@123,ARK Shop2 Cashier,CASHIER
+ark_s2_cashier2,ark_s2_cashier2@bikrikendra.com,9000000090,Admin@123,ARK Shop2 Cashier,CASHIER
+gut_s1_admin,gut_s1_admin@bikrikendra.com,9000000091,Admin@123,GUT Shop1 Admin,ADMIN
+gut_s1_supervisor,gut_s1_supervisor@bikrikendra.com,9000000092,Admin@123,GUT Shop1 Shop Supervisor,SHOP_SUPERVISOR
+gut_s1_bo,gut_s1_bo@bikrikendra.com,9000000093,Admin@123,GUT Shop1 Billing Operator,BILLING_OPERATOR
+gut_s1_cashier1,gut_s1_cashier1@bikrikendra.com,9000000094,Admin@123,GUT Shop1 Cashier,CASHIER
+gut_s1_cashier2,gut_s1_cashier2@bikrikendra.com,9000000095,Admin@123,GUT Shop1 Cashier,CASHIER
+gut_s2_admin,gut_s2_admin@bikrikendra.com,9000000096,Admin@123,GUT Shop2 Admin,ADMIN
+gut_s2_supervisor,gut_s2_supervisor@bikrikendra.com,9000000097,Admin@123,GUT Shop2 Shop Supervisor,SHOP_SUPERVISOR
+gut_s2_bo,gut_s2_bo@bikrikendra.com,9000000098,Admin@123,GUT Shop2 Billing Operator,BILLING_OPERATOR
+gut_s2_cashier1,gut_s2_cashier1@bikrikendra.com,9000000099,Admin@123,GUT Shop2 Cashier,CASHIER
+gut_s2_cashier2,gut_s2_cashier2@bikrikendra.com,9000000100,Admin@123,GUT Shop2 Cashier,CASHIER
+chu_s1_admin,chu_s1_admin@bikrikendra.com,9000000101,Admin@123,CHU Shop1 Admin,ADMIN
+chu_s1_supervisor,chu_s1_supervisor@bikrikendra.com,9000000102,Admin@123,CHU Shop1 Shop Supervisor,SHOP_SUPERVISOR
+chu_s1_bo,chu_s1_bo@bikrikendra.com,9000000103,Admin@123,CHU Shop1 Billing Operator,BILLING_OPERATOR
+chu_s1_cashier1,chu_s1_cashier1@bikrikendra.com,9000000104,Admin@123,CHU Shop1 Cashier,CASHIER
+chu_s1_cashier2,chu_s1_cashier2@bikrikendra.com,9000000105,Admin@123,CHU Shop1 Cashier,CASHIER
+chu_s2_admin,chu_s2_admin@bikrikendra.com,9000000106,Admin@123,CHU Shop2 Admin,ADMIN
+chu_s2_supervisor,chu_s2_supervisor@bikrikendra.com,9000000107,Admin@123,CHU Shop2 Shop Supervisor,SHOP_SUPERVISOR
+chu_s2_bo,chu_s2_bo@bikrikendra.com,9000000108,Admin@123,CHU Shop2 Billing Operator,BILLING_OPERATOR
+chu_s2_cashier1,chu_s2_cashier1@bikrikendra.com,9000000109,Admin@123,CHU Shop2 Cashier,CASHIER
+chu_s2_cashier2,chu_s2_cashier2@bikrikendra.com,9000000110,Admin@123,CHU Shop2 Cashier,CASHIER
+tai_s1_admin,tai_s1_admin@bikrikendra.com,9000000111,Admin@123,TAI Shop1 Admin,ADMIN
+tai_s1_supervisor,tai_s1_supervisor@bikrikendra.com,9000000112,Admin@123,TAI Shop1 Shop Supervisor,SHOP_SUPERVISOR
+tai_s1_bo,tai_s1_bo@bikrikendra.com,9000000113,Admin@123,TAI Shop1 Billing Operator,BILLING_OPERATOR
+tai_s1_cashier1,tai_s1_cashier1@bikrikendra.com,9000000114,Admin@123,TAI Shop1 Cashier,CASHIER
+tai_s1_cashier2,tai_s1_cashier2@bikrikendra.com,9000000115,Admin@123,TAI Shop1 Cashier,CASHIER
+tai_s2_admin,tai_s2_admin@bikrikendra.com,9000000116,Admin@123,TAI Shop2 Admin,ADMIN
+tai_s2_supervisor,tai_s2_supervisor@bikrikendra.com,9000000117,Admin@123,TAI Shop2 Shop Supervisor,SHOP_SUPERVISOR
+tai_s2_bo,tai_s2_bo@bikrikendra.com,9000000118,Admin@123,TAI Shop2 Billing Operator,BILLING_OPERATOR
+tai_s2_cashier1,tai_s2_cashier1@bikrikendra.com,9000000119,Admin@123,TAI Shop2 Cashier,CASHIER
+tai_s2_cashier2,tai_s2_cashier2@bikrikendra.com,9000000120,Admin@123,TAI Shop2 Cashier,CASHIER
+lep_s1_admin,lep_s1_admin@bikrikendra.com,9000000121,Admin@123,LEP Shop1 Admin,ADMIN
+lep_s1_supervisor,lep_s1_supervisor@bikrikendra.com,9000000122,Admin@123,LEP Shop1 Shop Supervisor,SHOP_SUPERVISOR
+lep_s1_bo,lep_s1_bo@bikrikendra.com,9000000123,Admin@123,LEP Shop1 Billing Operator,BILLING_OPERATOR
+lep_s1_cashier1,lep_s1_cashier1@bikrikendra.com,9000000124,Admin@123,LEP Shop1 Cashier,CASHIER
+lep_s1_cashier2,lep_s1_cashier2@bikrikendra.com,9000000125,Admin@123,LEP Shop1 Cashier,CASHIER
+lep_s2_admin,lep_s2_admin@bikrikendra.com,9000000126,Admin@123,LEP Shop2 Admin,ADMIN
+lep_s2_supervisor,lep_s2_supervisor@bikrikendra.com,9000000127,Admin@123,LEP Shop2 Shop Supervisor,SHOP_SUPERVISOR
+lep_s2_bo,lep_s2_bo@bikrikendra.com,9000000128,Admin@123,LEP Shop2 Billing Operator,BILLING_OPERATOR
+lep_s2_cashier1,lep_s2_cashier1@bikrikendra.com,9000000129,Admin@123,LEP Shop2 Cashier,CASHIER
+lep_s2_cashier2,lep_s2_cashier2@bikrikendra.com,9000000130,Admin@123,LEP Shop2 Cashier,CASHIER
+tea_s1_admin,tea_s1_admin@bikrikendra.com,9000000131,Admin@123,TEA Shop1 Admin,ADMIN
+tea_s1_supervisor,tea_s1_supervisor@bikrikendra.com,9000000132,Admin@123,TEA Shop1 Shop Supervisor,SHOP_SUPERVISOR
+tea_s1_bo,tea_s1_bo@bikrikendra.com,9000000133,Admin@123,TEA Shop1 Billing Operator,BILLING_OPERATOR
+tea_s1_cashier1,tea_s1_cashier1@bikrikendra.com,9000000134,Admin@123,TEA Shop1 Cashier,CASHIER
+tea_s1_cashier2,tea_s1_cashier2@bikrikendra.com,9000000135,Admin@123,TEA Shop1 Cashier,CASHIER
+tea_s2_admin,tea_s2_admin@bikrikendra.com,9000000136,Admin@123,TEA Shop2 Admin,ADMIN
+tea_s2_supervisor,tea_s2_supervisor@bikrikendra.com,9000000137,Admin@123,TEA Shop2 Shop Supervisor,SHOP_SUPERVISOR
+tea_s2_bo,tea_s2_bo@bikrikendra.com,9000000138,Admin@123,TEA Shop2 Billing Operator,BILLING_OPERATOR
+tea_s2_cashier1,tea_s2_cashier1@bikrikendra.com,9000000139,Admin@123,TEA Shop2 Cashier,CASHIER
+tea_s2_cashier2,tea_s2_cashier2@bikrikendra.com,9000000140,Admin@123,TEA Shop2 Cashier,CASHIER
+her_s1_admin,her_s1_admin@bikrikendra.com,9000000141,Admin@123,HER Shop1 Admin,ADMIN
+her_s1_supervisor,her_s1_supervisor@bikrikendra.com,9000000142,Admin@123,HER Shop1 Shop Supervisor,SHOP_SUPERVISOR
+her_s1_bo,her_s1_bo@bikrikendra.com,9000000143,Admin@123,HER Shop1 Billing Operator,BILLING_OPERATOR
+her_s1_cashier1,her_s1_cashier1@bikrikendra.com,9000000144,Admin@123,HER Shop1 Cashier,CASHIER
+her_s1_cashier2,her_s1_cashier2@bikrikendra.com,9000000145,Admin@123,HER Shop1 Cashier,CASHIER
+her_s2_admin,her_s2_admin@bikrikendra.com,9000000146,Admin@123,HER Shop2 Admin,ADMIN
+her_s2_supervisor,her_s2_supervisor@bikrikendra.com,9000000147,Admin@123,HER Shop2 Shop Supervisor,SHOP_SUPERVISOR
+her_s2_bo,her_s2_bo@bikrikendra.com,9000000148,Admin@123,HER Shop2 Billing Operator,BILLING_OPERATOR
+her_s2_cashier1,her_s2_cashier1@bikrikendra.com,9000000149,Admin@123,HER Shop2 Cashier,CASHIER
+her_s2_cashier2,her_s2_cashier2@bikrikendra.com,9000000150,Admin@123,HER Shop2 Cashier,CASHIER
+bho_s1_admin,bho_s1_admin@bikrikendra.com,9000000151,Admin@123,BHO Shop1 Admin,ADMIN
+bho_s1_supervisor,bho_s1_supervisor@bikrikendra.com,9000000152,Admin@123,BHO Shop1 Shop Supervisor,SHOP_SUPERVISOR
+bho_s1_bo,bho_s1_bo@bikrikendra.com,9000000153,Admin@123,BHO Shop1 Billing Operator,BILLING_OPERATOR
+bho_s1_cashier1,bho_s1_cashier1@bikrikendra.com,9000000154,Admin@123,BHO Shop1 Cashier,CASHIER
+bho_s1_cashier2,bho_s1_cashier2@bikrikendra.com,9000000155,Admin@123,BHO Shop1 Cashier,CASHIER
+bho_s2_admin,bho_s2_admin@bikrikendra.com,9000000156,Admin@123,BHO Shop2 Admin,ADMIN
+bho_s2_supervisor,bho_s2_supervisor@bikrikendra.com,9000000157,Admin@123,BHO Shop2 Shop Supervisor,SHOP_SUPERVISOR
+bho_s2_bo,bho_s2_bo@bikrikendra.com,9000000158,Admin@123,BHO Shop2 Billing Operator,BILLING_OPERATOR
+bho_s2_cashier1,bho_s2_cashier1@bikrikendra.com,9000000159,Admin@123,BHO Shop2 Cashier,CASHIER
+bho_s2_cashier2,bho_s2_cashier2@bikrikendra.com,9000000160,Admin@123,BHO Shop2 Cashier,CASHIER
+kra_s1_admin,kra_s1_admin@bikrikendra.com,9000000161,Admin@123,KRA Shop1 Admin,ADMIN
+kra_s1_supervisor,kra_s1_supervisor@bikrikendra.com,9000000162,Admin@123,KRA Shop1 Shop Supervisor,SHOP_SUPERVISOR
+kra_s1_bo,kra_s1_bo@bikrikendra.com,9000000163,Admin@123,KRA Shop1 Billing Operator,BILLING_OPERATOR
+kra_s1_cashier1,kra_s1_cashier1@bikrikendra.com,9000000164,Admin@123,KRA Shop1 Cashier,CASHIER
+kra_s1_cashier2,kra_s1_cashier2@bikrikendra.com,9000000165,Admin@123,KRA Shop1 Cashier,CASHIER
+kra_s2_admin,kra_s2_admin@bikrikendra.com,9000000166,Admin@123,KRA Shop2 Admin,ADMIN
+kra_s2_supervisor,kra_s2_supervisor@bikrikendra.com,9000000167,Admin@123,KRA Shop2 Shop Supervisor,SHOP_SUPERVISOR
+kra_s2_bo,kra_s2_bo@bikrikendra.com,9000000168,Admin@123,KRA Shop2 Billing Operator,BILLING_OPERATOR
+kra_s2_cashier1,kra_s2_cashier1@bikrikendra.com,9000000169,Admin@123,KRA Shop2 Cashier,CASHIER
+kra_s2_cashier2,kra_s2_cashier2@bikrikendra.com,9000000170,Admin@123,KRA Shop2 Cashier,CASHIER
+gan_s1_admin,gan_s1_admin@bikrikendra.com,9000000171,Admin@123,GAN Shop1 Admin,ADMIN
+gan_s1_supervisor,gan_s1_supervisor@bikrikendra.com,9000000172,Admin@123,GAN Shop1 Shop Supervisor,SHOP_SUPERVISOR
+gan_s1_bo,gan_s1_bo@bikrikendra.com,9000000173,Admin@123,GAN Shop1 Billing Operator,BILLING_OPERATOR
+gan_s1_cashier1,gan_s1_cashier1@bikrikendra.com,9000000174,Admin@123,GAN Shop1 Cashier,CASHIER
+gan_s1_cashier2,gan_s1_cashier2@bikrikendra.com,9000000175,Admin@123,GAN Shop1 Cashier,CASHIER
+gan_s2_admin,gan_s2_admin@bikrikendra.com,9000000176,Admin@123,GAN Shop2 Admin,ADMIN
+gan_s2_supervisor,gan_s2_supervisor@bikrikendra.com,9000000177,Admin@123,GAN Shop2 Shop Supervisor,SHOP_SUPERVISOR
+gan_s2_bo,gan_s2_bo@bikrikendra.com,9000000178,Admin@123,GAN Shop2 Billing Operator,BILLING_OPERATOR
+gan_s2_cashier1,gan_s2_cashier1@bikrikendra.com,9000000179,Admin@123,GAN Shop2 Cashier,CASHIER
+gan_s2_cashier2,gan_s2_cashier2@bikrikendra.com,9000000180,Admin@123,GAN Shop2 Cashier,CASHIER
+aro_s1_admin,aro_s1_admin@bikrikendra.com,9000000181,Admin@123,ARO Shop1 Admin,ADMIN
+aro_s1_supervisor,aro_s1_supervisor@bikrikendra.com,9000000182,Admin@123,ARO Shop1 Shop Supervisor,SHOP_SUPERVISOR
+aro_s1_bo,aro_s1_bo@bikrikendra.com,9000000183,Admin@123,ARO Shop1 Billing Operator,BILLING_OPERATOR
+aro_s1_cashier1,aro_s1_cashier1@bikrikendra.com,9000000184,Admin@123,ARO Shop1 Cashier,CASHIER
+aro_s1_cashier2,aro_s1_cashier2@bikrikendra.com,9000000185,Admin@123,ARO Shop1 Cashier,CASHIER
+aro_s2_admin,aro_s2_admin@bikrikendra.com,9000000186,Admin@123,ARO Shop2 Admin,ADMIN
+aro_s2_supervisor,aro_s2_supervisor@bikrikendra.com,9000000187,Admin@123,ARO Shop2 Shop Supervisor,SHOP_SUPERVISOR
+aro_s2_bo,aro_s2_bo@bikrikendra.com,9000000188,Admin@123,ARO Shop2 Billing Operator,BILLING_OPERATOR
+aro_s2_cashier1,aro_s2_cashier1@bikrikendra.com,9000000189,Admin@123,ARO Shop2 Cashier,CASHIER
+aro_s2_cashier2,aro_s2_cashier2@bikrikendra.com,9000000190,Admin@123,ARO Shop2 Cashier,CASHIER
+san_s1_admin,san_s1_admin@bikrikendra.com,9000000191,Admin@123,SAN Shop1 Admin,ADMIN
+san_s1_supervisor,san_s1_supervisor@bikrikendra.com,9000000192,Admin@123,SAN Shop1 Shop Supervisor,SHOP_SUPERVISOR
+san_s1_bo,san_s1_bo@bikrikendra.com,9000000193,Admin@123,SAN Shop1 Billing Operator,BILLING_OPERATOR
+san_s1_cashier1,san_s1_cashier1@bikrikendra.com,9000000194,Admin@123,SAN Shop1 Cashier,CASHIER
+san_s1_cashier2,san_s1_cashier2@bikrikendra.com,9000000195,Admin@123,SAN Shop1 Cashier,CASHIER
+san_s2_admin,san_s2_admin@bikrikendra.com,9000000196,Admin@123,SAN Shop2 Admin,ADMIN
+san_s2_supervisor,san_s2_supervisor@bikrikendra.com,9000000197,Admin@123,SAN Shop2 Shop Supervisor,SHOP_SUPERVISOR
+san_s2_bo,san_s2_bo@bikrikendra.com,9000000198,Admin@123,SAN Shop2 Billing Operator,BILLING_OPERATOR
+san_s2_cashier1,san_s2_cashier1@bikrikendra.com,9000000199,Admin@123,SAN Shop2 Cashier,CASHIER
+san_s2_cashier2,san_s2_cashier2@bikrikendra.com,9000000200,Admin@123,SAN Shop2 Cashier,CASHIER
+dhy_s1_admin,dhy_s1_admin@bikrikendra.com,9000000201,Admin@123,DHY Shop1 Admin,ADMIN
+dhy_s1_supervisor,dhy_s1_supervisor@bikrikendra.com,9000000202,Admin@123,DHY Shop1 Shop Supervisor,SHOP_SUPERVISOR
+dhy_s1_bo,dhy_s1_bo@bikrikendra.com,9000000203,Admin@123,DHY Shop1 Billing Operator,BILLING_OPERATOR
+dhy_s1_cashier1,dhy_s1_cashier1@bikrikendra.com,9000000204,Admin@123,DHY Shop1 Cashier,CASHIER
+dhy_s1_cashier2,dhy_s1_cashier2@bikrikendra.com,9000000205,Admin@123,DHY Shop1 Cashier,CASHIER
+dhy_s2_admin,dhy_s2_admin@bikrikendra.com,9000000206,Admin@123,DHY Shop2 Admin,ADMIN
+dhy_s2_supervisor,dhy_s2_supervisor@bikrikendra.com,9000000207,Admin@123,DHY Shop2 Shop Supervisor,SHOP_SUPERVISOR
+dhy_s2_bo,dhy_s2_bo@bikrikendra.com,9000000208,Admin@123,DHY Shop2 Billing Operator,BILLING_OPERATOR
+dhy_s2_cashier1,dhy_s2_cashier1@bikrikendra.com,9000000209,Admin@123,DHY Shop2 Cashier,CASHIER
+dhy_s2_cashier2,dhy_s2_cashier2@bikrikendra.com,9000000210,Admin@123,DHY Shop2 Cashier,CASHIER
+art_s1_admin,art_s1_admin@bikrikendra.com,9000000211,Admin@123,ART Shop1 Admin,ADMIN
+art_s1_supervisor,art_s1_supervisor@bikrikendra.com,9000000212,Admin@123,ART Shop1 Shop Supervisor,SHOP_SUPERVISOR
+art_s1_bo,art_s1_bo@bikrikendra.com,9000000213,Admin@123,ART Shop1 Billing Operator,BILLING_OPERATOR
+art_s1_cashier1,art_s1_cashier1@bikrikendra.com,9000000214,Admin@123,ART Shop1 Cashier,CASHIER
+art_s1_cashier2,art_s1_cashier2@bikrikendra.com,9000000215,Admin@123,ART Shop1 Cashier,CASHIER
+art_s2_admin,art_s2_admin@bikrikendra.com,9000000216,Admin@123,ART Shop2 Admin,ADMIN
+art_s2_supervisor,art_s2_supervisor@bikrikendra.com,9000000217,Admin@123,ART Shop2 Shop Supervisor,SHOP_SUPERVISOR
+art_s2_bo,art_s2_bo@bikrikendra.com,9000000218,Admin@123,ART Shop2 Billing Operator,BILLING_OPERATOR
+art_s2_cashier1,art_s2_cashier1@bikrikendra.com,9000000219,Admin@123,ART Shop2 Cashier,CASHIER
+art_s2_cashier2,art_s2_cashier2@bikrikendra.com,9000000220,Admin@123,ART Shop2 Cashier,CASHIER
+psm_s1_admin,psm_s1_admin@bikrikendra.com,9000000221,Admin@123,PSM Shop1 Admin,ADMIN
+psm_s1_supervisor,psm_s1_supervisor@bikrikendra.com,9000000222,Admin@123,PSM Shop1 Shop Supervisor,SHOP_SUPERVISOR
+psm_s1_bo,psm_s1_bo@bikrikendra.com,9000000223,Admin@123,PSM Shop1 Billing Operator,BILLING_OPERATOR
+psm_s1_cashier1,psm_s1_cashier1@bikrikendra.com,9000000224,Admin@123,PSM Shop1 Cashier,CASHIER
+psm_s1_cashier2,psm_s1_cashier2@bikrikendra.com,9000000225,Admin@123,PSM Shop1 Cashier,CASHIER
+psm_s2_admin,psm_s2_admin@bikrikendra.com,9000000226,Admin@123,PSM Shop2 Admin,ADMIN
+psm_s2_supervisor,psm_s2_supervisor@bikrikendra.com,9000000227,Admin@123,PSM Shop2 Shop Supervisor,SHOP_SUPERVISOR
+psm_s2_bo,psm_s2_bo@bikrikendra.com,9000000228,Admin@123,PSM Shop2 Billing Operator,BILLING_OPERATOR
+psm_s2_cashier1,psm_s2_cashier1@bikrikendra.com,9000000229,Admin@123,PSM Shop2 Cashier,CASHIER
+psm_s2_cashier2,psm_s2_cashier2@bikrikendra.com,9000000230,Admin@123,PSM Shop2 Cashier,CASHIER
+ast_s1_admin,ast_s1_admin@bikrikendra.com,9000000231,Admin@123,AST Shop1 Admin,ADMIN
+ast_s1_supervisor,ast_s1_supervisor@bikrikendra.com,9000000232,Admin@123,AST Shop1 Shop Supervisor,SHOP_SUPERVISOR
+ast_s1_bo,ast_s1_bo@bikrikendra.com,9000000233,Admin@123,AST Shop1 Billing Operator,BILLING_OPERATOR
+ast_s1_cashier1,ast_s1_cashier1@bikrikendra.com,9000000234,Admin@123,AST Shop1 Cashier,CASHIER
+ast_s1_cashier2,ast_s1_cashier2@bikrikendra.com,9000000235,Admin@123,AST Shop1 Cashier,CASHIER
+ast_s2_admin,ast_s2_admin@bikrikendra.com,9000000236,Admin@123,AST Shop2 Admin,ADMIN
+ast_s2_supervisor,ast_s2_supervisor@bikrikendra.com,9000000237,Admin@123,AST Shop2 Shop Supervisor,SHOP_SUPERVISOR
+ast_s2_bo,ast_s2_bo@bikrikendra.com,9000000238,Admin@123,AST Shop2 Billing Operator,BILLING_OPERATOR
+ast_s2_cashier1,ast_s2_cashier1@bikrikendra.com,9000000239,Admin@123,AST Shop2 Cashier,CASHIER
+ast_s2_cashier2,ast_s2_cashier2@bikrikendra.com,9000000240,Admin@123,AST Shop2 Cashier,CASHIER
+iti_s1_admin,iti_s1_admin@bikrikendra.com,9000000241,Admin@123,ITI Shop1 Admin,ADMIN
+iti_s1_supervisor,iti_s1_supervisor@bikrikendra.com,9000000242,Admin@123,ITI Shop1 Shop Supervisor,SHOP_SUPERVISOR
+iti_s1_bo,iti_s1_bo@bikrikendra.com,9000000243,Admin@123,ITI Shop1 Billing Operator,BILLING_OPERATOR
+iti_s1_cashier1,iti_s1_cashier1@bikrikendra.com,9000000244,Admin@123,ITI Shop1 Cashier,CASHIER
+iti_s1_cashier2,iti_s1_cashier2@bikrikendra.com,9000000245,Admin@123,ITI Shop1 Cashier,CASHIER
+iti_s2_admin,iti_s2_admin@bikrikendra.com,9000000246,Admin@123,ITI Shop2 Admin,ADMIN
+iti_s2_supervisor,iti_s2_supervisor@bikrikendra.com,9000000247,Admin@123,ITI Shop2 Shop Supervisor,SHOP_SUPERVISOR
+iti_s2_bo,iti_s2_bo@bikrikendra.com,9000000248,Admin@123,ITI Shop2 Billing Operator,BILLING_OPERATOR
+iti_s2_cashier1,iti_s2_cashier1@bikrikendra.com,9000000249,Admin@123,ITI Shop2 Cashier,CASHIER
+iti_s2_cashier2,iti_s2_cashier2@bikrikendra.com,9000000250,Admin@123,ITI Shop2 Cashier,CASHIER

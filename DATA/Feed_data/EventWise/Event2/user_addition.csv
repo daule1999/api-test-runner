@@ -1,0 +1,7 @@
+username,email,mobile,password,fullName,role
+priyanshu_acc,priyanshu@bikrikendra.com,9876543001,Admin@123,Priyanshu Pandey (Accounts),ACCOUNTS
+rahul_im,rahul.im@bikrikendra.com,9876543003,Admin@123,Rahul Deo (Inv Mgr),INVENTORY_MANAGER
+c1_s1_admin,c1_s1_admin@bikrikendra.com,9000000101,Admin@123,Rigveda S1 Admin,ADMIN
+c1_s1_sup,c1_s1_sup@bikrikendra.com,9000000102,Admin@123,Rigveda S1 Supervisor,SHOP_SUPERVISOR
+c1_s1_bo,c1_s1_bo@bikrikendra.com,9000000103,Admin@123,Rigveda S1 Billing Op,BILLING_OPERATOR
+c1_s1_csh1,c1_s1_csh1@bikrikendra.com,9000000104,Admin@123,Rigveda S1 Cashier One,CASHIER

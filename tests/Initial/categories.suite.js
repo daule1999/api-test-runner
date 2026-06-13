@@ -6,7 +6,7 @@ const path = require('path');
  * Exportable Jest suite mapping to the "03: Categories" Postman Collection,
  * powered dynamically by Feed_data/category.csv!
  */
-function runCategoriesSuite(customCsvPath) {
+function runCategoriesSuite(customCsvPath, createdEventId) {
   describe('Postman Collection: 03: Categories (Data-Driven)', () => {
     let adminToken;
 

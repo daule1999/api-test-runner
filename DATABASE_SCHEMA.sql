@@ -700,9 +700,10 @@ CREATE TABLE IF NOT EXISTS shop_shift_session (
 CREATE TABLE IF NOT EXISTS shop_shift_denomination (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     shift_session_id BIGINT NOT NULL,
-    entry_type ENUM('OPENING', 'CLOSING') NOT NULL,
+    entry_type ENUM('OPENING', 'CLOSING', 'ADDITION') NOT NULL,
     currency_value INT NOT NULL,
     note_count INT NOT NULL DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     
     CONSTRAINT fk_denomination_session
         FOREIGN KEY (shift_session_id)

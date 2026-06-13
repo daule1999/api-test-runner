@@ -10,7 +10,7 @@ const path = require('path');
  * quantities per shop, and performs rigorous validation on stock visibility for 
  * EVERY single staff user assigned to each shop counter!
  */
-function runShopIssueSuite(customCsvPath) {
+function runShopIssueSuite(customCsvPath, createdEventId) {
   describe('Postman Collection: 04: Counter/Shop issue (Data-Driven)', () => {
     let adminToken;
     let eventId;
@@ -27,7 +27,7 @@ function runShopIssueSuite(customCsvPath) {
 
     beforeAll(async () => {
       // Resolve Event ID from environment variable or fallback to '1'
-      eventId = process.env.SELECTED_EVENT_ID;
+      eventId = createdEventId || process.env.SELECTED_EVENT_ID;
 
       const api = new TestClient();
       api.setEventId(eventId);

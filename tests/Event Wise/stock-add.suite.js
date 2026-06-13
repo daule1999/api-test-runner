@@ -6,14 +6,15 @@ const path = require('path');
  * Exportable Jest suite mapping to the "02: Stock add into inventory" collection,
  * powered dynamically by Feed_data/EventWise/Jhusi_Program/Setup/stock_movement.csv!
  */
-function runInventoryStockAddSuite(customCsvPath) {
+function runInventoryStockAddSuite(customCsvPath, createdEventId) {
   describe('Postman Collection: 02: Stock add into inventory (Data-Driven)', () => {
     let adminToken;
+    let eventId = createdEventId || process.env.SELECTED_EVENT_ID;
 
     beforeAll(async () => {
       // 1. Perform Single Admin Login (Postman Request 01)
       const api = new TestClient();
-      api.setEventId(process.env.SELECTED_EVENT_ID);
+      api.setEventId(eventId);
       console.log('🧪 Executing pre-requisite: 01: Admin Login...');
       adminToken = await api.login('admin', 'Admin@123');
       expect(adminToken).toBeDefined();
@@ -43,7 +44,7 @@ function runInventoryStockAddSuite(customCsvPath) {
         const api = new TestClient();
         api.token = adminToken;
         // Event ID is '1' in Postman collection variables
-        api.setEventId(process.env.SELECTED_EVENT_ID);
+        api.setEventId(eventId);
 
         console.log(`\n──────────────────────────────────────────────────`);
         console.log(`🧪 Starting Pipeline for Stock Movement: ${row.product_name}`);
