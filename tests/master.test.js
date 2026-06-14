@@ -10,6 +10,7 @@ const runShopsSuite = require('./Initial/shops.suite.js');
 const runInventoryStockAddSuite = require('./Event Wise/Jhusi_Program/stock-add.suite.js');
 const runShopCounterSuite = require('./Event Wise/Jhusi_Program/shop-counter.suite.js');
 const runShopIssueSuite = require('./Event Wise/Jhusi_Program/shop-issue.suite.js');
+const runRedisCacheSuite = require('./Initial/redis-cache.suite.js');
 
 describe('Master E2E Serial Integration Suite', () => {
 
@@ -43,6 +44,11 @@ describe('Master E2E Serial Integration Suite', () => {
     // Suite 3: Products Setup Collection
     describe('➡️ Step 3: Products Setup Flow', () => {
         runProductsSuite();
+    });
+
+    // Suite 3.6: Redis Cache Integration Collection
+    describe('➡️ Step 3.6: Redis Cache Integration Flow', () => {
+        runRedisCacheSuite();
     });
 
     // Suite 4: Jhusi Program Stock Add Collection (CSV-driven IN)

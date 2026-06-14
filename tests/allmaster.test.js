@@ -26,6 +26,7 @@ const runBillingVerificationSuite = require('./Event Wise/Jhusi_Program/billing-
 const runConcurrencySuite = require('./Event Wise/Jhusi_Program/concurrency.suite.js');
 const runPaymentModesSuite = require('./Event Wise/Jhusi_Program/payment-modes.suite.js');
 const runShiftAnalyticsSuite = require('./Event Wise/Jhusi_Program/shift-analytics.suite.js');
+const runRedisCacheSuite = require('./Initial/redis-cache.suite.js');
 
 const event1 = {
   id: 1,
@@ -90,6 +91,11 @@ describe('Master E2E Serial Integration Suite', () => {
   // Suite 3: Products Setup Collection
   describe('➡️ Step 3: Products Setup Flow', () => {
     runProductsSuite();
+  });
+
+  // Suite 3.6: Redis Cache Integration Collection
+  describe('➡️ Step 3.6: Redis Cache Integration Flow', () => {
+    runRedisCacheSuite();
   });
 
   // Suite 3.5: Advanced Inventory CRUD Collection
